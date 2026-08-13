@@ -135,7 +135,7 @@ export const DataTable = [
     salary: ''
   },
   {
-    id: 1,
+    id: 16,
     name: 'Mark',
     position: 'Otto',
     office: '@mdo',
@@ -144,7 +144,7 @@ export const DataTable = [
     salary: ''
   },
   {
-    id: 1,
+    id: 17,
     name: 'Mark',
     position: 'Otto',
     office: '@mdo',
@@ -153,7 +153,7 @@ export const DataTable = [
     salary: ''
   },
   {
-    id: 1,
+    id: 18,
     name: 'Mark',
     position: 'Otto',
     office: '@mdo',
@@ -162,7 +162,7 @@ export const DataTable = [
     salary: ''
   },
   {
-    id: 1,
+    id: 19,
     name: 'Mark',
     position: 'Otto',
     office: '@mdo',
@@ -171,7 +171,7 @@ export const DataTable = [
     salary: ''
   },
   {
-    id: 1,
+    id: 20,
     name: 'Mark',
     position: 'Otto',
     office: '@mdo',
@@ -180,7 +180,7 @@ export const DataTable = [
     salary: ''
   },
   {
-    id: 1,
+    id: 21,
     name: 'Mark',
     position: 'Otto',
     office: '@mdo',
@@ -189,7 +189,7 @@ export const DataTable = [
     salary: ''
   },
   {
-    id: 1,
+    id: 22,
     name: 'Mark',
     position: 'Otto',
     office: '@mdo',
@@ -198,7 +198,7 @@ export const DataTable = [
     salary: ''
   },
   {
-    id: 1,
+    id: 23,
     name: 'Mark',
     position: 'Otto',
     office: '@mdo',
@@ -207,7 +207,7 @@ export const DataTable = [
     salary: ''
   },
   {
-    id: 1,
+    id: 24,
     name: 'Mark',
     position: 'Otto',
     office: '@mdo',
@@ -216,7 +216,7 @@ export const DataTable = [
     salary: ''
   },
   {
-    id: 1,
+    id: 25  ,
     name: 'Mark',
     position: 'Otto',
     office: '@mdo',
