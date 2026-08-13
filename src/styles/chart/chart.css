@@ -1,0 +1,92 @@
+.dashboard-charts {
+  width: 100%;
+
+  margin-top: 50px;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  gap: 24px;
+}
+
+.chart-card {
+  background-color: #fff;
+
+  border-radius: 3px;
+
+  overflow: hidden;
+
+  min-width: 0;
+}
+
+.chart-card-header {
+  height: 70px;
+
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.chart-card-header h3 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.download-button {
+  width: 35px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #999;
+  border-radius: 4px;
+
+  background-color: #fff;
+  color: #666;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.download-button:hover {
+  background-color: #f3f4f6;
+  color: #222;
+}
+
+.download-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.line-chart-container {
+  height: 420px;
+
+  padding: 30px 25px 15px;
+}
+
+.doughnut-chart-container {
+  height: 420px;
+
+  padding: 30px 20px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1000px) {
+  .dashboard-charts {
+    grid-template-columns: 1fr;
+  }
+}
