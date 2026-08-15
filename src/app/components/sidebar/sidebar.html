@@ -1,0 +1,131 @@
+<aside
+  class="sidebar"
+  [class.sidebar-open]="isDrawerOpen()"
+  [class.sidebar-closed]="!isDrawerOpen()"
+  (mouseenter)="openDrawer()"
+  (mouseleave)="closeDrawer()"
+>
+  <nav class="sidebar-menu">
+
+    @for (item of sidebar(); track item.id) {
+
+      <div class="sidebar-group">
+
+
+        <button
+          type="button"
+          class="sidebar-item"
+          [class.active]="
+            isItemActive(item) ||
+            hasActiveChild(item)
+          "
+          (click)="handleMenuClick(item)"
+        >
+
+          <span class="sidebar-icon">
+
+            @switch (item.id) {
+
+              @case (1) {
+                <mat-icon>speed</mat-icon>
+              }
+
+              @case (2) {
+                <mat-icon>extension</mat-icon>
+              }
+
+              @case (3) {
+                <mat-icon>table_view</mat-icon>
+              }
+
+              @case (4) {
+                <mat-icon>edit_note</mat-icon>
+              }
+
+              @case (5) {
+                <mat-icon>auto_awesome_mosaic</mat-icon>
+              }
+
+              @case (6) {
+                <mat-icon>widgets</mat-icon>
+              }
+
+              @case (7) {
+                <mat-icon>bar_chart</mat-icon>
+              }
+
+              @case (8) {
+                <mat-icon>map</mat-icon>
+              }
+
+              @case (9) {
+                <mat-icon>description</mat-icon>
+              }
+
+            }
+
+          </span>
+
+          <span class="sidebar-text">
+            {{ item.title }}
+          </span>
+
+          @if (item.children) {
+
+            <mat-icon
+              class="sidebar-arrow"
+              [class.open]="openMenu() === item.id"
+            >
+              chevron_right
+            </mat-icon>
+
+          }
+
+        </button>
+
+
+
+
+        @if (
+          openMenu() === item.id &&
+          item.children
+        ) {
+
+          <div class="sidebar-children">
+
+            @for (
+              child of item.children;
+              track child.id
+            ) {
+
+              <button
+                type="button"
+                class="sidebar-child"
+                [class.active]="router.url === child.path"
+                (click)="handleChildClick(child.path)"
+              >
+
+                <div class="child-content">
+
+                  <mat-icon>
+                    radio_button_unchecked
+                  </mat-icon>
+
+                  {{ child.title }}
+
+                </div>
+
+              </button>
+
+            }
+
+          </div>
+
+        }
+
+      </div>
+
+    }
+
+  </nav>
+</aside>

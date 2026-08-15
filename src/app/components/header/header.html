@@ -1,1 +1,44 @@
-<p>header works!</p>
+<main>
+    <header class="header">
+      <div class="logo-and-hamburger">
+        <div class="logo">
+          <img
+            [src]="tabLogo"
+            alt="logo-header"
+            class="logo-header"
+          />
+
+          <a href="#" class="logo-title">
+            ElaAdmin
+          </a>
+        </div>
+
+        <button
+          class="hamburger"
+          (click)="setIsDrawerOpen.emit()"
+        >
+          <mat-icon fontIcon="menu"></mat-icon>
+        </button>
+      </div>
+      <div class="icon-header">
+
+            <mat-icon aria-hidden="false" aria-label="Example search icon" fontIcon="search" class="search-button"></mat-icon>
+
+            <app-badge
+                icon="notifications"
+                [count]="3"
+                badgeClass="error-badge"
+            />
+
+            <app-badge
+                icon="email"
+                [count]="5"
+                badgeClass="info-badge"
+            />
+          <div>
+              <img [src]="authLogo" alt="admin-logo" class="img-admin-logo"/>
+          </div>
+      </div>
+    </header>
+
+</main>

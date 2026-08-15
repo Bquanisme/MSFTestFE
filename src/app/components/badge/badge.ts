@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 
 @Component({
@@ -7,4 +7,8 @@ import {MatIconModule} from '@angular/material/icon';
   templateUrl: './badge.html',
   styleUrl: './badge.css',
 })
-export class Badge {}
+export class Badge {
+  icon = input('');
+  count = input(0);
+  badgeClass = input('');
+}

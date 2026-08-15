@@ -1,0 +1,271 @@
+.sidebar {
+  position: fixed;
+
+  top: 90px;
+  left: 0;
+
+  height: calc(100vh - 90px);
+
+  background-color: #2d4257;
+
+  z-index: 1200;
+
+  transition: width 0.45s ease-in-out;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-open {
+  width: 350px;
+}
+
+.sidebar-closed {
+  width: 105px;
+}
+
+
+
+.sidebar-menu {
+  width: 100%;
+  padding-top: 34px;
+}
+
+
+
+.sidebar-item {
+  width: 100%;
+  height: 64px;
+
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  border: none;
+  background: transparent;
+
+  color: #c5cdd5;
+
+  text-decoration: none;
+
+  position: relative;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background-color: #3b5064;
+  color: #ffffff;
+}
+
+
+
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+
+.sidebar-text {
+  font-size: 20px;
+  font-weight: 400;
+
+  white-space: nowrap;
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+
+
+.sidebar-arrow {
+  margin-left: auto;
+
+  color: #8e9aa6;
+
+  font-size: 28px !important;
+
+  transition: transform 0.25s ease;
+}
+
+
+/* Arrow khi menu mở */
+
+.sidebar-arrow.open {
+  transform: rotate(90deg);
+}
+
+
+.sidebar-item.active {
+  background-color: #526579;
+
+  color: #2dbff3;
+}
+
+.sidebar-item.active::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 5px;
+  height: 100%;
+
+  background-color: #00aeef;
+}
+
+
+.sidebar-section {
+  padding: 38px 30px 16px;
+
+  color: #8b97a3;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+
+  white-space: nowrap;
+}
+
+
+
+.sidebar-children {
+  display: flex;
+  flex-direction: column;
+
+  padding: 4px 0 8px 0;
+
+  background-color: #263b4e;
+}
+
+
+
+.sidebar-child {
+  width: 100%;
+  min-height: 48px;
+
+  padding: 0 20px 0 74px;
+
+  display: flex;
+  align-items: center;
+
+  border: none;
+  background: transparent;
+
+  color: #aeb8c1;
+
+  font-size: 17px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.sidebar-child mat-icon {
+  font-size: 13px;
+  width: 13px;
+  height: 13px;
+  line-height: 13px;
+}
+
+.sidebar-child:hover {
+  background-color: #3b5064;
+
+  color: #ffffff;
+}
+
+
+
+.sidebar-child.active {
+  background-color: #526579;
+
+  color: #2dbff3;
+}
+
+.sidebar-child.active::before {
+  content: "";
+
+  position: absolute;
+}
+
+
+
+.sidebar-closed .sidebar-text,
+.sidebar-closed .sidebar-arrow,
+.sidebar-closed .sidebar-section {
+  display: none;
+}
+
+
+.sidebar-closed .sidebar-item {
+  padding: 0;
+
+  justify-content: center;
+
+  gap: 0;
+}
+
+
+
+.sidebar-closed .sidebar-item.active {
+  width: 74px;
+  height: 57px;
+
+  margin: 0 auto 8px;
+
+  border-radius: 11px;
+
+  background-color: #526579;
+}
+
+
+.sidebar-closed .sidebar-item.active::before {
+  display: none;
+}
+
+
+.sidebar-closed .sidebar-icon {
+  font-size: 27px !important;
+}
+
+
+.sidebar-closed .sidebar-children {
+  display: none;
+}
+
+
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #263b4e;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #526579;
+
+  border-radius: 10px;
+}

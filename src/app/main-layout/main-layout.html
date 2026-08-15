@@ -1,0 +1,12 @@
+<main>
+  <app-header (setIsDrawerOpen)="setIsDrawerOpen()"/>
+
+  <app-sidebar
+    [isDrawerOpen]="isDrawerOpen()"
+    (setIsDrawerOpen)="setIsDrawerOpen()"
+  />
+
+  <router-outlet />
+
+  <app-footer />
+</main>

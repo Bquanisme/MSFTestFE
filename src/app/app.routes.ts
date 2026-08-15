@@ -25,12 +25,13 @@ import { App } from './app';
 import { LoginPage } from './page/authPage/login-page/login-page';
 import { RegisterPage } from './page/authPage/register-page/register-page';
 import { ForgetPasswordPage } from './page/authPage/forget-password-page/forget-password-page';
+import { MainLayout } from './main-layout/main-layout';
 
 export const routes: 
     Routes = [
         {
             path: "",
-            component: App,
+            component: MainLayout,
             children: [
                 {
                     path: "",
@@ -39,7 +40,6 @@ export const routes:
         
                 {
                     path: "components",
-                    component: RouterOutlet,
                     children: [
                         {
                             path: "buttons",
@@ -89,7 +89,6 @@ export const routes:
                 },
                 {
                     path: "tables",
-                    component: RouterOutlet,
                     children: [
                         {
                             path: "basic-table",
@@ -104,7 +103,6 @@ export const routes:
                 
                 {
                     path: "forms",
-                    component: RouterOutlet,
                     children: [
                         {
                             path: "basic-form",
@@ -119,7 +117,6 @@ export const routes:
         
                 {
                     path: "icons",
-                    component: RouterOutlet,
                     children: [
                         {
                             path: "font-awesome",
@@ -139,7 +136,6 @@ export const routes:
         
                 {
                     path: "charts",
-                    component: RouterOutlet,
                     children: [
                         {
                             path: "font-awesome",
@@ -150,7 +146,6 @@ export const routes:
         
                 {
                     path: "maps",
-                    component: RouterOutlet,
                     children: [
                         {
                             path: "google-maps",
