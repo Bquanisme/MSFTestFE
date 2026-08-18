@@ -1,9 +1,9 @@
 import { DataTableBreadcrumb } from '../../../components/Breadcrumb'
-import { basicTable } from '../../../mocks/tableApi/basicTable'
+import { DataTable } from '../../../mocks/tableApi/dataTableApi'
 import '../../../styles/pageStyles/components/button.css'
 import '../../../styles/pageStyles/tables/basicTable.css'
 
-export const DataTablePage = () => {
+const DataTablePage = () => {
   return (
     <div className="section">
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
@@ -18,22 +18,27 @@ export const DataTablePage = () => {
           <div className='button-margin'>
             <div className='button-row'>
               <div className="basic-table-wrapper">
-                <table className="basic-table">
+                <table className="data-table-border">
                   <thead>
                     <tr>
-                      <th>#</th>
-                      <th>FIRST</th>
-                      <th>LAST</th>
-                      <th>HANDLE</th>
+                      <th>NAME</th>
+                      <th>POSITION</th>
+                      <th>OFFICE</th>
+                      <th>AGE</th>
+                      <th>START DATE</th>
+                      <th>SALARY</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {basicTable.map((table) => (
+                    {DataTable.map((table) => (
                       <tr key={table.id}>
-                        <td className="table-number">{table.id}</td>
-                        <td>{table.first}</td>
-                        <td>{table.last}</td>
-                        <td>{table.handle}</td>
+                        {/* <td className="table-number">{table.id}</td> */}
+                        <td>{table.name}</td>
+                        <td>{table.position}</td>
+                        <td>{table.office}</td>
+                        <td>{table.age}</td>
+                        <td>{table.startDate}</td>
+                        <td>{table.salary}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -93,3 +98,5 @@ export const DataTablePage = () => {
     </div>
   )
 }
+
+export default DataTablePage
