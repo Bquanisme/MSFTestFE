@@ -86,10 +86,14 @@ export class Sidebar {
 
 
   openDrawer() {
-    this.setIsDrawerOpen.emit(true)
+    if (!this.isDrawerOpen()) {
+      this.setIsDrawerOpen.emit(true);
+    }
   }
 
   closeDrawer() {
-    this.setIsDrawerOpen.emit(false)
+    if (this.isDrawerOpen()) {
+      this.setIsDrawerOpen.emit(false);
+    }
   }
 }

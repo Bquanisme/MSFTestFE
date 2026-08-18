@@ -13,3 +13,37 @@ export interface ISidebarItem {
     path: string;
   }[];
 }
+
+
+export interface IButtonIcon {
+  id: number;
+  title: string;
+  icon: 'star' | 'favorite' | 'check' | 'warning' | 'delete';
+  iconPosition: 'left' | 'right';
+}
+
+export interface IButtonIcon2 {
+  id: number;
+  title: string;
+  icon: 'facebook' | 'twitter' | 'instagram' | 'github' | 'youtube' | 'linkedin'
+  iconPosition: 'left' | 'right';
+}
+
+export interface IButtonIcon3 {
+  id: number;
+  title: string;
+  icon: 'active' | 'pending' | 'inactive' | 'processing' | 'paused' | 'blocked'
+  iconPosition: 'left' | 'right';
+}
+
+export interface IBadgeBoxs {
+  id: number;
+  title: string;
+  number: number
+}
+
+export interface ILinkBoxs {
+  id: number;
+  name: string;
+  count: number
+}

@@ -11,4 +11,6 @@ export class Badge {
   icon = input('');
   count = input(0);
   badgeClass = input('');
+  iconBadgeClass = input('')
+  iconColor = input('')
 }

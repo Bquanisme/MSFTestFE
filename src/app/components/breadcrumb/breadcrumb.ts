@@ -10,4 +10,13 @@ export class Breadcrumb {
   @Input() folderTitle = ''
 
   @Input() title = ''
+
+  scrollToTop(event: Event) {
+    event.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 }

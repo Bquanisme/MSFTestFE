@@ -1,5 +1,5 @@
-<div class="icon-badge">
-  <mat-icon>{{ icon() }}</mat-icon>
+<div [class]="iconBadgeClass()">
+  <mat-icon [class]="iconColor()">{{ icon() }}</mat-icon>
 
   <span [class]="badgeClass()" >
     {{ count() }}

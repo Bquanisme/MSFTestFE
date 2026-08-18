@@ -1,0 +1,1088 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+
+  padding-top: 170px;
+  padding-right: 50px;
+  padding-bottom: 100px;
+  padding-left: 140px;
+
+  background-color: #f1f2f7;
+}
+
+/* =========================
+   BOX ROW
+========================= */
+
+.box-row-1,
+.box-row-2
+ {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.box-row-1 {
+  margin-top: 30px;
+}
+
+.box-row-2 {
+  margin-top: 60px;
+}
+
+.box-row-1-column-1 {
+  width: 50%;
+  background-color: #ffffff;
+  height: 100%;
+}
+
+.box-row-1-column-1 h3 {
+  margin: 20px;
+}
+
+.button-margin {
+  margin: 20px;
+}
+
+.button-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* =========================
+   COMMON BUTTON
+========================= */
+
+.button-1,
+.button-2,
+.button-3,
+.button-4,
+.button-5,
+.button-6,
+.button-7,
+.button-8,
+.button-9
+{
+  border: none;
+  border-radius: 10px;
+
+  height: 40px;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+/* =========================
+   BUTTON 1
+========================= */
+
+.button-1 {
+  width: 90px;
+  background-color: rgb(39, 153, 218);
+  color: #ffffff;
+}
+
+.button-1:hover {
+  background-color: rgb(48, 177, 251);
+}
+
+.button-1:active {
+  background-color: rgb(39, 153, 218);
+}
+
+/* =========================
+   BUTTON 2
+========================= */
+
+.button-2 {
+  width: 100px;
+  background-color: rgb(113, 121, 126);
+  color: #ffffff;
+}
+
+.button-2:hover {
+  background-color: rgb(132, 137, 141);
+}
+
+.button-2:active {
+  background-color: rgb(113, 121, 126);
+}
+
+/* =========================
+   BUTTON 3
+========================= */
+
+.button-3 {
+  width: 90px;
+  background-color: rgb(6, 155, 33);
+  color: #ffffff;
+}
+
+.button-3:hover {
+  background-color: rgb(10, 173, 56);
+}
+
+.button-3:active {
+  background-color: rgb(6, 155, 33);
+}
+
+/* =========================
+   BUTTON 4
+========================= */
+
+.button-4 {
+  width: 90px;
+  background-color: rgb(239, 40, 40);
+  color: #ffffff;
+}
+
+.button-4:hover {
+  background-color: rgb(239, 76, 76);
+}
+
+.button-4:active {
+  background-color: rgb(239, 40, 40);
+}
+
+/* =========================
+   BUTTON 5
+========================= */
+
+.button-5 {
+  width: 100px;
+  background-color: rgb(228, 179, 66);
+  color: #000000;
+}
+
+.button-5:hover {
+  background-color: rgb(247, 183, 79);
+}
+
+.button-5:active {
+  background-color: rgb(228, 179, 66);
+}
+
+/* =========================
+   BUTTON 6
+========================= */
+
+.button-6 {
+  width: 70px;
+  background-color: rgb(39, 153, 218);
+  color: #ffffff;
+}
+
+.button-6:hover {
+  background-color: rgb(48, 177, 251);
+}
+
+.button-6:active {
+  background-color: rgb(39, 153, 218);
+}
+
+/* =========================
+   BUTTON 7
+========================= */
+
+.button-7 {
+  width: 70px;
+  background-color: rgb(225, 235, 241);
+  color: #000000;
+}
+
+.button-7:hover {
+  background-color: rgb(182, 189, 195);
+}
+
+.button-7:active {
+  background-color: rgb(202, 212, 218);
+}
+
+/* =========================
+   BUTTON 8
+========================= */
+
+.button-8 {
+  width: 70px;
+  background-color: rgb(17, 17, 17);
+  color: #ffffff;
+}
+
+.button-8:hover {
+  background-color: rgb(43, 44, 45);
+}
+
+.button-8:active {
+  background-color: rgb(17, 17, 17);
+}
+
+/* =========================
+   BUTTON 9
+========================= */
+
+.button-9 {
+  width: 70px;
+  background-color: #ffffff;
+}
+
+.button-9 a {
+  color: #264fe5;
+}
+
+.button-9:hover a {
+  color: #266fe5;
+}
+
+/* =========================
+   BUTTON TEXT
+========================= */
+
+.button-1 p {
+  margin: 10px;
+  font-size: 14px;
+}
+
+/* =========================
+   FLAT BUTTON
+========================= */
+
+.button-flat-1,
+.button-flat-2,
+.button-flat-3,
+.button-flat-4,
+.button-flat-5,
+.button-flat-6 {
+  width: 100px;
+  height: 40px;
+
+  color: #ffffff;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: transform 0.1s ease;
+}
+
+.button-flat-1:active,
+.button-flat-2:active,
+.button-flat-3:active,
+.button-flat-4:active,
+.button-flat-5:active,
+.button-flat-6:active {
+  transform: scale(1.05);
+}
+
+.button-flat-1 {
+  background-color: #00c292;
+}
+
+.button-flat-2 {
+  background-color: #ab8ce4;
+}
+
+.button-flat-3 {
+  background-color: #03a9f3;
+}
+
+.button-flat-4 {
+  background-color: #fb9678;
+}
+
+.button-flat-5 {
+  background-color: #66bb6a;
+}
+
+.button-flat-6 {
+  background-color: #5c6bc0;
+}
+
+.button-flat-1 p {
+  margin: 10px;
+  font-size: 14px;
+}
+
+/* =========================
+   LARGE BUTTON
+========================= */
+
+.button-large-1,
+.button-large-2,
+.button-large-3,
+.button-large-4,
+.button-large-5,
+.button-large-6 {
+  color: #ffffff;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+/* =========================
+   LARGE 1
+========================= */
+
+.button-large-1 {
+  width: 160px;
+  height: 70px;
+
+  background-color: rgb(39, 153, 218);
+}
+
+.button-large-1:hover {
+  background-color: rgb(48, 177, 251);
+}
+
+.button-large-1:active {
+  background-color: rgb(39, 153, 218);
+}
+
+/* =========================
+   LARGE 2
+========================= */
+
+.button-large-2 {
+  width: 160px;
+  height: 70px;
+
+  background-color: rgb(113, 121, 126);
+}
+
+.button-large-2:hover {
+  background-color: rgb(132, 137, 141);
+}
+
+.button-large-2:active {
+  background-color: rgb(113, 121, 126);
+}
+
+/* =========================
+   LARGE 3
+========================= */
+
+.button-large-3 {
+  width: 140px;
+  height: 50px;
+
+  background-color: rgb(39, 153, 218);
+}
+
+.button-large-3:hover {
+  background-color: rgb(48, 177, 251);
+}
+
+.button-large-3:active {
+  background-color: rgb(39, 153, 218);
+}
+
+/* =========================
+   LARGE 4
+========================= */
+
+.button-large-4 {
+  width: 140px;
+  height: 50px;
+
+  background-color: rgb(113, 121, 126);
+}
+
+.button-large-4:hover {
+  background-color: rgb(132, 137, 141);
+}
+
+.button-large-4:active {
+  background-color: rgb(113, 121, 126);
+}
+
+/* =========================
+   LARGE 5
+========================= */
+
+.button-large-5 {
+  width: 100px;
+  height: 40px;
+
+  background-color: rgb(39, 153, 218);
+}
+
+.button-large-5:hover {
+  background-color: rgb(48, 177, 251);
+}
+
+.button-large-5:active {
+  background-color: rgb(39, 153, 218);
+}
+
+/* =========================
+   LARGE 6
+========================= */
+
+.button-large-6 {
+  width: 100px;
+  height: 40px;
+
+  background-color: rgb(113, 121, 126);
+}
+
+.button-large-6:hover {
+  background-color: rgb(132, 137, 141);
+}
+
+.button-large-6:active {
+  background-color: rgb(113, 121, 126);
+}
+
+/* =========================
+   LARGE BUTTON TEXT
+========================= */
+
+.button-large-p {
+  margin: 10px;
+  font-size: 20px;
+}
+
+.button-large-p-medium {
+  margin: 10px;
+  font-size: 16px;
+}
+
+.button-large-p-small {
+  margin: 10px;
+  font-size: 14px;
+}
+
+/* OUTLINE BUTTON */
+.button-outline-1,
+.button-outline-2,
+.button-outline-3,
+.button-outline-4,
+.button-outline-5,
+.button-outline-6,
+.button-outline-7 
+{
+  border: 1px solid;
+  border-radius: 10px;
+
+  height: 40px;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+/* =========================
+   BUTTON 1
+========================= */
+
+.button-outline-1 {
+  width: 90px;
+  border-color: rgb(39, 153, 218);
+  background-color: #ffffff;
+  color: rgb(39, 153, 218);
+}
+
+.button-outline-1:hover {
+  background-color: rgb(48, 177, 251);
+  color: #ffffff;
+}
+
+
+/* =========================
+   BUTTON 2
+========================= */
+
+.button-outline-2 {
+  width: 100px;
+  background-color: #ffffff;
+  color: rgb(113, 121, 126);
+}
+
+.button-outline-2:hover {
+  background-color: rgb(132, 137, 141);
+  color: #ffffff;
+}
+
+
+/* =========================
+   BUTTON 3
+========================= */
+
+.button-outline-3 {
+  width: 90px;
+  background-color: #ffffff;
+  color: rgb(6, 155, 33);
+}
+
+.button-outline-3:hover {
+  background-color: rgb(10, 173, 56);
+  color: #ffffff;
+}
+
+
+/* =========================
+   BUTTON 4
+========================= */
+
+.button-outline-4 {
+  width: 90px;
+  background-color: #ffffff;
+  color: rgb(239, 40, 40);
+}
+
+.button-outline-4:hover {
+  background-color: rgb(239, 76, 76);
+  color: #ffffff;
+}
+
+
+/* =========================
+   BUTTON 5
+========================= */
+
+.button-outline-5 {
+  width: 100px;
+  background-color: #ffffff;
+  color: rgb(228, 179, 66);
+}
+
+.button-outline-5:hover {
+  background-color: rgb(246, 158, 16);
+  color: #000000;
+}
+
+
+/* =========================
+   BUTTON 6
+========================= */
+
+.button-outline-6 {
+  width: 70px;
+  background-color: #ffffff;
+  color: rgb(39, 153, 218);
+}
+
+.button-outline-6:hover {
+  background-color: rgb(48, 177, 251);
+  color: #ffffff;
+}
+
+
+/* =========================
+   BUTTON 7
+========================= */
+
+.button-outline-7 {
+  width: 70px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.button-outline-7:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+
+
+/* STATES BUTTON */
+.button-state-blue-1,
+.button-state-blue-2,
+.button-state-blue-3,
+.button-state-green-1,
+.button-state-green-2,
+.button-state-green-3
+{
+  border: none;
+  border-radius: 10px;
+
+  height: 40px;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+/* BUTTON BLUE */
+.button-state-blue-1 {
+  width: 70px;
+  background-color: rgb(39, 153, 218);
+  color: #ffffff;
+}
+
+.button-state-blue-1:hover {
+  background-color: rgb(48, 177, 251);
+}
+
+.button-state-blue-1:active {
+  background-color: rgb(39, 153, 218);
+}
+
+
+.button-state-blue-2 {
+  width: 70px;
+  background-color: rgb(62, 184, 255);
+  color: #ffffff;
+}
+
+.button-state-blue-3 {
+  width: 70px;
+  background-color: rgb(96, 197, 255);
+  color: #ffffff;
+}
+
+
+
+/* BUTTON GREEN */
+.button-state-green-1 {
+  width: 70px;
+  background-color: rgb(75, 166, 11);
+  color: #ffffff;
+}
+
+.button-state-green-1:hover {
+  background-color: rgb(109, 220, 29);
+}
+
+.button-state-green-1:active {
+  background-color: rgb(75, 166, 11);
+}
+
+
+.button-state-green-2 {
+  width: 70px;
+  background-color: rgb(101, 197, 33);
+  color: #ffffff;
+}
+
+.button-state-green-3 {
+  width: 70px;
+  background-color: rgb(142, 247, 68);
+  color: #ffffff;
+}
+
+
+
+
+/* Button with Icons */
+/* =========================
+   BUTTON ICON COMMON
+========================= */
+
+.button-icon-1,
+.button-icon-2,
+.button-icon-3,
+.button-icon-4,
+.button-icon-5
+{
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+.button-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================
+   BUTTON ICON 1
+========================= */
+
+.button-icon-1 {
+  width: 100px;
+
+  background-color: rgb(39, 153, 218);
+  color: #ffffff;
+}
+
+.button-icon-1:hover {
+  background-color: rgb(48, 177, 251);
+}
+
+.button-icon-1:active {
+  background-color: rgb(39, 153, 218);
+}
+
+/* =========================
+   BUTTON ICON 2
+========================= */
+
+.button-icon-2 {
+  width: 100px;
+
+  background-color: rgb(113, 121, 126);
+  color: #ffffff;
+}
+
+.button-icon-2:hover {
+  background-color: rgb(132, 137, 141);
+}
+
+.button-icon-2:active {
+  background-color: rgb(113, 121, 126);
+}
+
+/* =========================
+   BUTTON ICON 3
+========================= */
+
+.button-icon-3 {
+  width: 100px;
+
+  background-color: rgb(75, 166, 11);
+  color: #ffffff;
+}
+
+.button-icon-3:hover {
+  background-color: rgb(109, 220, 29);
+}
+
+.button-icon-3:active {
+  background-color: rgb(75, 166, 11);
+}
+
+/* =========================
+   BUTTON ICON 4
+========================= */
+
+.button-icon-4 {
+  width: 100px;
+
+  background-color: rgb(228, 179, 66);
+  color: #000000;
+}
+
+.button-icon-4:hover {
+  background-color: rgb(247, 183, 79);
+}
+
+.button-icon-4:active {
+  background-color: rgb(228, 179, 66);
+}
+
+/* =========================
+   BUTTON ICON 5
+========================= */
+
+.button-icon-5 {
+  width: 100px;
+
+  background-color: rgb(239, 40, 40);
+  color: #ffffff;
+}
+
+.button-icon-5:hover {
+  background-color: rgb(239, 76, 76);
+}
+
+.button-icon-5:active {
+  background-color: rgb(239, 40, 40);
+}
+
+
+
+
+/* ROW 4 */
+.box-row-4 
+{
+  width: 100%;
+  background-color: #ffffff;
+  height: 100%;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.box-row-4 h3 {
+  margin: 20px;
+}
+
+.button-left-middle-right {
+  display: flex;
+  align-items: center;
+  /* background-color: rgb(39, 153, 218);
+  color: #ffffff; */
+}
+
+.button-top-middle-bottom {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.button-group-row-1,
+.button-group-row-2,
+.button-group-row-3,
+.button-group-column-1,
+.button-group-column-2,
+.button-group-column-3
+{
+  border: none;
+
+  height: 40px;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+.button-group-row-1,
+.button-group-outline-1
+{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.button-group-row-3,
+.button-group-outline-3
+{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.button-group-row-1, 
+.button-group-row-2,
+.button-group-row-3 {
+  width: 90px;
+
+  background-color: rgb(39, 153, 218);
+  color: #ffffff;
+}
+
+.button-group-row-1:hover, 
+.button-group-row-2:hover,
+.button-group-row-3:hover {
+  background-color: rgb(48, 177, 251);
+}
+
+.button-group-row-1:active, 
+.button-group-row-2:active,
+.button-group-row-3:active {
+  background-color: rgb(39, 153, 218);
+}
+
+
+
+.button-group-outline-1, 
+.button-group-outline-2,
+.button-group-outline-3 {
+  width: 90px;
+  height: 40px;
+  border: 1px solid #949393;
+  background-color: #ffffff;
+  color: #949393;
+}
+
+.button-group-outline-1:hover, 
+.button-group-outline-2:hover,
+.button-group-outline-3:hover {
+  background-color: #949393;
+  color: #ffffff;
+}
+
+
+/* COLUMN */
+
+.button-group-column-1
+{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.button-group-column-3
+{
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+.button-group-column-1, 
+.button-group-column-2,
+.button-group-column-3 {
+  width: 90px;
+
+  background-color: rgb(75, 166, 11);
+  color: #ffffff;
+}
+
+.button-group-column-1:hover, 
+.button-group-column-2:hover,
+.button-group-column-3:hover {
+  background-color: rgb(109, 220, 29);
+}
+
+.button-group-column-1:active, 
+.button-group-column-2:active,
+.button-group-column-3:active {
+  background-color: rgb(75, 166, 11);
+}
+
+
+/* Social button */
+.button-icon-social-1,
+.button-icon-social-2,
+.button-icon-social-3,
+.button-icon-social-4,
+.button-icon-social-5,
+.button-icon-social-6
+{
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+}
+
+
+.button-icon-social-1,
+.button-icon-social-2,
+.button-icon-social-3
+{
+  transition: transform 0.1s ease;
+}
+
+.button-icon-social-1:active,
+.button-icon-social-2:active,
+.button-icon-social-3:active
+{
+  transform: scale(1.05);
+}
+
+.button-icon-social-4,
+.button-icon-social-5,
+.button-icon-social-6
+{
+  transition: background-color 0.15s ease;
+}
+
+
+/* =========================
+   BUTTON ICON 1
+========================= */
+
+.button-icon-social-1 {
+  width: 120px;
+
+  background-color: rgb(15, 22, 198);
+  color: #ffffff;
+}
+
+
+/* =========================
+   BUTTON ICON 2
+========================= */
+
+.button-icon-social-2 {
+  width: 120px;
+
+  background-color: rgb(39, 153, 218);
+  color: #ffffff;
+}
+
+
+
+/* =========================
+   BUTTON ICON 3
+========================= */
+
+.button-icon-social-3 {
+  width: 120px;
+
+  background-color: rgb(75, 166, 11);
+  color: #ffffff;
+}
+
+/* =========================
+   BUTTON ICON 4
+========================= */
+
+.button-icon-social-4 {
+  width: 100px;
+
+  background-color: rgb(228, 179, 66);
+  color: #000000;
+}
+
+.button-icon-social-4:hover {
+  background-color: rgb(247, 183, 79);
+}
+
+.button-icon-social-4:active {
+  background-color: rgb(228, 179, 66);
+}
+
+/* =========================
+   BUTTON ICON 5
+========================= */
+
+.button-icon-social-5 {
+  width: 100px;
+
+  background-color: rgb(239, 40, 40);
+  color: #ffffff;
+}
+
+.button-icon-social-5:hover {
+  background-color: rgb(239, 76, 76);
+}
+
+.button-icon-social-5:active {
+  background-color: rgb(239, 40, 40);
+}
+
+/* =========================
+   BUTTON ICON 6
+========================= */
+.button-icon-social-6 {
+  width: 100px;
+
+  background-color: rgb(39, 153, 218);
+  color: #ffffff;
+}
+
+.button-icon-social-6:hover {
+  background-color: rgb(48, 177, 251);
+}
+
+.button-icon-social-6:active {
+  background-color: rgb(39, 153, 218);
+}

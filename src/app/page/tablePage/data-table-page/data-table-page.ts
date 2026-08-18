@@ -1,9 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Breadcrumb } from "../../../components/breadcrumb/breadcrumb";
+import { TableService } from '../../../service/table/table-service';
 
 @Component({
   selector: 'app-data-table-page',
-  imports: [],
+  imports: [Breadcrumb],
   templateUrl: './data-table-page.html',
-  styleUrl: './data-table-page.css',
+  styleUrl: '../basic-table-page/basic-table-page.css',
 })
-export class DataTablePage {}
+export class DataTablePage {
+
+  private tableService = inject(TableService)
+
+  dataTable = this.tableService.dataTable()
+
+}

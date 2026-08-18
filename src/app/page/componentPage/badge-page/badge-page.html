@@ -1,1 +1,305 @@
-<p>badge-page works!</p>
+<div class='section'>
+    <div style="display: flex; justify-content: space-between">
+        <h2>Badges</h2>
+        <app-breadcrumb [folderTitle]="'UI Elements'" [title]="'Badges'"></app-breadcrumb>
+    </div>
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+
+        <h3>Basic Badges</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div class='badges-row'>
+            @for (item of basic; track item.id) {
+                <div [class]="'badges-' + item.id">
+                    <p>{{ item.title }}</p>
+                </div>
+            }
+            </div>
+        </div>
+        </div>
+        
+        <div class='box-row-1-column-1'>
+        
+        <h3>Flat Color Badges</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div class='badges-row'>
+            @for (item of flat; track item.id) {
+                <div [class]="'flat-badges-' + item.id">
+                    <p>{{ item.title }}</p>
+                </div>
+            }
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+    <div class='box-row-2'>
+        <div class='box-row-1-column-1'>
+
+        <h3>Badge Sizes</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+
+            <div class='badges-row-2'>
+            <h1 style="font-size: 35px">
+                Large Heading
+            </h1>
+
+            <div class='badges-large-1'>
+                <h1>New</h1>
+            </div>
+            </div>
+
+            <div class='badges-row-2'>
+            <h1>Heading 2</h1>
+
+            <div class='badges-large-2'>
+                <h2>New</h2>
+            </div>
+            </div>
+
+            <div class='badges-row-2'>
+            <h2>Heading 3</h2>
+
+            <div class='badges-large-3'>
+                <h3>New</h3>
+            </div>
+            </div>
+
+            <div class='badges-row-2'>
+            <h3>Heading 4</h3>
+
+            <div class='badges-large-4'>
+                <h4>New</h4>
+            </div>
+            </div>
+
+            <div class='badges-row-2'>
+            <h4>Heading 5</h4>
+
+            <div class='badges-large-5'>
+                <h5>New</h5>
+            </div>
+            </div>
+
+            <div class='badges-row-2'>
+            <h5>Small Heading</h5>
+
+            <div class='badges-large-6'>
+                <h6>New</h6>
+            </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class='box-row-1-column-1'>
+
+        <h3>Pill Badges</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div class='badges-row'>
+            @for (item of basic; track item.id) {
+                <div [class]="'pill-badges-' + item.id">
+                    <p>{{ item.title }}</p>
+                </div>
+            }
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+                
+        <h3>Badges in Buttons</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div class="badges-button">
+                @for (item of box; track item.id) {
+                    <button
+                        [class]="`button-badge-` + item.id"
+                    >
+                        <span>{{item.title}}</span>
+                        <span>
+                            <app-badge
+                                [count]="item.number || 0"
+                                badgeClass="box-badge"
+                                iconBadgeClass="icon-badge"
+                            ></app-badge>
+                        </span>
+
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+        
+        <div class='box-row-1-column-1'>
+        
+        <h3>Flat Color Pill Badges</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div class='badges-row'>
+             @for (item of flatColor; track item.id) {
+                <div [class]="'flat-badges-' + item.id">
+                    <p>{{ item.title }}</p>
+                </div>
+            }
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <div class='box-row-5'>
+        <h3>Badge Counters and Notifications</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='box-row-6'>
+            <div class='box-table'>    
+                <div class='button-margin'>
+                <div class="navigation-badges">
+                    <h3>Navigation with Badges</h3>
+
+                    <div class="navigation-list">
+
+                     @for (item of navigation; track item.id) {
+                        <div class="navigation-item">
+                            <span>{{item.name}}</span>
+
+                            <span [class]="`navigation-badge-` + item.type">
+                                {{item.count}}
+                            </span>
+                        </div>
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class='box-row-1-column-1'>    
+            <div class='button-margin'>
+            <div class="navigation-badges">
+                <h3>Status Badges</h3>
+
+                <div class="button-row">
+                @for (item of buttonStatus; track item.id) {
+                    <div [class]="`status-badge-` + item.id">
+                        @if (item.iconPosition === 'left') {
+                            <span [class]="'button-icon-social-' + item.id">
+                                <mat-icon>{{ item.icon }}</mat-icon>
+                            </span>
+                        }
+
+                        <p>{{item.title}}</p>
+
+                    </div>
+                }
+                </div><br />
+
+                <h3>Link Badges</h3>
+
+                <div class="button-row">
+                @for (item of linkBadge; track item.id) {
+                    <div [class]="'link-badge-' + item.id">
+                        <span>
+                            <a 
+                                [routerLink]="item.path"
+                                (click)="scrollToTop()"
+                                style="text-decoration: none; color: white"
+                            >
+                                {{ item.name }}
+                            </a>
+                        </span>
+                            <app-badge [count]="item.count" badgeClass="box-badge" iconBadgeClass="icon-badge"></app-badge>
+                        <span>
+                            
+                        </span>
+                    </div>
+                }
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <div class='box-row-5'>
+        <h3>Badge Counters and Notifications</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='box-row-7'>
+        <div class='box-row-1-column-1'>    
+            <div class='button-margin'>
+            <div class="navigation-badges">
+                <h3>Small Badges</h3>
+
+                <div class="badge-row-end">
+                @for (item of smallBadge; track item.id) {
+                    <div [class]="'small-badge-' + item.id">
+                        <span>{{item.name}}</span>
+                    </div>
+                }
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <div class='box-row-1-column-1'>    
+            <div class='button-margin'>
+                <div class="navigation-badges">
+                    <h3>Outlined Badges</h3>
+
+                    <div class="badge-row-end">
+                    @for (item of outline; track item.id) {
+                        <div [class]="'small-outline-badge-' + item.id">
+                            <span>{{item.name}}</span>
+                        </div>
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='box-row-1-column-1'>    
+            <div class='button-margin'>
+                <div class="navigation-badges">
+                    <h3>Position Badges</h3>
+
+                    <div class="badges-row-2">
+                        <app-badge 
+                            [count]="99"
+                            badgeClass="error-badge" 
+                            iconBadgeClass="icon-badge-background-1"
+                            icon="email"
+                            iconColor="icon-color"
+                            ></app-badge>
+                        <app-badge 
+                            badgeClass="error-badge" 
+                            iconBadgeClass="icon-badge-background-2"
+                            icon="notifications"
+                            iconColor="icon-color"
+                        ></app-badge>
+                        <!-- <EmailPositionBadge/>
+                        <NotificationPositionBadge/> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

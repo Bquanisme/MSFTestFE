@@ -1,1 +1,101 @@
-<p>data-table-page works!</p>
+<div class="section">
+    <div style="display: flex; justify-content: space-between">
+    <h2>Data Tables</h2>
+    <app-breadcrumb [folderTitle]="'Tables'" [title]="'Data Tables'"></app-breadcrumb>
+    </div>
+
+    <div class='box-row-4'>
+        <h3>Employee Data Table</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+        <div class='button-row'>
+            <div class="basic-table-wrapper">
+            <table class="data-table-border">
+                <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>POSITION</th>
+                    <th>OFFICE</th>
+                    <th>AGE</th>
+                    <th>START DATE</th>
+                    <th>SALARY</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- {DataTable.map((table) => (
+                    <tr key={table.id}>
+                    {/* <td className="table-number">{table.id}</td> */}
+                    <td>{table.name}</td>
+                    <td>{table.position}</td>
+                    <td>{table.office}</td>
+                    <td>{table.age}</td>
+                    <td>{table.startDate}</td>
+                    <td>{table.salary}</td>
+                    </tr>
+                ))} -->
+                @for (table of dataTable; track table.id) {
+                    <tr>
+                        <td>{{table.name}}</td>
+                        <td>{{table.position}}</td>
+                        <td>{{table.office}}</td>
+                        <td>{{table.age}}</td>
+                        <td>{{table.startDate}}</td>
+                        <td>{{table.salary}}</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class='box-row-4'>
+        <h3>Bordered Table</h3>
+        <div style="display: flex; justify-content: space-between">
+        
+        <div class='button-margin'>
+        <div class='button-row'>
+            <div class="basic-table-wrapper">
+            <table class="basic-table-border">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>FIRST</th>
+                    <th>LAST</th>
+                    <th>HANDLE</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td class="table-number">1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <td class="table-number">2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                </tbody>
+
+                <tbody>
+                <tr>
+                    <td class="table-number">3</td>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

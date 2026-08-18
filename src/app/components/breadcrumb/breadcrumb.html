@@ -1,11 +1,16 @@
 <div style="
     display: flex;
-    align-items: 'center';
-    gap: '5px';
+    align-items: center;
+    gap: 5px;
 ">
     <a href="https://preview.colorlib.com/#saasify" class="link-breadcrumb">Dashboard</a>
     <p>/</p>
-    <a href="#" className="link-breadcrumb">{{ folderTitle }}</a>
+    <a
+        (click)="scrollToTop($event)"
+        class="link-breadcrumb"
+        >
+        {{ folderTitle }}
+    </a>
       <p>/</p>
       <p class="color-title">{{  title  }}</p>
 </div>

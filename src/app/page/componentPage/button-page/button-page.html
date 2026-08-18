@@ -1,1 +1,227 @@
-<p>button-page works!</p>
+<div class="section">
+    <div style="display: flex; justify-content: space-between">
+        <h2>Buttons</h2>
+        <app-breadcrumb 
+            [title]="title"
+            [folderTitle]="folderTitle"
+
+        ></app-breadcrumb>
+    </div>
+    
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+
+            <h3>Basic Buttons</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <div class='button-row'>
+                    @for (data of basic; track data.id) {
+                    <div>
+                        <button [class]="'button-' + data.id">
+                        <p>{{ data.title }}</p>
+                        </button>
+                    </div>
+                    }
+                    <button class='button-9'>
+                    <a href="">Link</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class='box-row-1-column-1'>
+            
+            <h3>Flat Color Buttons</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+            <div class='button-row'>
+                @for (data of flat; track data.id) {
+                    <button [class]="'button-flat-' + data.id">
+                        <p>{{data.title}}</p>
+                    </button>
+                }
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='box-row-2'>
+    <div class='box-row-1-column-1'>
+
+        <h3>Button Sizes</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+
+        <div class='button-row'>
+
+            <button class='button-large-1'>
+            <p class='button-large-p'>Large Button</p>
+            </button>
+
+            <button class='button-large-2'>
+            <p class='button-large-p'>Large Button</p>
+            </button>
+        </div><br />
+
+        <div class='button-row'>
+
+            <button class='button-large-3'>
+            <p class='button-large-p-medium'>Default Button</p>
+            </button>
+
+            <button class='button-large-4'>
+            <p class='button-large-p-medium'>Default Button</p>
+            </button>
+        </div><br />
+
+        <div class='button-row'>
+
+            <button class='button-large-5'>
+            <p class='button-large-p-small'>Small Button</p>
+            </button>
+
+            <button class='button-large-6'>
+            <p class='button-large-p-small'>Small Button</p>
+            </button>
+        </div>
+        </div>
+    </div>
+    
+    <div class='box-row-1-column-1'>
+        
+        <h3>Outline Buttons</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div class='button-row'>
+                @for (item of outline; track item.id) {
+                    <button [class]="`button-outline-` + item.id">
+                        <p>{{item.title}}</p>
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class='box-row-2'>
+    <div class='box-row-1-column-1'>
+
+        <h3>Button States</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+
+        <div class='button-row'>
+             @for (item of states; track item.id) {
+                <button [class]="`button-state-blue-` + item.id">
+                    <p>{{item.title}}</p>
+                </button>
+            }
+        </div><br />
+        <div class='button-row'>
+            @for (item of states; track item.id) {
+                <button [class]="`button-state-green-` + item.id">
+                    <p>{{item.title}}</p>
+                </button>
+            }
+        </div>
+        </div>
+    </div>
+    
+    <div class='box-row-1-column-1'>
+        
+        <h3>Button with Icons</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+        <div class="button-row">
+            @for (item of icons; track item.id) {
+                <button [class]="`button-icon-` + item.id">
+                    @if (item.iconPosition === 'left') {
+                        <span class="button-icon">
+                            <mat-icon>{{ item.icon }}</mat-icon>
+
+                        </span>
+                    }
+
+                    <p>{{item.title}}</p>
+
+                    @if (item.iconPosition === 'right') {
+                        <span class="button-icon">
+                            <mat-icon>{{ item.icon }}</mat-icon>
+
+                        </span>
+                    }
+                </button>
+            }
+        </div>
+        </div>
+    </div>
+    </div>
+    
+    <div class='box-row-4'>
+        <h3>Button Groups</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div class='button-left-middle-right'>
+                @for (item of groupRaw; track item.id) {
+                    <button [class]="`button-group-row-` + item.id">
+                        <p>{{item.title}}</p>
+                    </button>
+                }
+            </div><br />
+
+            <div class='button-left-middle-right'>
+                @for (item of groupColumn; track item.id) {
+                    <button [class]="`button-group-outline-` + item.id">
+                        <p>{{item.title}}</p>
+                    </button>
+                }
+            </div><br />
+
+                <div class='button-top-middle-bottom'>
+                @for (item of groupRaw; track item.id) {
+                    <button [class]="`button-group-column-` + item.id">
+                        <p>{{item.title}}</p>
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class='box-row-4'>
+        <h3>Social Media Buttons</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div class="button-row">
+                @for (item of socialMedia; track item.id) {
+                <button [class]="`button-icon-social-` + item.id">
+                    @if (item.iconPosition === 'left') {
+                        <span class="button-icon-social">
+                            <mat-icon>{{ item.icon }}</mat-icon>
+
+                            
+                        </span>
+                    }
+
+                    <p>{{item.title}}</p>
+
+                    @if (item.iconPosition === 'right') {
+                        <span class="button-icon-social">
+                            <mat-icon>{{ item.icon }}</mat-icon>
+
+                            
+                        </span>
+                    }
+                </button>
+            }
+            </div>
+        </div>
+    </div>
+</div>

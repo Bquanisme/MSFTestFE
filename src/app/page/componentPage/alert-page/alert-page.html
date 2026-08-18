@@ -1,1 +1,171 @@
-<p>alert-page works!</p>
+<div class="section">
+
+    <div style="display: flex; justify-content: space-between">
+    <h2>Alerts</h2>
+    <app-breadcrumb [folderTitle]="'UI Components'" [title]="'Alerts'"></app-breadcrumb>
+    </div>
+    
+
+    <div class="alert-row-1">
+
+    <div class="alert-column">
+
+        <div class="alert-box">
+        <h3>Alerts</h3>
+
+        <hr style="border-top: 1px solid #d0cccc"/>
+
+        <br />
+
+        @for (item of firstAlert; track item.id) {
+            <div 
+                [class]="`alert-background-` + item.id"
+                > 
+                <p>{{item.title}}</p>
+            </div>
+        }
+        </div>
+
+        <div class="alert-box">
+        <h3>Link Color Alerts</h3>
+
+        <hr style="border-top: 1px solid #d0cccc"/>
+
+        <br />
+
+        <!-- {alertLink.map(alert => (
+            <div 
+            key={alert.id} 
+            className={`alert-background-${alert.id}`}
+            > 
+            <p dangerouslySetInnerHTML={{
+                __html: alert.title,
+            }}/>
+            </div>
+        ))} -->
+
+        @for (alert of linkAlert; track alert.id) {
+            <div 
+                [class]="'alert-background-' + alert.id"
+                (click)="handleAlertClick($event)"
+            >
+                <p [innerHTML]="alert.title"></p>
+            </div>
+        }
+        </div>
+
+    </div>
+
+
+    <div class="alert-column">
+
+        <div class="alert-box">
+            <h3>Dismissing Alerts</h3>
+
+            <hr style="border-top: 1px solid #d0cccc"/>
+
+            <br />
+
+        <!-- {alerts.map(alert => {
+            if (!alert.isShow) return null
+            return (
+            <div 
+            key={alert.id} 
+            className={`alert-background-${alert.id}`}
+            > 
+
+            <div className='alert-dismiss-row'>
+
+                <div className='badges-row'>
+
+                <div className={`badges-${alert.id}`}>
+                    Success
+                </div>
+
+                <p style={{fontSize: '16px'}}>{alert.title}</p>
+
+                </div>
+
+                <div onClick={() =>  handleClose(alert.id)} style={{cursor: 'pointer'}}>
+                <ClearIcon/>
+
+                </div>
+
+            </div>
+
+            </div>
+            )
+        })} -->
+            @for (alert of alerts(); track alert.id) {
+                @if (alert.isShow) {
+                    <div 
+                    [class]="`alert-background-` + alert.id"
+                    > 
+    
+                        <div class='alert-dismiss-row'>
+    
+                            <div class='badges-row'>
+    
+                            <div [class]="`badges-` + alert.id">
+                                Success
+                            </div>
+    
+                            <p style="font-size: 16px">
+                                {{alert.title}}
+                            </p>
+    
+                            </div>
+    
+                            <!-- <div onClick={() => handleCloseAlert(alert.id)" style={{cursor: 'pointer'}}}> -->
+                            <div
+                                (click)="handleCloseAlert(alert.id)"
+                                style="cursor: pointer"
+                            >
+                                <mat-icon>clear</mat-icon>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                }
+            }
+        </div>
+
+        <div class="alert-box">
+        <h3>Contents</h3>
+
+        <hr style="border-top: 1px solid #d0cccc"/>
+
+        <br />
+
+        <!-- {alertContent.map(alert => (
+            <div 
+            key={alert.id} 
+            className={`alert-contents-${alert.id}`}
+            > 
+            <h2>{alert.title}</h2><br />
+            <p>{alert.description}</p><br />
+            <hr style={{borderTop: "1px solid #696767"}}/><br />
+            <p>{alert.description2}</p>
+            </div>
+        ))} -->
+
+        @for (alert of contentAlert; track alert.id) {
+            <div 
+                [class]="'alert-contents-' + alert.id"
+            >
+                <h2>{{alert.title}}</h2><br />
+                <p>{{alert.description}}</p><br />
+                <hr style="border-top: 1px solid #696767"/><br />
+                <p>{{alert.description2}}</p>
+            </div>
+        }
+
+
+        </div>
+
+    </div>
+
+    </div>
+
+</div>
