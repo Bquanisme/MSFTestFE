@@ -14,4 +14,5 @@ export class DataTablePage {
 
   dataTable = this.tableService.dataTable()
 
+  exportDataTable = this.tableService.exportDataTable()
 }

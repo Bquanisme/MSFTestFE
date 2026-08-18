@@ -258,4 +258,73 @@ export class TableService {
     ]
   }
 
+  exportDataTable() {
+    return [
+      {
+        id: 1,
+        product: 'MacBook Pro 16"',
+        category: 'Laptops',
+        stock: 45,
+        price: 2399,
+        status: 'In Stock',
+      },
+      {
+        id: 2,
+        product: 'iPhone 14 Pro',
+        category: 'Phones',
+        stock: 128,
+        price: 999,
+        status: 'In Stock',
+      },
+      {
+        id: 3,
+        product: 'iPad Air',
+        category: 'Tablets',
+        stock: 23,
+        price: 599,
+        status: 'Low Stock',
+      },
+      {
+        id: 4,
+        product: 'AirPods Pro',
+        category: 'Accessories',
+        stock: 89,
+        price: 249,
+        status: 'In Stock',
+      },
+      {
+        id: 5,
+        product: 'Apple Watch Series 8',
+        category: 'Wearables',
+        stock: 5,
+        price: 399,
+        status: 'Out of Stock',
+      },
+      {
+        id: 6,
+        product: 'Samsung Galaxy S23',
+        category: 'Phones',
+        stock: 67,
+        price: 799,
+        status: 'In Stock',
+      },
+      {
+        id: 7,
+        product: 'Dell XPS 13',
+        category: 'Laptops',
+        stock: 12,
+        price: 1299,
+        status: 'Low Stock',
+      },
+      {
+        id: 8,
+        product: 'Sony WH-1000XM5',
+        category: 'Accessories',
+        stock: 34,
+        price: 399,
+        status: 'In Stock',
+      }
+    ]
+  }
+
 }

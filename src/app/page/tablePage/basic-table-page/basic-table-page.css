@@ -50,7 +50,8 @@
 }
 
 .button-margin {
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .button-row {
@@ -252,4 +253,35 @@
 
 .data-table-border tbody tr:nth-child(even) {
   background-color: #f5f5f5;
+}
+
+
+
+.flat-badges-1,
+.flat-badges-2,
+.flat-badges-3
+{
+  border-radius: 5px;
+
+  height: 14px;
+  width: 70px;
+  font-weight: 600;
+  font-size: smaller;
+  text-align: center;
+  color: white;
+
+}
+
+
+.flat-badges-1 {
+  background-color: #00c292;
+}
+
+.flat-badges-2 {
+  background-color: #eb0909;
+}
+
+
+.flat-badges-3 {
+  background-color: #fb9678;
 }

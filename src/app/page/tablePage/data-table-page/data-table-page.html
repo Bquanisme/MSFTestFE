@@ -52,46 +52,62 @@
     </div>
 
     <div class='box-row-4'>
-        <h3>Bordered Table</h3>
-        <div style="display: flex; justify-content: space-between">
+        <h3>Export Data Table</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
         
         <div class='button-margin'>
         <div class='button-row'>
             <div class="basic-table-wrapper">
-            <table class="basic-table-border">
+            <table class="data-table-border">
                 <thead>
                 <tr>
-                    <th>#</th>
-                    <th>FIRST</th>
-                    <th>LAST</th>
-                    <th>HANDLE</th>
+                    <th>PRODUCT</th>
+                    <th>CATEGORY</th>
+                    <th>STOCK</th>
+                    <th>PRICE</th>
+                    <th>STATUS</th>
                 </tr>
                 </thead>
-
                 <tbody>
-                <tr>
-                    <td class="table-number">1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                </tbody>
-                
-                <tbody>
-                <tr>
-                    <td class="table-number">2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                </tbody>
-
-                <tbody>
-                <tr>
-                    <td class="table-number">3</td>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                <!-- {DataTable.map((table) => (
+                    <tr key={table.id}>
+                    {/* <td className="table-number">{table.id}</td> */}
+                    <td>{table.name}</td>
+                    <td>{table.position}</td>
+                    <td>{table.office}</td>
+                    <td>{table.age}</td>
+                    <td>{table.startDate}</td>
+                    <td>{table.salary}</td>
+                    </tr>
+                ))} -->
+                @for (table of exportDataTable; track table.id) {
+                    <tr>
+                        <td>{{table.product}}</td>
+                        <td>{{table.category}}</td>
+                        <td>{{table.stock}}</td>
+                        <td>${{table.price.toLocaleString()}}</td>
+                        <td>
+                            @if (table.status === 'In Stock') {
+                                <div class="flat-badges-1">
+                                    {{ table.status }}
+                                </div>
+                            }
+    
+                            @else if (table.status === 'Out of Stock') {
+                                <div class="flat-badges-2">
+                                    {{ table.status }}
+                                </div>
+                            }
+    
+                            @else if (table.status === 'Low Stock') {
+                                <div class="flat-badges-3">
+                                    {{ table.status }}
+                                </div>
+                            }
+                        </td>
+                         
+                    </tr>
+                }
                 </tbody>
             </table>
             </div>
