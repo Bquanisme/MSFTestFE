@@ -266,9 +266,10 @@
   height: 14px;
   width: 70px;
   font-weight: 600;
-  font-size: smaller;
+  font-size: 10px;
   text-align: center;
   color: white;
+  padding: 1px;
 
 }
 

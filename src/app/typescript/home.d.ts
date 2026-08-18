@@ -47,3 +47,18 @@ export interface ILinkBoxs {
   name: string;
   count: number
 }
+
+
+export interface Tab {
+  id: string;
+  label: string;
+  title?: string;
+  content: string;
+}
+
+export interface TabsResponse {
+  defaultTabs: Tab[];
+  customTabs: Tab[];
+  centeredTabs: Tab[];
+  dynamicTabs: Tab[];
+}

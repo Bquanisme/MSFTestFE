@@ -1,1 +1,228 @@
-<p>tab-page works!</p>
+<div class="section">
+    <div style="display: flex; justify-content: space-between">
+        <h2>Tabs</h2>
+        <app-breadcrumb 
+            [title]="'UI Components'"
+            [folderTitle]="'Tabs'"
+
+        ></app-breadcrumb>
+    </div>
+
+    <div class="page">
+    
+        <div class="tabs-grid">
+    
+    
+          <div class="card">
+    
+            <div class="card-header">
+              <h2>Default Tab</h2>
+            </div>
+    
+            <div class="card-body">
+    
+              <div class="tab-list">
+    
+                @for (tab of defaultTabs; track tab.id) {
+    
+                  <button
+                    class="tab-button"
+                    [class.active]="activeDefaultTab() === tab.id"
+                    (click)="selectDefaultTab(tab.id)"
+                  >
+                    {{ tab.label }}
+                  </button>
+    
+                }
+    
+              </div>
+    
+    
+              @if (
+                getActiveTab(defaultTabs, activeDefaultTab());
+                as activeTab
+                ) {
+
+                <div class="tab-content">
+                    <p>
+                    {{ activeTab.content }}
+                    </p>
+                </div>
+
+            }
+    
+            </div>
+    
+          </div>
+    
+    
+    
+          <div class="card">
+    
+            <div class="card-header">
+              <h2>Custom Tab</h2>
+            </div>
+    
+            <div class="card-body">
+    
+              <div class="tab-list">
+    
+                @for (tab of defaultTabs; track tab.id) {
+    
+                  <button
+                    class="tab-button"
+                    [class.active]="activeCustomTab() === tab.id"
+                    (click)="selectCustomTab(tab.id)"
+                  >
+                    {{ tab.label }}
+                  </button>
+    
+                }
+    
+              </div>
+    
+    
+              @if (
+                getActiveTab(
+                  customTab,
+                  activeCustomTab()
+                );
+                as activeTab
+              ) {
+    
+                <div class="tab-content">
+    
+                  <p>
+                    {{ activeTab.content }}
+                  </p>
+    
+                </div>
+    
+              }
+    
+            </div>
+    
+          </div>
+    
+    
+    
+    
+          <div class="card">
+    
+            <div class="card-header">
+              <h2>Centered Tabs and Pills</h2>
+            </div>
+    
+            <div class="card-body">
+    
+              <p class="description">
+                To center/justify the tabs and pills,
+                use the <code>.nav-justified</code> class.
+              </p>
+    
+    
+              <div class="tab-list centered">
+    
+                @for (tab of centerTab; track tab.id) {
+    
+                  <button
+                    class="tab-button pill"
+                    [class.active]="activeCenteredTab() === tab.id"
+                    (click)="selectCenteredTab(tab.id)"
+                  >
+                    {{ tab.label }}
+                  </button>
+    
+                }
+    
+              </div>
+    
+    
+              @if (
+                getActiveTab(
+                  centerTab,
+                  activeCenteredTab()
+                );
+                as activeTab
+              ) {
+    
+                <div class="centered-content">
+    
+                  <h3>
+                    {{ activeTab.title }}
+                  </h3>
+    
+                  <p>
+                    {{ activeTab.content }}
+                  </p>
+    
+                </div>
+    
+              }
+    
+            </div>
+    
+          </div>
+    
+    
+          <div class="card">
+    
+            <div class="card-header">
+              <h2>Toggleable / Dynamic Tabs</h2>
+            </div>
+    
+            <div class="card-body">
+    
+              <p class="description">
+                To make the tabs toggleable, click on each
+                link to change the content.
+              </p>
+    
+    
+              <div class="tab-list">
+    
+                @for (tab of dynamicTab; track tab.id) {
+    
+                  <button
+                    class="tab-button"
+                    [class.active]="activeDynamicTab() === tab.id"
+                    (click)="selectDynamicTab(tab.id)"
+                  >
+                    {{ tab.label }}
+                  </button>
+    
+                }
+    
+              </div>
+    
+    
+              @if (
+                getActiveTab(
+                  dynamicTab,
+                  activeDynamicTab()
+                );
+                as activeTab
+              ) {
+    
+                <div class="dynamic-content">
+    
+                  <h3>
+                    {{ activeTab.title }}
+                  </h3>
+    
+                  <p>
+                    {{ activeTab.content }}
+                  </p>
+    
+                </div>
+    
+              }
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+    </div>
+</div>

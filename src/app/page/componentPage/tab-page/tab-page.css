@@ -1,0 +1,341 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+
+  padding-top: 170px;
+  padding-right: 50px;
+  padding-bottom: 100px;
+  padding-left: 140px;
+
+  background-color: #f1f2f7;
+}
+
+:host {
+  display: block;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+  padding: 14px;
+  background: #f1f3f7;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.tabs-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 30px 24px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  background: #ffffff;
+
+  border-radius: 4px;
+
+  overflow: hidden;
+}
+
+
+.card-header {
+  height: 77px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  border-bottom: 1px solid #ddd;
+}
+
+
+.card-header h2 {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 600;
+
+  color: #111827;
+}
+
+
+/* =========================
+   CARD BODY
+========================= */
+
+.card-body {
+  padding: 20px;
+}
+
+
+/* =========================
+   TAB LIST
+========================= */
+
+.tab-list {
+  display: flex;
+
+  align-items: center;
+
+  border-bottom: 1px solid #d9dee3;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.tab-button {
+  position: relative;
+
+  padding: 11px 16px;
+
+  border: 1px solid transparent;
+
+  border-bottom: none;
+
+  background: transparent;
+
+  color: #009ef7;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.tab-button:hover {
+  color: #007fc5;
+}
+
+
+/* =========================
+   ACTIVE TAB
+========================= */
+
+.tab-button.active {
+  color: #111827;
+
+  background: #ffffff;
+
+  border-color: #d9dee3;
+
+  border-radius: 6px 6px 0 0;
+
+  margin-bottom: -1px;
+}
+
+
+/* =========================
+   TAB CONTENT
+========================= */
+
+.tab-content {
+  padding: 9px 16px 17px;
+}
+
+
+.tab-content p {
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 24px;
+
+  color: #111827;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.description {
+  margin: 0 0 16px;
+
+  font-size: 15px;
+
+  line-height: 24px;
+
+  color: #202124;
+}
+
+
+.description code {
+  color: #e83e8c;
+
+  font-family: monospace;
+}
+
+
+/* =========================
+   CENTERED
+========================= */
+
+.tab-list.centered {
+  border-bottom: none;
+
+  gap: 8px;
+}
+
+
+.tab-list.centered .tab-button {
+  border-radius: 6px;
+}
+
+
+.tab-list.centered .tab-button.active {
+  color: #ffffff;
+
+  background: #03a9f4;
+
+  border: none;
+
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   CENTER CONTENT
+========================= */
+
+.centered-content {
+  margin-top: 10px;
+}
+
+
+.centered-content h3 {
+  margin: 0 0 5px;
+
+  font-size: 26px;
+
+  font-weight: 600;
+
+  color: #111827;
+}
+
+
+.centered-content p {
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 24px;
+}
+
+
+/* =========================
+   DYNAMIC CONTENT
+========================= */
+
+.dynamic-content {
+  padding: 5px 16px;
+}
+
+
+.dynamic-content h3 {
+  margin: 0 0 8px;
+
+  font-size: 28px;
+
+  font-weight: 600;
+
+  color: #111827;
+}
+
+
+.dynamic-content p {
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 24px;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading {
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+
+  font-size: 15px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .tabs-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .page {
+    padding: 10px;
+  }
+
+  .card-header {
+    height: 65px;
+  }
+
+  .card-header h2 {
+    font-size: 20px;
+  }
+
+  .card-body {
+    padding: 14px;
+  }
+
+  .tab-list {
+    overflow-x: auto;
+  }
+
+  .tab-button {
+    flex-shrink: 0;
+
+    white-space: nowrap;
+  }
+
+}
