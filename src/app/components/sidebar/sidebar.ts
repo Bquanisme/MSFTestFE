@@ -15,7 +15,7 @@ import { SidebarService } from '../../service/home/sidebar';
 
 export class Sidebar {
 
-  isDrawerOpen = input(true);
+  isDrawerOpen = input(false);
 
   sidebar = signal<ISidebarItem[]>([]);
 

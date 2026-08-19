@@ -1,3 +1,12 @@
+export interface IRecentActivity {
+  id: number;
+  type: 'order' | 'customer' | 'stock' | 'review';
+  title: string;
+  description: string;
+  time: string;
+}
+
+
 interface ISidebar {
   isDrawerOpen: boolean;
   setIsDrawerOpen: () => void;

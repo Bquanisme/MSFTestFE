@@ -1,0 +1,57 @@
+<div class="dashboard-charts">
+
+    <div class="chart-card">
+
+        <div class="chart-card-header">
+
+            <h3>
+                Sales Overview
+            </h3>
+
+            <button
+            class="download-button"
+            type="button"
+            >
+            <!-- <DownloadIcon /> -->
+                <mat-icon>cloud_download</mat-icon>
+            </button>
+
+        </div>
+
+        <div class="line-chart-container">
+            <canvas
+                baseChart
+                [data]="salesData"
+                [options]="salesOptions"
+                [type]="'line'"
+            >
+            </canvas>
+        </div>
+
+    </div>
+
+
+
+    <div class="chart-card">
+
+        <div class="chart-card-header">
+
+            <h3>
+            Traffic Sources
+            </h3>
+
+        </div>
+
+        <div class="doughnut-chart-container">
+            <canvas
+                baseChart
+                [data]="trafficData"
+                [options]="trafficOptions"
+                [type]="'doughnut'"
+            >
+            </canvas>
+        </div>
+
+    </div>
+
+</div>

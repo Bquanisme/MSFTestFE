@@ -46,28 +46,28 @@ export class DashboardService {
     return [
       {
         id: 1,
-        type: 'order',
+        type: 'shopping_basket',
         title: 'New order received',
         description: 'Order #12345 from John Doe',
         time: '2 minutes ago',
       },
       {
         id: 2,
-        type: 'customer',
+        type: 'person_add',
         title: 'New customer registered',
         description: 'Jane Smith joined the platform',
         time: '15 minutes ago',
       },
       {
         id: 3,
-        type: 'stock',
+        type: 'warning',
         title: 'Low stock alert',
         description: 'Product SKU #789 is running low',
         time: '1 hour ago',
       },
       {
         id: 4,
-        type: 'review',
+        type: 'message',
         title: 'New review posted',
         description: '5-star review on Product XYZ',
         time: '3 hours ago',
@@ -79,7 +79,7 @@ export class DashboardService {
     return [
       {
         id: 1,
-        type: 'premium',
+        type: 'inbox',
         name: 'Premium Widget',
         sales: 245,
         revenue: 12250,
@@ -87,7 +87,7 @@ export class DashboardService {
       },
       {
         id: 2,
-        type: 'standard',
+        type: 'markunread_mailbox',
         name: 'Standard Package',
         sales: 189,
         revenue: 9450,
@@ -95,7 +95,7 @@ export class DashboardService {
       },
       {
         id: 3,
-        type: 'basic',
+        type: 'tab',
         name: 'Basic Module',
         sales: 156,
         revenue: 4680,
@@ -103,7 +103,7 @@ export class DashboardService {
       },
       {
         id: 4,
-        type: 'pro',
+        type: 'card_giftcard',
         name: 'Pro Bundle',
         sales: 98,
         revenue: 19600,

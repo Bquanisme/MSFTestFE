@@ -11,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './main-layout.css',
 })
 export class MainLayout {
-  isDrawerOpen = signal(true);
+  isDrawerOpen = signal(false);
 
   setIsDrawerOpen() {
     this.isDrawerOpen.update(value => !value);
