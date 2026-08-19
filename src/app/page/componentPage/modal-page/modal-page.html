@@ -1,1 +1,30 @@
-<p>modal-page works!</p>
+<div class="section">
+    <div style="display: flex; justify-content: space-between">
+        <h2>Modals</h2>
+        <app-breadcrumb 
+            [title]="'Modals'"
+            [folderTitle]="'UI Components'"
+
+        ></app-breadcrumb>
+    </div>
+
+    <div class='box-row-4'>
+        <div class="flex-title">
+            <mat-icon>menu</mat-icon>
+            <h3>Modals</h3>
+        </div>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div class='button-row'>
+                @for (data of modalButton; track data.id) {
+                <div>
+                    <button [class]="'button-' + data.id">
+                    <p>{{ data.title }}</p>
+                    </button>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

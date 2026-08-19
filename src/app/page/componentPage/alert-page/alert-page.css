@@ -139,8 +139,14 @@
 
   border-radius: 4px;
 
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease;
 }
+
+.alert-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px #e4e1e1;
+}
+
 
 
 /* =========================
