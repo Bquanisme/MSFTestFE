@@ -1,30 +1,441 @@
 <div class="section">
-    <div style="display: flex; justify-content: space-between">
-        <h2>Modals</h2>
-        <app-breadcrumb 
-            [title]="'Modals'"
-            [folderTitle]="'UI Components'"
 
-        ></app-breadcrumb>
+  <div style="display: flex; justify-content: space-between">
+
+    <h2>Modals</h2>
+
+    <app-breadcrumb
+      [title]="'Modals'"
+      [folderTitle]="'UI Components'"
+    ></app-breadcrumb>
+
+  </div>
+
+
+  <div class="box-row-4">
+
+    <div class="flex-title">
+      <mat-icon>menu</mat-icon>
+      <h3>Modals</h3>
     </div>
 
-    <div class='box-row-4'>
-        <div class="flex-title">
-            <mat-icon>menu</mat-icon>
-            <h3>Modals</h3>
-        </div>
-        <hr style="border-top: 1px solid #d0cccc"/>
-        
-        <div class='button-margin'>
-            <div class='button-row'>
-                @for (data of modalButton; track data.id) {
-                <div>
-                    <button [class]="'button-' + data.id">
-                    <p>{{ data.title }}</p>
-                    </button>
-                </div>
-                }
-            </div>
-        </div>
+    <hr style="border-top: 1px solid #d0cccc" />
+
+
+    <div class="button-margin">
+
+      <div class="button-row">
+
+        @for (data of modalButton; track data.id) {
+
+          <div>
+
+            <button
+              [class]="'button-' + data.id"
+              type="button"
+              (click)="handleCLick(data)"
+            >
+              <p>{{ data.title }}</p>
+            </button>
+
+          </div>
+
+        }
+
+      </div>
+
     </div>
+
+  </div>
+
 </div>
+
+
+
+
+
+
+
+@if (isModalOpenSmall) {
+
+  <div
+    class="dialog-overlay"
+    (click)="closeModalSmall()"
+  >
+
+    <div
+      class="dialog-small"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="dialog-header">
+
+        <h2>
+          Small Modal
+        </h2>
+
+        <button
+          class="close-button"
+          type="button"
+          (click)="closeModalSmall()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </div>
+
+
+      <div class="dialog-body">
+
+        <p>
+          There are three species of zebras: the plains zebra, the mountain zebra and the Grévy's zebra. The plains zebra and the mountain zebra belong to the subgenus Hippotigris, but Grévy's zebra is the sole species of subgenus Dolichohippus. The latter resembles an ass, to which it is closely related, while the former two are more horse-like. All three belong to the genus Equus, along with other living equids.
+        </p>
+
+      </div>
+
+
+      <div class="dialog-footer">
+
+        <button
+          class="cancel-button"
+          type="button"
+          (click)="closeModalSmall()"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="confirm-button"
+          type="button"
+        >
+          Confirm
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+}
+
+@if (isModalOpenMedium) {
+
+  <div
+    class="dialog-overlay"
+    (click)="closeModalMedium()"
+  >
+
+    <div
+      class="dialog-medium"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="dialog-header">
+
+        <h2>
+          Medium Modal
+        </h2>
+
+        <button
+          class="close-button"
+          type="button"
+          (click)="closeModalMedium()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </div>
+
+
+      <div class="dialog-body">
+
+        <p>
+          There are three species of zebras: the plains zebra, the mountain zebra and the Grévy's zebra. The plains zebra and the mountain zebra belong to the subgenus Hippotigris, but Grévy's zebra is the sole species of subgenus Dolichohippus. The latter resembles an ass, to which it is closely related, while the former two are more horse-like. All three belong to the genus Equus, along with other living equids.
+        </p>
+
+      </div>
+
+
+      <div class="dialog-footer">
+
+        <button
+          class="cancel-button"
+          type="button"
+          (click)="closeModalMedium()"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="confirm-button"
+          type="button"
+        >
+          Confirm
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+}
+
+@if (isModalOpenLarge) {
+
+  <div
+    class="dialog-overlay"
+    (click)="closeModalLarge()"
+  >
+
+    <div
+      class="dialog-large"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="dialog-header">
+
+        <h2>
+          Large Modal
+        </h2>
+
+        <button
+          class="close-button"
+          type="button"
+          (click)="closeModalLarge()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </div>
+
+
+      <div class="dialog-body">
+
+        <p>
+          There are three species of zebras: the plains zebra, the mountain zebra and the Grévy's zebra. The plains zebra and the mountain zebra belong to the subgenus Hippotigris, but Grévy's zebra is the sole species of subgenus Dolichohippus. The latter resembles an ass, to which it is closely related, while the former two are more horse-like. All three belong to the genus Equus, along with other living equids.
+        </p>
+
+      </div>
+
+
+      <div class="dialog-footer">
+
+        <button
+          class="cancel-button"
+          type="button"
+          (click)="closeModalLarge()"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="confirm-button"
+          type="button"
+        >
+          Confirm
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+}
+
+@if (isModalOpenScrolling) {
+
+  <div
+    class="dialog-overlay"
+    (click)="closeModalScrolling()"
+  >
+
+    <div
+      class="dialog-scrolling"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="dialog-header">
+
+        <h2>
+          Scrolling Long Content Modal
+        </h2>
+
+        <button
+          class="close-button"
+          type="button"
+          (click)="closeModalScrolling()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </div>
+
+
+      <div class="dialog-body">
+
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        </p>
+
+        <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+        </p>
+
+        <p>
+            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+        </p>
+
+        <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        </p>
+
+        <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+        </p>
+
+        <p>
+            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+        </p>
+
+        <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        </p>
+
+        <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+        </p>
+
+        <p>
+            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+        </p>
+
+        <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        </p>
+
+        <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+        </p>
+
+        <p>
+            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+        </p>
+
+        <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        </p>
+
+        <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+        </p>
+
+        <p>
+            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+        </p>
+
+        <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        </p>
+
+        <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+        </p>
+
+        <p>
+            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+        </p>
+
+      </div>
+
+
+      <div class="dialog-footer">
+
+        <button
+          class="cancel-button"
+          type="button"
+          (click)="closeModalScrolling()"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="confirm-button"
+          type="button"
+        >
+          Confirm
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+}
+
+
+@if (isModalOpenStatic) {
+
+  <div
+    class="dialog-overlay"
+    (click)="closeModalStatic()"
+  >
+
+    <div
+      class="dialog-static"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="dialog-header">
+
+        <h2>
+          Static Modal
+        </h2>
+
+        <button
+          class="close-button"
+          type="button"
+          (click)="closeModalStatic()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </div>
+
+
+      <div class="dialog-body">
+
+        <p>
+          This is a static modal, backdrop click will not close it.
+        </p>
+
+      </div>
+
+
+      <div class="dialog-footer">
+
+        <button
+          class="cancel-button"
+          type="button"
+          (click)="closeModalStatic()"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="confirm-button"
+          type="button"
+        >
+          Confirm
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+}
