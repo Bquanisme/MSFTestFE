@@ -82,3 +82,20 @@ export interface TabsResponse {
 //         'center-start' | 'center' | 'center-end' |
 //         'bottom-start' | 'bottom' | 'bottom-end';
 // }
+
+
+export interface Widget {
+  id: number;
+  number?: number;
+  value?: string;
+  title: string;
+  icon: string;
+  percent?: number
+  
+}
+
+export interface WidgetResponse {
+  id: number;
+  data: Widget[]
+  
+}
