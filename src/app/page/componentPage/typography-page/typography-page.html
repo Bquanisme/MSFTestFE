@@ -1,1 +1,191 @@
-<p>typography-page works!</p>
+<div class="section">
+    <div style="display: flex; justify-content: space-between">
+        <h2>Typography</h2>
+        <app-breadcrumb 
+            [title]="'Typography'"
+            [folderTitle]="'UI Components'"
+
+        ></app-breadcrumb>
+    </div>  
+
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+            <div style="display: flex">
+                <h3 style="font-family: Arial, Helvetica, sans-serif; margin-right: 10px;">
+                    H
+                </h3>
+                <h3>Headings</h3>
+            </div>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <div class='button-row'>
+                    <h1 style="font-size: 44px;">h1. Bootstrap heading</h1>
+                    <h2 style="font-size: 38px;">h2. Bootstrap heading</h2>
+                    <h2 style="font-size: 32px;">h3. Bootstrap heading</h2>
+                    <h4 style="font-size: 26px;">h4. Bootstrap heading</h4>
+                    <h5 style="font-size: 20px;">h5. Bootstrap heading</h5>
+                    <h6 style="font-size: 14px;">h6. Bootstrap heading</h6>
+                </div>
+            </div>
+        </div>
+        
+        <div class='box-row-1-column-1'>
+            
+            <h3>Display Headings</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <div class='button-row'>
+                    <h1 class="display-6">Display 6</h1>
+                    <h1 class="display-5">Display 5</h1>
+                    <h1 class="display-4">Display 4</h1>
+                    <h1 class="display-3">Display 3</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='box-row-4'>
+        <h3>Lead & Body Text</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div class='button-row'>
+                <p class="lead">
+                    This is a lead paragraph. It stands out from regular paragraphs with larger font size and weight. Make a paragraph stand out by adding <span class="span">.lead</span>.
+                </p>
+                <p class="p-style">
+                   You can use the mark tag to 
+                   <mark class="mark">highlight</mark> 
+                   text. This is regular body text that shows the default typography styles applied in Bootstrap 5. The framework provides a solid typographic foundation with carefully chosen font sizes, line heights, and spacing.
+                </p>
+                <p class="p-style" style="text-decoration: line-through;">
+                    This line of text is meant to be treated as deleted text.
+                </p>
+                <p class="p-style" style="text-decoration: line-through;">
+                    This line of text is meant to be treated as no longer accurate.
+                </p>
+                <p class="p-style" style="text-decoration: underline;">
+                    This line of text is meant to be treated as an addition to the document.
+                </p>
+                <p class="p-style" style="text-decoration: underline;">
+                    This line of text will render as underlined.
+                </p>
+                <small class="small">
+                    This line of text is meant to be treated as fine print.
+                </small>
+                <strong class="p-style">
+                    This line rendered as bold text.
+                </strong>
+                <em class="p-style">
+                    This line rendered as italicized text.
+                </em>
+            </div>
+        </div>
+    </div>
+
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+            <h3>Text Colors</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <div class='button-row'>
+                    <p class="text-primary">
+                        .text-primary
+                    </p>
+                    <p class="text-secondary">
+                        .text-secondary
+                    </p>
+                    <p class="text-success">
+                        .text-success
+                    </p>
+                    <p class="text-danger">
+                        .text-danger
+                    </p>
+                    <p class="text-warning-bg-dark">
+                        .text-warning
+                    </p>
+                    <p class="text-info-bg-dark">
+                        .text-info
+                    </p>
+                    <p class="text-light-bg-dark">
+                        .text-light
+                    </p>
+                    <p class="p-style">
+                        .text-dark
+                    </p>
+                    <p class="text-body">
+                        .text-body
+                    </p>
+                    <p class="text-mute">
+                        .text-mute
+                    </p>
+                    <p class="text-light-bg-dark">
+                        .text-white
+                    </p>
+                    <p class="text-mute">
+                        .text-black-50
+                    </p>
+                    <p class="text-white-bg-dark">
+                        .text-white-50
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class='box-row-1-column-1'>
+            
+            <h3>Text Alignments</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <div class='button-row'>
+                    <div class="p-style">
+                        <p class="text-start">
+                            Start aligned text on all viewport sizes.
+                        </p>
+                        <br>
+                        <p class="text-center">
+                            Center aligned text on all viewport sizes.
+                        </p>
+                        <br>
+                        <p class="text-end">
+                            End aligned text on all viewport sizes
+                        </p>
+
+                        <br>
+
+                        <hr/>
+
+                        <br>
+
+                        <p class="text-sm-start">
+                            Start aligned text on viewports sized SM or wider.
+                        </p>
+                        <br>
+                        <p class="text-sm-center">
+                            Center aligned text on viewports sized MD or wider.
+                        </p>
+                        <br>
+                        <p class="text-sm-end">
+                            End aligned text on viewports sized LG or wider.
+                        </p>
+
+                        <br>
+
+                        <hr>
+
+                        <br>
+
+                        <p class="text-nowrap bg-light" style="width: 9rem">
+                            This text should overflow the parent.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

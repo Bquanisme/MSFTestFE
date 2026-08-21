@@ -1,6 +1,7 @@
 .link-breadcrumb{
     color: rgb(39, 153, 218);
     cursor: pointer;
+    text-decoration: solid;
 }
 
 .link-breadcrumb:hover {
