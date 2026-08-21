@@ -71,3 +71,14 @@ export interface TabsResponse {
   centeredTabs: Tab[];
   dynamicTabs: Tab[];
 }
+
+
+
+// export interface PositionItem {
+//   id: number;
+//   title: string;
+//   iconButton: string;
+//   icon: 'top-start' | 'top' | 'top-end' |
+//         'center-start' | 'center' | 'center-end' |
+//         'bottom-start' | 'bottom' | 'bottom-end';
+// }

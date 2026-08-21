@@ -1,0 +1,355 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.section {
+  width: 100%;
+  min-height: 95vh;
+
+  padding-top: 170px;
+  padding-right: 50px;
+  padding-bottom: 100px;
+  padding-left: 140px;
+
+  background-color: #f1f2f7;
+}
+
+.box-row-4 
+{
+  width: 100%;
+  background-color: #ffffff;
+  height: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  transition: transform 0.2s ease;
+}
+
+.box-row-4:hover 
+{
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px #e4e1e1;
+}
+
+.box-row-4 h3 {
+  padding: 17px 10px;
+}
+
+.button-margin {
+  margin: 20px;
+}
+
+.button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.button-icon-1,
+.button-icon-2,
+.button-icon-3,
+.button-icon-4,
+.button-icon-new,
+.button-icon-new-2,
+.button-icon-new-3,
+.button-outline-1,
+.button-outline-2,
+.button-outline-3,
+.button-outline-4,
+.button-icon-toast-1,
+.button-icon-toast-2,
+.button-icon-toast-3,
+.button-icon-toast-4,
+.button-position-outline,
+.button-special-1,
+.button-special-2,
+.button-special-3,
+.button-special-4
+{
+  width: 100%;
+
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  margin: 0 5px;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+.button-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================
+   BUTTON ICON 1
+========================= */
+
+.button-icon-1,
+.button-icon-toast-2
+{
+
+  background-color: rgb(39, 153, 218);
+  color: #ffffff;
+}
+
+.button-icon-1:hover,
+.button-icon-toast-2:hover {
+  background-color: rgb(48, 177, 251);
+}
+
+.button-icon-1:active,
+.button-icon-toast-2:active {
+  background-color: rgb(39, 153, 218);
+}
+
+/* =========================
+   BUTTON ICON 2
+========================= */
+
+.button-icon-2,
+.button-icon-toast-1 
+{
+
+  background-color: rgb(75, 166, 11);
+  color: #ffffff;
+}
+
+.button-icon-2:hover,
+.button-icon-toast-1:hover  {
+  background-color: rgb(109, 220, 29);
+}
+
+.button-icon-2:active,
+.button-icon-toast-1:active {
+  background-color: rgb(75, 166, 11);
+}
+
+/* =========================
+   BUTTON ICON 3
+========================= */
+
+.button-icon-3,
+.button-icon-toast-4 
+{
+
+  background-color: rgb(239, 40, 40);
+  color: #ffffff;
+}
+
+.button-icon-3:hover,
+.button-icon-toast-4:hover  {
+  background-color: rgb(239, 76, 76);
+}
+
+.button-icon-3:active,
+.button-icon-toast-4:active {
+  background-color: rgb(239, 40, 40);
+}
+
+/* =========================
+   BUTTON ICON 4
+========================= */
+
+.button-icon-4,
+.button-icon-toast-3 
+{
+
+  background-color: rgb(228, 179, 66);
+  color: #000000;
+}
+
+.button-icon-4:hover,
+.button-icon-toast-3:hover {
+  background-color: rgb(247, 183, 79);
+}
+
+.button-icon-4:active,
+.button-icon-toast-3:active  {
+  background-color: rgb(228, 179, 66);
+}
+
+/* =========================
+   BUTTON ICON NEW 1
+========================= */
+
+
+.button-icon-new {
+  background-color: rgb(113, 121, 126);
+  color: #ffffff;
+}
+
+.button-icon-new:hover {
+  background-color: rgb(132, 137, 141);
+}
+
+.button-icon-new:active {
+  background-color: rgb(113, 121, 126);
+}
+
+/* =========================
+   BUTTON ICON NEW 2
+========================= */
+
+
+.button-icon-new-2 {
+  background-color: rgb(43, 44, 44);
+  color: #ffffff;
+}
+
+.button-icon-new-2:hover {
+  background-color: rgb(81, 84, 86);
+}
+
+.button-icon-new-2:active {
+  background-color: rgb(43, 44, 44);
+}
+
+/* =========================
+   BUTTON ICON NEW 3
+========================= */
+
+
+.button-icon-new-3 {
+  background-color: rgb(115, 15, 182);
+  color: #ffffff;
+}
+
+
+
+
+/* =========================
+   BUTTON ICON OUTLINE
+========================= */
+.button-outline-1 {
+  border: solid 1px rgb(39, 153, 218);
+  background-color: #ffffff;
+  color: rgb(39, 153, 218);
+}
+
+.button-outline-1:hover {
+  background-color: rgb(48, 177, 251);
+  color: #ffffff;
+}
+
+
+.button-outline-2 {
+  border: solid 1px rgb(6, 155, 33);
+  background-color: #ffffff;
+  color: rgb(6, 155, 33);
+}
+
+.button-outline-2:hover {
+  background-color: rgb(10, 173, 56);
+  color: #ffffff;
+}
+
+
+.button-outline-3 {
+  border: solid 1px rgb(239, 40, 40);
+  background-color: #ffffff;
+  color: rgb(239, 40, 40);
+}
+
+.button-outline-3:hover {
+  background-color: rgb(239, 76, 76);
+  color: #ffffff;
+}
+
+
+.button-outline-4 {
+  border: solid 1px rgb(228, 179, 66);
+  background-color: #ffffff;
+  color: rgb(228, 179, 66);
+}
+
+.button-outline-4:hover {
+  background-color: rgb(246, 158, 16);
+  color: #000000;
+}
+
+
+
+.item-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+
+.button-position-outline {
+  border: solid 1px rgb(113, 121, 126);
+  background-color: #ffffff;
+  color: rgb(113, 121, 126);
+}
+
+
+.button-position-outline:hover {
+  background-color: rgb(132, 137, 141);
+  color: #ffffff;
+}
+
+
+
+/*-------------------
+    SPECIAL BUTTON 
+---------------------*/
+
+/* Queue Example */
+.button-special-1 {
+  background: linear-gradient(
+    90deg,
+    #667eea,
+    #764ba2
+  );
+
+  color: #ffffff;
+}
+
+/* Mixin Example */
+.button-special-2 {
+  background: linear-gradient(
+    90deg,
+    #e879e9,
+    #f5576c
+  );
+
+  color: #ffffff;
+}
+
+/* Progress Steps */
+.button-special-3 {
+  background: linear-gradient(
+    90deg,
+    #42a5f5,
+    #00d9e8
+  );
+
+  color: #ffffff;
+}
+
+/* Delete Confirm */
+.button-special-4 {
+  background: linear-gradient(
+    90deg,
+    #f7798a,
+    #fdd835
+  );
+
+  color: #ffffff;
+}

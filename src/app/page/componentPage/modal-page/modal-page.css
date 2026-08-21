@@ -40,7 +40,8 @@
 .flex-title {
     display: flex;
     align-items: center;
-    gap: 1px
+    gap: 1px;
+    padding: 15px 5px;
 }
 
 .flex-title mat-icon {
