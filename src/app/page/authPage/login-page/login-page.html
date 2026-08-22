@@ -1,22 +1,15 @@
 <div class="login-page">
 
     <!-- LOGO -->
-    <div 
-        class="logo"
-        (click)="handleReturnDashboard()"
-    >
-        <div class="logo-icon">
-            <img
-                [src]="tabLogo"
-                alt="logo-header"
-                class="logo-header"
-            />
-        </div>
-
-        <div class="logo-text">
-            ElaAdmin
-        </div>
+    <div class="logo" (click)="handleReturnDashboard()">
+    <div class="logo-icon">
+      <i class="fa-solid fa-layer-group"></i>
     </div>
+
+    <div class="logo-text">
+      ElaAdmin
+    </div>
+  </div>
 
 
     <div class="login-card">
@@ -27,7 +20,7 @@
         </div>
 
 
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" ngNativeValidate>
 
             <!-- EMAIL -->
             <div class="form-group">
@@ -50,6 +43,7 @@
                     type="email"
                     formControlName="email"
                     placeholder="Enter your email"
+                    required
                 >
 
             </div>
@@ -94,6 +88,7 @@
                     type="password"
                     formControlName="password"
                     placeholder="Enter your password"
+                    required
                 >
 
             </div>
@@ -133,9 +128,8 @@
 
 
             <a
-                href="#"
+                (click)="handleForgetPassword()"
                 class="forgot"
-                (click)="$event.preventDefault()"
             >
                 Forgot Password?
             </a>

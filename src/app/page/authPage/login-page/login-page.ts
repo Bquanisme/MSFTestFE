@@ -21,6 +21,10 @@ export class LoginPage {
     this.router.navigate(['/'])
   }
 
+  handleForgetPassword() {
+    this.router.navigate(['/pages/forget-password'])
+  }
+
   loginForm = this.fb.nonNullable.group({
     email: [
       '',
@@ -34,7 +38,7 @@ export class LoginPage {
       '',
       [
         Validators.required,
-        Validators.minLength(6)
+        Validators.minLength(8)
       ]
     ],
 
@@ -54,9 +58,14 @@ export class LoginPage {
     const formValue = this.loginForm.getRawValue();
 
     console.log('Login data:', formValue);
-
-    // Sau này gọi API ở đây
+    
+    // Call API ở đây
     // this.authService.login(formValue).subscribe(...)
+    
+    this.loginForm.reset();
+
+    this.submitted = false
+
   }
 
   get email() {

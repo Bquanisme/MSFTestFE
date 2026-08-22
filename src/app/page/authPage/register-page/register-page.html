@@ -1,1 +1,230 @@
-<p>register-page works!</p>
+<div class="login-page">
+
+    <!-- LOGO -->
+    <div class="logo" (click)="handleReturnDashboard()">
+        <div class="logo-icon">
+        <i class="fa-solid fa-layer-group"></i>
+        </div>
+
+        <div class="logo-text">
+        ElaAdmin
+        </div>
+    </div>
+
+
+    <div class="login-card">
+
+        <div class="login-title">
+            <h1>Welcome Back!</h1>
+            <p>Please sign in to your account</p>
+        </div>
+
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+
+            <!-- FULL NAME -->
+            <div class="form-group">
+
+            <label for="fullName">
+                Full Name
+            </label>
+
+            <div
+                class="input-wrapper"
+                [class.input-error]="fullName.invalid && fullName.touched"
+            >
+
+                <div class="input-icon">
+                    <mat-icon>person</mat-icon>
+                </div>
+
+                <input
+                    id="fullName"
+                    type="text"
+                    formControlName="fullName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+            @if (fullName.invalid && fullName.touched) {
+
+                <div class="error-message">
+
+                @if (fullName.errors?.['required']) {
+                    <span>fullName is required</span>
+                }
+
+                @if (fullName.errors?.['minlength']) {
+                    <span>Please enter a valid name</span>
+                }
+
+                </div>
+
+            }
+
+            </div>
+
+            <!-- EMAIL -->
+            <div class="form-group">
+
+            <label for="email">
+                Email Address
+            </label>
+
+            <div
+                class="input-wrapper"
+                [class.input-error]="email.invalid && email.touched"
+            >
+
+                <div class="input-icon">
+                    <mat-icon>email</mat-icon>
+                </div>
+
+                <input
+                    id="email"
+                    type="email"
+                    formControlName="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+            @if (email.invalid && email.touched) {
+
+                <div class="error-message">
+
+                @if (email.errors?.['required']) {
+                    <span>Email is required</span>
+                }
+
+                @if (email.errors?.['email']) {
+                    <span>Please enter a valid email</span>
+                }
+
+                </div>
+
+            }
+
+            </div>
+
+
+            <!-- PASSWORD -->
+            <div class="form-group">
+
+            <label for="password">
+                Password
+            </label>
+
+            <div
+                class="input-wrapper"
+                [class.input-error]="password.invalid && password.touched"
+            >
+
+                <div class="input-icon">
+                    <mat-icon>lock</mat-icon>
+                </div>
+
+                <input
+                    id="password"
+                    type="password"
+                    formControlName="password"
+                    placeholder="Create a strong password"
+                    required
+                >
+
+            </div>
+
+            @if (password.invalid && password.touched) {
+
+                <div class="error-message">
+
+                @if (password.errors?.['required']) {
+                    <p>Password is required</p>
+                }
+
+                @if (password.errors?.['minlength']) {
+                    <p>Password must be at least 8 characters</p>
+                }
+
+                </div>
+
+            }
+
+            <p style="color: rgb(131, 137, 142);">Must be at least 8 characters</p>
+
+            </div>
+
+
+            <div class="form-options">
+
+            <label class="remember">
+
+                <input
+                    type="checkbox"
+                    formControlName="agreePrivate"
+                    required
+                >
+                
+                <div class="register">
+                    I agree to the
+                    <a (click)="scrollToTop($event)">Terms of Service</a>
+                    and
+                    <a (click)="scrollToTop($event)">Privacy Policy</a>
+                </div>
+            </label>
+
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="sign-in-btn"
+                >
+
+                <mat-icon>person_add</mat-icon>
+
+                Create Account
+
+            </button>
+
+        </form>
+
+
+
+        <!-- DIVIDER -->
+        <div class="divider">
+            <span>or sign up with</span>
+        </div>
+
+
+        <!-- SOCIAL -->
+        <div class="social-login">
+
+            <button class="social-btn google">
+                <i class="fa-brands fa-google"></i>
+            </button>
+
+            <button class="social-btn facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </button>
+
+            <button class="social-btn twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+            </button>
+
+        </div>
+
+
+        <!-- REGISTER -->
+        <div class="register">
+            Already have an account?
+            <a href="/pages/login">Sign in here</a>
+        </div>
+
+    </div>
+
+</div>

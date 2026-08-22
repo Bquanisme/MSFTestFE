@@ -38,6 +38,23 @@
   gap: 8px;
 }
 
+.logo-icon {
+  width: 45px;
+  height: 60px;
+
+  background: #dceef9;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #08a4e8;
+
+  font-size: 34px;
+}
+
 .logo-header {
   width: 45px;
   height: 60px;
