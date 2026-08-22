@@ -206,25 +206,412 @@
 
 .text-start {
     text-align: left !important;
+    font-size: 1.25rem;
 }
 
 .text-center {
     text-align: center !important;
+    font-size: 1.25rem;
 }
 
 .text-end {
     text-align: right !important;
+    font-size: 1.25rem;
 }
 
 
 
 .text-nowrap {
     white-space: nowrap !important;
+    font-size: 1.25rem;
 }
 
 .bg-light{
     background-color: rgba(241, 242, 247, 1);
+    font-size: 1.25rem;
 }
+
+
+
+
+
+
+.text-lowercase{
+    text-transform: lowercase !important;
+    font-size: 1.25rem;
+}
+
+.text-uppercase{
+    text-transform: uppercase !important;
+    font-size: 1.25rem;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+    font-size: 1.25rem;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+    font-size: 1.25rem;
+}
+
+.fw-bolder {
+    font-weight: bolder !important;
+    font-size: 1.25rem;
+}
+
+.fw-normal {
+    font-weight: 400 !important;
+    font-size: 1.25rem;
+}
+
+.fw-light {
+    font-weight: 300 !important;
+    font-size: 1.25rem;
+    color: rgb(97, 97, 97);
+}
+
+.fw-lighter {
+    font-weight: lighter !important;
+    font-size: 1.25rem;
+    color: rgb(122, 122, 122);
+}
+
+.fst-italic{
+    font-style: italic !important;
+    font-size: 1.25rem;
+}
+
+.fst-normal {
+    font-style: normal !important;
+    font-size: 1.25rem;
+}
+
+
+
+
+
+.fs-1 {
+    font-size: calc(1.375rem + 1.5vw) !important;
+}
+
+.fs-2 {
+    font-size: calc(1.325rem + .9vw) !important;
+}
+
+.fs-3 {
+    font-size: calc(1.3rem + .6vw) !important;
+}
+
+.fs-4 {
+    font-size: calc(1.275rem + .3vw) !important;
+}
+
+.fs-5 {
+    font-size: 1.25rem !important;
+}
+
+.fs-6 {
+    font-size: 1rem !important;
+}
+
+
+
+
+
+.blockquote {
+    font-size: 1.25rem;
+    margin-bottom: 7px;
+}
+
+.blockquote-footer {
+    color: #6c757d;
+    margin-bottom: 1rem;
+    font-size: .975em;
+}
+
+.blockquote-footer:before {
+    content: "— ";
+}
+
+
+
+
+.style-ul ul {
+    margin-top: 7px;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 1.25rem;
+}
+
+.style-ul ol {
+    margin-top: 7px;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 1.25rem;
+}   
+
+.list-unstyled {
+    list-style: none;
+    margin-top: 10px;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 1.25rem;
+}
+
+.style-li {
+    display: list-item;
+    unicode-bidi: isolate;
+}
+
+.list-unstyled-row {
+    list-style: none;
+    margin-top: 10px;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.25rem;
+}
+
+
+
+
+.list-unstyled {
+    width: 100%;
+}
+
+.p-style {
+    margin: 0 0 12px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+
+
+
+
+.list-unstyled > .row {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.list-unstyled > .row > .col-sm-3 {
+    flex: 0 0 25%;
+    width: 25%;
+
+    margin: 0;
+    padding: 0 15px 10px 0;
+
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+
+
+.list-unstyled > .row > .col-sm-9 {
+    flex: 0 0 75%;
+    width: 75%;
+
+    margin: 0;
+    padding: 0 0 10px 15px;
+
+    line-height: 1.5;
+}
+
+
+
+.list-unstyled > .row > .col-sm-9 > p {
+    margin: 0 0 20px;
+}
+
+.list-unstyled > .row > .col-sm-9 > p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+.list-unstyled > .row > .col-sm-9 > .row {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.list-unstyled > .row > .col-sm-9 > .row > .col-sm-4 {
+    flex: 0 0 33.333333%;
+    width: 33.333333%;
+
+    margin: 0;
+    padding: 0 15px 0 0;
+
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+
+
+.list-unstyled > .row > .col-sm-9 > .row > .col-sm-8 {
+    flex: 0 0 66.666667%;
+    width: 66.666667%;
+
+    margin: 0;
+    padding: 0;
+
+    line-height: 1.5;
+}
+
+
+.text-truncate {
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+
+
+code {
+    color: #d63384;
+    word-wrap: break-word;
+    font-size: .775em;
+}
+
+.code-black {
+    color: black;
+    word-wrap: break-word;
+    font-size: .775em;
+}
+
+
+
+
+var {
+    font-style: italic;
+}
+
+kbd {
+    color: white;
+    background-color: black;
+    border-radius: .25rem;
+    padding: .1875rem .375rem;
+    font-size: .675em;
+}
+
+samp {
+    font-family: monospace;
+    font-size: 1.25em;
+}
+
+
+
+
+
+abbr {
+    text-decoration: underline dotted;
+    cursor: help;
+}
+
+.margin {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 1.10em;
+}
+
+.margin a {
+    color: #0287c2;
+    text-decoration: underline;
+}
+
+
+
+
+
+.lh-l {
+    line-height: 1 !important;
+    font-size: 1.25em;
+}
+
+.lh-sm {
+    line-height: 1.25 !important;
+    font-size: 1.25em;
+}
+
+.lh-base {
+    line-height: 1.5 !important;
+    font-size: 1.25em;
+}
+
+.lh-lg {
+    line-height: 2 !important;
+    font-size: 1.25em;
+}
+
+
+
+
+
+.text-decoration-underline {
+    text-decoration: underline !important;
+    font-size: 1.25em;
+}
+
+.text-decoration-line-through {
+    text-decoration: line-through !important;
+    font-size: 1.25em;
+}
+
+.text-decoration-none {
+    text-decoration: none !important;
+    color: #03a9f3;
+    font-size: 1.25em;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 576px) {
+
+    .list-unstyled > .row > .col-sm-3,
+    .list-unstyled > .row > .col-sm-9 {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .list-unstyled > .row > .col-sm-9 {
+        padding-left: 0;
+    }
+
+    .list-unstyled > .row > .col-sm-9 > .row > .col-sm-4,
+    .list-unstyled > .row > .col-sm-9 > .row > .col-sm-8 {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
 
 
 
@@ -232,13 +619,38 @@
 @media (width >= 576px) {
     .text-sm-start {
         text-align: left !important;
+        font-size: 1.25rem;
     }
 
     .text-sm-center {
         text-align: center !important;
+        font-size: 1.25rem;
     }
 
     .text-sm-end {
         text-align: right !important;
+        font-size: 1.25rem;
     }
+
+    .col-sm-3 {
+        flex: none;
+        width: 25%;
+        font-weight: 600;
+    }
+
+    .col-sm-9 {
+        flex: none;
+        width: 75%;
+    }
+
+    .col-sm-4 {
+        flex: none;
+        width: 33.3333%;
+    }
+
+    .col-sm-8 {
+        flex: none;
+        width: 66.6667%;
+    }
+   
 }

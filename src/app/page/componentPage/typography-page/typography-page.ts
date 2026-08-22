@@ -9,6 +9,13 @@ import { Breadcrumb } from "../../../components/breadcrumb/breadcrumb";
 })
 export class TypographyPage {
 
-  
+  scrollToTop(event: Event) {
+    event.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 
 }
