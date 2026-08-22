@@ -1,1 +1,194 @@
-<p>login-page works!</p>
+<div class="login-page">
+
+    <!-- LOGO -->
+    <div 
+        class="logo"
+        (click)="handleReturnDashboard()"
+    >
+        <div class="logo-icon">
+            <img
+                [src]="tabLogo"
+                alt="logo-header"
+                class="logo-header"
+            />
+        </div>
+
+        <div class="logo-text">
+            ElaAdmin
+        </div>
+    </div>
+
+
+    <div class="login-card">
+
+        <div class="login-title">
+            <h1>Welcome Back!</h1>
+            <p>Please sign in to your account</p>
+        </div>
+
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <!-- EMAIL -->
+            <div class="form-group">
+
+            <label for="email">
+                Email Address
+            </label>
+
+            <div
+                class="input-wrapper"
+                [class.input-error]="email.invalid && email.touched"
+            >
+
+                <div class="input-icon">
+                    <mat-icon>email</mat-icon>
+                </div>
+
+                <input
+                    id="email"
+                    type="email"
+                    formControlName="email"
+                    placeholder="Enter your email"
+                >
+
+            </div>
+
+            @if (email.invalid && email.touched) {
+
+                <div class="error-message">
+
+                @if (email.errors?.['required']) {
+                    <span>Email is required</span>
+                }
+
+                @if (email.errors?.['email']) {
+                    <span>Please enter a valid email</span>
+                }
+
+                </div>
+
+            }
+
+            </div>
+
+
+            <!-- PASSWORD -->
+            <div class="form-group">
+
+            <label for="password">
+                Password
+            </label>
+
+            <div
+                class="input-wrapper"
+                [class.input-error]="password.invalid && password.touched"
+            >
+
+                <div class="input-icon">
+                    <mat-icon>lock</mat-icon>
+                </div>
+
+                <input
+                    id="password"
+                    type="password"
+                    formControlName="password"
+                    placeholder="Enter your password"
+                >
+
+            </div>
+
+            @if (password.invalid && password.touched) {
+
+                <div class="error-message">
+
+                @if (password.errors?.['required']) {
+                    <span>Password is required</span>
+                }
+
+                @if (password.errors?.['minlength']) {
+                    <span>Password must be at least 6 characters</span>
+                }
+
+                </div>
+
+            }
+
+            </div>
+
+
+            <!-- REMEMBER + FORGOT -->
+            <div class="form-options">
+
+            <label class="remember">
+
+                <input
+                    type="checkbox"
+                    formControlName="rememberMe"
+                >
+
+                <span>Remember me</span>
+
+            </label>
+
+
+            <a
+                href="#"
+                class="forgot"
+                (click)="$event.preventDefault()"
+            >
+                Forgot Password?
+            </a>
+
+            </div>
+
+
+            <!-- LOGIN BUTTON -->
+            <button
+                type="submit"
+                class="sign-in-btn"
+                >
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Sign In
+
+            </button>
+
+        </form>
+
+
+
+        <!-- DIVIDER -->
+        <div class="divider">
+            <span>or continue with</span>
+        </div>
+
+
+        <!-- SOCIAL -->
+        <div class="social-login">
+
+            <button class="social-btn google">
+                <i class="fa-brands fa-google"></i>
+            </button>
+
+            <button class="social-btn facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </button>
+
+            <button class="social-btn twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+            </button>
+
+        </div>
+
+
+        <!-- REGISTER -->
+        <div class="register">
+            Don't have an account?
+            <a href="/pages/register">Create one here</a>
+        </div>
+
+    </div>
+
+</div>

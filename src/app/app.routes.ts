@@ -163,7 +163,7 @@ export const routes:
 
         {
             
-            path: "auth",
+            path: "pages",
             children: [
                 {
                     path: "login",
