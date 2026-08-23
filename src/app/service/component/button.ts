@@ -195,37 +195,37 @@ export class ButtonService {
       {
         id: 1,
         title: 'Facebook',
-        icon: 'facebook',
+        icon: 'fa-brands fa-facebook',
         iconPosition: 'left',
       },
       {
         id: 2,
         title: 'Twitter',
-        icon: 'twitter',
+        icon: 'fa-brands fa-twitter',
         iconPosition: 'left',
       },
       {
         id: 3,
         title: 'Instagram',
-        icon: 'instagram',
+        icon: 'fa-brands fa-instagram',
         iconPosition: 'left',
       },
       {
         id: 4,
         title: 'Github',
-        icon: 'github',
+        icon: 'fa-brands fa-github',
         iconPosition: 'left',
       },
       {
         id: 5,
         title: 'Youtube',
-        icon: 'youtube',
+        icon: 'fa-brands fa-youtube',
         iconPosition: 'left',
       },
       {
         id: 6,
         title: 'LinkedIn',
-        icon: 'linkedin',
+        icon: 'fa-brands fa-linkedin',
         iconPosition: 'left',
       },
     ]

@@ -204,8 +204,8 @@
                 <button [class]="`button-icon-social-` + item.id">
                     @if (item.iconPosition === 'left') {
                         <span class="button-icon-social">
-                            <mat-icon>{{ item.icon }}</mat-icon>
-
+                            <!-- <mat-icon>{{ item.icon }}</mat-icon> -->
+                            <i [class]="item.icon"></i>
                             
                         </span>
                     }
@@ -214,7 +214,7 @@
 
                     @if (item.iconPosition === 'right') {
                         <span class="button-icon-social">
-                            <mat-icon>{{ item.icon }}</mat-icon>
+                            <i [class]="item.icon"></i>
 
                             
                         </span>
