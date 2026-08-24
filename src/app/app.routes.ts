@@ -138,7 +138,7 @@ export const routes:
                     path: "charts",
                     children: [
                         {
-                            path: "font-awesome",
+                            path: "chart-js",
                             component: ChartJsPage
                         },
                     ]

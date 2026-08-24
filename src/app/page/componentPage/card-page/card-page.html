@@ -1,1 +1,498 @@
-<p>card-page works!</p>
+<div class="section">
+    <div style="display: flex; justify-content: space-between">
+        <h2>Cards</h2>
+        <app-breadcrumb 
+            [title]="'Cards'"
+            [folderTitle]="'UI Components'"
+
+        ></app-breadcrumb>
+    </div>
+
+    <div class='box-row-1'>
+        @for (item of cardDataRow1(); track item.id) {
+            <div class='box-row-1-column-1'>
+                @if ($index === 0) {
+                    <div class="change-color-header-1">
+                        <h3>{{ item.title }}</h3>
+                    </div>
+                }
+
+                @if ($index === 2) {
+                    <div class="change-color-header-3">
+                        <mat-icon>person</mat-icon>
+                        <h3>{{ item.title }}</h3>
+                    </div>
+                }
+                
+                <div class='button-margin'>
+                    <div class='button-row'>
+                        <img [src]="authLogo" alt="logo" class="img-logo"/>
+
+                        <h3 style="font-size: 1.5em;">{{ item.name }}</h3>
+
+                        <div class="flex">
+                            <mat-icon>location_on</mat-icon>
+                            <p style="font-size: 1.10em;">{{ item.address }}</p>
+                        </div>
+
+                        <br>
+
+                        <div class="flex">
+                            <i class="fa-brands fa-facebook" (click)="scrollToTop($event)"></i><br>
+                            <i class="fa-brands fa-twitter" (click)="scrollToTop($event)"></i><br>
+                            <i class="fa-brands fa-linkedin" (click)="scrollToTop($event)"></i><br>
+                            <i [class]="item.icon" (click)="scrollToTop($event)"></i>
+                        </div>
+                    </div>
+                </div>  
+
+                 @if ($index === 1) {
+                    <div class="change-color-header-2">
+                        <h3>{{ item.title }}</h3>
+                    </div>
+                }
+            </div>
+        }
+
+    </div>
+
+
+
+    <div class="box-row-1">
+
+        <div class="profile-card profile-card-left">
+
+            <div class="profile-dark-header">
+
+                <img [src]="authLogo" alt="logo" class="profile-avatar"/>
+
+                <div class="profile-info">
+                    <h3>Jim Doe</h3>
+                    <p>Project Manager</p>
+                </div>
+
+            </div>
+
+
+            <div class="profile-menu">
+
+                <div class="profile-menu-item">
+                    <div class="menu-left">
+                        <mat-icon>mail</mat-icon>
+                        <span>Mail Inbox</span>
+                    </div>
+
+                    <span class="badge badge-blue">10</span>
+                </div>
+
+
+                <div class="profile-menu-item">
+                    <div class="menu-left">
+                        <mat-icon>format_list_bulleted</mat-icon>
+                        <span>Recent Activity</span>
+                    </div>
+
+                    <span class="badge badge-red">15</span>
+                </div>
+
+
+                <div class="profile-menu-item">
+                    <div class="menu-left">
+                        <mat-icon>notifications</mat-icon>
+                        <span>Notifications</span>
+                    </div>
+
+                    <span class="badge badge-green">11</span>
+                </div>
+
+
+                <div class="profile-menu-item">
+                    <div class="menu-left">
+                        <mat-icon>chat_bubble</mat-icon>
+                        <span>Messages</span>
+                    </div>
+
+                    <span class="badge badge-orange">03</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="profile-card profile-card-center">
+
+            <div class="center-card-body">
+
+                <button class="twitter-button">
+                    <i class="fa-brands fa-twitter"></i>
+                </button>
+
+
+                <img [src]="authLogo" alt="logo" class="profile-avatar"/>
+
+                <br>
+
+                <h2>Alex Johnson</h2>
+
+
+                <p class="center-description">
+                    Just launched a new project with
+                    <a (click)="scrollToTop($event)">@teamawesome</a> - Check it out!
+                </p>
+
+
+                <a
+                    class="profile-link"
+                    (click)="scrollToTop($event)"
+                >
+                    alexjohnson.dev
+                </a>
+
+
+                <p class="center-description second-description">
+                    Excited to share this innovative solution that combines
+                    modern design principles with cutting-edge technology.
+                    Looking forward to your feedback!
+                </p>
+
+            </div>
+
+
+            <div class="center-card-footer">
+
+                <mat-icon>schedule</mat-icon>
+
+                <span>2 hours ago</span>
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="profile-card profile-card-right">
+
+            <!-- Header -->
+            <div class="social-header">
+
+                <img [src]="authLogo" alt="logo" class="profile-avatar"/>
+
+                <div class="profile-info">
+                    <h3>Sarah Wilson</h3>
+                    <p>Social Media Manager</p>
+                </div>
+
+
+                <div class="twitter-circle">
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+
+            </div>
+
+
+            <!-- Stats -->
+            <div class="social-stats">
+
+                <div class="stat-item">
+                    <strong>1,250</strong>
+                    <span>Posts</span>
+                </div>
+
+                <div class="stat-item">
+                    <strong>2,140</strong>
+                    <span>Following</span>
+                </div>
+
+                <div class="stat-item">
+                    <strong>8,965</strong>
+                    <span>Followers</span>
+                </div>
+
+            </div>
+
+
+            <!-- Tweet -->
+            <div class="tweet-content">
+
+                <textarea
+                    placeholder="What's happening?"
+                ></textarea>
+
+
+                <div class="tweet-footer">
+
+                    <div class="tweet-location" (click)="scrollToTop($event)">
+
+                        <mat-icon>photo_camera</mat-icon>
+
+                        <mat-icon>location_on</mat-icon>
+
+                        <span>Manchester, UK</span>
+
+                    </div>
+
+
+                    <button class="tweet-button">
+                        Tweet
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class='box-row-1'>
+        @for (item of cardDataRow3(); track item.id) {
+            <div class='box-row-1-column-1'>
+                @if ($index === 0) {
+                    <div class="header-row-three-1">
+                        <h3>{{ item.title }}</h3>
+                        <app-toggle [background]="backgroundToggle"></app-toggle>
+                    </div>
+                }
+
+                @if ($index === 1) {
+                    <div class="header-row-three-2">
+                        <div class="flex-row-3">
+                            <mat-icon>check_circle</mat-icon>
+                            <h3>{{ item.title }}</h3>
+                        </div>
+                        <div class="pill-badges">
+                            <p>Success</p>
+                        </div>
+                    </div>
+                }
+
+                @if ($index === 2) {
+                    <div class="header-row-three-3">
+                        <div class="flex-row-3-3">
+                            <mat-icon>warning</mat-icon>
+                            <h3>{{ item.title }}</h3>
+                        </div>
+                        <span class="badge badge-red">49</span>
+                    </div>
+                }
+                
+                <div class='button-margin'>
+                    <div>
+                        @if ($index === 0) {
+                            <p style="font-size: 1.10em; line-height: 1.5;">
+                                <span class="toggle">
+                                    <i class="fa-solid fa-toggle-on"></i>
+                                </span>
+                                {{ item.description }}
+                            <p>
+                        }
+
+                        @else if ($index === 2) {
+                            <p style="font-size: 1.10em; line-height: 1.5;">
+                                <span class="notification">
+                                    <i class="fa-solid fa-bell"></i>
+                                </span>
+                                {{ item.description }}
+                            <p>
+                        }
+
+                        @else {
+                            <p style="font-size: 1.10em; line-height: 1.5;">
+                                {{ item.description }}
+                            <p>
+                        }
+
+                    </div>
+                </div>  
+            </div>
+        }
+
+    </div>
+
+
+    <div class='box-row-1'>
+        @for (item of cardDataRow4(); track item.id) {
+            <div [class]='`box-row-4-` + item.id'>
+                <div [class]="`header-row-four-` + item.id">
+                    <div [class]="`flex-row-4-` + item.id">
+                        <i [class]="item.icon"></i>
+                        <h3>{{ item.title }}</h3>
+                    </div>
+                </div>
+
+                
+                <div class='button-margin'>
+                    <div>
+                        <p style="font-size: 1.10em; line-height: 1.5;">
+                            <span [class]="`color-icon-` + item.id">
+                                <i [class]="item.icon2"></i>
+                            </span>
+                            {{ item.description }}
+                        <p>
+
+                    </div>
+                </div>  
+            </div>
+        }
+
+    </div>
+
+
+    <div class='box-row-1'>
+        @for (item of cardDataRow5(); track item.id) {
+            <div [class]='`box-row-5-` + item.id'>
+                
+                <div class='button-margin'>
+                    <div>
+                        <p style="font-size: 1.10em; line-height: 1.5;">
+                            <span [class]="`color-icon-row-5-` + item.id">
+                                <i [class]="item.icon"></i>
+                            </span>
+                            {{ item.description }}
+                        <p>
+
+                    </div>
+                </div>
+                
+                
+                <div class='button-margin'>
+                    <div [class]="`icon-row-5-` + item.id">
+
+                        <i [class]="item.icon2"></i>
+                        <h3 style="font-size: 1.10em; line-height: 1.5">{{ item.title }}</h3>
+                    </div>
+                </div>
+
+
+            </div>
+        }
+
+    </div>
+
+    <div class="box-row-1">
+
+        @for (item of cardDataRow6(); track item.id) {
+            <div class='box-row-1-column-1'>
+                <div class="alert" [style.background]="item.color">
+    
+                    <div [class]="`alert-head-` + item.id">
+                        <b><span>
+                            <i [class]="item.icon"></i>
+                        </span> {{ item.title }}</b>
+                    </div>
+        
+                    <div class="alert-body">
+
+                        @if ($index === 1) {
+                            <p style="color: black;"><span>
+                                <i [class]="item.icon2" style="margin-right: 10px; color: green;"></i>
+                            </span>{{ item.description }}</p>
+            
+                            <div class="alert-footer">
+                                <span style="color: black;"><span>
+                                    <i [class]="item.icon3" style="color: black;"></i>
+                                </span> {{ item.time }}</span>
+                                <strong>{{ item.status }}</strong>
+                            </div>
+                        }
+                        @else {
+                            <p><span>
+                                <i [class]="item.icon2" style="margin-right: 10px"></i>
+                            </span>{{ item.description }}</p>
+            
+                            <div class="alert-footer">
+                                <span><span>
+                                    <i [class]="item.icon3"></i>
+                                </span> {{ item.time }}</span>
+                                <strong>{{ item.status }}</strong>
+                            </div>
+                        }
+                        
+                    </div>
+        
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+    <div class="box-row-2">
+
+        @for (item of cardDataRow7(); track item.id) {
+
+            <div class="box-row-2-column-1">
+
+                <div class="project-card">
+
+                    <!-- Image -->
+                    <div class="project-image">
+
+                        <img
+                            [src]="item.image"
+                            [alt]="item.title"
+                        >
+
+                        <span
+                            class="project-badge"
+                            [style.background]="item.badgeColor"
+                        >
+                            {{ item.badge }}
+                        </span>
+
+                    </div>
+
+
+                    <!-- Content -->
+                    <div class="project-content">
+
+                        <h3>
+                            <i
+                                [class]="item.icon"
+                                [style.color]="item.color"
+                            ></i>
+
+                            {{ item.title }}
+                        </h3>
+
+
+                        <p>
+                            {{ item.description }}
+                        </p>
+
+
+                        <!-- Footer -->
+                        <div class="project-footer">
+
+                            <span>
+                                <i [class]="item.icon2"></i>
+                                {{ item.time }}
+                            </span>
+
+
+                            <button
+                                [style.background]="item.color"
+                            >
+                                <i [class]="item.icon3"></i>
+                                {{ item.action }}
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        }
+
+    </div>
+
+</div>

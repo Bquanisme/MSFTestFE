@@ -99,3 +99,31 @@ export interface WidgetResponse {
   data: Widget[]
   
 }
+
+
+
+
+
+export interface Card {
+  id: number;
+  name: number;
+  title: string;
+  address: string;
+  icon: string;
+  description?: string;
+  icon2?: string;
+  icon3?: string;
+  time?: string;
+  status?: string;
+  color?: string;
+  action?: string;
+  badge?: string;
+  badgeColor?: string;
+  image?: string
+} 
+
+export interface CardResponse {
+  id: number;
+  data: Card[]
+  
+}

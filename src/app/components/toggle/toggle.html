@@ -1,0 +1,13 @@
+<button
+    type="button"
+    class="toggle"
+    [class.active]="isChecked()"
+    (click)="toggleUpdate()"
+    [attr.aria-pressed]="isChecked()"
+>
+    <span 
+        class="toggle-circle"
+        [style.toggle.active]="background()"
+    >
+    </span>
+</button>
