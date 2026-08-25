@@ -1,3 +1,9 @@
+<div
+  class="sidebar-overlay"
+  [class.show]="isDrawerOpen()"
+  (click)="setIsDrawerOpen.emit(true)"
+></div>
+
 <aside
   class="sidebar"
   [class.sidebar-open]="isDrawerOpen()"

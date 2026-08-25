@@ -1,51 +1,5 @@
 <div class="dashboard-section">
     <div class="dashboard-cards">
-
-    <!-- {dashboard.map((item, index) => (
-        <div
-            key={item.id}
-            class={`dashboard-card dashboard-card-${index + 1}`}
-        >
-            <div class="dashboard-card-content">
-
-            {index === 0 ? (
-                <h2 class="dashboard-card-cost">
-                ${item.cost.toLocaleString('en-US', {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2
-                })}
-                </h2>
-            ) : index === 3 ? (
-                <h2 class="dashboard-card-cost">
-                {item.cost.toLocaleString()}%
-                </h2>
-            ) : (
-                <h2 class="dashboard-card-cost">
-                {item.cost.toLocaleString()}
-                </h2>
-            )}
-
-            <p class="dashboard-card-title">
-            {item.title}
-            </p>
-
-            <div className="dashboard-card-change">
-            {item.isIncrease ? (
-                <ArrowUpwardIcon />
-            ) : (
-                <ArrowDownwardIcon />
-            )}
-
-            <span>{item.percent}</span>
-            </div>
-
-        </div>
-
-        <div className="dashboard-card-icon">
-            {icons[index]}
-        </div>
-        </div>
-    ))} -->
     @for (item of dashboard; track item.id) {
 
     <div

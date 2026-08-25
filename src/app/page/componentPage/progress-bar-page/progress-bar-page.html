@@ -1,1 +1,385 @@
-<p>progress-bar-page works!</p>
+<div class="section">
+    <div style="display: flex; justify-content: space-between">
+        <h2>Progress Bars</h2>
+        <app-breadcrumb 
+            [title]="'Progress Bars'"
+            [folderTitle]="'UI Components'"
+
+        ></app-breadcrumb>
+    </div>
+    
+    <!--  Basic Progress Bars & Colored Progress Bars   -->
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+
+            <h3>Basic Progress Bars</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <div class="progress-demo">
+
+                    <!-- Default progress bar -->
+                    <p>Default progress bar</p>
+
+                    <div class="progress-bar-container">
+                        <div
+                            class="progress progress-bgcolor-1"
+                            style="width: 25%"
+                        ></div>
+                    </div>
+
+                    <br>
+
+
+                    <!-- Progress bar with label -->
+                    <p>Progress bar with label</p>
+
+                    <div class="progress-bar-container">
+                        <div
+                            class="progress progress-bgcolor-1"
+                            style="width: 50%"
+                        >
+                            <span class="progress-label">
+                                    50%
+                            </span>
+                        </div>
+
+                        <span class="progress-label">
+                            50%
+                        </span>
+                    </div>
+
+                    <br>
+
+
+                    <p>Progress bar with custom height</p>
+
+                    @for (item of basicProgress(); track item.id) {
+                        <div class="progress-bar-container">
+                            <div
+                                class="progress progress-bgcolor-1"
+                                [style.width]="item.percent + '%'"
+                            >
+                                @if ($index === 3) {
+                                    <span class="progress-label">
+                                        {{ item.percent }}%
+                                    </span>
+                                }
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+        <div class='box-row-1-column-1'>
+
+            <h3>Colored Progress Bars</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <p>Bootstrap color variants</p>
+
+                    @for (item of coloredProgress(); track item.id) {
+                        <div class="progress-bar-container">
+                            <div
+                                [class]="`progress progress-bgcolor-` + item.id"
+                                [style.width]="item.percent + '%'"
+                            >
+                                <span class="progress-label">
+                                    {{ item.title }}
+                                </span>
+                            </div>
+                        </div>
+                    }
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Striped Progress Bars & Animated Progress Bars -->
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+
+            <h3>Striped Progress Bars</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <div>
+
+                    @for (item of stripedProgress(); track item.id) {
+                        <div class="progress-bar-container">
+                            <div
+                                [class]="`progress progress-mix-bgcolor-` + item.id"
+                                [style.width]="item.percent + '%'"
+                            >
+                                @if ($index !== 0) {
+                                    <span class="progress-label">
+                                        {{ item.percent }}%
+                                    </span>
+                                }
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+        <div class='box-row-1-column-1'>
+
+            <h3>Animated Progress Bars</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <div>
+
+                    @for (item of animatedProgress(); track item.id) {
+                        <div class="progress-bar-container">
+                            <div
+                                [class]="`progress progress-mix-bgcolor-` + item.id"
+                                [style.width]="item.percent + '%'"
+                            >
+                                <span class="progress-label">
+                                    {{ item.percent }}%
+                                </span>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Gradient Progress Bars & Skills Progress -->
+    <div class='box-row-1'>
+        <div class='box-row-1-column-2'>
+
+            <h3>Gradient Progress Bars</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <div>
+
+
+                    <p>Beautiful gradient effects</p>
+
+                    @for (item of gradientProgress(); track item.id) {
+                        <div class="progress-bar-container">
+                            <div
+                                [class]="`progress progress-bar-gradient-` + item.id"
+                                [style.width]="item.percent + '%'"
+                            >
+                                <span class="progress-label">
+                                    {{ item.percent }}%
+                                </span>
+                            </div>
+                        </div>
+                    }
+
+                    <br>
+
+                    <p>Rounded gradient bars</p>
+
+                    <div class="progress-bar-container">
+                        <div
+                            class="progress progress-bar-gradient-1"
+                            style="width: 65%; border-radius: 7px"
+                        ></div>
+                    </div>
+
+
+                    <div class="progress-bar-container">
+                        <div
+                            class="progress progress-bar-gradient-3"
+                            style="width: 85%; border-radius: 7px;"
+                        >
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class='box-row-1-column-2'>
+
+            <h3>Skills Progress</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+
+                @for (item of skillsProgress(); track item.id) {
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: -5px;">
+                        <p style="font-size: 16px; font-weight: 600">{{ item.title }}</p>
+                        <p>{{ item.percent }}%</p>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div
+                            [class]="`progress progress-bgcolor-` + item.id"
+                            [style.width]="item.percent + '%'"
+                        >
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Multiple/Stacked Progress Bars -->
+    <div class='box-row-4'>
+        <h3>Multiple/Stacked Progress Bars</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div>
+                <p>Include multiple progress bars in a progress component</p>
+
+                <div class="progress-bar-container-row">
+                    @for (item of multipleProgress(); track item.id) {
+                        <div
+                            [class]="'progress progress-bgcolor-' + item.id"
+                            [style.width]="item.percent + '%'"
+                        >
+                        </div>
+                    }
+                </div>
+
+                <br>
+
+                <p>With labels</p>
+
+                <div class="progress-bar-container-row" style="height: 20px;">
+                    @for (item of multipleLabelProgress(); track item.id) {
+                        <div
+                            [class]="'progress progress-bgcolor-label-' + item.id"
+                            [style.width]="item.percent + '%'"
+                        >
+                            <span class="progress-label">
+                                {{ item.title }}
+                            </span>
+                        </div>
+                    }
+                </div>
+
+                <br>
+
+                <p>Project completion status</p>
+
+                <div class="progress-bar-container-row" style="height: 25px;">
+                    @for (item of multipleProjectProgress(); track item.id) {
+                        <div
+                            [class]="'progress progress-bgcolor-project-' + item.id"
+                            [style.width]="item.percent + '%'"
+                        >
+                            <span class="progress-label">
+                                {{ item.title }}
+                            </span>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Dynamic Progress Bars  -->
+    <div class='box-row-4'>
+        <h3>Dynamic Progress Bars</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div>
+                <p>Click buttons to see progress changes</p>
+
+
+                <div class="button-row">
+                    <div style="width: 50%;">
+                        <p style="font-weight: 600;">Download Progress</p>
+                        <div class="progress-bar-container" style="height: 25px;">
+                            @if (width() === 100) {
+                                <div
+                                    class="progress progress-bgcolor-1"
+                                    [style.width.%]="width()"
+                                >
+                                    <span class="progress-label">
+                                        Complete!
+                                    </span>
+                                </div>
+                            }
+                            @else {
+                                <div
+                                    class="progress progress-mix-bgcolor-1"
+                                    [style.width.%]="width()"
+                                >
+                                    <span class="progress-label">
+                                        {{ width() }}%
+                                    </span>
+                                </div>
+                            }
+                        </div>
+                        <div class="button-row">
+                            <button class="button-3" (click)="startProgress()">Start download</button>
+                            <button class="button-2" (click)="resetProgress()">Reset</button>
+                        </div>
+                    </div>
+                    <div style="width: 50%;">
+                        <p style="font-weight: 600;">Task Progress</p>
+                        <div class="progress-bar-container" style="height: 25px;">
+                            @if (widthTask() >= 80) {
+                                <div
+                                    class="progress progress-bgcolor-2"
+                                    [style.width.%]="widthTask()"
+                                >
+                                    <span class="progress-label">
+                                        {{ widthTask() }}%
+                                    </span>
+                                </div>
+                            }
+                            @if (widthTask() < 80 && widthTask() >= 60) {
+                                <div
+                                    class="progress progress-bgcolor-1"
+                                    [style.width.%]="widthTask()"
+                                >
+                                    <span class="progress-label">
+                                        {{ widthTask() }}%
+                                    </span>
+                                </div>
+                            }
+                            @if (widthTask() < 60 && widthTask() >= 30) {
+                                <div
+                                    class="progress progress-bgcolor-4"
+                                    [style.width.%]="widthTask()"
+                                >
+                                    <span class="progress-label">
+                                        {{ widthTask() }}%
+                                    </span>
+                                </div>
+                            }
+                            @else {
+                                <div
+                                    class="progress progress-bgcolor-5"
+                                    [style.width.%]="widthTask()"
+                                >
+                                    <span class="progress-label">
+                                        {{ widthTask() }}%
+                                    </span>
+                                </div>
+                            }
+                        </div>
+                        <div class="button-row">
+                            <button class="button-task-1" (click)="increaseProgress()">+ 10%</button>
+                            <button class="button-task-2" (click)="reduceProgress()">- 10%</button>
+                            <button class="button-task-3" (click)="resetChangeProgress()">Reset</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

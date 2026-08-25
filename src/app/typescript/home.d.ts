@@ -127,3 +127,16 @@ export interface CardResponse {
   data: Card[]
   
 }
+
+
+export interface ProgressBar {
+  id: number;
+  title: string;
+  percent: number;
+  showLabel?: boolean
+} 
+
+export interface ProgressBarResponse {
+  id: number;
+  data: ProgressBar[]
+}

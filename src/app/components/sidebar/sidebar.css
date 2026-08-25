@@ -269,3 +269,280 @@
 
   border-radius: 10px;
 }
+
+
+
+/* =========================================
+   RESPONSIVE SIDEBAR
+   ========================================= */
+
+
+@media screen and (max-width: 768px) {
+
+  /* Sidebar mặc định ẩn sang bên trái */
+  .sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 280px !important;
+    height: 100vh;
+
+    z-index: 1300;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.3s ease-in-out;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+
+  /* Khi isDrawerOpen() = true */
+  .sidebar.sidebar-open {
+    width: 280px !important;
+
+    transform: translateX(0);
+  }
+
+
+  /* Khi isDrawerOpen() = false */
+  .sidebar.sidebar-closed {
+    width: 280px !important;
+
+    transform: translateX(-100%);
+  }
+
+
+  /* =================================
+     Khi mobile mở sidebar
+     Hiển thị đầy đủ text
+     ================================= */
+
+  .sidebar-open .sidebar-text,
+  .sidebar-open .sidebar-arrow,
+  .sidebar-open .sidebar-section {
+    display: block;
+  }
+
+
+  .sidebar-open .sidebar-item {
+    width: 100%;
+
+    height: 60px;
+
+    padding: 0 24px;
+
+    justify-content: flex-start;
+
+    gap: 18px;
+  }
+
+
+  .sidebar-open .sidebar-children {
+    display: flex;
+  }
+
+
+  .sidebar-open .sidebar-item.active {
+    width: 100%;
+
+    height: 60px;
+
+    margin: 0;
+
+    border-radius: 0;
+  }
+
+
+  .sidebar-open .sidebar-item.active::before {
+    display: block;
+  }
+
+
+  /* =================================
+     Sidebar item
+     ================================= */
+
+  .sidebar-item {
+    height: 60px;
+
+    padding: 0 24px;
+
+    gap: 18px;
+  }
+
+
+  .sidebar-text {
+    font-size: 17px;
+  }
+
+
+  .sidebar-arrow {
+    font-size: 24px !important;
+  }
+
+
+  /* =================================
+     Children
+     ================================= */
+
+  .sidebar-child {
+    min-height: 45px;
+
+    padding-left: 60px;
+
+    font-size: 15px;
+  }
+
+
+  /* =================================
+     Overlay
+     ================================= */
+
+  .sidebar::after {
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 280px;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+
+    z-index: -1;
+  }
+
+
+  /* Sidebar mở → hiện nền xám */
+
+  .sidebar.sidebar-open::after {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+  }
+
+
+
+}
+
+/* =====================================
+   RESPONSIVE
+   ===================================== */
+
+.sidebar-overlay {
+  display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  /* Sidebar mobile */
+  .sidebar {
+    top: 70px;
+    height: calc(100vh - 70px);
+
+    width: 280px !important;
+
+    z-index: 1200;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+
+  /* isDrawerOpen() = true */
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+
+  /* isDrawerOpen() = false */
+  .sidebar.sidebar-closed {
+    transform: translateX(-100%);
+  }
+
+
+  /*
+   * Khi mobile mở:
+   * bỏ trạng thái icon-only của CSS desktop
+   */
+
+  .sidebar-closed .sidebar-text,
+  .sidebar-closed .sidebar-arrow,
+  .sidebar-closed .sidebar-section {
+    display: block;
+  }
+
+  .sidebar-closed .sidebar-item {
+    width: 100%;
+    padding: 0 28px;
+    justify-content: flex-start;
+    gap: 22px;
+  }
+
+  .sidebar-closed .sidebar-children {
+    display: flex;
+  }
+
+  .sidebar-closed .sidebar-item.active {
+    width: 100%;
+    height: 64px;
+    margin: 0;
+    border-radius: 0;
+  }
+
+
+  /* ==========================
+     NỀN XÁM
+     ========================== */
+
+  .sidebar-overlay {
+    display: block;
+
+    position: fixed;
+
+    top: 70px;
+    left: 0;
+
+    width: 100%;
+    height: calc(100vh - 70px);
+
+    background-color: rgba(0, 0, 0, 0.45);
+
+    z-index: 1150;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+
+  /* isDrawerOpen() = true */
+
+  .sidebar-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+}

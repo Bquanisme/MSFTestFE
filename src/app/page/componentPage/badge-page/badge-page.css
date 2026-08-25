@@ -996,3 +996,650 @@
 }
 
 
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+
+@media (max-width: 1024px) {
+
+  .section {
+    width: 100%;
+    min-height: 100vh;
+
+    padding-top: 130px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-bottom: 60px;
+  }
+
+  /* =========================
+     BOX ROW
+  ========================= */
+
+  .box-row-1,
+  .box-row-2 {
+    width: 100%;
+
+    display: block;
+
+    margin-top: 20px;
+  }
+
+  /* =========================
+     BOX
+  ========================= */
+
+  .box-row-1-column-1,
+  .box-row-1-column-1-nohover {
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    margin-bottom: 20px;
+  }
+
+  .box-row-5 {
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    margin-top: 20px;
+  }
+
+  /* =========================
+     TABLE BOX
+  ========================= */
+
+  .box-row-6 {
+    width: 100%;
+
+    display: block;
+  }
+
+  .box-table {
+    width: 100%;
+    min-width: 0;
+
+    margin-bottom: 20px;
+  }
+
+  /* =========================
+     ROW 7
+  ========================= */
+
+  .box-row-7 {
+    width: 100%;
+
+    display: block;
+
+    margin: 20px 0;
+  }
+
+  .box-row-7 > .box-row-1-column-1 {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 20px;
+  }
+
+  /* =========================
+     BADGE ROW
+  ========================= */
+
+  .badges-row,
+  .badges-row-2 {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+  }
+
+  /* =========================
+     BADGE BUTTON
+  ========================= */
+
+  .badges-button {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+  }
+
+  /* =========================
+     BUTTON ROW
+  ========================= */
+
+  .button-row {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+  }
+
+  /* =========================
+     NAVIGATION
+  ========================= */
+
+  .navigation-badges {
+    width: 100%;
+  }
+
+  .navigation-list {
+    width: 100%;
+  }
+
+  .navigation-item {
+    width: 100%;
+
+    min-height: 41px;
+
+    padding: 8px 16px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+   <= 768px
+========================= */
+
+@media (max-width: 768px) {
+
+  .section {
+    width: 100%;
+
+    padding-top: 100px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 40px;
+  }
+
+  /* =========================
+     BOX ROW
+  ========================= */
+
+  .box-row-1,
+  .box-row-2 {
+    width: 100%;
+
+    display: block;
+
+    margin-top: 20px;
+  }
+
+  /* =========================
+     ALL BOX 100%
+  ========================= */
+
+  .box-row-1-column-1,
+  .box-row-1-column-1-nohover,
+  .box-row-5,
+  .box-row-6,
+  .box-row-7,
+  .box-table {
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+  }
+
+  /* =========================
+     BOX 1
+  ========================= */
+
+  .box-row-1-column-1,
+  .box-row-1-column-1-nohover {
+
+    height: auto;
+
+    margin-bottom: 20px;
+
+    overflow: hidden;
+  }
+
+  .box-row-1-column-1 h3,
+  .box-row-1-column-1-nohover h3 {
+
+    margin: 15px;
+
+    font-size: 18px;
+  }
+
+  /* =========================
+     BOX 5
+  ========================= */
+
+  .box-row-5 {
+
+    padding: 10px;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+  }
+
+  .box-row-5 > h3 {
+
+    margin: 15px;
+
+    font-size: 18px;
+  }
+
+  /* =========================
+     BOX 6
+  ========================= */
+
+  .box-row-6 {
+
+    width: 100%;
+
+    display: block;
+
+    margin-top: 20px;
+  }
+
+  .box-table {
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    overflow-x: auto;
+  }
+
+  /* =========================
+     BOX 7
+  ========================= */
+
+  .box-row-7 {
+
+    width: 100%;
+
+    display: block;
+
+    margin: 20px 0;
+  }
+
+  .box-row-7 > .box-row-1-column-1 {
+
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 20px;
+
+    height: auto;
+  }
+
+  /* =========================
+     BUTTON MARGIN
+  ========================= */
+
+  .button-margin {
+
+    width: 100%;
+
+    margin: 15px;
+  }
+
+  .box-row-7 .button-margin {
+
+    width: 100%;
+
+    margin: 0;
+  }
+
+  /* =========================
+     BADGE ROW
+  ========================= */
+
+  .badges-row,
+  .badges-row-2 {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 8px;
+  }
+
+  /* =========================
+     BADGE BUTTON
+  ========================= */
+
+  .badges-button {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+  }
+
+  .button-badge-1,
+  .button-badge-2,
+  .button-badge-3,
+  .button-badge-4,
+  .button-badge-5 {
+
+    flex-shrink: 0;
+  }
+
+  /* =========================
+     BUTTON ROW
+  ========================= */
+
+  .button-row {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+  }
+
+  /* =========================
+     NAVIGATION
+  ========================= */
+
+  .navigation-badges {
+
+    width: 100%;
+  }
+
+  .navigation-badges h3 {
+
+    margin-bottom: 10px;
+
+    font-size: 16px;
+  }
+
+  .navigation-list {
+
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+  .navigation-item {
+
+    width: 100%;
+
+    min-height: 42px;
+
+    padding: 8px 12px;
+
+    gap: 10px;
+  }
+
+  /* =========================
+     SMALL BADGES
+  ========================= */
+
+  .badge-row-end {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: flex-end;
+
+    gap: 5px;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+   <= 480px
+========================= */
+
+@media (max-width: 480px) {
+
+  .section {
+
+    width: 100%;
+
+    padding-top: 80px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+  }
+
+  /* =========================
+     ALL BOX
+  ========================= */
+
+  .box-row-1,
+  .box-row-2,
+  .box-row-5,
+  .box-row-6,
+  .box-row-7 {
+
+    width: 100%;
+
+    display: block;
+
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .box-row-1-column-1,
+  .box-row-1-column-1-nohover,
+  .box-row-5,
+  .box-table {
+
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 15px;
+  }
+
+  /* =========================
+     BOX TITLE
+  ========================= */
+
+  .box-row-1-column-1 h3,
+  .box-row-1-column-1-nohover h3,
+  .box-row-5 > h3 {
+
+    margin: 10px;
+
+    font-size: 17px;
+  }
+
+  /* =========================
+     BUTTON MARGIN
+  ========================= */
+
+  .button-margin {
+
+    width: 100%;
+
+    margin: 10px;
+  }
+
+  .box-row-7 .button-margin {
+
+    width: 100%;
+
+    margin: 0;
+  }
+
+  /* =========================
+     BADGE ROW
+  ========================= */
+
+  .badges-row,
+  .badges-row-2 {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+  }
+
+  /* =========================
+     BADGE BUTTON
+  ========================= */
+
+  .badges-button {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 8px;
+  }
+
+  .button-badge-1,
+  .button-badge-2,
+  .button-badge-3,
+  .button-badge-4,
+  .button-badge-5 {
+
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* =========================
+     BUTTON ROW
+  ========================= */
+
+  .button-row {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 8px;
+  }
+
+  .box-row-7 .button-row {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 8px;
+  }
+
+  /* =========================
+     SMALL BADGE
+  ========================= */
+
+  .badge-row-end {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: flex-end;
+
+    gap: 5px;
+  }
+
+  /* =========================
+     NAVIGATION
+  ========================= */
+
+  .navigation-badges {
+
+    width: 100%;
+  }
+
+  .navigation-list {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    overflow: hidden;
+  }
+
+  .navigation-item {
+
+    width: 100%;
+
+    min-height: 42px;
+
+    padding: 8px 10px;
+
+    font-size: 13px;
+  }
+
+  /* =========================
+     STATUS BADGE
+  ========================= */
+
+  .status-badge-1,
+  .status-badge-2,
+  .status-badge-3,
+  .status-badge-4,
+  .status-badge-5,
+  .status-badge-6 {
+
+    max-width: 100%;
+  }
+
+  /* =========================
+     LINK BADGE
+  ========================= */
+
+  .link-badge-1,
+  .link-badge-2,
+  .link-badge-3 {
+
+    max-width: 100%;
+  }
+
+  /* =========================
+     TABLE
+  ========================= */
+
+  .box-table {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+}

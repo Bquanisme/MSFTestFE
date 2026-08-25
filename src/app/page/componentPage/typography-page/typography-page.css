@@ -593,7 +593,7 @@ abbr {
    RESPONSIVE
 ========================= */
 
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
 
     .list-unstyled > .row > .col-sm-3,
     .list-unstyled > .row > .col-sm-9 {
@@ -653,4 +653,889 @@ abbr {
         width: 66.6667%;
     }
    
+} */
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+
+/* =========================
+   TABLET
+   <= 1024px
+========================= */
+
+@media (max-width: 1024px) {
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    .section {
+        width: 100%;
+
+        padding-top: 130px;
+        padding-right: 25px;
+        padding-left: 25px;
+        padding-bottom: 60px;
+    }
+
+
+    /* =========================
+       BOX ROW
+    ========================= */
+
+    .box-row-1,
+    .box-row-2 {
+        width: 100%;
+
+        display: block;
+
+        margin-top: 20px;
+    }
+
+
+    .box-row-1-column-1 {
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        margin-bottom: 20px;
+
+        overflow: hidden;
+    }
+
+
+    .box-row-1-column-1 h3 {
+        margin: 15px;
+    }
+
+
+    /* =========================
+       BOX 4
+    ========================= */
+
+    .box-row-4 {
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        margin-top: 20px;
+
+        overflow: hidden;
+    }
+
+
+    .box-row-4 h3 {
+        margin: 15px;
+    }
+
+
+    /* =========================
+       BUTTON ROW
+    ========================= */
+
+    .button-row {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    /* =========================
+       DISPLAY TEXT
+    ========================= */
+
+    .display-6,
+    .display-5,
+    .display-4,
+    .display-3 {
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =========================
+       TEXT
+    ========================= */
+
+    .lead {
+        font-size: 22px;
+        line-height: 1.5;
+    }
+
+
+    .p-style {
+        font-size: 19px;
+    }
+
+
+    /* =========================
+       LIST
+    ========================= */
+
+    .list-unstyled > .row {
+        width: 100%;
+    }
+
+
+    .list-unstyled > .row > .col-sm-3 {
+        padding-right: 10px;
+    }
+
+
+    .list-unstyled > .row > .col-sm-9 {
+        padding-left: 10px;
+    }
+
+
+    /* =========================
+       INNER ROW
+    ========================= */
+
+    .list-unstyled > .row > .col-sm-9 > .row {
+        width: 100%;
+    }
+
+
+    /* =========================
+       NOWRAP
+    ========================= */
+
+    .text-nowrap {
+        overflow-x: auto;
+
+        white-space: nowrap;
+    }
+
+
+    /* =========================
+       CODE
+    ========================= */
+
+    code,
+    .code-black,
+    kbd,
+    samp {
+        overflow-wrap: break-word;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+   <= 768px
+========================= */
+
+@media (max-width: 768px) {
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    .section {
+        width: 100%;
+        min-height: 100vh;
+
+        padding-top: 100px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-bottom: 40px;
+    }
+
+
+    /* =========================
+       BOX
+    ========================= */
+
+    .box-row-1,
+    .box-row-2 {
+        width: 100%;
+
+        display: block;
+
+        margin-top: 20px;
+    }
+
+
+    .box-row-1-column-1,
+    .box-row-4 {
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        margin-bottom: 20px;
+    }
+
+
+    .box-row-1-column-1 h3,
+    .box-row-4 h3 {
+        margin: 12px;
+
+        font-size: 18px;
+    }
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .button-margin {
+        width: 100%;
+
+        margin: 15px;
+    }
+
+
+    .button-row {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+    }
+
+
+    /* =========================
+       DISPLAY
+    ========================= */
+
+    .display-6 {
+        font-size: 2rem;
+    }
+
+
+    .display-5 {
+        font-size: 2.2rem;
+    }
+
+
+    .display-4 {
+        font-size: 2.4rem;
+    }
+
+
+    .display-3 {
+        font-size: 2.6rem;
+    }
+
+
+    /* =========================
+       LEAD
+    ========================= */
+
+    .lead {
+        font-size: 20px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       TEXT
+    ========================= */
+
+    .p-style {
+        font-size: 18px;
+
+        line-height: 1.5;
+    }
+
+
+    .small {
+        font-size: .875em;
+    }
+
+
+    /* =========================
+       TEXT SIZE
+    ========================= */
+
+    .text-primary,
+    .text-secondary,
+    .text-success,
+    .text-danger,
+    .text-warning-bg-dark,
+    .text-info-bg-dark,
+    .text-light-bg-dark,
+    .text-body,
+    .text-mute,
+    .text-white-bg-dark,
+    .text-start,
+    .text-center,
+    .text-end,
+    .text-nowrap,
+    .bg-light,
+    .text-lowercase,
+    .text-uppercase,
+    .text-capitalize,
+    .fw-bold,
+    .fw-bolder,
+    .fw-normal,
+    .fw-light,
+    .fw-lighter,
+    .fst-italic,
+    .fst-normal {
+        font-size: 1.0rem;
+    }
+
+
+    /* =========================
+       FONT SIZE
+    ========================= */
+
+    .fs-1 {
+        font-size: 2rem !important;
+    }
+
+    .fs-2 {
+        font-size: 1.8rem !important;
+    }
+
+    .fs-3 {
+        font-size: 1.6rem !important;
+    }
+
+    .fs-4 {
+        font-size: 1.4rem !important;
+    }
+
+    .fs-5 {
+        font-size: 1.2rem !important;
+    }
+
+    .fs-6 {
+        font-size: 1rem !important;
+    }
+
+
+    /* =========================
+       BLOCKQUOTE
+    ========================= */
+
+    .blockquote {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+
+    .blockquote-footer {
+        font-size: .9rem;
+    }
+
+
+    /* =========================
+       LIST
+    ========================= */
+
+    .style-ul ul,
+    .style-ul ol {
+        width: 100%;
+
+        padding-left: 1.5rem;
+
+        font-size: 1.1rem;
+    }
+
+
+    .list-unstyled {
+        width: 100%;
+
+        font-size: 1.1rem;
+    }
+
+
+    .list-unstyled-row {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        font-size: 1.1rem;
+    }
+
+
+    /* =========================
+       LIST GRID
+    ========================= */
+
+    .list-unstyled > .row {
+        width: 100%;
+
+        display: block;
+    }
+
+
+    .list-unstyled > .row > .col-sm-3,
+    .list-unstyled > .row > .col-sm-9 {
+
+        width: 100%;
+
+        flex: none;
+
+        padding-left: 0;
+        padding-right: 0;
+
+        margin-bottom: 10px;
+    }
+
+
+    .list-unstyled > .row > .col-sm-9 {
+        margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       INNER GRID
+    ========================= */
+
+    .list-unstyled > .row > .col-sm-9 > .row {
+        width: 100%;
+
+        display: block;
+    }
+
+
+    .list-unstyled > .row > .col-sm-9 > .row > .col-sm-4,
+    .list-unstyled > .row > .col-sm-9 > .row > .col-sm-8 {
+
+        width: 100%;
+
+        flex: none;
+
+        padding-left: 0;
+        padding-right: 0;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* =========================
+       TRUNCATE
+    ========================= */
+
+    .text-truncate {
+        max-width: 100%;
+    }
+
+
+    /* =========================
+       CODE
+    ========================= */
+
+    code,
+    .code-black {
+        font-size: .8em;
+
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+
+    kbd {
+        font-size: .7em;
+
+        white-space: normal;
+    }
+
+
+    samp {
+        font-size: 1em;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =========================
+       LINE HEIGHT
+    ========================= */
+
+    .lh-l {
+        font-size: 1.1em;
+    }
+
+    .lh-sm {
+        font-size: 1.1em;
+    }
+
+    .lh-base {
+        font-size: 1.1em;
+    }
+
+    .lh-lg {
+        font-size: 1.1em;
+    }
+
+
+    /* =========================
+       TEXT DECORATION
+    ========================= */
+
+    .text-decoration-underline,
+    .text-decoration-line-through,
+    .text-decoration-none {
+        font-size: 1.1em;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+   <= 480px
+========================= */
+
+@media (max-width: 480px) {
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    .section {
+        width: 100%;
+
+        padding-top: 80px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 30px;
+    }
+
+
+    /* =========================
+       BOX
+    ========================= */
+
+    .box-row-1,
+    .box-row-2,
+    .box-row-1-column-1,
+    .box-row-4 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    .box-row-1,
+    .box-row-2 {
+        display: block;
+
+        margin-top: 15px;
+    }
+
+
+    .box-row-1-column-1,
+    .box-row-4 {
+        height: auto;
+
+        margin-bottom: 15px;
+
+        padding: 8px;
+    }
+
+
+    .box-row-1-column-1 h3,
+    .box-row-4 h3 {
+        margin: 10px;
+
+        font-size: 17px;
+    }
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .button-margin {
+        width: 100%;
+
+        margin: 10px;
+    }
+
+
+    .button-row {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+    }
+
+
+    /* =========================
+       DISPLAY
+    ========================= */
+
+    .display-6 {
+        font-size: 1.8rem;
+    }
+
+    .display-5 {
+        font-size: 2rem;
+    }
+
+    .display-4 {
+        font-size: 2.2rem;
+    }
+
+    .display-3 {
+        font-size: 2.4rem;
+    }
+
+
+    /* =========================
+       LEAD / PARAGRAPH
+    ========================= */
+
+    .lead {
+        font-size: 18px;
+
+        line-height: 1.5;
+    }
+
+
+    .p-style {
+        font-size: 16px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       TEXT
+    ========================= */
+
+    .text-primary,
+    .text-secondary,
+    .text-success,
+    .text-danger,
+    .text-warning-bg-dark,
+    .text-info-bg-dark,
+    .text-light-bg-dark,
+    .text-body,
+    .text-mute,
+    .text-white-bg-dark,
+    .text-start,
+    .text-center,
+    .text-end,
+    .text-nowrap,
+    .bg-light,
+    .text-lowercase,
+    .text-uppercase,
+    .text-capitalize,
+    .fw-bold,
+    .fw-bolder,
+    .fw-normal,
+    .fw-light,
+    .fw-lighter,
+    .fst-italic,
+    .fst-normal {
+        font-size: 1rem;
+    }
+
+
+    /* =========================
+       FONT SIZE
+    ========================= */
+
+    .fs-1 {
+        font-size: 1.8rem !important;
+    }
+
+    .fs-2 {
+        font-size: 1.6rem !important;
+    }
+
+    .fs-3 {
+        font-size: 1.4rem !important;
+    }
+
+    .fs-4 {
+        font-size: 1.25rem !important;
+    }
+
+    .fs-5 {
+        font-size: 1.1rem !important;
+    }
+
+    .fs-6 {
+        font-size: 1rem !important;
+    }
+
+
+    /* =========================
+       BLOCKQUOTE
+    ========================= */
+
+    .blockquote {
+        font-size: 1rem;
+
+        line-height: 1.5;
+    }
+
+
+    .blockquote-footer {
+        font-size: .85rem;
+    }
+
+
+    /* =========================
+       LIST
+    ========================= */
+
+    .style-ul ul,
+    .style-ul ol {
+
+        padding-left: 1.25rem;
+
+        font-size: 1rem;
+    }
+
+
+    .list-unstyled {
+        font-size: 1rem;
+    }
+
+
+    .list-unstyled-row {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 6px;
+
+        font-size: 1rem;
+    }
+
+
+    /* =========================
+       LIST GRID
+    ========================= */
+
+    .list-unstyled > .row,
+    .list-unstyled > .row > .col-sm-3,
+    .list-unstyled > .row > .col-sm-9,
+    .list-unstyled > .row > .col-sm-9 > .row,
+    .list-unstyled > .row > .col-sm-9 > .row > .col-sm-4,
+    .list-unstyled > .row > .col-sm-9 > .row > .col-sm-8 {
+
+        width: 100%;
+
+        display: block;
+
+        flex: none;
+    }
+
+
+    .list-unstyled > .row > .col-sm-3,
+    .list-unstyled > .row > .col-sm-9,
+    .list-unstyled > .row > .col-sm-9 > .row > .col-sm-4,
+    .list-unstyled > .row > .col-sm-9 > .row > .col-sm-8 {
+
+        padding-left: 0;
+        padding-right: 0;
+
+        margin-bottom: 10px;
+    }
+
+
+    .list-unstyled > .row > .col-sm-9 > p {
+        margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       MARK
+    ========================= */
+
+    .mark {
+        font-size: 1rem;
+
+        padding: 2px 4px;
+    }
+
+
+    /* =========================
+       CODE
+    ========================= */
+
+    code,
+    .code-black {
+        font-size: .75em;
+
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
+
+    kbd {
+        font-size: .65em;
+
+        white-space: normal;
+    }
+
+
+    samp {
+        font-size: .95em;
+
+        word-break: break-word;
+    }
+
+
+    /* =========================
+       LINE HEIGHT
+    ========================= */
+
+    .lh-l,
+    .lh-sm,
+    .lh-base,
+    .lh-lg {
+        font-size: 1em;
+    }
+
+
+    /* =========================
+       TEXT DECORATION
+    ========================= */
+
+    .text-decoration-underline,
+    .text-decoration-line-through,
+    .text-decoration-none {
+        font-size: 1em;
+    }
+
+
+    /* =========================
+       NOWRAP
+    ========================= */
+
+    .text-nowrap {
+        max-width: 100%;
+
+        display: block;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+    }
+
 }

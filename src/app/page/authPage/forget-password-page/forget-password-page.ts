@@ -59,4 +59,8 @@ export class ForgetPasswordPage {
   backToLogin() {
     this.router.navigate(['/pages/login'])
   }
+
+  backToDashboard() {
+    this.router.navigate(['/'])
+  }
 }

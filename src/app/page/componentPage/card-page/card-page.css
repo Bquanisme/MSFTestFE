@@ -1158,13 +1158,344 @@
    RESPONSIVE
 ========================= */
 
-@media (max-width: 1000px) {
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-    .box-row-2 {
-        flex-direction: column;
+/* =========================
+   TABLET / SMALL DESKTOP
+========================= */
+
+@media (max-width: 1200px) {
+
+    .section {
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
+    /* 3 columns -> 2 columns */
+    .box-row-1,
+    .box-row-2 {
+        flex-wrap: wrap;
+    }
+
+    .box-row-1-column-1,
+    .box-row-4-1,
+    .box-row-4-2,
+    .box-row-4-3,
+    .box-row-5-1,
+    .box-row-5-2,
+    .box-row-5-3,
+    .profile-card-left,
+    .profile-card-center,
+    .profile-card-right,
+    .box-row-2-column-1 {
+        width: calc(50% - 11px);
+    }
+
+    /* Project cards */
+    .box-row-2 {
+        flex-wrap: wrap;
+    }
+
+    /* Grid */
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 20px;
+    }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .section {
+        padding-top: 120px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 60px;
+    }
+
+    .box-row-1,
+    .box-row-2 {
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    /* 2 columns */
+    .box-row-1-column-1,
+    .box-row-4-1,
+    .box-row-4-2,
+    .box-row-4-3,
+    .box-row-5-1,
+    .box-row-5-2,
+    .box-row-5-3,
+    .profile-card-left,
+    .profile-card-center,
+    .profile-card-right,
     .box-row-2-column-1 {
         width: 100%;
+    }
+
+    /* Profile */
+    .profile-card-left,
+    .profile-card-center,
+    .profile-card-right {
+        width: 100%;
+    }
+
+    /* Grid */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 10px;
+    }
+
+    /* Project image */
+    .project-image {
+        height: 220px;
+    }
+
+    /* Alert */
+    .alert-body {
+        min-height: auto;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .section {
+        padding-top: 90px;
+        padding-right: 15px;
+        padding-bottom: 40px;
+        padding-left: 15px;
+    }
+
+    /* Rows */
+    .box-row-1,
+    .box-row-2 {
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    /* All cards -> full width */
+    .box-row-1-column-1,
+    .box-row-4-1,
+    .box-row-4-2,
+    .box-row-4-3,
+    .box-row-5-1,
+    .box-row-5-2,
+    .box-row-5-3,
+    .box-row-2-column-1,
+    .profile-card-left,
+    .profile-card-center,
+    .profile-card-right {
+        width: 100%;
+    }
+
+    /* Header */
+    .change-color-header-1,
+    .change-color-header-2,
+    .change-color-header-3,
+    .header-row-three-1,
+    .header-row-three-2,
+    .header-row-three-3,
+    .header-row-four-1,
+    .header-row-four-2,
+    .header-row-four-3 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Text */
+    .change-color-header-1 h3,
+    .header-row-three-1 h3,
+    .header-row-three-2 h3,
+    .header-row-three-3 h3,
+    .header-row-four-1 h3,
+    .header-row-four-2 h3,
+    .header-row-four-3 h3 {
+        font-size: 18px;
+    }
+
+    /* Profile header */
+    .profile-dark-header,
+    .social-header {
+        min-height: 110px;
+        padding: 15px;
+    }
+
+    .profile-avatar,
+    .center-avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .profile-info h3 {
+        font-size: 18px;
+    }
+
+    .profile-info p {
+        font-size: 12px;
+    }
+
+    /* Center profile */
+    .center-card-body {
+        min-height: auto;
+        padding: 25px 15px;
+    }
+
+    .center-card-body h2 {
+        font-size: 21px;
+    }
+
+    .center-description,
+    .second-description {
+        max-width: 100%;
+        font-size: 13px;
+    }
+
+    /* Social stats */
+    .social-stats {
+        min-height: 70px;
+    }
+
+    .stat-item strong {
+        font-size: 17px;
+    }
+
+    /* Tweet */
+    .tweet-content {
+        padding: 12px;
+    }
+
+    .tweet-footer {
+        margin-left: -12px;
+        margin-right: -12px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    /* Project */
+    .project-image {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: 15px;
+    }
+
+    .project-content h3 {
+        font-size: 20px;
+    }
+
+    .project-content p {
+        min-height: auto;
+        font-size: 14px;
+    }
+
+    .project-footer {
+        font-size: 13px;
+    }
+
+    /* Alert */
+    .alert-head-1,
+    .alert-head-2,
+    .alert-head-3 {
+        height: 55px;
+        padding: 0 15px;
+    }
+
+    .alert-body {
+        padding: 15px;
+    }
+
+    .alert-body p {
+        font-size: 14px;
+    }
+
+    /* Grid */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0;
+    }
+
+    /* Icons */
+    .flex i {
+        font-size: 18px;
+    }
+
+    /* Buttons */
+    .project-footer button {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .profile-dark-header,
+    .social-header {
+        gap: 10px;
+    }
+
+    .profile-avatar,
+    .center-avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .profile-info h3 {
+        font-size: 16px;
+    }
+
+    .profile-info p {
+        font-size: 11px;
+    }
+
+    .project-image {
+        height: 160px;
+    }
+
+    .project-content h3 {
+        font-size: 18px;
+    }
+
+    .project-content p {
+        font-size: 13px;
+    }
+
+    .project-footer {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .tweet-footer {
+        gap: 10px;
+    }
+
+    .tweet-location {
+        gap: 8px;
     }
 }
