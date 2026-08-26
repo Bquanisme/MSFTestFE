@@ -1,1 +1,809 @@
-<p>switch-page works!</p>
+<div class="section">
+    <div style="display: flex; justify-content: space-between">
+        <h2>Switches</h2>
+        <app-breadcrumb 
+            [title]="'Switches'"
+            [folderTitle]="'UI Components'"
+
+        ></app-breadcrumb>
+    </div>
+    
+    <!-- Bootstrap 5 Switches & Colored Switches -->
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+            <h3>
+                <span style="margin-right: 5px;">
+                    <i class="fa-solid fa-toggle-on"></i>
+                </span>
+                Bootstrap 5 Switches
+            </h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <div class="button-row">
+                    <button
+                        type="button"
+                        class="toggle"
+                        [class.checked]="isCheckedDefault()"
+                        [class.focused]="isFocusedDefault"
+                        (click)="toggleUpdateDefault()"
+                        (focus)="isFocusedDefault = true"
+                        (blur)="isFocusedDefault = false"
+                    >
+                        <span
+                            class="toggle-circle"
+                            [class.focused]="isFocusedDefault"
+                            [class.checked]="isCheckedDefault()"
+                        >
+                        </span>
+                    </button>
+
+                    <p>Default switch</p>
+                </div>
+
+                <br>
+                
+                <div class="button-row">
+                    <button
+                        type="button"
+                        class="toggle"
+                        [class.checked]="isCheckedCheck()"
+                        [class.focused]="isFocusedChecked"
+                        (click)="toggleUpdateCheck()"
+                        (focus)="isFocusedChecked = true"
+                        (blur)="isFocusedChecked = false"
+                    >
+                        <span
+                            class="toggle-circle"
+                            [class.focused]="isFocusedChecked"  
+                            [class.checked]="isCheckedCheck()"
+                        >
+                        </span>
+                    </button>
+
+                    <p>Checked switch</p>
+                </div>
+
+                <br>
+
+                <div class="button-row">
+                    <button
+                        type="button"
+                        class="toggle"
+                        style="opacity: 0.5;"
+                        [class.checked]="isCheckedDisable()"
+                        disabled
+                    >
+                        <span
+                            class="toggle-circle"
+                        >
+                        </span>
+                    </button>
+
+                    <p style="opacity: 0.5;">Disabled switch</p>
+                </div>
+
+                <br>    
+
+                <div class="button-row">
+                    <button
+                        type="button"
+                        class="toggle"
+                        style="opacity: 0.5;"
+                        [class.checked]="isCheckedCheckDisable()"
+                        disabled
+                    >
+                        <span
+                            class="toggle-circle"
+                        >
+                        </span>
+                    </button>
+
+                    <p style="opacity: 0.5;">Checked disabled</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="box-row-1-column-1">
+
+            <h3>Colored Switches</h3>
+
+            <hr style="border-top: 1px solid #d0cccc"/>
+
+            <div class="button-margin">
+
+                <!-- Primary -->
+                <div class="button-row">
+
+                    <button
+                        type="button"
+                        class="toggle-colored primary"
+                        [class.checked]="isCheckedPrimary()"
+                        [class.focused]="isFocusedPrimary"
+                        (click)="toggleUpdatePrimary()"
+                        (focus)="isFocusedPrimary = true"
+                        (blur)="isFocusedPrimary = false"
+                    >
+                        <span
+                            class="toggle-circle-colored"
+                            [class.checked]="isCheckedPrimary()"
+                        ></span>
+                    </button>
+
+                    <p>Primary</p>
+
+                </div>
+
+                <br>
+
+
+                <!-- Success -->
+                <div class="button-row">
+
+                    <button
+                        type="button"
+                        class="toggle-colored success"
+                        [class.checked]="isCheckedSuccess()"
+                        [class.focused]="isFocusedSuccess"
+                        (click)="toggleUpdateSuccess()"
+                        (focus)="isFocusedSuccess = true"
+                        (blur)="isFocusedSuccess = false"
+                    >
+                        <span
+                            class="toggle-circle-colored"
+                            [class.checked]="isCheckedSuccess()"
+                        ></span>
+                    </button>
+
+                    <p>Success</p>
+
+                </div>
+
+                <br>
+
+
+                <!-- Danger -->
+                <div class="button-row">
+
+                    <button
+                        type="button"
+                        class="toggle-colored danger"
+                        [class.checked]="isCheckedDanger()"
+                        [class.focused]="isFocusedDanger"
+                        (click)="toggleUpdateDanger()"
+                        (focus)="isFocusedDanger = true"
+                        (blur)="isFocusedDanger = false"
+                    >
+                        <span
+                            class="toggle-circle-colored"
+                            [class.checked]="isCheckedDanger()"
+                        ></span>
+                    </button>
+
+                    <p>Danger</p>
+
+                </div>
+
+                <br>
+
+
+                <!-- Warning -->
+                <div class="button-row">
+
+                    <button
+                        type="button"
+                        class="toggle-colored warning"
+                        [class.checked]="isCheckedWarning()"
+                        [class.focused]="isFocusedWarning"
+                        (click)="toggleUpdateWarning()"
+                        (focus)="isFocusedWarning = true"
+                        (blur)="isFocusedWarning = false"
+                    >
+                        <span
+                            class="toggle-circle-colored"
+                            [class.checked]="isCheckedWarning()"
+                        ></span>
+                    </button>
+
+                    <p>Warning</p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Switch Sizes & Inline Switches -->
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+            <h3>
+                Switch Sizes
+            </h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <div class="button-row">
+                    <button
+                        type="button"
+                        class="toggle"
+                        style="width: 35px; height: 15px;"
+                        [class.checked]="isCheckedSmall()"
+                        [class.focused]="isFocusedSmall"
+                        (click)="toggleUpdateSmall()"
+                        (focus)="isFocusedSmall = true"
+                        (blur)="isFocusedSmall = false"
+                    >
+                        <span
+                            class="toggle-circle"
+                            style="width: 7px; height: 7px;"
+                            [class.focused]="isFocusedSmall"
+                            [class.checked]="isCheckedSmall()"
+                        >
+                        </span>
+                    </button>
+
+                    <p>Small switch</p>
+                </div>
+
+                <br>
+                
+                <div class="button-row">
+                    <button
+                        type="button"
+                        class="toggle"
+                        [class.checked]="isCheckedMedium()"
+                        [class.focused]="isFocusedMedium"
+                        (click)="toggleUpdateMedium()"
+                        (focus)="isFocusedMedium = true"
+                        (blur)="isFocusedMedium = false"
+                    >
+                        <span
+                            class="toggle-circle"
+                            [class.focused]="isFocusedMedium"  
+                            [class.checked]="isCheckedMedium()"
+                        >
+                        </span>
+                    </button>
+
+                    <p>Normal switch</p>
+                </div>
+
+                <br>
+
+                <div class="button-row">
+                    <button
+                        type="button"
+                        class="toggle"
+                        style="width: 50px; height: 27px;"
+                        [class.checked]="isCheckedLarge()"
+                        [class.focused]="isFocusedLarge"
+                        (click)="toggleUpdateLarge()"
+                        (focus)="isFocusedLarge = true"
+                        (blur)="isFocusedLarge = false"
+                    >
+                        <span
+                            class="toggle-circle"
+                            style="width: 19px; height: 19px;"
+                            [class.focused]="isFocusedLarge"  
+                            [class.checked]="isCheckedLarge()"
+                        >
+                        </span>
+                    </button>
+
+                    <p>
+                        Large switch
+                    </p>
+                </div>
+
+                <br>    
+
+                <div class="button-row">
+                    <button
+                        type="button"
+                        class="toggle"
+                        style="width: 60px; height: 37px;"
+                        [class.checked]="isCheckedExtra()"
+                        [class.focused]="isFocusedExtra"
+                        (click)="toggleUpdateExtra()"
+                        (focus)="isFocusedExtra = true"
+                        (blur)="isFocusedExtra = false"
+                    >
+                        <span
+                            class="toggle-circle"
+                            style="width: 29px; height: 29px;"
+                            [class.focused]="isFocusedExtra"  
+                            [class.checked]="isCheckedExtra()"
+                        >
+                        </span>
+                    </button>
+
+                    <p>
+                        Extra large switch
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="box-row-1-column-1">
+
+            <h3>Inline Switches</h3>
+
+            <hr style="border-top: 1px solid #d0cccc"/>
+
+            <div class="button-margin">
+
+                <div class="button-row">
+
+                    <div class="button-row">
+                        <button
+                            type="button"
+                            class="toggle"
+                            [class.checked]="isCheckedOption1()"
+                            [class.focused]="isFocusedOption1"
+                            (click)="toggleUpdateOption1()"
+                            (focus)="isFocusedOption1 = true"
+                            (blur)="isFocusedOption1 = false"
+                        >
+                            <span
+                                class="toggle-circle"
+                                [class.focused]="isFocusedOption1"  
+                                [class.checked]="isCheckedOption1()"
+                            >
+                            </span>
+                        </button>
+    
+                        <p>Option 1</p>
+
+                        <br>
+                    </div>
+
+                    <div class="button-row">
+                        <button
+                            type="button"
+                            class="toggle"
+                            [class.checked]="isCheckedOption2()"
+                            [class.focused]="isFocusedOption2"
+                            (click)="toggleUpdateOption2()"
+                            (focus)="isFocusedOption2 = true"
+                            (blur)="isFocusedOption2 = false"
+                        >
+                            <span
+                                class="toggle-circle"
+                                [class.focused]="isFocusedOption2"  
+                                [class.checked]="isCheckedOption2()"
+                            >
+                            </span>
+                        </button>
+    
+                        <p>Option 2</p>
+
+                        <br>
+                    </div>
+
+                    <div class="button-row">
+                        <button
+                            type="button"
+                            class="toggle"
+                            [class.checked]="isCheckedOption3()"
+                            [class.focused]="isFocusedOption3"
+                            (click)="toggleUpdateOption3()"
+                            (focus)="isFocusedOption3 = true"
+                            (blur)="isFocusedOption3 = false"
+                        >
+                            <span
+                                class="toggle-circle"
+                                [class.focused]="isFocusedOption3"  
+                                [class.checked]="isCheckedOption3()"
+                            >
+                            </span>
+                        </button>
+    
+                        <p>Option 3</p>
+
+                        <br>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    
+    <!-- Switch States & Examples -->
+     <div class='box-row-4'>
+        <h3>Switch States & Examples</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+        
+        <div class='button-margin'>
+            <div class="button-row-start">
+                <div style="width: 33%;"> 
+                    <p style="font-size: 18px; font-weight: 600;">With Labels</p>
+                    <br>
+                    
+                    <div class="switch-row">
+                        <button
+                            type="button"
+                            class="toggle"
+                            [class.checked]="isCheckedEmail()"
+                            [class.focused]="isFocusedEmail"
+                            (click)="toggleUpdateEmail()"
+                            (focus)="isFocusedEmail = true"
+                            (blur)="isFocusedEmail = false"
+                        >
+                            <span
+                                class="toggle-circle"
+                                [class.focused]="isFocusedEmail"
+                                [class.checked]="isCheckedEmail()"
+                            >
+                            </span>
+                        </button>
+                        
+                        <div>
+                            <p style="margin-bottom: 3px;">Email Notifications</p>
+                            <p style="font-size: 13px; color: rgb(102, 103, 104);">Receive email updates</p>
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <div class="switch-row">
+                        <button
+                            type="button"
+                            class="toggle"
+                            [class.checked]="isCheckedSms()"
+                            [class.focused]="isFocusedSms"
+                            (click)="toggleUpdateSms()"
+                            (focus)="isFocusedSms = true"
+                            (blur)="isFocusedSms = false"
+                        >
+                            <span
+                                class="toggle-circle"
+                                [class.focused]="isFocusedSms"
+                                [class.checked]="isCheckedSms()"
+                            >
+                            </span>
+                        </button>
+                        
+                        <div>
+                            <p style="margin-bottom: 3px;">SMS Alerts</p>
+                            <p style="font-size: 13px; color: rgb(102, 103, 104);">Get text messages</p>
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <div class="switch-row">
+                        <button
+                            type="button"
+                            class="toggle"
+                            [class.checked]="isCheckedNotifications()"
+                            [class.focused]="isFocusedNotifications"
+                            (click)="toggleUpdateNotifications()"
+                            (focus)="isFocusedNotifications = true"
+                            (blur)="isFocusedNotifications = false"
+                        >
+                            <span
+                                class="toggle-circle"
+                                [class.focused]="isFocusedNotifications"
+                                [class.checked]="isCheckedNotifications()"
+                            >
+                            </span>
+                        </button>
+                        
+                        <div>
+                            <p style="margin-bottom: 3px;">Push Notifications</p>
+                            <p style="font-size: 13px; color: rgb(102, 103, 104);">Browser notifications</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div style="width: 33%;"> 
+                    <p style="font-size: 18px; font-weight: 600;">Form Integration</p>
+                    <br>
+                    
+                    <p style="font-size: 14px; color: rgb(102, 103, 104); font-weight: 600;">
+                        USERNAME
+                    </p>
+
+                    <input 
+                        type="text" 
+                        [(ngModel)]="name"
+                        class="input"
+                        placeholder="Enter username"
+                    >
+
+                    <br><br>
+
+                    <div class="switch-row">
+                        <button
+                            type="button"
+                            class="toggle"
+                            [class.checked]="isCheckedRemember()"
+                            [class.focused]="isFocusedRemember"
+                            (click)="toggleUpdateRemember()"
+                            (focus)="isFocusedRemember = true"
+                            (blur)="isFocusedRemember = false"
+                        >
+                            <span
+                                class="toggle-circle"
+                                [class.focused]="isFocusedRemember"
+                                [class.checked]="isCheckedRemember()"
+                            >
+                            </span>
+                        </button>
+                        
+                        <div>
+                            <p style="margin-bottom: 3px;">SMS Alerts</p>
+                            <p style="font-size: 13px; color: rgb(102, 103, 104);">Get text messages</p>
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <div class="switch-row">
+                        <button
+                            type="button"
+                            class="toggle"
+                            [class.checked]="isCheckedSubscribe()"
+                            [class.focused]="isFocusedSubscribe"
+                            (click)="toggleUpdateSubscribe()"
+                            (focus)="isFocusedSubscribe = true"
+                            (blur)="isFocusedSubscribe = false"
+                        >
+                            <span
+                                class="toggle-circle"
+                                [class.focused]="isFocusedSubscribe"
+                                [class.checked]="isCheckedSubscribe()"
+                            >
+                            </span>
+                        </button>
+                        
+                        <div>
+                            <p style="margin-bottom: 3px;">Push Notifications</p>
+                            <p style="font-size: 13px; color: rgb(102, 103, 104);">Browser notifications</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div style="width: 33%;"> 
+                    <p style="font-size: 18px; font-weight: 600;">Settings Example</p>
+                    <br>
+
+                    <table class="table-small">
+                        <tr>
+                            <td>Dark Mode</td>
+                            <td>
+                                <button
+                                    type="button"
+                                    class="toggle"
+                                    [class.checked]="isCheckedDarkMode()"
+                                    [class.focused]="isFocusedDarkMode"
+                                    (click)="toggleUpdateDarkMode()"
+                                    (focus)="isFocusedDarkMode = true"
+                                    (blur)="isFocusedDarkMode = false"
+                                >
+                                    <span
+                                        class="toggle-circle"
+                                        [class.focused]="isFocusedEmail"
+                                        [class.checked]="isCheckedDarkMode()"
+                                    >
+                                    </span>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Auto-save</td>
+                            <td>
+                                <button
+                                    type="button"
+                                    class="toggle"
+                                    [class.checked]="isCheckedAutoSave()"
+                                    [class.focused]="isFocusedAutoSave"
+                                    (click)="toggleUpdateAutoSave()"
+                                    (focus)="isFocusedAutoSave = true"
+                                    (blur)="isFocusedAutoSave = false"
+                                >
+                                    <span
+                                        class="toggle-circle"
+                                        [class.focused]="isFocusedAutoSave"
+                                        [class.checked]="isCheckedAutoSave()"
+                                    >
+                            </span>
+                        </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Analytics</td>
+                            <td>
+                                <button
+                                    type="button"
+                                    class="toggle"
+                                    [class.checked]="isCheckedAnalytics()"
+                                    [class.focused]="isFocusedAnalytics"
+                                    (click)="toggleUpdateAnalytics()"
+                                    (focus)="isFocusedAnalytics = true"
+                                    (blur)="isFocusedAnalytics = false"
+                                >
+                                    <span
+                                        class="toggle-circle"
+                                        [class.focused]="isFocusedAnalytics"
+                                        [class.checked]="isCheckedAnalytics()"
+                                    >
+                            </span>
+                        </button>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+    <!-- Implementation Guide -->
+     <div class='box-row-4'>
+        <h3>Implementation Guide</h3>
+        <hr style="border-top: 1px solid #d0cccc"/>
+
+        <table class="implementation-table">
+
+            <thead>
+                <tr>
+                    <th>TYPE</th>
+                    <th>EXAMPLE</th>
+                    <th>CODE</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <!-- Basic Switch -->
+                <tr>
+                    <td>Basic Switch</td>
+
+                    <td>
+                        <button
+                            type="button"
+                            class="toggle"
+                            [class.checked]="isCheckedBasicSwitch()"
+                            [class.focused]="isFocusedBasicSwitch"
+                            (click)="toggleUpdateBasicSwitch()"
+                            (focus)="isFocusedBasicSwitch = true"
+                            (blur)="isFocusedBasicSwitch = false"
+                        >
+                            <span
+                                class="toggle-circle"
+                                [class.focused]="isFocusedBasicSwitch"
+                                [class.checked]="isCheckedBasicSwitch()"
+                            >
+                            </span>
+                        </button>
+                    </td>
+
+                    <td>
+                        <code>
+                            &lt;div class="form-check form-switch"&gt;...&lt;/div&gt;
+                        </code>
+                    </td>
+                </tr>
+
+
+                <!-- With Label -->
+                <tr>
+                    <td>With Label</td>
+
+                    <td>
+                        <div class="example-with-label">
+
+                            <button
+                                type="button"
+                                class="toggle"
+                                [class.checked]="isCheckedWithLabel()"
+                                [class.focused]="isFocusedWithLabel"
+                                (click)="toggleUpdateWithLabel()"
+                                (focus)="isFocusedWithLabel = true"
+                                (blur)="isFocusedWithLabel = false"
+                            >
+                                <span
+                                    class="toggle-circle"
+                                    [class.focused]="isFocusedWithLabel"
+                                    [class.checked]="isCheckedWithLabel()"
+                                >
+                                </span>
+                            </button>
+
+                            <span>Label</span>
+
+                        </div>
+                    </td>
+
+                    <td>
+                        <code>
+                            &lt;label class="form-check-label"&gt;...&lt;/label&gt;
+                        </code>
+                    </td>
+                </tr>
+
+
+                <!-- Disabled -->
+                <tr>
+                    <td>Disabled</td>
+
+                    <td>
+                        <button
+                            type="button"
+                            class="toggle"
+                            style="opacity: 0.5;"
+                            [class.checked]="isCheckedDisable()"
+                            disabled
+                        >
+                            <span
+                                class="toggle-circle"
+                            >
+                            </span>
+                        </button>
+                    </td>
+
+                    <td>
+                        <code>
+                            &lt;input ... disabled&gt;
+                        </code>
+                    </td>
+                </tr>
+
+
+                <!-- Colored -->
+                <tr>
+                    <td>Colored</td>
+
+                    <td>
+                        <button
+                            type="button"
+                            class="toggle-colored success"
+                            [class.checked]="isCheckedColored()"
+                            [class.focused]="isFocusedColored"
+                            (click)="toggleUpdateColored()"
+                            (focus)="isFocusedColored = true"
+                            (blur)="isFocusedColored = false"
+                        >
+                            <span
+                                class="toggle-circle-colored"
+                                [class.checked]="isCheckedColored()"
+                            ></span>
+                        </button>
+                    </td>
+
+                    <td>
+                        <code>
+                            class="... bg-success border-success"
+                        </code>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        
+    </div>
+
+</div>

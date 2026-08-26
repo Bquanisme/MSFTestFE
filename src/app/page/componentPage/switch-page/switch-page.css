@@ -1,0 +1,1080 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+
+  padding-top: 170px;
+  padding-right: 50px;
+  padding-bottom: 100px;
+  padding-left: 140px;
+
+  background-color: #f1f2f7;
+}
+
+
+.box-row-1,
+.box-row-2
+ {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 20px;
+}
+
+
+.box-row-1 {
+  margin-top: 30px;
+}
+
+.box-row-2 {
+  margin-top: 60px;
+}
+
+.box-row-1-column-1 {
+  width: 50%;
+  background-color: #ffffff;
+  height: 100%;
+  transition: transform 0.2s ease;
+}
+
+.box-row-1-column-1:hover
+{
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px #e4e1e1;
+}
+
+.box-row-1-column-1 h3 {
+  margin: 20px;
+}
+
+.button-margin {
+  margin: 20px;
+}
+
+.button-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.button-row p {
+  font-size: 16px;
+}
+
+
+.button-row-start {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.button-row-start p {
+  font-size: 16px;
+}
+
+.box-row-4 
+{
+  width: 100%;
+  background-color: #ffffff;
+  height: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  transition: transform 0.2s ease;
+}
+
+.box-row-4:hover 
+{
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px #e4e1e1;
+}
+
+.box-row-4 h3 {
+  margin: 20px;
+}
+
+
+
+/* Input */
+.input {
+    width: 90%;
+    height: 40px;
+    border: 1px solid #b4b7ba;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 0 8px;
+}
+
+.input:focus {
+    border-color: #0da9e8;
+}
+
+
+
+
+
+
+
+
+
+
+/* TOGGLE */
+.toggle{
+    width: 44px;
+    height: 21px;
+
+    position: relative;
+
+    padding: 0;
+
+    border: 2px solid #d1d5db;
+    border-radius: 20px;
+
+    background-color: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+
+    outline: none;
+}
+
+
+
+
+
+/* Checked Basic */
+
+.toggle.checked {
+    background-color: #06c00f;
+    border-color: #06c00f;
+}
+
+
+
+.toggle.focused {
+    border-color: #0da9e8;
+}
+
+
+.toggle-circle {
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    top: 2px;
+    left: 2px;
+
+    border-radius: 50%; 
+
+    background-color: #d1d5db;
+
+    transition:
+        left 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* Toggle ON → circle sang phải */
+
+.toggle.checked .toggle-circle {
+    left: 23px;
+    background-color: #ffffff;
+}
+
+
+/* Focus + OFF → circle xanh */
+
+.toggle.focused:not(.checked) .toggle-circle {
+    background-color: #148ec3;
+}
+
+
+/* Focus + ON → circle trắng */
+
+.toggle.focused.checked .toggle-circle {
+    background-color: #ffffff;
+}
+
+
+.toggle.active,
+.toggle-colored.active {
+    background-color: rgb(7, 212, 7);
+}
+
+
+.toggle.active,
+.toggle-colored.active .toggle-circle {
+    transform: translateX(24px);
+}
+
+
+.toggle:hover,
+.toggle-colored:hover {
+    opacity: 0.9;
+}
+
+
+
+
+
+
+
+
+.toggle-colored {
+    position: relative;
+
+    width: 44px;
+    height: 21px;
+
+    padding: 0;
+
+    border: 2px solid transparent;
+    border-radius: 20px;
+
+    cursor: pointer;
+    outline: none;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+/* =========================
+   CIRCLE
+   ========================= */
+
+.toggle-circle-colored {
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    top: 2px;
+    left: 2px;
+
+    border-radius: 50%;
+
+    background-color: #858585;
+
+
+    transition:
+        left 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* =========================
+   PRIMARY
+   ========================= */
+
+.toggle-colored.primary {
+    background-color: #0da9e8;
+    border-color: #0da9e8;
+}
+
+
+/* =========================
+   SUCCESS
+   ========================= */
+
+.toggle-colored.success {
+    background-color: #06c00f;
+    border-color: #06c00f;
+}
+
+
+/* =========================
+   DANGER
+   ========================= */
+
+.toggle-colored.danger {
+    background-color: #e80d0d;
+    border-color: #e80d0d;
+}
+
+
+/* =========================
+   WARNING
+   ========================= */
+
+.toggle-colored.warning {
+    background-color: #e8a30d;
+    border-color: #e8a30d;
+}
+
+
+/* =========================
+   ON
+   ========================= */
+
+.toggle-colored.checked .toggle-circle-colored {
+    left: 27px;
+    background-color: #ffffff;
+}
+
+
+
+
+
+/* ON */
+
+.toggle-colored.primary.checked {
+    background-color: #0da9e8;
+    border-color: #0da9e8;
+}
+
+/* ON → circle sang phải + trắng */
+
+.toggle-colored.primary.checked .toggle-circle-colored {
+    left: 27px;
+    background-color: #ffffff;
+}
+
+/* OFF + FOCUS */
+
+.toggle-colored.primary.focused:not(.checked) {
+    background-color: #11bcff;
+}
+
+.toggle-colored.primary.focused:not(.checked) .toggle-circle-colored {
+    background-color: #aee1f3;
+}
+
+
+/* =====================================================
+   SUCCESS
+   ===================================================== */
+
+/* ON */
+
+.toggle-colored.success.checked {
+    background-color: #06c00f;
+    border-color: #06c00f;
+}
+
+/* ON → circle sang phải + trắng */
+
+.toggle-colored.success.checked .toggle-circle-colored {
+    left: 27px;
+    background-color: #ffffff;
+}
+
+/* OFF + FOCUS */
+
+.toggle-colored.success.focused:not(.checked) {
+    border-color: #06c00f;
+}
+
+.toggle-colored.success.focused:not(.checked) .toggle-circle-colored {
+    background-color: #aee1f3;
+}
+
+
+/* =====================================================
+   DANGER
+   ===================================================== */
+
+/* ON */
+
+.toggle-colored.danger.checked {
+    background-color: #e80d0d;
+    border-color: #e80d0d;
+}
+
+/* ON → circle sang phải + trắng */
+
+.toggle-colored.danger.checked .toggle-circle-colored {
+    left: 27px;
+    background-color: #ffffff;
+}
+
+/* OFF + FOCUS */
+
+.toggle-colored.danger.focused:not(.checked) {
+    border-color: #e80d0d;
+}
+
+.toggle-colored.danger.focused:not(.checked) .toggle-circle-colored {
+    background-color: #aee1f3;
+}
+
+
+/* =====================================================
+   WARNING
+   ===================================================== */
+
+/* ON */
+
+.toggle-colored.warning.checked {
+    background-color: #e8a30d;
+    border-color: #e8a30d;
+}
+
+/* ON → circle sang phải + trắng */
+
+.toggle-colored.warning.checked .toggle-circle-colored {
+    left: 27px;
+    background-color: #ffffff;
+}
+
+/* OFF + FOCUS */
+
+.toggle-colored.warning.focused:not(.checked) {
+    border-color: #e8a30d;
+}
+
+.toggle-colored.warning.focused:not(.checked) .toggle-circle-colored {
+    background-color: #aee1f3;
+}
+
+
+
+
+
+
+
+
+
+.switch-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px
+}
+
+
+/* table-small */
+
+.table-small {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+
+    background-color: #ffffff;
+
+    font-size: 14px;
+    color: #495057;
+}
+
+
+/* Row */
+
+.table-small tr {
+    border-bottom: 1px solid #dee2e6;
+
+    transition:
+        background-color 0.15s ease;
+}
+
+
+/* Bỏ border của row cuối */
+
+.table-small tr:last-child {
+    border-bottom: none;
+}
+
+
+/* Cell */
+
+.table-small td {
+    padding: 12px 16px;
+
+    text-align: left;
+
+    vertical-align: middle;
+
+    font-size: 16px
+}
+
+
+/* Căn cột thứ 2 sang phải */
+
+.table-small td:last-child {
+    text-align: right;
+
+    color: #4c5257;
+}
+
+
+/* Hover
+
+.table-small tr:hover {
+    background-color: #f8f9fa;
+} */
+
+
+
+
+.implementation-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    font-size: 13px;
+}
+
+
+/* Header */
+
+.implementation-table thead th {
+    height: 42px;
+
+    padding: 0 8px;
+
+    text-align: left;
+
+    color: #68707a;
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+
+/* Chia độ rộng 3 cột */
+
+.implementation-table th:nth-child(1),
+.implementation-table td:nth-child(1) {
+    width: 19%;
+}
+
+.implementation-table th:nth-child(2),
+.implementation-table td:nth-child(2) {
+    width: 21%;
+}
+
+.implementation-table th:nth-child(3),
+.implementation-table td:nth-child(3) {
+    width: 60%;
+}
+
+
+/* Row */
+
+.implementation-table tbody tr {
+    border-top: 1px solid #dee2e6;
+
+    transition: background-color 0.15s ease;
+}
+
+
+/* Giống ảnh: row xen kẽ màu */
+
+.implementation-table tbody tr:nth-child(odd) {
+    background-color: #f1f2f4;
+}
+
+.implementation-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+
+/* Cell */
+
+.implementation-table td {
+    height: 49px;
+
+    padding: 8px;
+
+    vertical-align: middle;
+
+    color: #26364a;
+}
+
+
+/* =========================
+   EXAMPLE
+========================= */
+
+.example-with-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.example-with-label span {
+    color: #4b5563;
+
+    font-size: 13px;
+}
+
+
+/*
+    Chỗ trống để bạn tự nhét toggle.
+    Không có logic/API ở đây.
+*/
+
+.toggle-placeholder {
+    width: 44px;
+    height: 21px;
+}
+
+
+/* =========================
+   CODE
+========================= */
+
+.implementation-table code {
+    color: #f23d78;
+
+    font-family: Consolas, Monaco, monospace;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+
+/* =========================
+   TABLET / LAPTOP
+   <= 1200px
+========================= */
+
+@media (max-width: 1200px) {
+
+    .section {
+        width: 100%;
+        min-height: 100vh;
+
+        padding-top: 130px;
+        padding-right: 25px;
+        padding-left: 25px;
+        padding-bottom: 60px;
+    }
+
+
+    .box-row-1,
+    .box-row-2 {
+        gap: 16px;
+    }
+
+
+    .box-row-1-column-1 {
+        width: 50%;
+    }
+
+
+    .box-row-4 {
+        width: 100%;
+    }
+
+
+    .implementation-table {
+        min-width: 650px;
+    }
+
+
+    .box-row-4 {
+        overflow-x: auto;
+    }
+}
+
+
+
+/* =========================
+   TABLET
+   <= 768px
+========================= */
+
+@media (max-width: 768px) {
+
+    .section {
+        width: 100%;
+        min-height: 100vh;
+
+        padding-top: 100px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-bottom: 40px;
+    }
+
+
+    /* =====================
+       BOX ROW
+    ===================== */
+
+    .box-row-1,
+    .box-row-2 {
+        width: 100%;
+
+        display: block;
+    }
+
+
+    .box-row-1-column-1 {
+        width: 100%;
+
+        margin-bottom: 20px;
+
+        padding: 10px;
+    }
+
+
+    .box-row-2 {
+        margin-top: 30px;
+    }
+
+
+    .box-row-4 {
+        width: 100%;
+
+        margin-top: 20px;
+
+        padding: 5px;
+
+        overflow-x: auto;
+    }
+
+
+    /* =====================
+       BUTTON ROW
+    ===================== */
+
+    .button-row {
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .button-row-start {
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .button-margin {
+        margin: 16px;
+    }
+
+
+    /* =====================
+       INPUT
+    ===================== */
+
+    .input {
+        width: 100%;
+    }
+
+
+    /* =====================
+       TABLE SMALL
+    ===================== */
+
+    .table-small {
+        width: 100%;
+    }
+
+
+    .table-small td {
+        padding: 10px 12px;
+
+        font-size: 14px;
+    }
+
+
+    /* =====================
+       IMPLEMENTATION TABLE
+    ===================== */
+
+    .implementation-table {
+        min-width: 650px;
+    }
+
+
+    .implementation-table thead th {
+        height: 40px;
+
+        font-size: 10px;
+    }
+
+
+    .implementation-table td {
+        height: 46px;
+
+        padding: 8px;
+
+        font-size: 13px;
+    }
+
+
+    .implementation-table code {
+        font-size: 10px;
+    }
+
+
+    /* =====================
+       BOX TITLE
+    ===================== */
+
+    .box-row-1-column-1 h3,
+    .box-row-4 h3 {
+        margin: 16px;
+
+        font-size: 18px;
+    }
+}
+
+
+
+/* =========================
+   MOBILE
+   <= 600px
+========================= */
+
+@media (max-width: 600px) {
+
+    .section {
+        padding-top: 80px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 30px;
+    }
+
+
+    /* =====================
+       BOX
+    ===================== */
+
+    .box-row-1,
+    .box-row-2 {
+        display: block;
+
+        width: 100%;
+
+        margin: 20px;
+    }
+
+
+    .box-row-1-column-1 {
+        width: 100%;
+
+        margin-bottom: 15px;
+    }
+
+
+    .box-row-4 {
+        width: 100%;
+
+        padding: 5px;
+
+        margin-top: 15px;
+
+        overflow-x: auto;
+    }
+
+
+    /* =====================
+       TITLE
+    ===================== */
+
+    .box-row-1-column-1 h3,
+    .box-row-4 h3 {
+        margin: 15px;
+
+        font-size: 16px;
+    }
+
+
+    /* =====================
+       CONTENT
+    ===================== */
+
+    .button-margin {
+        margin: 15px;
+    }
+
+
+    .button-row {
+        gap: 8px;
+    }
+
+
+    .button-row p,
+    .button-row-start p {
+        font-size: 14px;
+    }
+
+
+    /* =====================
+       INPUT
+    ===================== */
+
+    .input {
+        width: 100%;
+
+        height: 38px;
+
+        font-size: 14px;
+    }
+
+
+    /* =====================
+       TOGGLE
+    ===================== */
+
+    .toggle,
+    .toggle-colored {
+        flex-shrink: 0;
+    }
+
+
+    /* =====================
+       SMALL TABLE
+    ===================== */
+
+    .table-small {
+        width: 100%;
+    }
+
+
+    .table-small td {
+        padding: 9px 10px;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================
+       IMPLEMENTATION TABLE
+    ===================== */
+
+    .box-row-4 {
+        overflow-x: auto;
+    }
+
+
+    .implementation-table {
+        min-width: 600px;
+    }
+
+
+    .implementation-table th:nth-child(1),
+    .implementation-table td:nth-child(1) {
+        width: 120px;
+    }
+
+
+    .implementation-table th:nth-child(2),
+    .implementation-table td:nth-child(2) {
+        width: 150px;
+    }
+
+
+    .implementation-table th:nth-child(3),
+    .implementation-table td:nth-child(3) {
+        width: 330px;
+    }
+
+
+    .implementation-table thead th {
+        padding: 0 8px;
+
+        font-size: 10px;
+    }
+
+
+    .implementation-table td {
+        padding: 8px;
+
+        font-size: 12px;
+    }
+
+
+    .implementation-table code {
+        font-size: 9px;
+    }
+
+
+    /* =====================
+       EXAMPLE LABEL
+    ===================== */
+
+    .example-with-label {
+        gap: 8px;
+    }
+
+
+    .example-with-label span {
+        font-size: 12px;
+    }
+}
+
+
+
+/* =========================
+   VERY SMALL MOBILE
+   <= 400px
+========================= */
+
+@media (max-width: 400px) {
+
+    .section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .box-row-1-column-1 h3,
+    .box-row-4 h3 {
+        margin: 12px;
+
+        font-size: 15px;
+    }
+
+
+    .button-margin {
+        margin: 12px;
+    }
+
+
+    .button-row p,
+    .button-row-start p {
+        font-size: 13px;
+    }
+
+
+    .table-small td {
+        padding: 8px;
+
+        font-size: 12px;
+    }
+
+
+    .implementation-table {
+        min-width: 560px;
+    }
+}
