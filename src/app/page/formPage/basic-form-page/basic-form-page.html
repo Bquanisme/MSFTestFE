@@ -1,1 +1,699 @@
-<p>basic-form-page works!</p>
+<section class="section">
+
+  <form
+    class="form-container"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    ngNativeValidate
+  >
+
+    <!-- ================= LEFT ================= -->
+
+    <div class="form-card">
+
+      <div class="card-header">
+        <h3 style="font-weight: 600;">Basic Form Elements</h3>
+      </div>
+
+
+      <div class="card-body">
+
+        <!-- COMPANY -->
+
+        <div class="form-group">
+
+          <label>COMPANY</label>
+
+          <input
+            type="text"
+            formControlName="company"
+            placeholder="Enter your company name"
+          />
+
+
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+          <label>EMAIL</label>
+
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Enter email"
+          />
+
+          <small>
+            We'll never share your email with anyone else.
+          </small>
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <div class="form-group">
+
+          <label>PASSWORD</label>
+
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+          />
+
+        </div>
+
+
+        <!-- TEXTAREA -->
+
+        <div class="form-group">
+
+          <label>TEXTAREA</label>
+
+          <textarea
+            formControlName="description"
+            placeholder="Enter description..."
+          ></textarea>
+
+        </div>
+
+
+        <!-- SELECT -->
+
+        <div class="form-group">
+
+          <label>SELECT</label>
+
+          <select formControlName="select">
+
+            <option value="">
+              Choose...
+            </option>
+
+            <option value="option1">
+              Option 1
+            </option>
+
+            <option value="option2">
+              Option 2
+            </option>
+
+            <option value="option3">
+              Option 3
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- MULTIPLE SELECT -->
+
+        <div class="form-group">
+
+          <label>MULTIPLE SELECT</label>
+
+          <select
+            multiple
+            formControlName="multipleSelect"
+          >
+
+            <option value="option1">
+              Option 1
+            </option>
+
+            <option value="option2">
+              Option 2
+            </option>
+
+            <option value="option3">
+              Option 3
+            </option>
+
+            <option value="option4">
+              Option 4
+            </option>
+
+            <option value="option5">
+              Option 5
+            </option>
+
+            <option value="option6">
+              Option 6
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <div class="form-actions">
+
+          <button
+            type="submit"
+            class="btn-submit"
+            (click)="scrollToTop()"
+          >
+            Submit
+          </button>
+
+          <button
+            type="button"
+            class="btn-reset"
+            (click)="onReset()"
+          >
+            Reset
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= RIGHT ================= -->
+
+    <div class="form-card">
+
+      <div class="card-header">
+
+        <h3 style="font-weight: 600;">
+          Form Control Sizing
+        </h3>
+
+      </div>
+
+
+      <div class="card-body">
+
+
+        <!-- LARGE -->
+
+        <div class="form-group">
+
+          <label>LARGE INPUT</label>
+
+          <input
+            class="input-large"
+            type="text"
+            formControlName="largeInput"
+            placeholder="Large input"
+          />
+
+        </div>
+
+
+        <!-- DEFAULT -->
+
+        <div class="form-group">
+
+          <label>DEFAULT INPUT</label>
+
+          <input
+            type="text"
+            formControlName="defaultInput"
+            placeholder="Default input"
+          />
+
+        </div>
+
+
+        <!-- SMALL -->
+
+        <div class="form-group">
+
+          <label>SMALL INPUT</label>
+
+          <input
+            class="input-small"
+            type="text"
+            formControlName="smallInput"
+            placeholder="Small input"
+          />
+
+        </div>
+
+
+        <!-- DISABLED -->
+
+        <div class="form-group">
+
+          <label>DISABLED INPUT</label>
+
+          <input
+            type="text"
+            formControlName="disabledInput"
+            placeholder="Disabled input"
+          />
+
+        </div>
+
+
+        <!-- READONLY -->
+
+        <div class="form-group">
+
+          <label>READONLY INPUT</label>
+
+          <input
+            type="text"
+            formControlName="readonlyInput"
+            readonly
+          />
+
+        </div>
+
+
+        <!-- FILE -->
+
+        <div class="form-group">
+
+          <label>FILE INPUT</label>
+
+          <input
+            type="file"
+            (change)="onFileChange($event, 'fileInput')"
+            style="height: 37px;"
+          />
+
+        </div>
+
+
+        <!-- MULTIPLE FILE -->
+
+        <div class="form-group">
+
+          <label>MULTIPLE FILES</label>
+
+          <input
+            type="file"
+            multiple
+            (change)="onFileChange($event, 'multipleFiles')"
+          />
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </form>
+
+  <br>
+
+  <div class="forms-page">
+
+  <!-- ================= LEFT CARD ================= -->
+  <div class="card">
+
+    <div class="card-header">
+      <h3 style="font-weight: 600;">Checkboxes and Radios</h3>
+    </div>
+
+    <div class="card-body">
+
+      <!-- CHECKBOXES -->
+      <div class="form-section">
+        <div class="section-title">CHECKBOXES</div>
+
+        <label class="check-row">
+          <input
+            type="checkbox"
+            [checked]="defaultCheckbox"
+            (change)="defaultCheckbox = $any($event.target).checked"
+          />
+          <span class="custom-checkbox"></span>
+          <span>Default checkbox</span>
+        </label>
+
+        <label class="check-row">
+          <input
+            type="checkbox"
+            [checked]="checkedCheckbox"
+            (change)="checkedCheckbox = $any($event.target).checked"
+          />
+          <span class="custom-checkbox"></span>
+          <span>Checked checkbox</span>
+        </label>
+
+        <label class="check-row disabled">
+          <input type="checkbox" disabled />
+          <span class="custom-checkbox"></span>
+          <span>Disabled checkbox</span>
+        </label>
+      </div>
+
+
+      <!-- RADIO BUTTONS -->
+      <div class="form-section radio-section">
+        <div class="section-title">RADIO BUTTONS</div>
+
+        <label class="radio-row">
+          <input
+            type="radio"
+            name="radio"
+            value="default"
+            [(ngModel)]="selectedRadio"
+          />
+          <span class="custom-radio"></span>
+          <span>Default radio</span>
+        </label>
+
+        <label class="radio-row">
+          <input
+            type="radio"
+            name="radio"
+            value="second"
+            [(ngModel)]="selectedRadio"
+          />
+          <span class="custom-radio"></span>
+          <span>Second radio</span>
+        </label>
+
+        <label class="radio-row disabled">
+          <input
+            type="radio"
+            name="disabledRadio"
+            disabled
+          />
+          <span class="custom-radio"></span>
+          <span>Disabled radio</span>
+        </label>
+      </div>
+
+
+      <!-- INLINE CHECKBOXES -->
+      <div class="form-section inline-section">
+        <div class="section-title">INLINE CHECKBOXES</div>
+
+        <div class="inline-checkboxes">
+
+          <label class="inline-check">
+            <input
+              type="checkbox"
+              [(ngModel)]="inlineCheckbox1"
+            />
+            <span class="custom-checkbox"></span>
+            <span>1</span>
+          </label>
+
+          <label class="inline-check">
+            <input
+              type="checkbox"
+              [(ngModel)]="inlineCheckbox2"
+            />
+            <span class="custom-checkbox"></span>
+            <span>2</span>
+          </label>
+
+          <label class="inline-check">
+            <input
+              type="checkbox"
+              [(ngModel)]="inlineCheckbox3"
+            />
+            <span class="custom-checkbox"></span>
+            <span>3</span>
+          </label>
+
+        </div>
+      </div>
+
+
+      <!-- SWITCHES -->
+      <div class="form-section switch-section">
+        <div class="section-title">SWITCHES</div>
+
+        <div class="switch-row">
+          <button
+            type="button"
+            class="toggle"
+            [class.checked]="isCheckedDefault()"
+            [class.focused]="isFocusedDefault"
+            (click)="toggleUpdateDefault()"
+            (focus)="isFocusedDefault = true"
+            (blur)="isFocusedDefault = false"
+            >
+                <span
+                    class="toggle-circle"
+                    [class.focused]="isFocusedDefault"
+                    [class.checked]="isCheckedDefault()"
+                >
+                </span>
+                
+            </button>
+
+            <p>Default switch</p>
+        </div>
+
+
+        <div class="switch-row">
+          <button
+                type="button"
+                class="toggle"
+                [class.checked]="isCheckedCheck()"
+                [class.focused]="isFocusedChecked"
+                (click)="toggleUpdateCheck()"
+                (focus)="isFocusedChecked = true"
+                (blur)="isFocusedChecked = false"
+            >
+                <span
+                    class="toggle-circle"
+                    [class.focused]="isFocusedChecked"  
+                    [class.checked]="isCheckedCheck()"
+                >
+                </span>
+            </button>
+            <span>Checked switch</span>
+        </div>
+
+
+        <label class="switch-row disabled">
+          <span class="switch">
+            <input
+              type="checkbox"
+              disabled
+            />
+            <span class="slider"></span>
+          </span>
+
+          <span>Disabled switch</span>
+        </label>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================= RIGHT CARD ================= -->
+  <div class="card">
+
+    <div class="card-header">
+      <h3 style="font-weight: 600;">Input Groups</h3>
+    </div>
+
+    <div class="card-body">
+
+      <!-- WITH TEXT -->
+      <div class="input-section">
+
+        <div class="section-title">
+          WITH TEXT
+        </div>
+
+        <div class="input-group">
+
+          <div class="input-addon">
+            @
+          </div>
+
+          <input
+            type="text"
+            [(ngModel)]="username"
+            placeholder="Username"
+          />
+
+        </div>
+
+
+        <div class="input-group">
+
+          <input
+            type="text"
+            [(ngModel)]="recipient"
+            placeholder="Recipient's username"
+          />
+
+          <div class="input-addon right">
+            @example.com
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- WITH ICON -->
+      <div class="input-section">
+
+        <div class="section-title">
+          WITH ICON
+        </div>
+
+        <div class="input-group">
+
+          <div class="input-addon icon">
+            <span class="material-icons">person</span>
+          </div>
+
+          <input
+            type="text"
+            [(ngModel)]="iconUsername"
+            placeholder="Username"
+          />
+
+        </div>
+
+
+        <div class="input-group">
+
+          <div class="input-addon icon">
+            <span class="material-icons">email</span>
+          </div>
+
+          <input
+            type="email"
+            [(ngModel)]="email"
+            placeholder="Email"
+          />
+
+        </div>
+
+      </div>
+
+
+      <!-- WITH BUTTON -->
+      <div class="input-section">
+
+        <div class="section-title">
+          WITH BUTTON
+        </div>
+
+        <div class="input-group">
+
+          <input
+            type="text"
+            [(ngModel)]="searchText"
+            placeholder="Search for..."
+            (keyup.enter)="search()"
+          />
+
+          <button
+            type="button"
+            class="search-button"
+            (click)="search()"
+          >
+            Search
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- WITH DROPDOWN -->
+      <div class="input-section">
+
+        <div class="section-title">
+          WITH DROPDOWN
+        </div>
+
+        <div class="input-group dropdown-group">
+
+          <div class="dropdown">
+
+            <button
+              type="button"
+              class="dropdown-button"
+              (click)="toggleDropdown()"
+            >
+              {{ selectedDropdown }}
+
+              <span
+                class="material-icons"
+                [class.rotate]="dropdownOpen"
+              >
+                expand_more
+              </span>
+            </button>
+
+            @if (dropdownOpen) {
+              <div class="dropdown-menu">
+
+                @for (item of dropdownItems; track item) {
+                  <button
+                    type="button"
+                    (click)="selectDropdown(item)"
+                  >
+                    {{ item }}
+                  </button>
+                }
+
+              </div>
+            }
+
+          </div>
+
+          <input
+            type="text"
+            [(ngModel)]="dropdownInput"
+          />
+
+        </div>
+
+      </div>
+
+
+      <!-- MULTIPLE INPUTS -->
+      <div class="input-section multiple-section">
+
+        <div class="section-title">
+          MULTIPLE INPUTS
+        </div>
+
+        <div class="multiple-inputs">
+
+          <div class="multiple-label">
+            First and last name
+          </div>
+
+          <input
+            type="text"
+            placeholder="First name"
+            [(ngModel)]="firstName"
+          />
+
+          <input
+            type="text"
+            placeholder="Last name"
+            [(ngModel)]="lastName"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</section>
