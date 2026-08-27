@@ -1,1 +1,177 @@
-<p>chart-js-page works!</p>
+<div class="section">
+    <div style="display: flex; justify-content: space-between">
+        
+        <h2>Chart.js Examples</h2>
+        <p>Interactive charts using Chart.js v4.5</p>
+
+    </div>
+    
+    <!-- Sales & Team Chart -->
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+
+            <h3>Sales Chart</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class="line-chart-container">
+                <canvas
+                    baseChart
+                    [data]="salesData"
+                    [options]="salesOptions"
+                    [type]="'line'"
+                >
+                </canvas>
+            </div>
+        </div>
+
+        <div class='box-row-1-column-1'>
+
+            <h3>Team Chart</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class="line-chart-container">
+                <canvas
+                    baseChart
+                    [data]="teamData"
+                    [options]="teamOptions"
+                    [type]="'bar'"
+                >
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Bar & Radar Chart -->
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+
+            <h3>Bar Chart</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class="line-chart-container">
+                <canvas
+                    baseChart
+                    [data]="barData"
+                    [options]="barOptions"
+                    [type]="'bar'"
+                >
+                </canvas>
+            </div>
+        </div>
+
+        <div class='box-row-1-column-1'>
+
+            <h3>Radar Chart</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class="line-chart-container">
+                <canvas
+                    baseChart
+                    [data]="radarData"
+                    [options]="radarOptions"
+                    [type]="'radar'"
+                >
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Line & Doughnut Chart -->
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+
+            <h3>Line Chart</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class="line-chart-container">
+                <canvas
+                    baseChart
+                    [data]="lineData"
+                    [options]="lineOptions"
+                    [type]="'line'"
+                >
+                </canvas>
+            </div>
+        </div>
+
+        <div class='box-row-1-column-1'>
+
+            <h3>Doughnut Chart</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class="line-chart-container">
+                <canvas
+                    baseChart
+                    [data]="doughnutData"
+                    [options]="doughnutOptions"
+                    [type]="'doughnut'"
+                >
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Pie & Polar Chart -->
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+
+            <h3>Pie Chart</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class="line-chart-container">
+                <canvas
+                    baseChart
+                    [data]="teamPieData"
+                    [options]="teamPieOptions"
+                    [type]="'pie'"
+                >
+                </canvas>
+            </div>
+        </div>
+
+        <div class='box-row-1-column-1'>
+
+            <h3>Polar Chart</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class="line-chart-container">
+                <canvas
+                    baseChart
+                    [data]="polarData"
+                    [options]="polarOptions"
+                    [type]="'polarArea'"
+                >
+                </canvas>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class='box-row-3'>
+        <div class='box-row-1-column-1'>
+
+            <h3>Single Bar Chart</h3>
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class="line-chart-container">
+                <canvas
+                    baseChart
+                    [data]="singleBarData"
+                    [options]="singleBarOptions"
+                    [type]="'bar'"
+                >
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>
