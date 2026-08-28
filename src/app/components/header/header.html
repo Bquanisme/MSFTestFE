@@ -1,44 +1,647 @@
 <main>
-    <header class="header">
-      <div class="logo-and-hamburger">
-        <div class="logo">
-          <div class="logo-icon">
-            <i class="fa-solid fa-layer-group"></i>
-          </div>
+  <header class="header">
 
-          <a href="#" class="logo-title">
-            ElaAdmin
-          </a>
+
+    <div class="logo-and-hamburger">
+
+      <div class="logo">
+
+        <div class="logo-icon">
+          <i class="fa-solid fa-layer-group"></i>
         </div>
 
-        <button
-          class="hamburger"
-          (click)="setIsDrawerOpen.emit()"
-        >
-          <mat-icon fontIcon="menu"></mat-icon>
-        </button>
+        <a href="#" class="logo-title">
+          ElaAdmin
+        </a>
+
       </div>
-      <div class="icon-header">
 
-            <mat-icon aria-hidden="false" aria-label="Example search icon" fontIcon="search" class="search-button"></mat-icon>
+      <button
+        class="hamburger"
+        type="button"
+        (click)="setIsDrawerOpen.emit()"
+      >
+        <mat-icon fontIcon="menu"></mat-icon>
+      </button>
 
-            <app-badge
-                icon="notifications"
-                [count]="3"
-                badgeClass="error-badge"
-                iconBadgeClass="icon-badge"
+    </div>
+
+
+
+
+
+    <div class="icon-header">
+
+
+      <button
+        class="header-icon-button"
+        type="button"
+        (click)="toggleSearch()"
+      >
+        <mat-icon fontIcon="search"></mat-icon>
+      </button> 
+
+        <!-- ================= SEARCH ================= -->
+
+        @if (showSearch()) {
+
+        <div class="dropdown-panel-search" >
+
+
+          <div class="search-box">
+
+            <input
+              type="text"
+              [(ngModel)]="searchInput"
+              class="search-input"
+              placeholder="Search for pages, users, or features..."
             />
 
-            <app-badge
-                icon="email"
-                [count]="5"
-                badgeClass="info-badge"
-                iconBadgeClass="icon-badge"
-            />
-          <div>
-              <img [src]="authLogo" alt="admin-logo" class="img-admin-logo"/>
+            @if (searchInput.length > 0) {
+
+              <button
+                type="button"
+                class="search-clear-button"
+                (click)="handleClose()"
+              >
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+
+            }
+
+            <button
+              type="button"
+              class="search-submit-button"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
           </div>
-      </div>
-    </header>
 
+
+
+          <div class="search-result-list">
+
+            @if (searchInput.length === 0) {
+
+
+              <div class="search-section-title">
+                Quick Links
+              </div>
+
+
+              @for (
+                item of searchData();
+                track item.id
+              ) {
+
+                <div
+                  class="search-item"
+                  (click)="routerPath(item.path)"
+                >
+
+                  <div [class]="`search-item-icon-` + item.id">
+                    <i [class]="item.icon"></i>
+                  </div>
+
+                  <div class="search-item-content">
+
+                    <div class="search-item-title">
+                      {{ item.title }}
+                    </div>
+
+                  </div>
+
+                </div>
+
+              }
+
+            }
+
+          </div>
+
+        </div>
+
+        }
+
+
+
+      <div class="header-dropdown">
+
+        <button
+          class="header-icon-button"
+          type="button"
+          (click)="toggleNotification()"
+        >
+
+          <app-badge
+            icon="notifications"
+            [count]="3"
+            badgeClass="error-badge"
+            iconBadgeClass="icon-badge"
+          />
+
+        </button>
+
+
+
+
+        <!-- ================= NOTIFICATION ================= -->
+
+        @if (showNotification()) {
+
+        <div class="dropdown-panel notification-panel">
+
+          <!-- HEADER -->
+          <div class="dropdown-header">
+
+            <span style="font-size: 18px;">
+              Notifications
+            </span>
+
+            <button
+              type="button"
+              class="clear-button"
+              (click)="handleClose()"
+            >
+              Clear all
+            </button>
+
+          </div>
+
+
+          <!-- BODY -->
+          <div class="notification-list">
+
+            @if (notificationData().length > 0) {
+
+              @for (
+                notification of notificationData();
+                track notification.id
+              ) {
+
+                <div
+                  class="notification-item"
+                  (click)="handleClose()"
+                >
+
+                  <div
+                    [class]="'notification-icon-' + notification.id"
+                  >
+
+                    <i
+                      [class]="notification.icon"
+                    ></i>
+
+                  </div>
+
+
+                  <div class="notification-content">
+
+                    <div class="notification-title">
+                      {{
+                        notification.title || 'Notification'
+                      }}
+                    </div>
+
+
+                    <div class="notification-message">
+                      {{
+                        notification.description || ''
+                      }}
+                    </div>
+
+
+                    <div class="notification-time">
+
+                      <mat-icon fontIcon="schedule"></mat-icon>
+
+                      <span>
+                        {{
+                          notification.time || 'Just now'
+                        }}
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              }
+
+            } @else {
+
+              <div class="notification-empty">
+                No notifications
+              </div>
+
+            }
+
+
+            <!-- FOOTER -->
+            <div class="notification-footer">
+
+              <button
+                type="button"
+                class="button-footer-notification"
+                (click)="handleClose()"
+              >
+                View all notification
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        }
+
+      </div>
+
+
+      <!-- ================= MESSAGE ================= -->
+
+      <div class="header-dropdown">
+
+        <button
+          class="header-icon-button"
+          type="button"
+          (click)="toggleMessage()"
+        >
+
+          <app-badge
+            icon="email"
+            [count]="5"
+            badgeClass="info-badge"
+            iconBadgeClass="icon-badge"
+          />
+
+        </button>
+
+
+        <!-- MESSAGE PANEL -->
+
+        @if (showMessage()) {
+
+          <div class="dropdown-panel message-panel" (click)="handleClose()" >
+
+            <div class="dropdown-header">
+
+              <span style="font-size: 18px;">
+                Messages
+              </span>
+
+              <button
+                type="button"
+                class="clear-button"
+                (click)="handleClose()"
+              >
+                Mark all read
+              </button>
+
+            </div>
+
+
+            <div class="notification-list">
+
+              @if (messageData().length > 0) {
+
+                @for (
+                  message of messageData();
+                  track message.id
+                ) {
+
+                  <div class="notification-item">
+
+                    <div class="notification-icon">
+
+                      <img 
+                        style="width: 40px; height: 40px; border-radius: 50%;"
+                        [src]="message.image" 
+                      >
+
+                    </div>
+
+
+                    <div class="notification-content">
+
+                      <div style="display: flex; justify-content: space-between; align-items: center;">
+
+                        <div class="notification-title">
+
+                          {{
+                            message.title || 'New message'
+                          }}
+
+                        </div>
+
+                        <span class="notification-message">
+                          {{
+                            message.time
+                            || 'Just now'
+                          }}
+                        </span>
+
+                      </div>
+
+                      <div class="notification-description">
+
+                        {{
+                          message.description
+                          || ''
+                        }}
+
+                      </div>
+
+
+                      <div class="message-status">
+
+                        <div [class]="`message-status-` + message.id">
+                          {{ message.status }}
+                        </div>
+
+                        @if (message.status2 !== "") {
+                          <div class="message-status-3">
+                            {{ message.status2 }}
+                          </div>
+
+                        }
+
+                        </div>
+                        
+
+                    </div>
+
+                  </div>
+
+                }
+
+              } 
+
+              <div class="notification-footer">
+
+                <button
+                  type="button"
+                  class="button-footer-notification"
+                  (click)="handleClose()"
+                >
+                  View all messages
+
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+
+
+      <!-- ================= ADMIN AVATAR ================= -->
+
+      <button
+        type="button"
+        class="admin-avatar-button"
+        (click)="toggleUser()"
+      >
+
+        <img
+          [src]="authLogo"
+          alt="admin-logo"
+          class="img-admin-logo"
+        />
+
+      </button>
+
+        <div class="user-dropdown">
+
+          <!-- USER PANEL -->
+
+          @if (showUser()) {
+
+            <div class="user-panel">
+
+              <!-- ================= USER INFO ================= -->
+
+              <div class="user-info">
+
+                <img
+                  [src]="authLogo"
+                  alt="admin-logo"
+                  class="user-avatar"
+                />
+
+                <div class="user-info-content">
+
+                  <div class="user-name">
+                    John Doe
+                  </div>
+
+                  <div class="user-role">
+                    Administrator
+                  </div>
+
+                  <div class="user-status">
+                    <span class="status-dot"></span>
+                    Online
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- ================= MENU ================= -->
+
+              <div class="user-menu">
+
+                <button
+                  type="button"
+                  class="user-menu-item"
+                  (click)="handleClose()"
+                >
+
+                  <i class="fa-solid fa-user"></i>
+
+                  <span>
+                    My Profile
+                  </span>
+
+                </button>
+
+
+
+                <button
+                  type="button"
+                  class="user-menu-item"
+                  (click)="handleClose()"
+                >
+
+                  <i class="fa-solid fa-gear"></i>
+
+                  <span>
+                    Account Settings
+                  </span>
+
+                </button>
+
+
+                <!-- NOTIFICATIONS -->
+
+                <button
+                  type="button"
+                  class="user-menu-item"
+                  (click)="handleClose()"
+                >
+
+                  <i class="fa-solid fa-bell"></i>
+
+                  <span>
+                    Notifications
+                  </span>
+
+                  <span class="menu-badge notification-badge">
+                    12
+                  </span>
+
+                </button>
+
+
+                <!-- MY TASKS -->
+
+                <button
+                  type="button"
+                  class="user-menu-item"
+                  (click)="handleClose()"
+                >
+
+                  <i class="fa-solid fa-list-check"></i>
+
+                  <span>
+                    My Tasks
+                  </span>
+
+                  <span class="menu-badge task-badge">
+                    5
+                  </span>
+
+                </button>
+
+              </div>
+
+
+
+              <div class="user-divider"></div>
+
+
+              <!-- ================= BOTTOM MENU ================= -->
+
+              <div class="user-menu bottom-menu">
+
+                <!-- LOCK SCREEN -->
+
+                <button
+                  type="button"
+                  class="user-menu-item lock-item"
+                  (click)="handleClose()"
+                >
+
+                  <i class="fa-solid fa-lock"></i>
+
+                  <span>
+                    Lock Screen
+                  </span>
+
+                </button>
+
+
+                <!-- LOGOUT -->
+
+                <button
+                  type="button"
+                  class="user-menu-item logout-item"
+                  (click)="handleClose()"
+                >
+
+                  <i class="fa-solid fa-right-from-bracket"></i>
+
+                  <span>
+                    Logout
+                  </span>
+
+                </button>
+
+              </div>
+
+
+              <!-- ================= USER STATS ================= -->
+
+              <div class="user-stats">
+
+                <!-- STORAGE -->
+
+                <div class="user-stat">
+
+                  <div class="stat-title">
+                    Storage
+                  </div>
+
+                  <div class="stat-line"></div>
+
+                  <div class="stat-value">
+                    65%
+                  </div>
+
+                </div>
+
+
+                <!-- PROJECTS -->
+
+                <div class="user-stat">
+
+                  <div class="stat-title">
+                    Projects
+                  </div>
+
+                  <div class="stat-value stat-number">
+                    12
+                  </div>
+
+                </div>
+
+
+                <!-- TASKS -->
+
+                <div class="user-stat">
+
+                  <div class="stat-title">
+                    Tasks
+                  </div>
+
+                  <div class="stat-value stat-number">
+                    34
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          }
+
+        </div>
+
+    </div>
+
+  </header>
 </main>

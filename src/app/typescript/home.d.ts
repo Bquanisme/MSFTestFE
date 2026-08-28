@@ -140,3 +140,22 @@ export interface ProgressBarResponse {
   id: number;
   data: ProgressBar[]
 }
+
+
+
+interface HeaderTs {
+  id: number;
+  title: string;
+  description: string;
+  time: string;
+  icon?: string;
+  image?: string;
+  status?: string;
+  status2?: string;
+  path?: string
+}
+
+interface HeaderResponse {
+  id: number;
+  data: Header[]
+}
