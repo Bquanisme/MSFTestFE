@@ -16,7 +16,7 @@ export class ChartJsPage {
   public salesData: ChartData<'line'> = {
     labels: [
       'January',
-      'Febuary',  
+      'February',  
       'March',
       'April',
       'May',
@@ -36,13 +36,15 @@ export class ChartJsPage {
           30000
         ],
 
-        borderColor: '#00c49a',
+        borderColor: '#26c1cc',
         backgroundColor: 'rgba(1, 182, 170, 0.12)',
 
-        borderWidth: 2,
+        borderWidth: 3,
 
         pointRadius: 3,
-        pointHoverRadius: 5,
+        pointHoverRadius: 4,
+
+        pointBorderWidth: 1,
 
         tension: 0.4,
 
@@ -91,6 +93,14 @@ export class ChartJsPage {
         // Xuất phát từ 0
         // beginAtZero: true,
 
+        title: {
+          display: true,
+          text: 'Sales ($)',
+          font: {
+            size: 12
+          }
+        },
+
         min: 12000,
         beginAtZero: false,
 
@@ -107,8 +117,16 @@ export class ChartJsPage {
       },
 
       x: {
+        title: {
+          display: true,
+          text: 'Months',
+          font: {
+            size: 12
+          }
+        },
         grid: {
-          display: false,
+          color: '#e5e7eb',
+          display: true,
         },
       },
     },
@@ -141,24 +159,26 @@ export class ChartJsPage {
         ],
 
         backgroundColor: [
-          '#f75fbf', // Developer
-          '#42a8e3', // Designer
-          '#dfdc84', // Marketing
-          '#78ff78', // Sales
-          '#a561ed', // Support
+          '#FF829D', // Developer - hồng
+          '#5EB5EF', // Designer - xanh dương
+          '#FFD878', // Marketing - vàng
+          '#6FCDCD', // Sales - xanh ngọc
+          '#AD85FF'  // Support - tím
         ],
 
         borderColor: [
-          '#e80d98',
-          '#0888d1',
-          '#ded716',
-          '#05f905',
-          '#7e0cf7',
+          '#FF5C82',
+          '#3FA3E8',
+          '#FFC94D',
+          '#4FC0C0',
+          '#9465F5'
         ],
+        
+        borderWidth: 2,
 
         borderRadius: 5,
+        borderSkipped: false,
 
-        borderWidth: 2,
       }
     ],
   };
@@ -200,11 +220,7 @@ export class ChartJsPage {
 
     scales: {
       y: {
-        // Xuất phát từ 0
         beginAtZero: true,
-
-        // min: 12000,
-        // beginAtZero: false,
 
         ticks: {
           stepSize: 2,
@@ -214,7 +230,9 @@ export class ChartJsPage {
         },
 
         grid: {
-          color: '#e5e7eb',
+          display: true,
+          lineWidth: 1,
+          z: 1,
         },
       },
 
@@ -222,6 +240,12 @@ export class ChartJsPage {
         grid: {
           display: false,
         },
+      },
+    },
+
+    elements: {
+      bar: {
+        borderWidth: 1,
       },
     },
   };
@@ -246,7 +270,7 @@ export class ChartJsPage {
         label: 'Dataset',
 
         data: [
-          13,
+          12,
           19,
           3,
           5,
@@ -255,34 +279,35 @@ export class ChartJsPage {
         ],
 
         backgroundColor: [
-          'rgba(255, 122, 122, 0.35)',
-          'rgba(140, 226, 255, 0.35)',
-          'rgba(223, 222, 132, 0.35)',
-          'rgba(134, 255, 120, 0.35)',
-          'rgba(192, 13, 232, 0.35)',
-          'rgba(232, 119, 13, 0.35)'
+          '#FFE0E6', // Red
+          '#D7ECFB', // Blue
+          '#fdf2d6', // Yellow
+          '#DBF2F2', // Green
+          '#EBE0FF', // Purple
+          '#FFECD9'  // Orange
         ],
 
         borderColor: [
-          '#e80d98',
-          '#0888d1',
-          '#ded716',
-          '#05f905',
-          '#7e0cf7',
-          '#e1a639'
+          '#FF829D',
+          '#5EB5EF',
+          '#fcce5b',
+          '#6FCDCD',
+          '#AD85FF',
+          '#FFB66E'
         ],
-
+        
         hoverBackgroundColor: [
-          '#eecde2',
-          '#c0d9e7', 
-          '#ebebd4', 
-          '#bee6d0', 
-          '#d4c3e7',
-          '#e9ddc8'
+          '#FFD5DD', // Red
+          '#BFDFF5', // Blue
+          '#F9E8B5', // Yellow
+          '#BFE5E5', // Green
+          '#DCCCF5', // Purple
+          '#FFE1C5'  // Orange
         ],
 
 
-        borderWidth: 1,
+        borderWidth: 1.2,
+        
 
       }
     ],
@@ -339,13 +364,15 @@ export class ChartJsPage {
         },
 
         grid: {
-          color: '#e5e7eb',
+          display: true,
+          lineWidth: 1,
+          z: 1
         },
       },
 
       x: {
         grid: {
-          display: false,
+          display: true,
         },
       },
     },
@@ -369,7 +396,7 @@ export class ChartJsPage {
 
     datasets: [
       {
-        label: 'Dataset',
+        label: 'My First Dataset',
 
         data: [
           65,
@@ -444,7 +471,7 @@ export class ChartJsPage {
   public lineData: ChartData<'line'> = {
     labels: [
       'January',
-      'Febuary',  
+      'February',  
       'March',
       'April',
       'May',
@@ -466,12 +493,14 @@ export class ChartJsPage {
           40
         ],
 
-        borderColor: '#00c49a',
+        borderColor: '#26c1cc',
 
-        borderWidth: 2,
+        borderWidth: 3,
 
         pointRadius: 3,
-        pointHoverRadius: 5,
+        pointHoverRadius: 4,
+
+        pointBorderWidth: 1,
 
         tension: 0.1,
 
@@ -528,6 +557,8 @@ export class ChartJsPage {
 
         ticks: {
           stepSize: 5,
+
+          maxTicksLimit: 6,
           callback: (value) => {
             return `${Number(value).toLocaleString()}`;
           },
@@ -540,7 +571,8 @@ export class ChartJsPage {
 
       x: {
         grid: {
-          display: false,
+          color: '#e5e7eb',
+          display: true,
         },
       },
     },
@@ -569,12 +601,12 @@ export class ChartJsPage {
         ],
 
         backgroundColor: [
-          '#f4038c',
-          '#47a6ee',
-          '#ffd15d',
+          '#FF6384', // Red
+          '#36A2EB', // Blue
+          '#FFCE56'  // Yellow
         ],
 
-        borderWidth: 0,
+        borderWidth: 2,
 
         hoverOffset: 3,
       },
@@ -586,7 +618,8 @@ export class ChartJsPage {
 
     maintainAspectRatio: false,
 
-    cutout: '65%',
+    // độ dày của hình tròn, càng thấp càng dày
+    cutout: '50%',
 
     plugins: {
       legend: {
@@ -626,9 +659,9 @@ export class ChartJsPage {
         ],
 
         backgroundColor: [
-          '#f4038c',
-          '#47a6ee',
-          '#ffd15d',
+          '#FF6384', // Red
+          '#36A2EB', // Blue
+          '#FFCE56'  // Yellow
         ],
 
         borderColor: '#ffffff',
@@ -643,6 +676,7 @@ export class ChartJsPage {
     responsive: true,
 
     maintainAspectRatio: false,
+    
 
     plugins: {
       legend: {
@@ -651,10 +685,10 @@ export class ChartJsPage {
         labels: {
           usePointStyle: false,
 
-          padding: 20,
+        //   padding: 20,
 
-          boxWidth: 15,
-          boxHeight: 15
+        //   boxWidth: 15,
+        //   boxHeight: 15
         }
       },
 
@@ -691,34 +725,33 @@ export class ChartJsPage {
 
         data: [11, 16, 7, 3, 14],
 
-        borderColor: [
-          'rgb(255, 99, 132)',
-          'rgb(75, 192, 192)',
-          'rgb(255, 205, 86)',
-          'rgb(201, 203, 207)',
-          'rgb(54, 162, 235)'
+        // Màu nền nhạt giống hình
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.20)',   // Red
+          'rgba(75, 192, 192, 0.20)',   // Green
+          'rgba(255, 206, 86, 0.20)',   // Yellow
+          'rgba(201, 203, 207, 0.20)',  // Grey
+          'rgba(54, 162, 235, 0.20)'    // Blue
         ],
 
-        backgroundColor: [
-          'rgb(255, 200, 212)',
-          'rgb(199, 238, 238)',
-          'rgb(255, 238, 200)',
-          'rgb(230, 233, 240)',
-          'rgb(186, 216, 237)'
+        // Border theo đúng màu của từng phần
+        borderColor: [
+          '#FF6384',
+          '#4BC0C0',
+          '#FFCE56',
+          '#C9CBCF',
+          '#36A2EB'
         ],
+
+        borderWidth: 1,
 
         hoverBackgroundColor: [
-          'rgb(255, 200, 212)',
-          'rgb(199, 238, 238)',
-          'rgb(255, 238, 200)',
-          'rgb(230, 233, 240)',
-          'rgb(186, 216, 237)'
-        ],
-
-
-
-        borderWidth: 2,
-
+          'rgba(255, 99, 132, 0.30)',
+          'rgba(75, 192, 192, 0.30)',
+          'rgba(255, 206, 86, 0.30)',
+          'rgba(201, 203, 207, 0.30)',
+          'rgba(54, 162, 235, 0.30)'
+        ]
       }
     ]
   };
@@ -735,10 +768,9 @@ export class ChartJsPage {
         labels: {
           usePointStyle: false,
 
-          padding: 20,
-
-          // boxWidth: 15,
-          // boxHeight: 15
+          font: {
+            size: 12
+          }
         }
       },
 
@@ -748,6 +780,38 @@ export class ChartJsPage {
             const value = context.raw as number;
 
             return `${context.label}: ${value}`;
+          }
+        }
+      }
+    },
+
+    scales: {
+      r: {
+        beginAtZero: true,
+
+        min: 0,
+        max: 20,
+
+        ticks: {
+          stepSize: 5,
+
+          color: '#666',
+          font: {
+            size: 12
+          },
+
+          backdropColor: 'transparent'
+        },
+
+        grid: {
+          color: '#e5e5e5',
+          lineWidth: 1
+        },
+
+        pointLabels: {
+          color: '#666',
+          font: {
+            size: 12
           }
         }
       }
@@ -763,7 +827,7 @@ export class ChartJsPage {
   public singleBarData: ChartData<'bar'> = {
     labels: [
       'January',
-      'Febuary',  
+      'February',  
       'March',
       'April',
       'May',
@@ -786,18 +850,18 @@ export class ChartJsPage {
         ],
 
         backgroundColor: [
-          'rgba(178, 233, 251, 0.35)',
+          '#D7ECFB',
         ],
 
         borderColor: [
-          '#53b8f3'
+          '#4baff1'
         ],
 
         hoverBackgroundColor: [
           '#d1eeff', 
         ],
 
-        borderWidth: 1,
+        borderWidth: 1.3,
       }
     ],
   };
@@ -815,15 +879,11 @@ export class ChartJsPage {
     plugins: {
       // label
       legend: {
-        position: 'top',
-
         labels: {
-          // hình tròn
-          // usePointStyle: true,
-          // padding: 95,
-
-          usePointStyle: false
-        },
+          color: 'transparent',
+          boxWidth: 0,
+          boxHeight: 0
+        }
       },
 
       tooltip: {
@@ -853,13 +913,15 @@ export class ChartJsPage {
         },
 
         grid: {
-          color: '#e5e7eb',
+          display: true,
+          z: 1
         },
       },
 
       x: {
         grid: {
-          display: false,
+          color: '#e5e7eb',
+          display: true,
         },
       },
     },

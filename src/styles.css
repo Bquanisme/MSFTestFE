@@ -1,6 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'sweetalert2/dist/sweetalert2.min.css';
 
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f2f7;
+}
+
+
+.alert-background-1 a,
+.alert-background-2 a,
+.alert-background-3 a,
+.alert-background-4 a,
+.alert-background-5 a,
+.alert-background-6 a,
+.alert-background-7 a,
+.alert-background-8 a {
+  color: #014461;
+  font-size: 16px;
+  font-family: Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+
 .swal2-container {
   /* Bọc full màn */
   z-index: 99999 !important;

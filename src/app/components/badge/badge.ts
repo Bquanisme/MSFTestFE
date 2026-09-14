@@ -9,7 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 })
 export class Badge {
   icon = input('');
-  count = input(0);
+  count = input('');
   badgeClass = input('');
   iconBadgeClass = input('')
   iconColor = input('')

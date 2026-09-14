@@ -1,12 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
-import { MatIcon } from "@angular/material/icon";
 import { WidgetService } from '../../service/widget/widget-service';
 import { map, tap } from 'rxjs';
 import { Widget } from '../../typescript/home';
 
 @Component({
   selector: 'app-widget-page',
-  imports: [MatIcon],
+  imports: [],
   templateUrl: './widget-page.html',
   styleUrl: './widget-page.css',
 })

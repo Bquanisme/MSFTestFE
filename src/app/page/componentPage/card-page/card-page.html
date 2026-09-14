@@ -1,6 +1,6 @@
 <div class="section">
-    <div style="display: flex; justify-content: space-between">
-        <h2>Cards</h2>
+    <div class="section-title">
+        <h2 class="title">Cards</h2>
         <app-breadcrumb 
             [title]="'Cards'"
             [folderTitle]="'UI Components'"
@@ -19,7 +19,7 @@
 
                 @if ($index === 2) {
                     <div class="change-color-header-3">
-                        <mat-icon>person</mat-icon>
+                        <i class="fa-solid fa-user"></i>
                         <h3>{{ item.title }}</h3>
                     </div>
                 }
@@ -28,14 +28,13 @@
                     <div class='button-row'>
                         <img [src]="authLogo" alt="logo" class="img-logo"/>
 
-                        <h3 style="font-size: 1.5em;">{{ item.name }}</h3>
+                        <h3>{{ item.name }}</h3>
 
-                        <div class="flex">
-                            <mat-icon>location_on</mat-icon>
-                            <p style="font-size: 1.10em;">{{ item.address }}</p>
+                        <div class="flex-2">
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <p>{{ item.address }}</p>
                         </div>
 
-                        <br>
 
                         <div class="flex">
                             <i class="fa-brands fa-facebook" (click)="scrollToTop($event)"></i><br>
@@ -48,7 +47,7 @@
 
                  @if ($index === 1) {
                     <div class="change-color-header-2">
-                        <h3>{{ item.title }}</h3>
+                        <h3 style="font-weight: 700; color: #212529Bf;">{{ item.title }}</h3>
                     </div>
                 }
             </div>
@@ -58,7 +57,7 @@
 
 
 
-    <div class="box-row-1">
+    <div class="box-row-1" style="margin-bottom: 55px;">
 
         <div class="profile-card profile-card-left">
 
@@ -78,8 +77,8 @@
 
                 <div class="profile-menu-item">
                     <div class="menu-left">
-                        <mat-icon>mail</mat-icon>
-                        <span>Mail Inbox</span>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span style="font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI">Mail Inbox</span>
                     </div>
 
                     <span class="badge badge-blue">10</span>
@@ -88,8 +87,8 @@
 
                 <div class="profile-menu-item">
                     <div class="menu-left">
-                        <mat-icon>format_list_bulleted</mat-icon>
-                        <span>Recent Activity</span>
+                        <i class="fa-solid fa-list-check"></i>
+                        <span style="font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI">Recent Activity</span>
                     </div>
 
                     <span class="badge badge-red">15</span>
@@ -98,8 +97,8 @@
 
                 <div class="profile-menu-item">
                     <div class="menu-left">
-                        <mat-icon>notifications</mat-icon>
-                        <span>Notifications</span>
+                        <i class="fa-solid fa-bell"></i>
+                        <span style="font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI">Notifications</span>
                     </div>
 
                     <span class="badge badge-green">11</span>
@@ -108,8 +107,8 @@
 
                 <div class="profile-menu-item">
                     <div class="menu-left">
-                        <mat-icon>chat_bubble</mat-icon>
-                        <span>Messages</span>
+                        <i class="fa-solid fa-comments"></i>
+                        <span style="font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI">Messages</span>
                     </div>
 
                     <span class="badge badge-orange">03</span>
@@ -131,9 +130,8 @@
                 </button>
 
 
-                <img [src]="authLogo" alt="logo" class="profile-avatar"/>
+                <img [src]="authLogo" alt="logo" class="img-logo" style="margin: 0 0 14px;"/>
 
-                <br>
 
                 <h2>Alex Johnson</h2>
 
@@ -141,18 +139,24 @@
                 <p class="center-description">
                     Just launched a new project with
                     <a (click)="scrollToTop($event)">@teamawesome</a> - Check it out!
+                    <a
+                        class="profile-link"
+                        (click)="scrollToTop($event)"
+                    >
+                        alexjohnson.dev
+                    </a>
                 </p>
 
 
-                <a
+                <!-- <a
                     class="profile-link"
                     (click)="scrollToTop($event)"
                 >
                     alexjohnson.dev
-                </a>
+                </a> -->
 
 
-                <p class="center-description second-description">
+                <p class="second-description">
                     Excited to share this innovative solution that combines
                     modern design principles with cutting-edge technology.
                     Looking forward to your feedback!
@@ -163,7 +167,7 @@
 
             <div class="center-card-footer">
 
-                <mat-icon>schedule</mat-icon>
+                <i class="fa-regular fa-clock"></i>
 
                 <span>2 hours ago</span>
 
@@ -188,7 +192,8 @@
 
 
                 <div class="twitter-circle">
-                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-twitter twitter-back"></i>
+                    <i class="fa-brands fa-twitter twitter-front"></i>
                 </div>
 
             </div>
@@ -197,7 +202,7 @@
             <!-- Stats -->
             <div class="social-stats">
 
-                <div class="stat-item">
+                <div class="stat-item" style="background-color: #f8f9fa; border-bottom: none;">
                     <strong>1,250</strong>
                     <span>Posts</span>
                 </div>
@@ -227,9 +232,9 @@
 
                     <div class="tweet-location" (click)="scrollToTop($event)">
 
-                        <mat-icon>photo_camera</mat-icon>
+                        <i class="fa-solid fa-camera" style="margin-right: 20px;"></i>
 
-                        <mat-icon>location_on</mat-icon>
+                        <i class="fa-solid fa-location-dot" style="margin-right: 12px;"></i>
 
                         <span>Manchester, UK</span>
 
@@ -263,7 +268,7 @@
                 @if ($index === 1) {
                     <div class="header-row-three-2">
                         <div class="flex-row-3">
-                            <mat-icon>check_circle</mat-icon>
+                            <i class="fa-solid fa-circle-check"></i>
                             <h3>{{ item.title }}</h3>
                         </div>
                         <div class="pill-badges">
@@ -275,17 +280,17 @@
                 @if ($index === 2) {
                     <div class="header-row-three-3">
                         <div class="flex-row-3-3">
-                            <mat-icon>warning</mat-icon>
+                            <i class="fa-solid fa-triangle-exclamation"></i>
                             <h3>{{ item.title }}</h3>
                         </div>
-                        <span class="badge badge-red">49</span>
+                        <span class="badge badge-red" style="border-radius: 6px;">49</span>
                     </div>
                 }
                 
                 <div class='button-margin'>
                     <div>
                         @if ($index === 0) {
-                            <p style="font-size: 1.10em; line-height: 1.5;">
+                            <p style="font-size: 16px; line-height: 1.5; color: #212529;">
                                 <span class="toggle">
                                     <i class="fa-solid fa-toggle-on"></i>
                                 </span>
@@ -294,7 +299,7 @@
                         }
 
                         @else if ($index === 2) {
-                            <p style="font-size: 1.10em; line-height: 1.5;">
+                            <p style="font-size: 16px; line-height: 1.5; color: #212529;">
                                 <span class="notification">
                                     <i class="fa-solid fa-bell"></i>
                                 </span>
@@ -303,7 +308,7 @@
                         }
 
                         @else {
-                            <p style="font-size: 1.10em; line-height: 1.5;">
+                            <p style="font-size: 16px; line-height: 1.5; color: #212529;">
                                 {{ item.description }}
                             <p>
                         }
@@ -316,12 +321,12 @@
     </div>
 
 
-    <div class='box-row-1'>
+    <div class='box-row-1' style="margin-bottom: 55px;">
         @for (item of cardDataRow4(); track item.id) {
             <div [class]='`box-row-4-` + item.id'>
                 <div [class]="`header-row-four-` + item.id">
                     <div [class]="`flex-row-4-` + item.id">
-                        <i [class]="item.icon"></i>
+                        <i [class]="item.icon" style="margin-top: 3px;"></i>
                         <h3>{{ item.title }}</h3>
                     </div>
                 </div>
@@ -329,7 +334,7 @@
                 
                 <div class='button-margin'>
                     <div>
-                        <p style="font-size: 1.10em; line-height: 1.5;">
+                        <p style="font-size: 16px; line-height: 1.5; color: #212529;">
                             <span [class]="`color-icon-` + item.id">
                                 <i [class]="item.icon2"></i>
                             </span>
@@ -344,30 +349,30 @@
     </div>
 
 
-    <div class='box-row-1'>
+    <div class='box-row-1' style="margin-bottom: 55px;">
         @for (item of cardDataRow5(); track item.id) {
             <div [class]='`box-row-5-` + item.id'>
                 
                 <div class='button-margin'>
                     <div>
-                        <p style="font-size: 1.10em; line-height: 1.5;">
+                        <p style="font-size: 20px; line-height: 1.5; padding: 0 0 16px 0;">
                             <span [class]="`color-icon-row-5-` + item.id">
                                 <i [class]="item.icon"></i>
                             </span>
-                            {{ item.description }}
+                            "{{ item.description }}"
                         <p>
 
-                    </div>
-                </div>
-                
-                
-                <div class='button-margin'>
-                    <div [class]="`icon-row-5-` + item.id">
+                        <div [class]="`icon-row-5-` + item.id">
+                            <i [class]="item.icon2" style="margin: 0 6px; font-size: 17px;"></i>
+                            <p>
+                                {{ item.title.split(' ').slice(0, -2).join(' ') }}
+                                <i>{{ item.title.split(' ').slice(-2).join(' ') }}</i>
+                            </p>
+                        </div>
 
-                        <i [class]="item.icon2"></i>
-                        <h3 style="font-size: 1.10em; line-height: 1.5">{{ item.title }}</h3>
                     </div>
                 </div>
+            
 
 
             </div>
@@ -382,32 +387,50 @@
                 <div class="alert" [style.background]="item.color">
     
                     <div [class]="`alert-head-` + item.id">
-                        <b><span>
-                            <i [class]="item.icon"></i>
-                        </span> {{ item.title }}</b>
+                        <p>
+                            <span>
+                                <i [class]="item.icon" style="margin: 0 4px 0 0;"></i>
+                            </span> 
+                            {{ item.title }}
+                        </p>
                     </div>
         
                     <div class="alert-body">
 
                         @if ($index === 1) {
-                            <p style="color: black;"><span>
-                                <i [class]="item.icon2" style="margin-right: 10px; color: green;"></i>
+                            <p style="color: #272C33;"><span>
+                                <i [class]="item.icon2" style="margin-right: 12px; color: #00C292;"></i>
                             </span>{{ item.description }}</p>
             
                             <div class="alert-footer">
-                                <span style="color: black;"><span>
-                                    <i [class]="item.icon3" style="color: black;"></i>
+                                <span style="color: #272C33; font-size: 14px;"><span>
+                                    <i [class]="item.icon3" style="color: #272C33;"></i>
                                 </span> {{ item.time }}</span>
                                 <strong>{{ item.status }}</strong>
                             </div>
                         }
-                        @else {
+                        @else if ($index === 2) {
                             <p><span>
-                                <i [class]="item.icon2" style="margin-right: 10px"></i>
+                                <i [class]="item.icon2" style="margin-right: 8px;"></i>
                             </span>{{ item.description }}</p>
             
                             <div class="alert-footer">
-                                <span><span>
+                                <span style="font-size: 14px;">
+                                    <span>
+                                        <i [class]="item.icon3"></i>
+                                    </span> 
+                                    {{ item.time }}
+                                </span>
+                                <strong style="background: #f1f2f7; color: #272C33;">{{ item.status }}</strong>
+                            </div>
+                        }
+                        @else {
+                            <p><span>
+                                <i [class]="item.icon2" style="margin-right: 12px"></i>
+                            </span>{{ item.description }}</p>
+            
+                            <div class="alert-footer">
+                                <span style="font-size: 14px;"><span>
                                     <i [class]="item.icon3"></i>
                                 </span> {{ item.time }}</span>
                                 <strong>{{ item.status }}</strong>
@@ -439,12 +462,24 @@
                             [alt]="item.title"
                         >
 
-                        <span
-                            class="project-badge"
-                            [style.background]="item.badgeColor"
-                        >
-                            {{ item.badge }}
-                        </span>
+                        @if ($index === 2) {
+                            <span
+                                class="project-badge"
+                                [style.background]="item.badgeColor"
+                                [style.color]="'#272c33'"
+                            >
+                                {{ item.badge }}
+                            </span>
+
+                        }
+                        @else {
+                            <span
+                                class="project-badge"
+                                [style.background]="item.badgeColor"
+                            >
+                                {{ item.badge }}
+                            </span>
+                        }
 
                     </div>
 
@@ -476,12 +511,27 @@
                             </span>
 
 
-                            <button
-                                [style.background]="item.color"
-                            >
-                                <i [class]="item.icon3"></i>
-                                {{ item.action }}
-                            </button>
+                            @if ($index === 2) {
+                                <button
+                                    [style.background]="item.color"
+                                    [style.color]="'#272c33'"
+                                    style="flex-wrap: wrap; align-items: center; display: flex; justify-content: center;"
+                                >
+                                    <i [class]="item.icon3"></i>
+                                    {{ item.action }}
+                                </button>
+                            }
+
+                            @else {
+                                <button
+                                    [style.background]="item.color"
+
+                                    style="flex-wrap: wrap; align-items: center; display: flex; justify-content: center;"
+                                >
+                                    <i [class]="item.icon3"></i>
+                                    {{ item.action }}
+                                </button>
+                            }
 
                         </div>
 

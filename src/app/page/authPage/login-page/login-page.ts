@@ -1,17 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
-import { MatIcon } from "@angular/material/icon";
 
 @Component({
   selector: 'app-login-page',
-  imports: [ReactiveFormsModule, MatIcon],
+  imports: [ReactiveFormsModule],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
 })
 export class LoginPage {
-
-  tabLogo = '/tabs.png'
 
   router = inject(Router)
 

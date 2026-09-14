@@ -1,101 +1,65 @@
-<div class="dashboard-bottom-card products-card">
+<div class="dashboard-bottom-card">
 
     <div class="bottom-card-header">
     <h3>Top Products</h3>
     </div>
 
     <div class="products-table-wrapper">
-    <table class="products-table">
-
-        <thead>
-        <tr>
-            <th>PRODUCT</th>
-            <th>SALES</th>
-            <th>REVENUE</th>
-            <th>STATUS</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <!-- {topProducts.map((product) => (
-            <tr key={product.id}>
-
-            <td>
-                <div class="product-info">
-                <div
-                    class={`product-icon ${product.type}`}
-                >
-                {productIcons[product.type]}
-                </div>
-                <span>{product.name}</span>
-                </div>
-            </td>
-
-            <td>
-                {product.sales}
-            </td>
-
-            <td>
-                ${product.revenue.toLocaleString()}
-            </td>
-
-            <td>
-                <span
-                className={
-                    product.status === 'In Stock'
-                    ? 'product-status in-stock'
-                    : 'product-status low-stock'
+        <div class="products-table-scroll">
+            <table class="products-table">
+    
+                <thead>
+                    <tr>
+                        <th class="product-col">PRODUCT</th>
+                        <th class="sales-col">SALES</th>
+                        <th class="revenue-col">REVENUE</th>
+                        <th class="status-col">STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                @for (product of topProducts; track product.id) {
+                <tr>
+    
+                    <td>
+                        <div class="product-info">
+                            <div
+                                [class]="`product-icon-` + product.id"
+                            >
+    
+                                <i [class]="product.type"></i>
+                            
+                            </div>
+                        <span class="span-name">{{product.name}}</span>
+                        </div>
+                    </td>
+    
+                    <td class="span-name">
+                        {{product.sales}}
+                    </td>
+    
+                    <td class="span-name">
+                        ${{product.revenue.toLocaleString()}}
+                    </td>
+    
+                    <td>
+                        <span
+                            [class]="
+                                product.status === 'In Stock'
+                                ? 'product-status in-stock'
+                                : 'product-status low-stock'
+                            "
+                            >
+                            {{ product.status }}
+                        </span>
+                    </td>
+    
+                </tr>
                 }
-                >
-                {product.status}
-                </span>
-            </td>
-
-            </tr>
-        ))} -->
-
-        @for (product of topProducts; track product.id) {
-            <tr>
-
-            <td>
-                <div class="product-info">
-                    <div
-                        [class]="`product-icon ` + product.type"
-                    >
-                    <!-- {productIcons[product.type]} -->
-
-                    <mat-icon>{{product.type}}</mat-icon>
-                    
-                    </div>
-                <span>{{product.name}}</span>
-                </div>
-            </td>
-
-            <td>
-                {{product.sales}}
-            </td>
-
-            <td>
-                ${{product.revenue.toLocaleString()}}
-            </td>
-
-            <td>
-                <span
-                    [class]="
-                        product.status === 'In Stock'
-                        ? 'product-status in-stock'
-                        : 'product-status low-stock'
-                    "
-                    >
-                    {{ product.status }}
-                </span>
-            </td>
-
-            </tr>
-        }
-        </tbody>
-
-    </table>
+                </tbody>
+    
+            </table>
+        </div>
     </div>
 
 </div>

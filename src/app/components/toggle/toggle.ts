@@ -12,6 +12,8 @@ export class Toggle {
 
   isChecked = signal(true)
 
+  isFocused = false;
+
   toggleUpdate() {
     this.isChecked.update(value => !value)
   }

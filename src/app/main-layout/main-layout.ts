@@ -10,10 +10,22 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.css',
 })
+
 export class MainLayout {
   isDrawerOpen = signal(false);
+  isHoverSidebar = signal(false);
 
   setIsDrawerOpen() {
     this.isDrawerOpen.update(value => !value);
+  }
+
+  openSidebarHover() {
+    if (!this.isDrawerOpen()) {
+      this.isHoverSidebar.set(true);
+    }
+  }
+
+  closeSidebarHover() {
+    this.isHoverSidebar.set(false);
   }
 }

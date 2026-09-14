@@ -10,28 +10,28 @@ export class SweetAlert2Service {
       {
         id: 1,
         title: 'Basic Alert',
-        iconButton: 'info',
+        iconButton: 'fa-solid fa-info-circle',
         action: 'info',
         icon: 'info'
       },
       {
         id: 2,
         title: 'Success',
-        iconButton: 'check',
+        iconButton: 'fa-solid fa-check-circle',
         action: 'check',
         icon: 'success'
       },
       {
         id: 3,
         title: 'Error',
-        iconButton: 'clear',
+        iconButton: 'fa-solid fa-times-circle',
         action: 'clear',
         icon: 'error'
       },
       {
         id: 4,
         title: 'Warning',
-        iconButton: 'warning',
+        iconButton: 'fa-solid fa-exclamation-triangle',
         action: 'warning',
         icon: 'warning'
       },
@@ -44,28 +44,28 @@ export class SweetAlert2Service {
       {
         id: 1,
         title: 'Success Toast',
-        iconButton: 'check',
+        iconButton: 'fa-solid fa-check',
         action: 'check',
         icon: 'success'
       },
       {
         id: 2,
         title: 'Info Toast',
-        iconButton: 'info',
+        iconButton: 'fa-solid fa-info',
         action: 'info',
         icon: 'info'
       },
       {
         id: 3,
         title: 'Warning Toast',
-        iconButton: 'warning',
+        iconButton: 'fa-solid fa-exclamation',
         action: 'warning',
         icon: 'warning'
       },
       {
         id: 4,
         title: 'Error Toast',
-        iconButton: 'clear',
+        iconButton: 'fa-solid fa-times',
         action: 'clear',
         icon: 'error'
       },
@@ -77,55 +77,55 @@ export class SweetAlert2Service {
       {
         id: 1,
         title: 'Top Start',
-        iconButton: 'arrow_upward',
+        iconButton: 'fa-solid fa-arrow-up',
         icon: 'top-start'
       },
       {
         id: 2,
         title: 'Top Center',
-        iconButton: 'arrow_upward',
+        iconButton: 'fa-solid fa-arrow-up',
         icon: 'top-center'
       },
       {
         id: 3,
         title: 'Top End',
-        iconButton: 'arrow_upward',
+        iconButton: 'fa-solid fa-arrow-up',
         icon: 'top-end'
       },
       {
         id: 4,
         title: 'Center Start',
-        iconButton: 'arrow_back',
+        iconButton: 'fa-solid fa-arrow-left',
         icon: 'center-start'
       },
       {
         id: 5,
         title: 'Center',
-        iconButton: 'gps_fixed',
+        iconButton: 'fa-solid fa-crosshairs',
         icon: 'center'
       },
       {
         id: 6,
         title: 'Center End',
-        iconButton: 'arrow_forward',
+        iconButton: 'fa-solid fa-arrow-right',
         icon: 'center-end'
       },
       {
         id: 7,
         title: 'Bottom Start',
-        iconButton: 'gps_fixed',
+        iconButton: 'fa-solid fa-arrow-down',
         icon: 'bottom-start'
       },
       {
         id: 8,
         title: 'Bottom Center',
-        iconButton: 'arrow_downward',
+        iconButton: 'fa-solid fa-arrow-down',
         icon: 'bottom-center'
       },
       {
         id: 9,
         title: 'Bottom End',
-        iconButton: 'arrow_downward',
+        iconButton: 'fa-solid fa-arrow-down',
         icon: 'bottom-end'
       },
     ]

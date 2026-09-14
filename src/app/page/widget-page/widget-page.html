@@ -1,7 +1,7 @@
 <div class="dashboard-section">
 
-    <h1 style="padding-bottom: 7px;">Widgets</h1>
-    <p style="font-size: 16px;">Dashboard widgets and components showcase</p>
+    <h1>Widgets</h1>
+    <p style="font-size: 16px; color: #212529;">Dashboard widgets and components showcase</p>
 
     <br><br>
 
@@ -13,18 +13,18 @@
         >
 
             <div [class]="`dashboard-card-icon-white-`+ item.id">
-                <mat-icon>{{ item.icon }}</mat-icon>
+                <i [class]="item.icon"></i>
             </div>
 
             <div class="dashboard-card-content">
                 @if ($index === 0) {
                     <h2 class="dashboard-card-cost">
-                        ${{ item.number?.toLocaleString() || 0 }}
+                        ${{ item.number?.toLocaleString('en-US') || 0 }}
                     </h2>
                 }
                 @else {
                     <h2 class="dashboard-card-cost">
-                        {{ item.number?.toLocaleString() || 0 }}
+                        {{ item.number?.toLocaleString('en-US') || 0 }}
                     </h2>
                 }
 
@@ -40,9 +40,7 @@
 
     </div>
 
-    <br><br><br><br>    
-
-    <div class="dashboard-cards">
+    <div class="dashboard-cards-row-2">
         @for (item of widgetDataRow2(); track item.id) {
 
         <div
@@ -51,27 +49,7 @@
 
             <div class="dashboard-card-content">
 
-                <!-- @if ($index === 0) {
-
-                    <h2 class="dashboard-card-cost">
-                        {{ item.value }}
-                    </h2>
-
-                } @else if ($index === 3) {
-
-                    <h2 class="dashboard-card-cost">
-                    {{ item.cost }}%
-                    </h2>
-
-                } @else {
-
-                    <h2 class="dashboard-card-cost">
-                    {{ item.cost.toLocaleString() }}
-                    </h2>
-
-                } -->
-
-                <h2 class="dashboard-card-cost">
+                <h2 class="dashboard-card-cost-2">
                     {{ item.value }}
                 </h2>
 
@@ -82,7 +60,7 @@
             </div>
 
             <div class="dashboard-card-icon">
-                <mat-icon>{{ item.icon }}</mat-icon>
+                <i [class]="item.icon"></i>
             </div>
 
         </div>
@@ -91,29 +69,29 @@
 
     </div>
 
-    <br><br><br><br> 
-
-    <div class="dashboard-cards">
+    <div class="dashboard-cards-2">
         @for (item of widgetDataRow3(); track item.id) {
 
         <div
-            [class]="'dashboard-card-white'"
+            [class]="'dashboard-card-white-2'"
         >
+            <div class="dashboard-card-white-2-row">
 
-            <div [class]="`dashboard-card-icon-white-three-`+ item.id">
-                <mat-icon>{{ item.icon }}</mat-icon>
-            </div>
-
-            <div class="dashboard-card-content">
-                <p class="dashboard-card-title-white-three">
-                    {{ item.title }}
-                </p>
-
-
-                <h2 class="dashboard-card-cost">
-                    Total: {{ item.value }}
-                </h2>
-
+                <div [class]="`dashboard-card-icon-white-three-`+ item.id">
+                    <i [class]="item.icon"></i>
+                </div>
+    
+                <div class="dashboard-card-content">
+                    <p class="dashboard-card-title-white-three">
+                        {{ item.title }}
+                    </p>
+    
+    
+                    <h2 class="dashboard-card-cost">
+                        Total: {{ item.value }}
+                    </h2>
+    
+                </div>
             </div>
 
         </div>
@@ -121,13 +99,11 @@
         }
 
     </div>
-
-    <br><br><br><br>
 
     <div class="dashboard-cards-3fr">
         @for (item of widgetDataRow4(); track item.id) {
 
-        <div class="dashboard-card-white">
+        <div class="dashboard-card-white-four">
 
             <div class="dashboard-card-white-content">
 
@@ -136,18 +112,16 @@
                     <p class="dashboard-card-title-white-four">
                     {{ item.title }}
                     </p>
-
+                    
                     <div [class]="'dashboard-card-icon-white-four-' + item.id">
-                    <mat-icon>{{ item.icon }}</mat-icon>
+                        <i [class]="item.icon"></i>
                     </div>
 
                 </div>
 
-                <h2 class="dashboard-card-cost">
-                    {{ item.number?.toLocaleString() || 0 }}
+                <h2 class="dashboard-card-cost-3">
+                    {{ item.number?.toLocaleString('en-US') || 0 }}
                 </h2>
-
-                <br>
 
                 <div class="progress-bar-container">
                     <div

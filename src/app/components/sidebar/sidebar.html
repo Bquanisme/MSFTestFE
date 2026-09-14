@@ -1,100 +1,131 @@
 <div
   class="sidebar-overlay"
   [class.show]="isDrawerOpen()"
-  (click)="setIsDrawerOpen.emit(true)"
+  (click)="toggleDrawer()"
 ></div>
 
 <aside
   class="sidebar"
-  [class.sidebar-open]="isDrawerOpen()"
-  [class.sidebar-closed]="!isDrawerOpen()"
+  [class.sidebar-open]="isDrawerOpen() || isHoverSidebar()"
+  [class.sidebar-closed]="!isDrawerOpen() && !isHoverSidebar()"
   (mouseenter)="openDrawer()"
   (mouseleave)="closeDrawer()"
 >
+
   <nav class="sidebar-menu">
 
     @for (item of sidebar(); track item.id) {
 
-      <div class="sidebar-group">
 
+
+      @if (item.id === 2) {
+
+        @if (isDrawerOpen() || isHoverSidebar()) {
+          <div class="sidebar-section">
+            UI ELEMENTS
+          </div>
+        }
+
+      }
+
+
+
+      @if (item.id === 5) {
+
+        @if (isDrawerOpen() || isHoverSidebar()) {
+          <div class="sidebar-section">
+            ICONS & CHARTS
+          </div>
+        }
+
+      }
+
+
+      @if (item.id === 9) {
+
+        @if (isDrawerOpen() || isHoverSidebar()) {
+          <div class="sidebar-section">
+            EXTRAS
+          </div>
+        }
+
+      }
+
+
+      <!-- =================================
+           SIDEBAR ITEM
+      ================================== -->
+
+      <div class="sidebar-group">
 
         <button
           type="button"
           class="sidebar-item"
-          [class.active]="
-            isItemActive(item) ||
-            hasActiveChild(item)
-          "
+          [class.dashboard-item]="item.id === 1"
+          [class.active]="item.id !== 1 && isItemActive(item)"
+          [class.menu-open]="item.children?.length && openMenu() === item.id"
           (click)="handleMenuClick(item)"
         >
-
           <span class="sidebar-icon">
-
             @switch (item.id) {
-
               @case (1) {
-                <mat-icon>speed</mat-icon>
+                <i class="fa-solid fa-gauge-high"></i>
               }
 
               @case (2) {
-                <mat-icon>extension</mat-icon>
+                <i class="fa-solid fa-puzzle-piece"></i>
               }
 
               @case (3) {
-                <mat-icon>table_view</mat-icon>
+                <i class="fa-solid fa-table"></i>
               }
 
               @case (4) {
-                <mat-icon>edit_note</mat-icon>
+                <i class="fa-solid fa-pen-to-square"></i>
               }
 
               @case (5) {
-                <mat-icon>auto_awesome_mosaic</mat-icon>
+                <i class="fa-solid fa-icons"></i>
               }
 
               @case (6) {
-                <mat-icon>widgets</mat-icon>
+                <i class="fa-solid fa-border-all"></i>
               }
 
               @case (7) {
-                <mat-icon>bar_chart</mat-icon>
+                <i class="fa-solid fa-chart-bar"></i>
               }
 
               @case (8) {
-                <mat-icon>map</mat-icon>
+                <i class="fa-solid fa-map-location-dot"></i>
               }
 
               @case (9) {
-                <mat-icon>description</mat-icon>
+                <i class="fa-solid fa-file-lines"></i>
               }
-
             }
-
           </span>
 
           <span class="sidebar-text">
             {{ item.title }}
           </span>
 
-          @if (item.children) {
-
-            <mat-icon
-              class="sidebar-arrow"
+          @if (item.children?.length) {
+            <i
+              class="fa-solid fa-chevron-right sidebar-arrow"
               [class.open]="openMenu() === item.id"
-            >
-              chevron_right
-            </mat-icon>
-
+            ></i>
           }
-
         </button>
 
 
-
+        <!-- =================================
+             CHILDREN
+        ================================== -->
 
         @if (
           openMenu() === item.id &&
-          item.children
+          item.children?.length
         ) {
 
           <div class="sidebar-children">
@@ -107,17 +138,25 @@
               <button
                 type="button"
                 class="sidebar-child"
-                [class.active]="router.url === child.path"
+
+                [class.active]="
+                  router.url.split('?')[0] === child.path
+                "
+
                 (click)="handleChildClick(child.path)"
               >
 
                 <div class="child-content">
 
-                  <mat-icon>
-                    radio_button_unchecked
-                  </mat-icon>
+                  <span class="child-icon">
+                    @if (child.icon) {
+                      <i [class]="child.icon"></i>
+                    }
+                  </span>
 
-                  {{ child.title }}
+                  <span>
+                    {{ child.title }}
+                  </span>
 
                 </div>
 
@@ -134,4 +173,5 @@
     }
 
   </nav>
+
 </aside>

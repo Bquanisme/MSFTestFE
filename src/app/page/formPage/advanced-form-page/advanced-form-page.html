@@ -1,1 +1,169 @@
-<p>advanced-form-page works!</p>
+<div class="section">
+    <div style="display: flex; justify-content: space-between">
+        <h2>Advanced Forms</h2>
+        <app-breadcrumb 
+            [title]="'Advanced Forms'"
+            [folderTitle]="'Forms'"
+
+        ></app-breadcrumb>
+    </div>
+    
+    <div class='box-row-1'>
+        <div class='box-row-1-column-1'>
+
+            <div style="display: flex; align-items: center; gap: 5px; margin-left: 20px;">
+                <i class="fa-solid fa-keyboard"></i>
+                <h3>Input Groups</h3>
+            </div>
+
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                
+                <div class="input-groups">
+
+
+                    <!-- USERNAME -->
+                    <div class="form-group">
+                        <label>USERNAME</label>
+
+                        <div class="input-group">
+                        <span class="input-group-text">@</span>
+
+                        <input
+                            type="text"
+                            formControlName="username"
+                            placeholder="Username"
+                        />
+                        </div>
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+                        <label>EMAIL</label>
+
+                        <div class="input-group">
+                        <input
+                            type="email"
+                            formControlName="email"
+                            placeholder="Email"
+                        />
+
+                        <span class="input-group-text">
+                            @example.com
+                        </span>
+                        </div>
+                    </div>
+
+
+                    <!-- PRICE -->
+                    <div class="form-group">
+                        <label>PRICE</label>
+
+                        <div class="input-group">
+                        <span class="input-group-text">$</span>
+
+                        <input
+                            type="number"
+                            formControlName="price"
+                            placeholder="Amount"
+                        />
+
+                        <span class="input-group-text">
+                            .00
+                        </span>
+                        </div>
+                    </div>
+
+
+                    <!-- URL -->
+                    <div class="form-group">
+                        <label>URL</label>
+
+                        <div class="input-group">
+                        <span class="input-group-text">
+                            https://
+                        </span>
+
+                        <input
+                            type="text"
+                            formControlName="url"
+                            placeholder="example.com"
+                        />
+                        </div>
+                    </div>
+
+
+                    <!-- WITH BUTTON -->
+                    <div class="form-group">
+                        <label>WITH BUTTON</label>
+
+                        <div class="input-group">
+                        <input
+                            type="text"
+                            formControlName="search"
+                            placeholder="Search for..."
+                        />
+
+                        <button
+                            type="button"
+                            class="input-button"
+                        >
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Search
+                        </button>
+                        </div>
+                    </div>
+
+
+                    <!-- WITH DROPDOWN -->
+                    <div class="form-group">
+                        <label>WITH DROPDOWN</label>
+
+                        <div class="input-group">
+                        <select
+                            formControlName="action"
+                            class="dropdown-select"
+                        >
+                            <option>Action</option>
+                            <option>Another action</option> 
+                            <option>
+                                Something else
+                            </option>
+                        </select>
+
+                        <input
+                            type="text"
+                            formControlName="dropdownInput"
+                            placeholder=""
+                        />
+                        </div>
+                    </div>
+
+                    </div>
+
+            </div>
+
+        </div>
+
+
+        <div class='box-row-1-column-1'>
+
+            <h3>Icon Inputs</h3>
+
+            <hr style="border-top: 1px solid #d0cccc"/>
+            
+            <div class='button-margin'>
+                <div class='button-row'>
+
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

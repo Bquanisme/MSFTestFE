@@ -20,6 +20,7 @@ export interface ISidebarItem {
     id: number;
     title: string;
     path: string;
+    icon: string
   }[];
 }
 
@@ -158,4 +159,23 @@ interface HeaderTs {
 interface HeaderResponse {
   id: number;
   data: Header[]
+}
+
+
+
+
+
+
+
+
+export interface AdvancedForm {
+  id: number;
+  title: string;
+  name: string;
+  icon: string
+} 
+
+export interface AdvancedFormResponse {
+  id: number;
+  data: AdvancedForm[]
 }

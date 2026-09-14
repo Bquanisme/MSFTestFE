@@ -1,12 +1,29 @@
-<main>
-  <app-header (setIsDrawerOpen)="setIsDrawerOpen()"/>
+<main class="app-layout">
 
-  <app-sidebar
-    [isDrawerOpen]="isDrawerOpen()"
+  <app-header
     (setIsDrawerOpen)="setIsDrawerOpen()"
   />
 
-  <router-outlet />
+  <div
+    class="layout"
+    [class.sidebar-closed-layout]="!isDrawerOpen()"
+  >
 
-  <app-footer />
+    <app-sidebar
+      [isDrawerOpen]="isDrawerOpen()"
+      (setIsDrawerOpen)="setIsDrawerOpen()"
+    />
+
+    <div class="content">
+
+      <div class="router-content">
+        <router-outlet />
+      </div>
+
+      <app-footer />
+
+    </div>
+
+  </div>
+
 </main>

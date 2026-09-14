@@ -6,7 +6,7 @@ import { TableService } from '../../../service/table/table-service';
   selector: 'app-data-table-page',
   imports: [Breadcrumb],
   templateUrl: './data-table-page.html',
-  styleUrl: '../basic-table-page/basic-table-page.css',
+  styleUrl: './data-table-page.css',
 })
 export class DataTablePage {
 

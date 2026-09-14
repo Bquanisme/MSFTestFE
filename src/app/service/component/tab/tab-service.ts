@@ -80,7 +80,7 @@ export class TabService {
         "id": "home",
         "label": "Home",
         "title": "Home",
-        "content": "Home content here."
+        "content": "Some content here."
       },
       {
         "id": "menu1",

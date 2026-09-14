@@ -116,7 +116,7 @@ export class ButtonService {
       },
       {
         id: 3,
-        title: 'Disable',
+        title: 'Disabled',
       },
     ]
   }
@@ -126,31 +126,31 @@ export class ButtonService {
       {
         id: 1,
         title: 'Left Icon',
-        icon: 'star',
+        icon: 'fa-solid fa-star',
         iconPosition: 'left',
       },
       {
         id: 2,
         title: 'Right Icon',
-        icon: 'favorite',
+        icon: 'fa-solid fa-heart',
         iconPosition: 'right',
       },
       {
         id: 3,
         title: 'Success',
-        icon: 'check',
+        icon: 'fa-solid fa-check',
         iconPosition: 'left',
       },
       {
         id: 4,
         title: 'Warning',
-        icon: 'warning',
+        icon: 'fa-solid fa-warning',
         iconPosition: 'left',
       },
       {
         id: 5,
         title: 'Delete',
-        icon: 'delete',
+        icon: 'fa-solid fa-trash',
         iconPosition: 'left',
       },
     ]
@@ -195,7 +195,7 @@ export class ButtonService {
       {
         id: 1,
         title: 'Facebook',
-        icon: 'fa-brands fa-facebook',
+        icon: 'fa-brands fa-facebook-f',
         iconPosition: 'left',
       },
       {
@@ -212,20 +212,20 @@ export class ButtonService {
       },
       {
         id: 4,
-        title: 'Github',
+        title: 'GitHub',
         icon: 'fa-brands fa-github',
         iconPosition: 'left',
       },
       {
         id: 5,
-        title: 'Youtube',
+        title: 'YouTube',
         icon: 'fa-brands fa-youtube',
         iconPosition: 'left',
       },
       {
         id: 6,
         title: 'LinkedIn',
-        icon: 'fa-brands fa-linkedin',
+        icon: 'fa-brands fa-linkedin-in',
         iconPosition: 'left',
       },
     ]

@@ -15,8 +15,8 @@
     <div class="login-card">
 
         <div class="login-title">
-            <h1>Welcome Back!</h1>
-            <p>Please sign in to your account</p>
+            <h1>Create Account</h1>
+            <p>Join us and get started today</p>
         </div>
 
 
@@ -35,7 +35,7 @@
             >
 
                 <div class="input-icon">
-                    <mat-icon>person</mat-icon>
+                    <i class="fa-solid fa-user"></i>
                 </div>
 
                 <input
@@ -79,7 +79,7 @@
             >
 
                 <div class="input-icon">
-                    <mat-icon>email</mat-icon>
+                    <i class="fa-solid fa-envelope"></i>
                 </div>
 
                 <input
@@ -124,7 +124,7 @@
             >
 
                 <div class="input-icon">
-                    <mat-icon>lock</mat-icon>
+                    <i class="fa-solid fa-lock"></i>
                 </div>
 
                 <input
@@ -153,28 +153,28 @@
 
             } -->
 
-            <p style="color: rgb(131, 137, 142); margin-top: 4px;">Must be at least 8 characters</p>
+            <p style="color: #212529bf; margin-top: 4px; font-size: 14px;">Must be at least 8 characters</p>
 
             </div>
 
 
             <div class="form-options">
 
-            <label class="remember">
+                <label class="remember">
 
-                <input
-                    type="checkbox"
-                    formControlName="agreePrivate"
-                    required
-                >
-                
-                <div class="register">
-                    I agree to the
-                    <a (click)="scrollToTop($event)">Terms of Service</a>
-                    and
-                    <a (click)="scrollToTop($event)">Privacy Policy</a>
-                </div>
-            </label>
+                    <input
+                        type="checkbox"
+                        formControlName="agreePrivate"
+                        required
+                    >
+                    
+                    <div class="register">
+                        I agree to the
+                        <a (click)="scrollToTop($event)">Terms of Service</a>
+                        and
+                        <a (click)="scrollToTop($event)">Privacy Policy</a>
+                    </div>
+                </label>
 
 
             </div>
@@ -185,7 +185,7 @@
                 class="sign-in-btn"
                 >
 
-                <mat-icon>person_add</mat-icon>
+                <i class="fa-solid fa-user-plus"></i>
 
                 Create Account
 
@@ -209,7 +209,7 @@
             </button>
 
             <button class="social-btn facebook">
-                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-facebook-f"></i>
             </button>
 
             <button class="social-btn twitter">
@@ -220,7 +220,7 @@
 
 
         <!-- REGISTER -->
-        <div class="register">
+        <div class="login">
             Already have an account?
             <a href="/pages/login">Sign in here</a>
         </div>

@@ -10,22 +10,19 @@
 ========================= */
 
 .header {
-  width: 100%;
-  height: 90px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  background-color: #ffffff;
-
-  border-bottom: 1px solid #ddd;
-
   position: fixed;
   top: 0;
   left: 0;
-
-  z-index: 1100;
+  right: 0;
+  height: 60px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1030;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
 }
 
 
@@ -37,7 +34,7 @@
   display: flex;
   align-items: center;
 
-  padding-left: 3 0px;
+  gap: 15px;
 }
 
 .logo {
@@ -45,13 +42,17 @@
   align-items: center;
 
   gap: 8px;
+
+  margin-right: 10px;
+
+  text-decoration: none;
 }
 
 .logo-icon {
-  width: 45px;
-  height: 60px;
+  width: 30px;
+  height: 40px;
 
-  background: #dceef9;
+  background: rgba(0, 123, 255, 0.1);
 
   border-radius: 8px;
 
@@ -59,9 +60,11 @@
   align-items: center;
   justify-content: center;
 
-  color: #08a4e8;
+  color: #007bff;
+  
+  padding-left: 10px;
 
-  font-size: 34px;
+  font-size: 24px;
 }
 
 .logo-header {
@@ -72,11 +75,14 @@
 }
 
 .logo-title {
-  color: #26364a;
+  color: #2c3e50;
 
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 700;
 
+  letter-spacing: -0.5px;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   text-decoration: none;
 }
 
@@ -86,32 +92,14 @@
 ========================= */
 
 .hamburger {
-  width: 45px;
-  height: 45px;
-
-  margin-left: 45px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  background: none;
   border: none;
-
-  background: transparent;
-
-  color: #666;
-
+  font-size: 18px;
   cursor: pointer;
+  padding: 8px;
+  padding-bottom: 5px;
+  color: #666;
 }
-
-.hamburger mat-icon {
-  font-size: 30px;
-}
-
-.hamburger:hover {
-  color: #222;
-}
-
 
 /* =========================
    RIGHT HEADER
@@ -120,10 +108,13 @@
 .icon-header {
   display: flex;
   align-items: center;
+  gap: 16px;
+  margin-right: -10px;
+  transform: translateY(0.5px);
+}
 
-  gap: 35px;
-
-  padding-right: 20px;
+.icon-header > :last-child {
+  margin-right: 0;
 }
 
 
@@ -145,35 +136,28 @@
    SEARCH
 ========================= */
 
-.search-button {
-  color: #969494;
-
-  cursor: pointer;
-}
-
 .header-icon-button {
-  width: 40px;
-  height: 40px;
-
+  position: relative;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 0;
-
   border: none;
-
   background: transparent;
-
-  cursor: pointer;
-}
-
-.header-icon-button:hover {
-  background-color: #f5f5f5;
-
+  color: #666;
   border-radius: 50%;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
+.header-icon-button i {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+}
 
 /* =========================
    DROPDOWN PANEL
@@ -182,8 +166,8 @@
 .dropdown-panel {
   position: absolute;
 
-  top: 60px;
-  right: -20px;
+  top: 40px;
+  right: 0px;
 
   width: 350px;
 
@@ -199,23 +183,6 @@
 /* =========================
    SEARCH PANEL
 ========================= */
-
-.dropdown-panel-search {
-  position: absolute;
-
-  top: 80px;
-  right: 250px;
-
-  width: 350px;
-
-  background-color: #ffffff;
-
-  border-radius: 3px;
-
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-
-  overflow: hidden;
-}
 
 .input {
     width: 95%;
@@ -239,14 +206,14 @@
 .dropdown-panel-search {
   position: absolute;
 
-  top: 80px;
-  right: 250px;
+  top: 60px;
+  right: 185px;
 
-  width: 380px;
+  width: 350px;
 
   background-color: #ffffff;
 
-  border-radius: 5px;
+  border-radius: 7px;
 
   border: 1px solid #eeeeee;
 
@@ -267,9 +234,7 @@
 
   width: 100%;
 
-  padding: 12px;
-
-  border-bottom: 1px solid #eeeeee;
+  padding: 15px;
 
   background-color: #ffffff;
 }
@@ -277,9 +242,9 @@
 
 .search-input {
   width: 100%;
-  height: 42px;
+  /* height: 42px; */
 
-  padding: 0 85px 0 14px;
+  padding: 11px 12px;
 
   border: 1px solid #d8dce0;
 
@@ -291,7 +256,7 @@
 
   color: #555;
 
-  font-size: 13px;
+  font-size: 12.5px;
 
   transition:
     border-color 0.2s ease,
@@ -300,7 +265,8 @@
 
 
 .search-input::placeholder {
-  color: #a5a5a5;
+  color: #212529;
+  opacity: 0.5;
 }
 
 
@@ -320,32 +286,37 @@
 
   position: absolute;
 
-  top: 17px;
-  right: 18px;
+  top: 15px;
+  right: 13px;
+/* 
+  width: 37px;
+  height: 40px; */
 
-  width: 32px;
-  height: 32px;
+  padding: 11px 13px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+
   border: none;
 
   border-left: 1px solid #e5e5e5;
 
-  background-color: transparent;
+  background-color: #03a9f4;
 
-  color: #8b8f93;
+  color: #ffffff;
 
   cursor: pointer;
 
-  font-size: 14px;
+  font-size: 16px;
 }
 
 
 .search-submit-button:hover {
-  color: #03a9f4;
+  opacity: 0.8;
 }
 
 
@@ -358,9 +329,9 @@
   position: absolute;
 
   top: 17px;
-  right: 50px;
+  right: 62px;
 
-  width: 30px;
+  width: 35px;
   height: 32px;
 
   display: flex;
@@ -378,10 +349,10 @@
   font-size: 13px;
 }
 
-
-.search-clear-button:hover {
-  color: #ef2828;
+.search-clear-button i {
+  font-size: 16px;
 }
+
 
 
 /* =========================
@@ -392,31 +363,10 @@
 
   width: 100%;
 
-  max-height: 360px;
-
   overflow-y: auto;
 
-  padding: 8px 0;
 }
 
-
-/* scrollbar */
-
-.search-result-list::-webkit-scrollbar {
-  width: 5px;
-}
-
-
-.search-result-list::-webkit-scrollbar-thumb {
-  background-color: #d5d5d5;
-
-  border-radius: 10px;
-}
-
-
-.search-result-list::-webkit-scrollbar-track {
-  background-color: transparent;
-}
 
 
 /* =========================
@@ -425,15 +375,14 @@
 
 .search-section-title {
 
-  padding: 10px 18px 8px;
+  padding: 14px 0 12px;
 
-  color: #999;
+  color: #212529bf;
 
-  font-size: 16px;
+  font-size: 14px;
 
   font-weight: 600;
 
-  letter-spacing: 0.5px;
 }
 
 
@@ -445,15 +394,13 @@
 
   width: 100%;
 
-  min-height: 58px;
-
   display: flex;
 
   align-items: center;
 
-  gap: 13px;
+  gap: 12px;
 
-  padding: 9px 18px;
+  padding: 0 0 10px;
 
   cursor: pointer;
 
@@ -476,8 +423,8 @@
 .search-item-icon-2,
 .search-item-icon-3{
 
-  width: 38px;
-  height: 38px;
+  /* width: 38px; */
+  height: 30px;
 
   flex-shrink: 0;
 
@@ -488,16 +435,16 @@
 
   border-radius: 5px;
 
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .search-item-icon-1,
 .search-item-icon-2 {
-  color: #03a9f4;
+  color: #03a9f3;
 }
 
 .search-item-icon-3 {
-  color: #27f403;
+  color: #00C292;
 }
 
 
@@ -516,11 +463,11 @@
 
 .search-item-title {
 
-  color: #4b5563;
+  color: #212529bf;
 
   font-size: 16px;
 
-  font-weight: 500;
+  font-weight: 400;
 
   white-space: nowrap;
 
@@ -566,7 +513,14 @@
    NOTIFICATION PANEL
 ========================= */
 
+.notification-scroll {
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .notification-panel {
+  width: 320px;
   max-height: 400px;
 
   display: flex;
@@ -580,13 +534,12 @@
 
 .dropdown-header {
   width: 100%;
-  min-height: 55px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 18px;
+  padding: 15px 16px 18px 17px;
 
   border-bottom: 1px solid #ddd;
 
@@ -594,9 +547,9 @@
 }
 
 .dropdown-header span {
-  color: #555;
+  color: #6c757d;
 
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -605,11 +558,16 @@
 
   background: transparent;
 
-  color: #666;
+  color: #212529bf;
 
-  font-size: 16px;
+  font-size: 12.25px;
 
   cursor: pointer;
+
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+
+  transform: translateY(-1px);
+  transform: translateX(2px);
 }
 
 .clear-button:hover {
@@ -622,7 +580,7 @@
 ========================= */
 
 .notification-list {
-  max-height: 345px;
+  max-height: 400px;
 
   overflow-y: auto;
 }
@@ -632,21 +590,21 @@
    SCROLLBAR
 ========================= */
 
-.notification-list::-webkit-scrollbar {
+.notification-panel::-webkit-scrollbar {
   width: 7px;
 }
 
-.notification-list::-webkit-scrollbar-track {
+.notification-panel::-webkit-scrollbar-track {
   background-color: #f5f5f5;
 }
 
-.notification-list::-webkit-scrollbar-thumb {
+.notification-panel::-webkit-scrollbar-thumb {
   background-color: #999;
 
   border-radius: 10px;
 }
 
-.notification-list::-webkit-scrollbar-thumb:hover {
+.notification-panel::-webkit-scrollbar-thumb:hover {
   background-color: #777;
 }
 
@@ -660,11 +618,9 @@
 
   display: flex;
 
-  gap: 14px;
+  gap: 16px;
 
-  padding: 20px 16px;
-
-  border-bottom: 1px solid #f0f0f0;
+  padding: 16px;
 
   cursor: pointer;
 }
@@ -682,10 +638,10 @@
 .notification-icon-2,
 .notification-icon-3 
 {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 40px;
 
-  flex: 0 0 38px;
+  flex: 0 0 36px;
 
   display: flex;
   align-items: center;
@@ -706,18 +662,20 @@
   background-color: #e5f8f4;
 
   color: #00b894;
+
+  width: 36px;
 }
 
 .notification-icon-2 {
-  background-color: #e5f0f8;
+  background-color: #03a9f31a;
 
-  color: #008db8;
+  color: #03a9f3;
 }
 
 .notification-icon-3 {
-  background-color: #fff4e0;
+  background-color: #fb96781a;
 
-  color: #de9528;
+  color: #fb9678;
 }
 
 
@@ -728,7 +686,7 @@
 
 .notification-footer {
   width: 100%;
-  height: 50px;
+  height: 57px;
 
   display: flex;
   align-items: center;
@@ -744,27 +702,28 @@
 
 .button-footer-notification {
   width: 100%;
-  height: 35px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  gap: 7px;
+  gap: 8px;
 
   margin: 0;
 
-  padding: 0;
+  padding: 8px 16px 8px 22px;
 
   border: none;
   border-radius: 3px;
 
   background-color: transparent;
 
-  color: #008db8;
+  color: #03a9f3;
 
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
+
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
 
   cursor: pointer;
 
@@ -787,11 +746,10 @@
 
 
 .button-footer-notification i {
-  font-size: 12px;
+  font-size: 14px;
+  transform: translateY(1px);
 
 }
-
-
 
 
 /* =========================
@@ -813,31 +771,55 @@
   min-width: 0;
 
   flex: 1;
+
+  /* transform: translateY(-3px); */
 }
 
 .notification-title {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 
-  color: #111827;
+  color: #212529;
 
   font-size: 16px;
   font-weight: 600;
 }
 
 .notification-message {
-  color: #777;
+  color: #212529bf;
 
-  font-size: 13px;
+  font-size: 14px;
 
   line-height: 1.5;
+
+   margin: 0 0 8px;
+
+  
+}
+
+
+
+.time-message {
+  color: #212529bf;
+
+  font-size: 14px;
+
+  /* line-height: 1.5; */
+
+   margin-left: 16px;
+
+  
 }
 
 .notification-description {
-  color: #777;
+  color: #212529bf;
 
-  font-size: 15px;
+  font-size: 14px;
 
   line-height: 1.5;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
@@ -845,20 +827,32 @@
   display: flex;
   align-items: center;
 
-  gap: 5px;
+  gap: 4px;
 
-  margin-top: 8px;
+  /* margin-top: 8px; */
 
-  color: #555;
+  color: #212529bf;
 
-  font-size: 12px;
+  font-size: 14px;
 }
 
-.notification-time mat-icon {
-  width: 15px;
-  height: 15px;
 
-  font-size: 15px;
+.notification-time span{
+  transform: translateY(-1px);
+}
+
+
+
+.time-description {
+  color: #212529bf;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
@@ -890,32 +884,16 @@
    ADMIN AVATAR
 ========================= */
 
-.admin-avatar-button {
-  width: 40px;
-  height: 40px;
-
-  padding: 0;
-
-  border: none;
-
-  background: transparent;
-
+/* .admin-avatar-button {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-
-  cursor: pointer;
-
-  overflow: hidden;
-}
+} */
 
 .img-admin-logo {
-  width: 40px;
-  height: 40px;
-
-  display: block;
-
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-
-  object-fit: cover;
 
   cursor: pointer;
 }
@@ -925,7 +903,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 
@@ -937,7 +915,7 @@
 
   font-size: 13px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   border-radius: 7px;
 
@@ -945,24 +923,60 @@
 }
 
 .message-status-1 {
-  background-color: #caeaf9;
-  color: #03a9f4
+  background-color: #03a9f31a;
+  color: #03a9f3
 }
 
 .message-status-2 {
-  background-color: #caeaf9;
-  color: #03a9f4
+  background-color: #03a9f31a;;
+  color: #03a9f3
 }
 
 .message-status-3 {
-  background-color: #ddf2de;
-  color: #01cc37
+  background-color: #00c2921a;
+  color: #00c292
 }
 
 .message-status-4 {
-  background-color: #e0ebef;
-  color: #60676a
+  background-color: #8787871a;
+  color: #878787
 }
+
+
+
+
+/* =========================
+   BADGE
+========================= */
+.error-badge {
+  position: absolute;
+  top: -1px;
+  right: -3px;
+  background: #dc3545;
+  color: white;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  border-radius: 10px;
+  padding: 2.8px 6px;
+  font-size: 10px;
+  min-width: 16px;
+  text-align: center;
+}
+
+.primary-badge {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  background: #007bff;
+  color: white;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  border-radius: 10px;
+  padding: 2.8px 6px;
+  font-size: 10px;
+  min-width: 16px;
+  text-align: center;
+}
+
+
 
 
 /* =========================
@@ -972,76 +986,9 @@
 @media screen and (max-width: 768px) {
 
   .header {
-    height: 70px;
+    height: 60px;
   }
 
-
-  /* LOGO */
-
-  .logo-and-hamburger {
-    padding-left: 15px;
-  }
-
-  .logo-icon {
-    width: 40px;
-    height: 50px;
-
-    font-size: 28px;
-  }
-
-  .logo-title {
-    font-size: 22px;
-  }
-
-
-  /* HAMBURGER */
-
-  .hamburger {
-    width: 40px;
-    height: 40px;
-
-    margin-left: 20px;
-  }
-
-
-  /* RIGHT */
-
-  .icon-header {
-    gap: 15px;
-
-    padding-right: 15px;
-  }
-
-  .search-button {
-    font-size: 22px;
-  }
-
-
-  /* AVATAR */
-
-  .img-admin-logo {
-    width: 35px;
-    height: 35px;
-  }
-
-  .admin-avatar-button {
-    width: 35px;
-    height: 35px;
-  }
-
-
-  /* DROPDOWN */
-
-  .dropdown-panel {
-    position: fixed;
-
-    top: 70px;
-    right: 10px;
-
-    width: 350px;
-
-    max-width: calc(100vw - 20px);
-  }
 }
 
 
@@ -1055,40 +1002,6 @@
 }
 
 
-/* ========================================
-   AVATAR BUTTON
-======================================== */
-
-.admin-avatar-button {
-
-  width: 45px;
-  height: 45px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: none;
-
-  background: transparent;
-
-  padding: 0;
-
-  cursor: pointer;
-}
-
-
-.img-admin-logo {
-
-  width: 40px;
-  height: 40px;
-
-  border-radius: 50%;
-
-  object-fit: cover;
-
-}
-
 
 /* ========================================
    USER PANEL
@@ -1098,8 +1011,8 @@
 
   position: absolute;
 
-  top: 55px;
-  right: 0;
+  top: 25px;
+  right: 10px;
 
   width: 260px;
 
@@ -1131,15 +1044,18 @@
 
   gap: 15px;
 
-  padding: 20px 18px;
+  padding: 24px 16px 16px;
+
+  border-bottom: 1px solid #dee2e6;
+  
 
 }
 
 
 .user-avatar {
 
-  width: 46px;
-  height: 46px;
+  width: 45px;
+  height: 45px;
 
   border-radius: 50%;
 
@@ -1156,14 +1072,14 @@
 
   flex-direction: column;
 
-  gap: 3px;
+  gap: 5px
 
 }
 
 
 .user-name {
 
-  color: #333333;
+  color: #212529;
 
   font-size: 14px;
 
@@ -1174,9 +1090,9 @@
 
 .user-role {
 
-  color: #777777;
+  color: #212529bf;
 
-  font-size: 13px;
+  font-size: 12px;
 
 }
 
@@ -1187,23 +1103,23 @@
 
   display: flex;
 
-  align-items: center;
+  align-items: flex-end;
 
-  gap: 5px;
+  gap: 2px;
 
-  margin-top: 5px;
+  margin-top: 8px;
 
   padding: 2px 7px;
 
-  border-radius: 3px;
+  border-radius: 5px;
 
-  background-color: #e8faf5;
+  background-color: #00c2921a;
 
-  color: #00b686;
+  color: #00c292;
 
-  font-size: 11px;
+  font-size: 10px;
 
-  font-weight: 600;
+  font-weight: 700;
 
 }
 
@@ -1214,6 +1130,8 @@
   height: 6px;
 
   border-radius: 50%;
+
+  transform: translateY(-2px);
 
   background-color: #00c292;
 
@@ -1235,17 +1153,6 @@
 }
 
 
-/* ========================================
-   USER MENU
-======================================== */
-
-.user-menu {
-
-  width: 100%;
-
-  padding: 5px 0;
-
-}
 
 
 /* ========================================
@@ -1257,21 +1164,21 @@
   position: relative;
 
   width: 100%;
-  min-height: 39px;
+  min-height: 35.5px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 13px;
+  gap: 8px;
 
-  padding: 0 18px;
+  padding: 0 16px;
 
   border: none;
 
   background: transparent;
 
-  color: #555555;
+  color: #212529;
 
   font-family: inherit;
 
@@ -1310,9 +1217,8 @@
 
   width: 16px;
 
-  color: #03a9f4;
-
-  font-size: 13px;
+  color: #03a9f3;
+  font-size: 12px;
 
   text-align: center;
 
@@ -1332,37 +1238,37 @@
 
 .menu-badge {
 
-  min-width: 23px;
-  height: 20px;
+  /* min-width: 21px;
+  height: 20px; */
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  padding: 0 6px;
+  padding: 2px 6.5px;
 
   border-radius: 6px;
 
   color: #ffffff;
 
-  font-size: 11px;
+  font-size: 10px;
 
-  font-weight: 600;
+  font-weight: 700;
 
 }
 
 
 .notification-badge {
 
-  background-color: #ff4848;
+  background-color: #f44336;
 
 }
 
 
 .task-badge {
 
-  background-color: #03a9f4;
+  background-color: #03a9f3;
 
 }
 
@@ -1373,7 +1279,7 @@
 
 .bottom-menu {
 
-  padding: 5px 0;
+  padding: 4px 0;
 
 }
 
@@ -1387,7 +1293,7 @@
 
 .logout-item {
 
-  color: #555555;
+  color: #212529;
 
 }
 
@@ -1424,7 +1330,7 @@
 
   justify-content: space-around;
 
-  padding: 10px 10px 12px;
+  padding: 8px 4px 12px;
 
   border-top: 1px solid #eeeeee;
 
@@ -1452,18 +1358,20 @@
 
   margin-bottom: 4px;
 
-  color: #666666;
+  color: #212529bf;
 
-  font-size: 11px;
+  font-size: 10px;
 
 }
 
 
 .stat-value {
 
-  color: #555555;
+  color: #212529bf;
 
-  font-size: 11px;
+  font-size: 10px;
+
+  margin-top: 2px;
 
 }
 
@@ -1472,7 +1380,9 @@
 
   font-size: 12px;
 
-  font-weight: 600;
+  font-weight: 700;
+
+  color: #212529;
 
 }
 
@@ -1485,9 +1395,9 @@
 
   width: 75px;
 
-  height: 2px;
+  height: 2.5px;
 
-  margin-bottom: 4px;
+  margin: 1px 0 6px;
 
   background-color: #e6e6e6;
 
@@ -1524,9 +1434,9 @@
 
   .user-panel {
 
-    top: 50px;
+    top: 25px;
 
-    right: -5px;
+    right: 10px;
 
     width: 250px;
 
@@ -1573,11 +1483,15 @@
     width: calc(100vw - 20px);
 
     right: 10px;
+
+    top: -10px;
   }
 
   .user-panel{
 
     right: -5px;
+
+    top: -10px;
 
     width: 245px;
 

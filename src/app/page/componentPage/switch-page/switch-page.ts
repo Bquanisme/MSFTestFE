@@ -19,8 +19,8 @@ export class SwitchPage {
   isCheckedCheckDisable = signal(true)
   isCheckedDisable = signal(false)
 
-  isFocusedDefault = true;
-  isFocusedChecked = true;
+  isFocusedDefault = false;
+  isFocusedChecked = false;
 
 
 
@@ -38,8 +38,8 @@ export class SwitchPage {
   
   isCheckedPrimary = signal(true);
   isCheckedSuccess = signal(true);
-  isCheckedDanger = signal(false);
-  isCheckedWarning = signal(false);
+  isCheckedDanger = signal(true);
+  isCheckedWarning = signal(true);
 
   isFocusedPrimary = false;
   isFocusedSuccess = false;

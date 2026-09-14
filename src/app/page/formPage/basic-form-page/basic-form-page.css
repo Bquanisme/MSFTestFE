@@ -351,6 +351,12 @@
   border-radius: 3px;
   overflow: visible;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
 }
 
 .card-header {
@@ -1187,6 +1193,11 @@
     gap: 20px;
   }
 
+  .forms-page {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .form-card {
     width: 100%;
   }
@@ -1231,6 +1242,11 @@
 
   .form-container {
     gap: 15px;
+  }
+
+  .forms-page {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .form-card {
@@ -1362,6 +1378,12 @@
 
   .card-body {
     padding: 18px 13px 20px;
+  }
+
+
+  .forms-page {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
 

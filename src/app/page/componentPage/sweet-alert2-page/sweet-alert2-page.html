@@ -2,17 +2,16 @@
 
   <div>
 
-    <h2 style="font-size: 48px; margin-bottom: 10px;">SweetAlert2</h2>
+    <h2 class="title">SweetAlert2</h2>
 
-    <p>Beautiful, responsive, customizable replacement for JavaScript's popup boxes</p>
+    <p class="title-p">Beautiful, responsive, customizable replacement for JavaScript's popup boxes</p>
 
-    <br><br>
 
     <div class="box-row-4">
 
         <h3>Basic Examples</h3>
 
-        <hr style="border-top: 1px solid #d0cccc" />
+        <hr style="border-top: 1px solid #e7e7e7; opacity: 0.7;" />
         
 
 
@@ -25,9 +24,9 @@
                         [class]="`button-icon-` + item.id"
                         (click)="handleClickButton(item)"
                     >
-                        <div style="display: flex; gap: 5px; align-items: center;">
+                        <div class="flex-icon-title">
                             <div class="button-icon">
-                                <mat-icon>{{ item.iconButton }}</mat-icon>
+                                <i [class]="item.iconButton"></i>
     
                             </div>
     
@@ -42,15 +41,13 @@
         </div>
 
     </div>
-
-    <br><br><br>
     
     
     <div class="box-row-4">
 
         <h3>Interactive Examples</h3>
 
-        <hr style="border-top: 1px solid #d0cccc" />
+        <hr style="border-top: 1px solid #e7e7e7; opacity: 0.7;" />
         
 
 
@@ -62,11 +59,9 @@
                     class="button-icon-1"
                     (click)="confirmDialog()"
                 >
-                    <div style="display: flex; gap: 5px; align-items: center;">
+                    <div class="flex-icon-title">
                         <div class="button-icon">
-                            <mat-icon>
-                                help
-                            </mat-icon>
+                            <i class="fa-solid fa-question-circle"></i>
 
                         </div>
 
@@ -79,11 +74,9 @@
                     class="button-icon-new"
                     (click)="inputEmailAddress()"
                 >
-                    <div style="display: flex; gap: 5px; align-items: center;">
+                    <div class="flex-icon-title">
                         <div class="button-icon">
-                            <mat-icon>
-                                keyboard
-                            </mat-icon>
+                            <i class="fa-solid fa-keyboard"></i>
 
                         </div>
 
@@ -96,11 +89,9 @@
                     class="button-icon-new-2"
                     (click)="AjaxRequest()"
                 >
-                    <div style="display: flex; gap: 5px; align-items: center;">
+                    <div class="flex-icon-title">
                         <div class="button-icon">
-                            <mat-icon>
-                                cloud_download
-                            </mat-icon>
+                            <i class="fa-solid fa-cloud-arrow-down"></i>
 
                         </div>
 
@@ -112,12 +103,9 @@
                 <button 
                     class="button-icon-new-3"
                 >
-                    <div style="display: flex; gap: 5px; align-items: center;">
+                    <div class="flex-icon-title">
                         <div class="button-icon">
-                            <mat-icon>
-                                link
-                            </mat-icon>
-
+                            <i class="fa-solid fa-link"></i>
                         </div>
 
                         <p>Chained Modals</p>
@@ -131,13 +119,12 @@
 
     </div>  
 
-    <br><br><br>
 
     <div class="box-row-4">
 
         <h3>Advanced Features</h3>
 
-        <hr style="border-top: 1px solid #d0cccc" />
+        <hr style="border-top: 1px solid #e7e7e7; opacity: 0.7;" />
         
 
 
@@ -149,11 +136,9 @@
                     class="button-outline-1"
                     (click)="autoCloseTimer()"
                 >
-                    <div style="display: flex; gap: 5px; align-items: center;">
+                    <div class="flex-icon-title">
                         <div class="button-icon">
-                            <mat-icon>
-                                access_time
-                            </mat-icon>
+                            <i class="fa-solid fa-clock"></i>
 
                         </div>
 
@@ -166,11 +151,9 @@
                     class="button-outline-2"
                     (click)="htmlContent()"
                 >
-                    <div style="display: flex; gap: 5px; align-items: center;">
+                    <div class="flex-icon-title">
                         <div class="button-icon">
-                            <mat-icon>
-                                code
-                            </mat-icon>
+                            <i class="fa-solid fa-code"></i>
 
                         </div>
 
@@ -183,11 +166,9 @@
                     class="button-outline-3"
                     (click)="customStyling()"
                 >
-                    <div style="display: flex; gap: 5px; align-items: center;">
+                    <div class="flex-icon-title">
                         <div class="button-icon">
-                            <mat-icon>
-                                color_lens
-                            </mat-icon>
+                            <i class="fa-solid fa-palette"></i>
 
                         </div>
 
@@ -200,11 +181,9 @@
                     class="button-outline-4"
                     (click)="withImage()"
                 >
-                    <div style="display: flex; gap: 5px; align-items: center;">
+                    <div class="flex-icon-title">
                         <div class="button-icon">
-                            <mat-icon>
-                                image
-                            </mat-icon>
+                            <i class="fa-solid fa-image"></i>
 
                         </div>
 
@@ -219,13 +198,12 @@
 
     </div>  
 
-    <br><br><br>
 
     <div class="box-row-4">
 
         <h3>Toast Notifications</h3>
 
-        <hr style="border-top: 1px solid #d0cccc" />
+        <hr style="border-top: 1px solid #e7e7e7; opacity: 0.7;" />
         
 
 
@@ -238,9 +216,9 @@
                         [class]="`button-icon-toast-` + item.id"
                         (click)="handleClickToast(item)"
                     >
-                        <div style="display: flex; gap: 5px; align-items: center;">
+                        <div class="flex-icon-title">
                             <div class="button-icon">
-                                <mat-icon>{{ item.iconButton }}</mat-icon>
+                                <i [class]="item.iconButton"></i>
     
                             </div>
     
@@ -256,17 +234,16 @@
 
     </div>
 
-    <br><br><br>
 
     <div class="box-row-4">
 
-        <h3>Toast Notifications</h3>
+        <h3>Positioning</h3>
 
-        <hr style="border-top: 1px solid #d0cccc" />
+        <hr style="border-top: 1px solid #e7e7e7; opacity: 0.7;" />
 
         <div class="button-margin">
 
-            <div class="button-row">
+            <div class="button-row-positioning">
 
                 <div class="item-grid">
 
@@ -276,9 +253,9 @@
                             class="button-position-outline"
                             (click)="handleClickPosition(item)"
                         >
-                            <div style="display: flex; gap: 5px; align-items: center;">
+                            <div class="flex-icon-title">
                                 <div class="button-icon">
-                                    <mat-icon>{{ item.iconButton }}</mat-icon>
+                                    <i [class]="item.iconButton"></i>
                                 </div>
         
                                 <p>{{item.title}}</p>
@@ -296,13 +273,12 @@
     
     </div>
 
-    <br><br><br>
 
-    <div class="box-row-4">
+    <div class="box-row-4" style="margin: 0;">
 
         <h3>Special Examples</h3>
 
-        <hr style="border-top: 1px solid #d0cccc" />
+        <hr style="border-top: 1px solid #e7e7e7; opacity: 0.7;" />
         
 
 
@@ -313,11 +289,9 @@
                 <button 
                     class="button-special-1"
                 >
-                    <div style="display: flex; gap: 5px; align-items: center;">
+                    <div class="flex-icon-title">
                         <div class="button-icon">
-                            <mat-icon>
-                                format_list_bulleted
-                            </mat-icon>
+                            <i class="fa-solid fa-list"></i>
 
                         </div>
 
@@ -330,11 +304,9 @@
                     class="button-special-2"
                     (click)="handleClickMixing()"
                 >
-                    <div style="display: flex; gap: 5px; align-items: center;">
+                    <div class="flex-icon-title">
                         <div class="button-icon">
-                            <mat-icon>
-                                local_drink
-                            </mat-icon>
+                            <i class="fa-solid fa-blender"></i>
 
                         </div>
 
@@ -347,11 +319,9 @@
                     class="button-special-3"
                     (click)="handleStepAlert()"
                 >
-                    <div style="display: flex; gap: 5px; align-items: center;">
+                    <div class="flex-icon-title">
                         <div class="button-icon">
-                            <mat-icon>
-                                filter_list
-                            </mat-icon>
+                            <i class="fa-solid fa-list-check"></i>
 
                         </div>
 
@@ -364,11 +334,9 @@
                     class="button-special-4"
                     (click)="handleDeleteConfirm()"
                 >
-                    <div style="display: flex; gap: 5px; align-items: center;">
+                    <div class="flex-icon-title">
                         <div class="button-icon">
-                            <mat-icon>
-                                delete
-                            </mat-icon>
+                            <i class="fa-solid fa-trash"></i>
 
                         </div>
 
@@ -383,4 +351,4 @@
 
     </div>
 
-  </div>
+</div>

@@ -1,11 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MatIcon } from "@angular/material/icon";
 
 @Component({
   selector: 'app-register-page',
-  imports: [MatIcon, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './register-page.html',
   styleUrl: './register-page.css',
 })

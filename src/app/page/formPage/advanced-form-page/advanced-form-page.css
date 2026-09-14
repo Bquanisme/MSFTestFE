@@ -1,0 +1,352 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+
+  padding-top: 170px;
+  padding-right: 50px;
+  padding-bottom: 100px;
+  padding-left: 140px;
+
+  background-color: #f1f2f7;
+}
+
+
+.box-row-1,
+.box-row-2
+ {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 20px;
+}
+
+
+.box-row-1 {
+  margin-top: 30px;
+}
+
+.box-row-2 {
+  margin-top: 60px;
+}
+
+.box-row-1-column-1 {
+  width: 50%;
+  background-color: #ffffff;
+  height: 100%;
+  transition: transform 0.2s ease;
+}
+
+.box-row-1-column-1:hover
+{
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px #e4e1e1;
+}
+
+.box-row-1-column-1 h3 {
+  margin: 20px;
+}
+
+.button-margin {
+  margin: 20px;
+}
+
+.button-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.input-groups {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 9px;
+
+  color: #777;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   INPUT GROUP
+========================= */
+
+.input-group {
+  width: 100%;
+  height: 37px;
+
+  display: flex;
+  align-items: stretch;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group input {
+  min-width: 0;
+  flex: 1;
+
+  height: 37px;
+
+  padding: 0 12px;
+
+  border: 1px solid #dedede;
+  outline: none;
+
+  background-color: #fff;
+
+  color: #555;
+  font-size: 13px;
+}
+
+
+/* =========================
+   LEFT INPUT
+========================= */
+
+.input-group-text {
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 13px;
+
+  border: 1px solid #dedede;
+
+  background-color: #f8f9fa;
+
+  color: #667085;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   INPUT + TEXT
+========================= */
+
+.input-group > .input-group-text:first-child {
+  border-right: none;
+
+  border-radius: 4px 0 0 4px;
+}
+
+.input-group > input + .input-group-text {
+  border-left: none;
+
+  border-radius: 0 4px 4px 0;
+}
+
+
+/* =========================
+   INPUT FOCUS
+========================= */
+
+.input-group input:focus {
+  border-color: #03a9f4;
+
+  box-shadow: 0 0 0 1px #03a9f4;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================
+   USERNAME
+========================= */
+
+.input-group > .input-group-text:first-child + input {
+  border-radius: 0 4px 4px 0;
+}
+
+
+/* =========================
+   EMAIL
+========================= */
+
+.input-group input[type="email"] {
+  border-radius: 4px 0 0 4px;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.input-group input[type="number"] {
+  border-radius: 0;
+}
+
+
+/* bỏ spinner của number */
+
+.input-group input[type="number"]::-webkit-inner-spin-button,
+.input-group input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* =========================
+   URL
+========================= */
+
+.input-group input[type="text"] {
+  border-radius: 0 4px 4px 0;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.input-button {
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 15px;
+
+  border: 1px solid #888;
+
+  border-radius: 0 4px 4px 0;
+
+  background-color: #fff;
+
+  color: #667085;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.input-button:hover {
+  color: #fff;
+
+  background-color: #667085;
+}
+
+.input-button i {
+  font-size: 14px;
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown-select {
+  height: 37px;
+  width: 100px;
+
+  padding: 0 12px;
+
+  border: 1px solid #888;
+  border-radius: 4px 0 0 4px;
+
+  background-color: #fff;
+
+  color: #667085;
+
+  font-size: 14px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+.dropdown-select:hover {
+  color: #fff;
+
+  background-color: #667085;
+}
+
+.dropdown-select + input {
+  border-left: none;
+
+  border-radius: 0 4px 4px 0;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .input-groups {
+    gap: 18px;
+  }
+
+  .input-group {
+    width: 100%;
+  }
+
+  .input-group-text {
+    padding: 0 10px;
+  }
+
+  .input-button {
+    padding: 0 12px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .input-group-text {
+    padding: 0 8px;
+  }
+
+  .input-button {
+    padding: 0 10px;
+  }
+
+  .input-button i {
+    display: none;
+  }
+
+}

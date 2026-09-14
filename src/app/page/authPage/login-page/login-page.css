@@ -4,20 +4,17 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f1f2f7;
-    min-height: 100vh;
-    color: #222;
-}
-
 .login-page {
+    color: #212529;
     min-height: 100vh;
+    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
     background: #f1f2f7;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     align-items: center;
-    padding-top: 82px;
+    padding: 24px;
 }
 
 /* ================= LOGO ================= */
@@ -26,21 +23,21 @@ body {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 22px;
+    margin-bottom: 25px;
     cursor: pointer;
 }
 
 .logo-icon {
-    width: 67px;
-    height: 62px;
-    background: #dceef9;
+    background: #03a9f31A;
     border-radius: 10px;
+
+    padding: 16px 16px 17px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    color: #08a4e8;
+    color: #03a9f3;
     font-size: 32px;
 }
 
@@ -52,21 +49,24 @@ body {
 }
 
 .logo-text {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 700;
-    color: #17202a;
 }
 
 /* ================= LOGIN CARD ================= */
 
 .login-card {
-    width: 400px;
-    min-height: 550px;
+    width: 100%;
+    max-width: 355.99px;
+
+    min-height: 592.79px;
 
     background: #fff;
     border-radius: 12px;
 
-    padding: 46px 45px 40px;
+    padding: 46px 48px 48px;
+
+    margin-bottom: 30px;
 
     box-shadow: 0 7px 20px rgba(0, 0, 0, 0.13);
 
@@ -86,12 +86,13 @@ body {
 .login-title h1 {
     font-size: 24px;
     font-weight: 600;
-    margin-bottom: 7px;
+    margin-bottom: 4px;
 }
 
 .login-title p {
-    font-size: 16px;
-    color: #777;
+    font-size: 14px;
+    color: #212529bf;
+    margin-bottom: 24px;
 }
 
 /* ================= FORM ================= */
@@ -103,25 +104,28 @@ body {
 .form-group label {
   display: block;
 
-  font-size: 12px;
-  color: #6d6d6d;
+  font-size: 13px;
+  color: #878787;
   font-weight: 500;
 
   margin-bottom: 8px;
 
   text-transform: uppercase;
+
+  /* giãn chữ */
+  letter-spacing: 0.5px;
 }
 
 
 /* ================= INPUT ================= */
 
 .input-wrapper {
-  height: 36px;
+  height: 38px;
 
   display: flex;
 
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
 
   overflow: hidden;
 
@@ -137,26 +141,20 @@ body {
 
 
 .input-icon {
-  width: 38px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: #fafafa;
+  background: #ffffff;
+
+  padding: 9px 12px;
 
   border-right: 1px solid #ddd;
 
-  color: #555;
+  color: #212529b7;
 
   font-size: 13px;
-}
-
-.input-icon mat-icon {
-    font-size: 15px;
-    width: 15px;
-    height: 15px;
-    line-height: 15px;
 }
 
 
@@ -167,16 +165,18 @@ body {
   border: none;
   outline: none;
 
-  padding: 0 12px;
+  padding: 8px 12px;
 
-  font-size: 12px;
+  font-size: 13px;
 
   color: #333;
 }
 
 
 .input-wrapper input::placeholder {
-  color: #777;
+  color: #212529;
+  opacity: 0.7;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
 }
 
 
@@ -203,8 +203,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  margin-top: 1px;
-  margin-bottom: 31px;
+  margin-bottom: 36px;
 }
 
 
@@ -213,11 +212,9 @@ body {
 
   align-items: center;
 
-  gap: 7px;
+  gap: 8px;
 
-  font-size: 14px !important;
-
-  color: #222 !important;
+  font-size: 13px !important;
 
   text-transform: none !important;
 
@@ -226,12 +223,35 @@ body {
 
 
 .remember input {
-  width: 15px;
-  height: 15px;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
 
-  cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #e3e3e3;
+    border-radius: 4px;
+
+    cursor: pointer;
+    box-sizing: border-box;
+
+    transform: translateY(-2px);
 }
 
+
+.remember input:checked {
+    background-color: #03a9f3;
+    border-color: #03a9f3;
+
+    box-shadow: 0 0 5px rgba(3, 169, 244, 0.6);
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5L6.5 12L13 4.5' fill='none' stroke='%23fff' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 8px 8px;
+}
 
 .forgot {
   font-size: 14px;
@@ -239,6 +259,7 @@ body {
   color: #009ff0;
 
   text-decoration: none;
+  transform: translateY(3px);
 }
 
 .forgot:hover {
@@ -251,17 +272,19 @@ body {
 /* ================= BUTTON ================= */
 
 .sign-in-btn {
-  width: 100%;
-  height: 39px;
-
+    width: 100%;
   border: none;
   border-radius: 5px;
 
-  background: #09a5e5;
+  background: #03a9f3;
+
+  padding: 10px 16px;
+
+  margin: 0 0 20px;
 
   color: white;
 
-  font-size: 14px;
+  font-size: 16px;
 
   cursor: pointer;
 
@@ -270,7 +293,9 @@ body {
   align-items: center;
   justify-content: center;
 
-  gap: 9px;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+
+  gap: 8px;
 
   transition: 0.2s;
 }
@@ -279,46 +304,59 @@ body {
   background: #078fc9;
 }
 
+.sign-in-btn i {
+    margin-top: 1px;
+}
+
 /* ================= DIVIDER ================= */
 
 .divider {
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 14px;
-
-    margin: 34px 0 15px;
-
-    color: #777;
-    font-size: 16px;
+    margin: 0 0 3px;
+    color: #212529bf;
 }
 
 .divider::before,
 .divider::after {
     content: "";
     height: 1px;
-    background: #ddd;
+    background-color: #ddd;
     flex: 1;
+}
+
+.divider span {
+    flex-shrink: 1;
+    max-width: 90px;
+    margin: 0;
+    color: #212529bf;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
 }
 
 /* ================= SOCIAL ================= */
 
 .social-login {
     display: flex;
-    gap: 7px;
+    gap: 8px;
 }
 
 .social-btn {
     flex: 1;
-    height: 39px;
 
     background: white;
     border-radius: 5px;
+
+    padding: 12px 12px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 17px;
+    font-size: 16px;
     cursor: pointer;
 
     transition: 0.2s;
@@ -330,8 +368,8 @@ body {
 }
 
 .facebook {
-    color: #1297e8;
-    border: 1px solid #1297e8;
+    color: #03a9f3;
+    border: 1px solid #03a9f3;
 }
 
 .twitter {
@@ -367,7 +405,6 @@ body {
 .register a {
     color: #009ff0;
     text-decoration: none;
-    margin-left: 3px;
 }
 
 .register a:hover {
@@ -376,25 +413,45 @@ body {
 }
 
 /* ================= RESPONSIVE ================= */
-
-@media (max-width: 500px) {
-    .login-page {
-        padding: 40px 15px;
+@media (min-width: 1301px) {
+    .login-card {
+        width: 415.99px !important;
+        max-width: 415.99px !important;
     }
 
+    .divider {
+        margin: 30px 0 14px;
+    }
+
+    .divider span {
+        flex-shrink: 1;
+        max-width: 110px;
+    }
+}
+
+@media (max-width: 1200px) {
     .logo-text {
-        font-size: 30px;
+        font-size: calc(1.375rem + 1.5vw)
     }
 
-    .logo-icon {
-        width: 55px;
-        height: 52px;
-        font-size: 26px;
+    .login-title h1 {
+        font-size: calc(1.275rem + .3vw);
     }
+}
 
+@media (max-width: 990px) {
     .login-card {
         width: 100%;
-        max-width: 386px;
-        padding: 40px 30px;
+        max-width: 336px;
+        /* padding: 40px 30px; */
+    }
+}
+
+@media (max-width: 576px) {
+    /* width calc sd with so với res */
+    .login-card {
+        width: calc(446px * 97vw / 576px);
+        max-width: 446px;
+        box-sizing: border-box;
     }
 }

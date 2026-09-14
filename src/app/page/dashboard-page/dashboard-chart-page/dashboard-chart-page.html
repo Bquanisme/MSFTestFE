@@ -9,11 +9,11 @@
             </h3>
 
             <button
-            class="download-button"
-            type="button"
+                class="download-button"
+                type="button"
             >
             <!-- <DownloadIcon /> -->
-                <mat-icon>cloud_download</mat-icon>
+                <i class="fa-solid fa-download"></i>
             </button>
 
         </div>
@@ -35,21 +35,55 @@
     <div class="chart-card">
 
         <div class="chart-card-header">
-
-            <h3>
-            Traffic Sources
-            </h3>
-
+            <h3>Traffic Sources</h3>
         </div>
 
         <div class="doughnut-chart-container">
-            <canvas
-                baseChart
-                [data]="trafficData"
-                [options]="trafficOptions"
-                [type]="'doughnut'"
-            >
-            </canvas>
+
+            <div class="doughnut-chart">
+                <canvas
+                    baseChart
+                    [data]="trafficData"
+                    [options]="trafficOptions"
+                    [type]="'doughnut'">
+                </canvas>
+            </div>
+
+
+            <div class="footer-traffic">
+                <!-- HR giữa chart và legend -->
+                <hr class="chart-divider">
+    
+                <!-- Legend -->
+                <div class="doughnut-legend">
+    
+                    <div class="legend-item">
+                        <span
+                        class="legend-box"
+                        style="background-color: #007BFF;">
+                        </span>
+                        <span>Direct</span>
+                    </div>
+    
+                    <div class="legend-item">
+                        <span
+                        class="legend-box"
+                        style="background-color: #28A745;">
+                        </span>
+                        <span>Social</span>
+                    </div>
+    
+                    <div class="legend-item">
+                        <span
+                        class="legend-box"
+                        style="background-color: #ffc107;">
+                        </span>
+                        <span>Referral</span>
+                    </div>
+    
+                </div>
+            </div>
+
         </div>
 
     </div>

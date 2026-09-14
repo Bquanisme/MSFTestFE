@@ -11,7 +11,7 @@
             @if ($index === 0) {
 
                 <h2 class="dashboard-card-cost">
-                    {{ item.cost | number:'1.2-2' }}
+                    ${{ item.cost | number:'1.2-2' }}
                 </h2>
 
             } @else if ($index === 3) {
@@ -34,10 +34,10 @@
 
             <div class="dashboard-card-change">
                 @if (item.isIncrease) {
-                    <mat-icon>arrow_upward</mat-icon>
+                    <i class="fa-solid fa-arrow-up" style="font-size: 10px;"></i>
                 }
                 @else {
-                    <mat-icon>arrow_downward</mat-icon>
+                    <i class="fa-solid fa-arrow-down" style="font-size: 10px;"></i>
                 }
 
                 <span>{{item.percent}}</span>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="dashboard-card-icon">
-            <mat-icon>{{ item.icon }}</mat-icon>
+            <i [class]="item.icon"></i>
         </div>
 
     </div>
@@ -66,3 +66,4 @@
     </div>
 
 </div>
+

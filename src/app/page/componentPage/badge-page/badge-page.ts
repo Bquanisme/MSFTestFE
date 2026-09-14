@@ -2,12 +2,11 @@ import { Component, inject } from '@angular/core';
 import { Breadcrumb } from "../../../components/breadcrumb/breadcrumb";
 import { BadgeService } from '../../../service/component/badge/badge-service';
 import { Badge } from "../../../components/badge/badge";
-import { MatIcon } from "@angular/material/icon";
 import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-badge-page',
-  imports: [Breadcrumb, Badge, MatIcon, RouterLink],
+  imports: [Breadcrumb, Badge, RouterLink],
   templateUrl: './badge-page.html',
   styleUrl: './badge-page.css',
 })

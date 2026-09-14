@@ -1,117 +1,97 @@
 <div class="section">
-    <div style="display: flex; justify-content: space-between">
-    <h2>Data Tables</h2>
-    <app-breadcrumb [folderTitle]="'Tables'" [title]="'Data Tables'"></app-breadcrumb>
+    <div class="section-title">
+        <h2 class="title">Data Tables</h2>
+        <app-breadcrumb [folderTitle]="'Tables'" [title]="'Data Tables'"></app-breadcrumb>
     </div>
 
-    <div class='box-row-4'>
-        <h3>Employee Data Table</h3>
-        <hr style="border-top: 1px solid #d0cccc"/>
-        
-        <div class='button-margin'>
-        <div class='button-row'>
-            <div class="basic-table-wrapper">
-            <table class="data-table-border">
-                <thead>
-                <tr>
-                    <th>NAME</th>
-                    <th>POSITION</th>
-                    <th>OFFICE</th>
-                    <th>AGE</th>
-                    <th>START DATE</th>
-                    <th>SALARY</th>
-                </tr>
-                </thead>
-                <tbody>
-                <!-- {DataTable.map((table) => (
-                    <tr key={table.id}>
-                    {/* <td className="table-number">{table.id}</td> */}
-                    <td>{table.name}</td>
-                    <td>{table.position}</td>
-                    <td>{table.office}</td>
-                    <td>{table.age}</td>
-                    <td>{table.startDate}</td>
-                    <td>{table.salary}</td>
-                    </tr>
-                ))} -->
-                @for (table of dataTable; track table.id) {
-                    <tr>
-                        <td>{{table.name}}</td>
-                        <td>{{table.position}}</td>
-                        <td>{{table.office}}</td>
-                        <td>{{table.age}}</td>
-                        <td>{{table.startDate}}</td>
-                        <td>{{table.salary}}</td>
-                    </tr>
-                }
-                </tbody>
-            </table>
+    <div class="column">
+        <div class='box-row-4'>
+            <h3>Employee Data Table</h3>
+            <hr style="border-top: 1px solid #fbf8f8;"/>
+            
+            <div class='button-margin'>
+                <div class='button-row'>
+                    <div class="basic-table-wrapper">
+                    <table class="data-table-border">
+                        <thead>
+                            <tr>
+                                <th>NAME</th>
+                                <th>POSITION</th>
+                                <th>OFFICE</th>
+                                <th>AGE</th>
+                                <th>START DATE</th>
+                                <th>SALARY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @for (table of dataTable; track table.id) {
+                            <tr>
+                                <td>{{table.name}}</td>
+                                <td>{{table.position}}</td>
+                                <td>{{table.office}}</td>
+                                <td>{{table.age}}</td>
+                                <td>{{table.startDate}}</td>
+                                <td>{{table.salary}}</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
-    </div>
-
-    <div class='box-row-4'>
-        <h3>Export Data Table</h3>
-        <hr style="border-top: 1px solid #d0cccc"/>
-        
-        <div class='button-margin'>
-        <div class='button-row'>
-            <div class="basic-table-wrapper">
-            <table class="data-table-border">
-                <thead>
-                <tr>
-                    <th>PRODUCT</th>
-                    <th>CATEGORY</th>
-                    <th>STOCK</th>
-                    <th>PRICE</th>
-                    <th>STATUS</th>
-                </tr>
-                </thead>
-                <tbody>
-                <!-- {DataTable.map((table) => (
-                    <tr key={table.id}>
-                    {/* <td className="table-number">{table.id}</td> */}
-                    <td>{table.name}</td>
-                    <td>{table.position}</td>
-                    <td>{table.office}</td>
-                    <td>{table.age}</td>
-                    <td>{table.startDate}</td>
-                    <td>{table.salary}</td>
-                    </tr>
-                ))} -->
-                @for (table of exportDataTable; track table.id) {
-                    <tr>
-                        <td>{{table.product}}</td>
-                        <td>{{table.category}}</td>
-                        <td>{{table.stock}}</td>
-                        <td>${{table.price.toLocaleString()}}</td>
-                        <td>
-                            @if (table.status === 'In Stock') {
-                                <div class="flat-badges-1">
-                                    {{ table.status }}
-                                </div>
-                            }
     
-                            @else if (table.status === 'Out of Stock') {
-                                <div class="flat-badges-2">
-                                    {{ table.status }}
-                                </div>
-                            }
-    
-                            @else if (table.status === 'Low Stock') {
-                                <div class="flat-badges-3">
-                                    {{ table.status }}
-                                </div>
-                            }
-                        </td>
-                         
-                    </tr>
-                }
-                </tbody>
-            </table>
+        <div class='box-row-4' style="margin-top: 22px;">
+            <h3>Export Data Table</h3>
+            <hr style="border-top: 1px solid #fbf8f8;"/>
+            
+            <div class='button-margin'>
+                <div class='button-row'>
+                    <div class="basic-table-wrapper">
+                    <table class="data-table-export">
+                        <thead>
+                            <tr>
+                                <th>PRODUCT</th>
+                                <th>CATEGORY</th>
+                                <th>STOCK</th>
+                                <th>PRICE</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @for (table of exportDataTable; track table.id) {
+                            <tr>
+                                <td>{{table.product}}</td>
+                                <td>{{table.category}}</td>
+                                <td>{{table.stock}}</td>
+                                <td>${{table.price.toLocaleString()}}</td>
+                                <td>
+                                    @if (table.status === 'In Stock') {
+                                        <div class="flat-badges-1">
+                                            {{ table.status }}
+                                        </div>
+                                    }
+            
+                                    @else if (table.status === 'Out of Stock') {
+                                        <div class="flat-badges-2">
+                                            {{ table.status }}
+                                        </div>
+                                    }
+            
+                                    @else if (table.status === 'Low Stock') {
+                                        <div class="flat-badges-3">
+                                            {{ table.status }}
+                                        </div>
+                                    }
+                                </td>
+                                
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 </div>

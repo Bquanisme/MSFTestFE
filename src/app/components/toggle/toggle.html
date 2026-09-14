@@ -1,12 +1,16 @@
 <button
     type="button"
     class="toggle"
-    [class.active]="isChecked()"
+    [class.checked]="isChecked()"
+    [class.focused]="isFocused"
     (click)="toggleUpdate()"
-    [attr.aria-pressed]="isChecked()"
+    (focus)="isFocused = true"
+    (blur)="isFocused = false"
 >
-    <span 
+    <span
         class="toggle-circle"
+        [class.focused]="isFocused"
+        [class.checked]="isChecked()"
         [style.toggle.active]="background()"
     >
     </span>

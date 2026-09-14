@@ -1,10 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .dashboard-charts {
   width: 100%;
-
-  margin-top: 50px;
+  margin-top: 52px;
 
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 67.2fr 32.8fr;
 
   gap: 24px;
 }
@@ -17,27 +22,37 @@
   overflow: hidden;
 
   min-width: 0;
+
+  height: 100%;
+  
+}
+
+.chart-card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+  box-shadow: 4px 4px 4px 1px #0000000d;
 }
 
 .chart-card-header {
-  height: 70px;
+  /* height: 70px; */
 
-  padding: 0 20px;
+  padding: 20px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e7e7e7;
 }
 
 .chart-card-header h3 {
   margin: 0;
 
-  color: #111827;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  color: #272c33;
 
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .download-button {
@@ -52,7 +67,7 @@
   border-radius: 4px;
 
   background-color: #fff;
-  color: #666;
+  color: #878787;
 
   cursor: pointer;
 
@@ -60,33 +75,170 @@
 }
 
 .download-button:hover {
-  background-color: #f3f4f6;
-  color: #222;
+  background-color: #878787;
+  color: #ffffff;
 }
 
-.download-button svg {
-  width: 18px;
-  height: 18px;
-}
+
+
 
 .line-chart-container {
-  height: 420px;
-
-  padding: 30px 25px 15px;
+  position: relative;
+  width: 100%;
+  height: 420.10px;
+  padding: 36px 36px 65px;
+  border-bottom: 1px solid #0000002d;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
-.doughnut-chart-container {
-  height: 420px;
 
-  padding: 30px 20px 20px;
+
+/* =========================
+   CONTAINER
+========================= */
+
+.doughnut-chart-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  padding: 20px;
+
+  border-bottom: 1px solid #0000002d;
+}
+
+
+/* =========================
+   DONUT
+========================= */
+
+.doughnut-chart {
+  width: 100%;
+
+  padding: 16px 0;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  flex-shrink: 0;
 }
 
-@media (max-width: 1000px) {
+.doughnut-chart canvas {
+  width: 218px !important;
+  height: 218px !important;
+}
+
+
+/* =========================
+   LEGEND WRAPPER
+========================= */
+
+.doughnut-chart-container > div:last-child {
+  width: 100%;
+}
+
+
+/* =========================
+   HR
+========================= */
+
+.chart-divider {
+  width: 100%;
+
+  margin: 0;
+
+  border: 0;
+  border-top: 1px solid #f9f6f6;
+}
+
+.footer-traffic {
+  margin: 72.4688px 0 0;
+  padding: 16px 0 0;
+}
+
+/* =========================
+   LEGEND
+========================= */
+
+.doughnut-legend {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 25px;
+
+  padding: 16px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   LEGEND ITEM
+========================= */
+
+.legend-item {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #878787;
+
+  font-size: 14px;
+
+  font-family: Open Sans, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  font-weight: 400;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   LEGEND BOX
+========================= */
+
+.legend-box {
+  width: 12px;
+  height: 12px;
+
+  display: inline-block;
+
+  flex-shrink: 0;
+
+  border-radius: 2px;
+}
+
+
+@media (max-width: 1200px) {
   .dashboard-charts {
+    width: 100%;
     grid-template-columns: 1fr;
+  }
+
+  .chart-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .line-chart-container,
+  .doughnut-chart-container {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .footer-traffic {
+    margin: 15px 0 0;
   }
 }

@@ -4,7 +4,6 @@ import { MatIconModule } from '@angular/material/icon';
 
 import type { ISidebarItem } from '../../typescript/home';
 import { SidebarService } from '../../service/home/sidebar';
-// import { getSidebar } from '../../mocks/sidebarApi';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,10 +11,13 @@ import { SidebarService } from '../../service/home/sidebar';
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })
-
 export class Sidebar {
 
+  // Mở bằng hamburger → ảnh hưởng layout
   isDrawerOpen = input(false);
+
+  // Mở tạm bằng hover → không ảnh hưởng layout
+  isHoverSidebar = signal(false);
 
   sidebar = signal<ISidebarItem[]>([]);
 
@@ -23,18 +25,16 @@ export class Sidebar {
 
   setIsDrawerOpen = output<boolean>();
 
-
-  // nếu có private thì chỉ dùng trong ts
   router = inject(Router);
 
   private sidebarService = inject(SidebarService);
 
-  
 
   constructor() {
-    console.log('SIDEBAR CREATE')
+    console.log('SIDEBAR CREATE');
     this.loadSidebar();
   }
+
 
   async loadSidebar() {
     const data = await this.sidebarService.getSidebar();
@@ -42,8 +42,51 @@ export class Sidebar {
   }
 
 
+  // =========================
+  // HAMBURGER
+  // =========================
+
+  toggleDrawer() {
+    this.setIsDrawerOpen.emit(!this.isDrawerOpen());
+  }
+
+
+  // =========================
+  // HOVER
+  // =========================
+
+  openDrawer() {
+
+    // Đã mở bằng hamburger
+    // → hover không được làm gì
+    if (this.isDrawerOpen()) {
+      return;
+    }
+
+    // Chỉ mở tạm bằng hover
+    this.isHoverSidebar.set(true);
+  }
+
+
+  closeDrawer() {
+
+    // Đang mở bằng hamburger
+    // → hover ra không được đóng
+    if (this.isDrawerOpen()) {
+      return;
+    }
+
+    // Đang mở do hover → đóng
+    this.isHoverSidebar.set(false);
+  }
+
+
+  // =========================
+  // MENU
+  // =========================
+
   handleMenuClick(item: ISidebarItem) {
-    // Có submenu
+
     if (item.children) {
       this.openMenu.update(current =>
         current === item.id
@@ -65,16 +108,24 @@ export class Sidebar {
   }
 
 
+  isItemActive(item: any): boolean {
 
-  isItemActive(item: ISidebarItem) {
-    if (!item.path) {
+    const currentUrl = this.router.url.split('?')[0];
+
+    if (item.id === 1) {
       return false;
     }
 
-    return this.router.url === item.path;
+    if (item.children?.length) {
+      return false;
+    }
+
+    return currentUrl === item.path;
   }
 
+
   hasActiveChild(item: ISidebarItem) {
+
     if (!item.children) {
       return false;
     }
@@ -82,18 +133,5 @@ export class Sidebar {
     return item.children.some(
       child => this.router.url === child.path
     );
-  }
-
-
-  openDrawer() {
-    if (!this.isDrawerOpen()) {
-      this.setIsDrawerOpen.emit(true);
-    }
-  }
-
-  closeDrawer() {
-    if (this.isDrawerOpen()) {
-      this.setIsDrawerOpen.emit(false);
-    }
   }
 }

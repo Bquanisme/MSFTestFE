@@ -19,7 +19,6 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   imports: [
-    Badge,
     MatIconModule,
     FormsModule
   ],

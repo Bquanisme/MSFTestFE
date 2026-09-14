@@ -1,42 +1,18 @@
 <div class="dashboard-bottom-card">
     <div class="bottom-card-header">
-    <h3>Recent Activity</h3>
+        <h3>Recent Activity</h3>
     </div>
 
     <div class="activity-list">
-    <!-- {recentActivities.map((item) => (
-        <div
-        className="activity-item"
-        key={item.id}
-        >
-        <div
-            className={`activity-icon ${item.type}`}
-        >
-            {activityIcons[item.type]}
-        </div>
-
-        <div className="activity-content">
-            <h4>{item.title}</h4>
-
-            <p>
-            {item.description}
-            </p>
-
-            <span>
-            {item.time}
-            </span>
-        </div>
-        </div>
-    ))} -->
 
     @for (item of recentActivity; track item.id) {
         <div
             class="activity-item"
             >
             <div
-                [class]="`activity-icon ` + item.type"
+                [class]="`activity-icon-` + item.id"
             >
-                <mat-icon>{{ item.type }}</mat-icon>
+                <i [class]="item.type"></i>
             </div>
 
             <div class="activity-content">

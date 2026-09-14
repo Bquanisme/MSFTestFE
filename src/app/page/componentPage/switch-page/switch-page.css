@@ -7,15 +7,27 @@
 
 .section {
   width: 100%;
-  min-height: 100vh;
-
-  padding-top: 170px;
-  padding-right: 50px;
-  padding-bottom: 100px;
-  padding-left: 140px;
-
+  padding: 75px 42px 60px;
+  box-sizing: border-box;
   background-color: #f1f2f7;
 }
+
+.title {
+  margin: 4px 0 0;
+  color: #212529;
+  font-family: Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.section-title {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%;
+}
+
 
 
 .box-row-1,
@@ -26,12 +38,12 @@
   display: flex;
   justify-content: center;
 
-  gap: 20px;
+  gap: 24px;
 }
 
 
 .box-row-1 {
-  margin-top: 30px;
+  margin: 26px 0 30px;
 }
 
 .box-row-2 {
@@ -41,8 +53,10 @@
 .box-row-1-column-1 {
   width: 50%;
   background-color: #ffffff;
+  border-radius: 3px;
   height: 100%;
   transition: transform 0.2s ease;
+  border-bottom: 1px solid #e4e1e1;
 }
 
 .box-row-1-column-1:hover
@@ -52,33 +66,83 @@
 }
 
 .box-row-1-column-1 h3 {
-  margin: 20px;
+  padding: 21px 20px; 
+  color: #272C33;
+  font-size: 16px;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  font-weight: 600;
 }
 
 .button-margin {
-  margin: 20px;
+  padding: 24px 20px 20px;
+}
+
+.margin {
+  padding: 21px 20px;
+}
+
+.margin-20 {
+  padding: 18px 20px;
 }
 
 .button-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  margin: 0 0 20px;
+}
+
+.button-row-switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px;
 }
 
 
-.button-row p {
-  font-size: 16px;
+.button-row-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 28px;
+  row-gap: 13px;
+  margin: 0 0 7px;
+}
+
+.button-row-last {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.button-row-last p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+
+.button-row p,
+.button-row-last p,
+.button-row-switch p {
+  font-size: 13px;
+  color: #272C33;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  font-weight: 400;
 }
 
 
 .button-row-start {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    /* gap: 10px; */
 }
 
 .button-row-start p {
   font-size: 16px;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  font-weight: 600;
 }
 
 .box-row-4 
@@ -86,9 +150,10 @@
   width: 100%;
   background-color: #ffffff;
   height: 100%;
-  padding: 10px;
   margin-top: 20px;
   transition: transform 0.2s ease;
+  border-radius: 3px;
+  border-bottom: 1px solid #0000002d;
 }
 
 .box-row-4:hover 
@@ -98,27 +163,33 @@
 }
 
 .box-row-4 h3 {
-  margin: 20px;
+  padding: 20px; 
+  color: #272C33;
+  font-size: 16px;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  font-weight: 600;
 }
+
+
 
 
 
 /* Input */
 .input {
-    width: 90%;
-    height: 40px;
-    border: 1px solid #b4b7ba;
-    border-radius: 5px;
-    margin: 10px 0;
-    padding: 0 8px;
+    width: 100%;
+    height: 36.84px;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    margin: 0 0 20px;
+    padding: 8px 12px;
+    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
 }
 
 .input:focus {
-    border-color: #0da9e8;
+  border-color: #0da9e8;
+  outline: none;
+  box-shadow: 0 0 5px rgba(13, 169, 232, 0.35);
 }
-
-
-
 
 
 
@@ -128,14 +199,14 @@
 
 /* TOGGLE */
 .toggle{
-    width: 44px;
-    height: 21px;
+    width: 42px;
+    height: 20px;
 
     position: relative;
 
     padding: 0;
 
-    border: 2px solid #d1d5db;
+    border: 2px solid #dee2e6;
     border-radius: 20px;
 
     background-color: #ffffff;
@@ -143,8 +214,8 @@
     cursor: pointer;
 
     transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease;
+        background-color 0s ease,
+        border-color 0s ease;
 
     outline: none;
 }
@@ -156,9 +227,10 @@
 /* Checked Basic */
 
 .toggle.checked {
-    background-color: #06c00f;
-    border-color: #06c00f;
+    background-color: #00C292;
+    border-color: #00C292;
 }
+
 
 
 
@@ -170,15 +242,17 @@
 .toggle-circle {
     position: absolute;
 
-    width: 13px;
-    height: 13px;
+    width: 12px;
+    height: 12px;
 
     top: 2px;
     left: 2px;
+    /* padding-left: 7px; */
+    /* right: 0px; */
 
     border-radius: 50%; 
 
-    background-color: #d1d5db;
+    background-color: #c2c5c9;
 
     transition:
         left 0.2s ease,
@@ -186,10 +260,11 @@
 }
 
 
+
 /* Toggle ON → circle sang phải */
 
 .toggle.checked .toggle-circle {
-    left: 23px;
+    left: 24px;
     background-color: #ffffff;
 }
 
@@ -197,7 +272,7 @@
 /* Focus + OFF → circle xanh */
 
 .toggle.focused:not(.checked) .toggle-circle {
-    background-color: #148ec3;
+    background-color: #08a9ef78;
 }
 
 
@@ -210,7 +285,7 @@
 
 .toggle.active,
 .toggle-colored.active {
-    background-color: rgb(7, 212, 7);
+    background-color: #00C292;
 }
 
 
@@ -233,22 +308,25 @@
 
 
 .toggle-colored {
-    position: relative;
+    width: 42px;
+    height: 20px;
 
-    width: 44px;
-    height: 21px;
+    position: relative;
 
     padding: 0;
 
-    border: 2px solid transparent;
+    border: 2px solid #dee2e6;
     border-radius: 20px;
 
+    background-color: #ffffff;
+
     cursor: pointer;
-    outline: none;
 
     transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease;
+        background-color 0s ease,
+        border-color 0s ease;
+
+    outline: none;
 }
 
 /* =========================
@@ -258,16 +336,17 @@
 .toggle-circle-colored {
     position: absolute;
 
-    width: 13px;
-    height: 13px;
+    width: 12px;
+    height: 12px;
 
     top: 2px;
     left: 2px;
+    /* padding-left: 7px; */
+    right: 5px;
 
-    border-radius: 50%;
+    border-radius: 50%; 
 
-    background-color: #858585;
-
+    background-color: #464c536a;
 
     transition:
         left 0.2s ease,
@@ -280,8 +359,8 @@
    ========================= */
 
 .toggle-colored.primary {
-    background-color: #0da9e8;
-    border-color: #0da9e8;
+    background-color: #03a9f3;
+    border-color: #03a9f3;
 }
 
 
@@ -290,8 +369,8 @@
    ========================= */
 
 .toggle-colored.success {
-    background-color: #06c00f;
-    border-color: #06c00f;
+    background-color: #00C292;
+    border-color: #00C292;
 }
 
 
@@ -300,8 +379,8 @@
    ========================= */
 
 .toggle-colored.danger {
-    background-color: #e80d0d;
-    border-color: #e80d0d;
+    background-color: #F44336;
+    border-color: #F44336;
 }
 
 
@@ -310,8 +389,8 @@
    ========================= */
 
 .toggle-colored.warning {
-    background-color: #e8a30d;
-    border-color: #e8a30d;
+    background-color: #fb9678;
+    border-color: #fb9678;
 }
 
 
@@ -331,21 +410,21 @@
 /* ON */
 
 .toggle-colored.primary.checked {
-    background-color: #0da9e8;
-    border-color: #0da9e8;
+    background-color: #03a9f3;
+    border-color: #03a9f3;
 }
 
 /* ON → circle sang phải + trắng */
 
 .toggle-colored.primary.checked .toggle-circle-colored {
-    left: 27px;
+    left: 24px;
     background-color: #ffffff;
 }
 
 /* OFF + FOCUS */
 
 .toggle-colored.primary.focused:not(.checked) {
-    background-color: #11bcff;
+    background-color: #03a9f3;
 }
 
 .toggle-colored.primary.focused:not(.checked) .toggle-circle-colored {
@@ -360,21 +439,21 @@
 /* ON */
 
 .toggle-colored.success.checked {
-    background-color: #06c00f;
-    border-color: #06c00f;
+    background-color: #00C292;
+    border-color: #00C292;
 }
 
 /* ON → circle sang phải + trắng */
 
 .toggle-colored.success.checked .toggle-circle-colored {
-    left: 27px;
+    left: 24px;
     background-color: #ffffff;
 }
 
 /* OFF + FOCUS */
 
 .toggle-colored.success.focused:not(.checked) {
-    border-color: #06c00f;
+    border-color: #00C292;
 }
 
 .toggle-colored.success.focused:not(.checked) .toggle-circle-colored {
@@ -389,21 +468,21 @@
 /* ON */
 
 .toggle-colored.danger.checked {
-    background-color: #e80d0d;
-    border-color: #e80d0d;
+    background-color: #F44336;
+    border-color: #F44336;
 }
 
 /* ON → circle sang phải + trắng */
 
 .toggle-colored.danger.checked .toggle-circle-colored {
-    left: 27px;
+    left: 24px;
     background-color: #ffffff;
 }
 
 /* OFF + FOCUS */
 
 .toggle-colored.danger.focused:not(.checked) {
-    border-color: #e80d0d;
+    border-color: #F44336;
 }
 
 .toggle-colored.danger.focused:not(.checked) .toggle-circle-colored {
@@ -418,21 +497,21 @@
 /* ON */
 
 .toggle-colored.warning.checked {
-    background-color: #e8a30d;
-    border-color: #e8a30d;
+    background-color: #fb9678;
+    border-color: #fb9678;
 }
 
 /* ON → circle sang phải + trắng */
 
 .toggle-colored.warning.checked .toggle-circle-colored {
-    left: 27px;
+    left: 24px;
     background-color: #ffffff;
 }
 
 /* OFF + FOCUS */
 
 .toggle-colored.warning.focused:not(.checked) {
-    border-color: #e8a30d;
+    border-color: #fb9678;
 }
 
 .toggle-colored.warning.focused:not(.checked) .toggle-circle-colored {
@@ -450,16 +529,65 @@
 .switch-row {
     display: flex;
     align-items: flex-start;
-    gap: 10px
+    gap: 12px;
+    margin: 0 0 18px;
 }
+
+.switch-row-last {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 0;
+}
+
+.lable-p {
+    color: #272C33;
+    font-size: 13px !important;
+    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    font-weight: 400 !important;
+    margin: 0 0 3px;
+}
+
+.lable-p-small {
+    color: #212529bf;
+    font-size: 11.375px !important;
+    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    font-weight: 400 !important;
+}
+
+.form-lable {
+    color: #878787;
+    font-size: 13px !important;
+    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    font-weight: 600 !important;
+    margin: 0 0 10px;
+}
+
 
 
 /* table-small */
 
+.settings-example {
+    width: 32%;
+    margin: 0 0 0 10px;
+}
+
+.form-example {
+    width: 34%; 
+    padding: 0 16px 0 5px;
+}
+
+.label-example {
+    width: 34%
+}
+
+
 .table-small {
     width: 100%;
+    height: 41.33px;
 
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
 
     border: 1px solid #dee2e6;
     border-radius: 6px;
@@ -468,10 +596,25 @@
 
     font-size: 14px;
     color: #495057;
+
+    overflow: hidden;
 }
 
-
 /* Row */
+.table-small th,
+.table-small td {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table-small th:last-child,
+.table-small td:last-child {
+    border-right: none;
+}
+
+.table-small tr:last-child td {
+    border-bottom: none;
+}
+
 
 .table-small tr {
     border-bottom: 1px solid #dee2e6;
@@ -491,13 +634,16 @@
 /* Cell */
 
 .table-small td {
-    padding: 12px 16px;
+    padding: 8px 16px;
 
     text-align: left;
 
     vertical-align: middle;
 
-    font-size: 16px
+    color: #272C33;
+    font-size: 16px;
+    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    font-weight: 400;
 }
 
 
@@ -535,14 +681,21 @@
 .implementation-table thead th {
     height: 42px;
 
-    padding: 0 8px;
+    font-size: 12px;
+
+    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    
+    padding: 0 12px;
 
     text-align: left;
 
-    color: #68707a;
+    color: #878787;
 
-    font-size: 11px;
+    border-bottom: 2px solid #e7e7e7;
+
     font-weight: 500;
+
+    padding-bottom: 1px;
 }
 
 
@@ -550,17 +703,17 @@
 
 .implementation-table th:nth-child(1),
 .implementation-table td:nth-child(1) {
-    width: 19%;
+    width: 18.40%;
 }
 
 .implementation-table th:nth-child(2),
 .implementation-table td:nth-child(2) {
-    width: 21%;
+    width: 21.36%;
 }
 
 .implementation-table th:nth-child(3),
 .implementation-table td:nth-child(3) {
-    width: 60%;
+    width: 60.24%;
 }
 
 
@@ -593,7 +746,13 @@
 
     vertical-align: middle;
 
-    color: #26364a;
+    color: #272C33;
+
+    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    
+    padding: 0 12px;
+
+    padding-bottom: 1px;
 }
 
 
@@ -633,11 +792,11 @@
 ========================= */
 
 .implementation-table code {
-    color: #f23d78;
+    color: #d63384;
 
     font-family: Consolas, Monaco, monospace;
 
-    font-size: 11px;
+    font-size: 11.375px;
 
     white-space: nowrap;
 }
@@ -649,23 +808,24 @@
 ===================================================== */
 
 
-/* =========================
-   TABLET / LAPTOP
-   <= 1200px
-========================= */
-
 @media (max-width: 1200px) {
+  .title {
+    font-size: calc(1.275rem + .3vw);
+  }
+}
+
+@media (max-width: 990px) {
 
     .section {
-        width: 100%;
-        min-height: 100vh;
-
-        padding-top: 130px;
-        padding-right: 25px;
-        padding-left: 25px;
-        padding-bottom: 60px;
+        padding-top: 15px;
+        padding-right: 27px;
+        padding-left: 27px;
+        padding-bottom: 50px;
     }
 
+    .section-title {
+        margin-top: -16px;
+    }
 
     .box-row-1,
     .box-row-2 {
@@ -684,13 +844,27 @@
 
 
     .implementation-table {
-        min-width: 650px;
+        width: 100%;
+        min-width: 100%;
     }
 
 
     .box-row-4 {
         overflow-x: auto;
     }
+
+    /* .button-row-inline {
+        flex-wrap: wrap;
+    }
+
+    .button-row-last {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .button-row-last p {
+        white-space: nowrap;
+    } */
 }
 
 
@@ -703,15 +877,15 @@
 @media (max-width: 768px) {
 
     .section {
-        width: 100%;
-        min-height: 100vh;
-
-        padding-top: 100px;
-        padding-right: 15px;
-        padding-left: 15px;
-        padding-bottom: 40px;
+        padding-top: 15px;
+        padding-right: 27px;
+        padding-left: 27px;
+        padding-bottom: 48px;
     }
 
+    .section-title {
+        margin-top: -16px;
+    }
 
     /* =====================
        BOX ROW
@@ -721,16 +895,15 @@
     .box-row-2 {
         width: 100%;
 
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 30px
     }
 
 
     .box-row-1-column-1 {
         width: 100%;
 
-        margin-bottom: 20px;
-
-        padding: 10px;
     }
 
 
@@ -741,10 +914,6 @@
 
     .box-row-4 {
         width: 100%;
-
-        margin-top: 20px;
-
-        padding: 5px;
 
         overflow-x: auto;
     }
@@ -759,7 +928,6 @@
 
         align-items: center;
 
-        gap: 10px;
 
         flex-wrap: wrap;
     }
@@ -769,15 +937,19 @@
         display: flex;
 
         align-items: flex-start;
-
-        gap: 10px;
-
+        flex-direction: column;
         flex-wrap: wrap;
     }
 
-
-    .button-margin {
+    /* .button-margin {
         margin: 16px;
+    } */
+
+    .example-with-label {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1px;
+        align-items: flex-end;
     }
 
 
@@ -794,287 +966,39 @@
        TABLE SMALL
     ===================== */
 
-    .table-small {
+    .settings-example {
         width: 100%;
+        margin: 0;
     }
-
-
-    .table-small td {
-        padding: 10px 12px;
-
-        font-size: 14px;
-    }
-
-
-    /* =====================
-       IMPLEMENTATION TABLE
-    ===================== */
-
-    .implementation-table {
-        min-width: 650px;
-    }
-
-
-    .implementation-table thead th {
-        height: 40px;
-
-        font-size: 10px;
-    }
-
-
-    .implementation-table td {
-        height: 46px;
-
-        padding: 8px;
-
-        font-size: 13px;
-    }
-
-
-    .implementation-table code {
-        font-size: 10px;
-    }
-
-
-    /* =====================
-       BOX TITLE
-    ===================== */
-
-    .box-row-1-column-1 h3,
-    .box-row-4 h3 {
-        margin: 16px;
-
-        font-size: 18px;
-    }
-}
-
-
-
-/* =========================
-   MOBILE
-   <= 600px
-========================= */
-
-@media (max-width: 600px) {
-
-    .section {
-        padding-top: 80px;
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-bottom: 30px;
-    }
-
-
-    /* =====================
-       BOX
-    ===================== */
-
-    .box-row-1,
-    .box-row-2 {
-        display: block;
-
-        width: 100%;
-
-        margin: 20px;
-    }
-
-
-    .box-row-1-column-1 {
-        width: 100%;
-
-        margin-bottom: 15px;
-    }
-
-
-    .box-row-4 {
-        width: 100%;
-
-        padding: 5px;
-
-        margin-top: 15px;
-
-        overflow-x: auto;
-    }
-
-
-    /* =====================
-       TITLE
-    ===================== */
-
-    .box-row-1-column-1 h3,
-    .box-row-4 h3 {
-        margin: 15px;
-
-        font-size: 16px;
-    }
-
-
-    /* =====================
-       CONTENT
-    ===================== */
-
-    .button-margin {
-        margin: 15px;
-    }
-
-
-    .button-row {
-        gap: 8px;
-    }
-
-
-    .button-row p,
-    .button-row-start p {
-        font-size: 14px;
-    }
-
-
-    /* =====================
-       INPUT
-    ===================== */
-
-    .input {
-        width: 100%;
-
-        height: 38px;
-
-        font-size: 14px;
-    }
-
-
-    /* =====================
-       TOGGLE
-    ===================== */
-
-    .toggle,
-    .toggle-colored {
-        flex-shrink: 0;
-    }
-
-
-    /* =====================
-       SMALL TABLE
-    ===================== */
 
     .table-small {
         width: 100%;
     }
 
-
-    .table-small td {
-        padding: 9px 10px;
-
-        font-size: 13px;
+    .form-example {
+        width: 100%;
+        padding: 0;
     }
 
+    .label-example {
+        width: 100%
+    }   
 
-    /* =====================
-       IMPLEMENTATION TABLE
-    ===================== */
-
-    .box-row-4 {
-        overflow-x: auto;
+    .form-example input {
+        width: 100%;
     }
-
 
     .implementation-table {
-        min-width: 600px;
-    }
-
-
-    .implementation-table th:nth-child(1),
-    .implementation-table td:nth-child(1) {
-        width: 120px;
-    }
-
-
-    .implementation-table th:nth-child(2),
-    .implementation-table td:nth-child(2) {
-        width: 150px;
-    }
-
-
-    .implementation-table th:nth-child(3),
-    .implementation-table td:nth-child(3) {
-        width: 330px;
-    }
-
-
-    .implementation-table thead th {
-        padding: 0 8px;
-
-        font-size: 10px;
-    }
-
-
-    .implementation-table td {
-        padding: 8px;
-
-        font-size: 12px;
-    }
-
-
-    .implementation-table code {
-        font-size: 9px;
-    }
-
-
-    /* =====================
-       EXAMPLE LABEL
-    ===================== */
-
-    .example-with-label {
-        gap: 8px;
-    }
-
-
-    .example-with-label span {
-        font-size: 12px;
+        width: 100%;
     }
 }
 
 
 
-/* =========================
-   VERY SMALL MOBILE
-   <= 400px
-========================= */
+@media (max-width: 576px) {
+  .section-title {
+    display: block;
+    margin-top: -6px;
+  }
 
-@media (max-width: 400px) {
-
-    .section {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-
-    .box-row-1-column-1 h3,
-    .box-row-4 h3 {
-        margin: 12px;
-
-        font-size: 15px;
-    }
-
-
-    .button-margin {
-        margin: 12px;
-    }
-
-
-    .button-row p,
-    .button-row-start p {
-        font-size: 13px;
-    }
-
-
-    .table-small td {
-        padding: 8px;
-
-        font-size: 12px;
-    }
-
-
-    .implementation-table {
-        min-width: 560px;
-    }
 }

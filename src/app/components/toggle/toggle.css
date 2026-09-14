@@ -1,59 +1,101 @@
-.toggle {
-    width: 44px;
-    height: 21px;
+.toggle{
+    width: 42px;
+    height: 20px;
 
     position: relative;
 
     padding: 0;
 
-    border: none;
+    border: 2px solid #dee2e6;
     border-radius: 20px;
 
-    background-color: #d1d5db;
+    background-color: #ffffff;
 
     cursor: pointer;
 
-    transition: background-color 0.2s ease;
+    transition:
+        background-color 0s ease,
+        border-color 0s ease;
+
+    outline: none;
+}
+
+
+
+
+
+/* Checked Basic */
+
+.toggle.checked {
+    background-color: #00C292;
+    border-color: #00C292;
+}
+
+
+
+
+.toggle.focused {
+    border-color: #0da9e8;
 }
 
 
 .toggle-circle {
     position: absolute;
 
-    top: 3px;
-    left: 3px;
+    width: 12px;
+    height: 12px;
 
-    width: 15px;
-    height: 15px;
+    top: 2px;
+    left: 2px;
+    /* padding-left: 7px; */
+    /* right: 0px; */
 
-    border-radius: 50%;
+    border-radius: 50%; 
 
+    background-color: #c2c5c9;
+
+    transition:
+        left 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+
+/* Toggle ON → circle sang phải */
+
+.toggle.checked .toggle-circle {
+    left: 24px;
     background-color: #ffffff;
-
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-
-    transition: transform 0.2s ease;
 }
 
 
-/* =========================
-   ACTIVE
-========================= */
+/* Focus + OFF → circle xanh */
 
-.toggle.active {
-    background-color: rgb(7, 212, 7);
+.toggle.focused:not(.checked) .toggle-circle {
+    background-color: #08a9ef78;
 }
 
 
-.toggle.active .toggle-circle {
+/* Focus + ON → circle trắng */
+
+.toggle.focused.checked .toggle-circle {
+    background-color: #ffffff;
+}
+
+
+.toggle.active,
+.toggle-colored.active {
+    background-color: #00C292;
+}
+
+
+.toggle.active,
+.toggle-colored.active .toggle-circle {
     transform: translateX(24px);
 }
 
 
-/* =========================
-   HOVER
-========================= */
-
-.toggle:hover {
+.toggle:hover,
+.toggle-colored:hover {
     opacity: 0.9;
 }

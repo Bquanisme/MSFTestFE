@@ -1,9 +1,7 @@
 <div class="section">
-    <div style="display: flex; justify-content: space-between">
-        
-        <h2>Chart.js Examples</h2>
-        <p>Interactive charts using Chart.js v4.5</p>
-
+    <div>
+        <h2 class="title">Chart.js Examples</h2>
+        <p class="title-p">Interactive charts using Chart.js v4.5</p>
     </div>
     
     <!-- Sales & Team Chart -->
@@ -11,7 +9,7 @@
         <div class='box-row-1-column-1'>
 
             <h3>Sales Chart</h3>
-            <hr style="border-top: 1px solid #d0cccc"/>
+            <hr style="border-top: 1px solid #e7e7e7"/>
             
             <div class="line-chart-container">
                 <canvas
@@ -27,7 +25,7 @@
         <div class='box-row-1-column-1'>
 
             <h3>Team Chart</h3>
-            <hr style="border-top: 1px solid #d0cccc"/>
+            <hr style="border-top: 1px solid #e7e7e7"/>
             
             <div class="line-chart-container">
                 <canvas
@@ -50,23 +48,24 @@
         <div class='box-row-1-column-1'>
 
             <h3>Bar Chart</h3>
-            <hr style="border-top: 1px solid #d0cccc"/>
+            <hr style="border-top: 1px solid #e7e7e7"/>
             
-            <div class="line-chart-container">
-                <canvas
-                    baseChart
-                    [data]="barData"
-                    [options]="barOptions"
-                    [type]="'bar'"
-                >
-                </canvas>
+            <div class="bar-chart-container">
+                <div class="bar-chart">
+                    <canvas
+                        baseChart
+                        [data]="barData"
+                        [options]="barOptions"
+                        [type]="'bar'">
+                    </canvas>
+                </div>
             </div>
         </div>
 
         <div class='box-row-1-column-1'>
 
             <h3>Radar Chart</h3>
-            <hr style="border-top: 1px solid #d0cccc"/>
+            <hr style="border-top: 1px solid #e7e7e7"/>
             
             <div class="line-chart-container">
                 <canvas
@@ -89,23 +88,25 @@
         <div class='box-row-1-column-1'>
 
             <h3>Line Chart</h3>
-            <hr style="border-top: 1px solid #d0cccc"/>
+            <hr style="border-top: 1px solid #e7e7e7"/>
             
             <div class="line-chart-container">
-                <canvas
-                    baseChart
-                    [data]="lineData"
-                    [options]="lineOptions"
-                    [type]="'line'"
-                >
-                </canvas>
+                <div class="bar-chart">
+                    <canvas
+                        baseChart
+                        [data]="lineData"
+                        [options]="lineOptions"
+                        [type]="'line'"
+                    >
+                    </canvas>
+                </div>
             </div>
         </div>
 
         <div class='box-row-1-column-1'>
 
             <h3>Doughnut Chart</h3>
-            <hr style="border-top: 1px solid #d0cccc"/>
+            <hr style="border-top: 1px solid #e7e7e7"/>
             
             <div class="line-chart-container">
                 <canvas
@@ -125,7 +126,7 @@
         <div class='box-row-1-column-1'>
 
             <h3>Pie Chart</h3>
-            <hr style="border-top: 1px solid #d0cccc"/>
+            <hr style="border-top: 1px solid #e7e7e7"/>
             
             <div class="line-chart-container">
                 <canvas
@@ -141,7 +142,7 @@
         <div class='box-row-1-column-1'>
 
             <h3>Polar Chart</h3>
-            <hr style="border-top: 1px solid #d0cccc"/>
+            <hr style="border-top: 1px solid #e7e7e7"/>
             
             <div class="line-chart-container">
                 <canvas
@@ -161,16 +162,18 @@
         <div class='box-row-1-column-1'>
 
             <h3>Single Bar Chart</h3>
-            <hr style="border-top: 1px solid #d0cccc"/>
+            <hr style="border-top: 1px solid #e7e7e7"/>
             
             <div class="line-chart-container">
-                <canvas
-                    baseChart
-                    [data]="singleBarData"
-                    [options]="singleBarOptions"
-                    [type]="'bar'"
-                >
-                </canvas>
+                <div class="bar-chart">
+                    <canvas
+                        baseChart
+                        [data]="singleBarData"
+                        [options]="singleBarOptions"
+                        [type]="'bar'"
+                    >
+                    </canvas>
+                </div>
             </div>
         </div>
     </div>

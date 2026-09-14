@@ -164,38 +164,32 @@ export class BadgeService {
       {
         id: 1,
         title: 'Active',
-        icon: 'done',
-        iconPosition: 'left',
+        icon: 'fa-solid fa-check',
       },
       {
         id: 2,
         title: 'Pending',
-        icon: 'watch_later',
-        iconPosition: 'left',
+        icon: 'fa-solid fa-clock',
       },
       {
         id: 3,
         title: 'Inactive',
-        icon: 'clear',
-        iconPosition: 'left',
+        icon: 'fa-solid fa-times',
       },
       {
         id: 4,
         title: 'Processing',
-        icon: 'watch_later',
-        iconPosition: 'left',
+        icon: 'fa-solid fa-info-circle',
       },
       {
         id: 5,
         title: 'Paused',
-        icon: 'paused',
-        iconPosition: 'left',
+        icon: 'fa-solid fa-pause',
       },
       {
         id: 6,
         title: 'Blocked',
-        icon: 'block',
-        iconPosition: 'left',
+        icon: 'fa-solid fa-ban',
       },
     ]
   }

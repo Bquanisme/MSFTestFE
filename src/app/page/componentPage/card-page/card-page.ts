@@ -8,7 +8,7 @@ import { Toggle } from "../../../components/toggle/toggle";
 
 @Component({
   selector: 'app-card-page',
-  imports: [Breadcrumb, MatIcon, Toggle],
+  imports: [Breadcrumb, Toggle],
   templateUrl: './card-page.html',
   styleUrl: './card-page.css',
 })

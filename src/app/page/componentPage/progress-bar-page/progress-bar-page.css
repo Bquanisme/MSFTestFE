@@ -7,15 +7,27 @@
 
 .section {
   width: 100%;
-  min-height: 100vh;
-
-  padding-top: 170px;
-  padding-right: 50px;
-  padding-bottom: 100px;
-  padding-left: 140px;
-
+  padding: 75px 42px 60px;
+  box-sizing: border-box;
   background-color: #f1f2f7;
 }
+
+.title {
+  margin: 4px 0 0;
+  color: #212529;
+  font-family: Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.section-title {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%;
+}
+
 
 
 .box-row-1,
@@ -26,12 +38,13 @@
   display: flex;
   justify-content: center;
 
-  gap: 20px;
+  gap: 24px;
+
 }
 
 
 .box-row-1 {
-  margin-top: 30px;
+  margin: 26px 0 23px;
 }
 
 .box-row-2 {
@@ -43,13 +56,18 @@
   background-color: #ffffff;
   /* height: 100%; */
   transition: transform 0.2s ease;
+  border-bottom: 1px solid #0000002d;
+  /* opacity: 0.7; */
+  border-radius: 5px;
 }
 
 .box-row-1-column-2 {
+  margin-top: 30px;
   width: 50%;
   background-color: #ffffff;
   height: 100%;
   transition: transform 0.2s ease;
+  border-bottom: 1px solid #0000002d;
 }
 
 .box-row-1-column-1:hover,
@@ -60,28 +78,50 @@
 }
 
 .box-row-1-column-1 h3 {
-  margin: 20px;
+  padding: 21px 20px; 
+  color: #272C33;
+  font-size: 16px;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  font-weight: 600;
 }
 
 .box-row-1-column-2 h3 {
-  margin: 20px;
+  padding: 20px; 
+  color: #272C33;
+  font-size: 16px;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  font-weight: 600;
 }
 
 
 .button-margin {
-  margin: 20px;
+  padding: 22px 20px;
 }
 
-.button-margin p{
-  color: rgb(66, 65, 65);
-  font-size: 18px;
-  margin-bottom: 15px;
+.margin {
+  padding: 20px 20px 4px;
+}
+
+
+
+.button-margin p,
+.margin p{
+  color: #212529bf;
+  font-size: 16px;
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+  margin-bottom: 17px;
 }
 
 .button-row {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 24px;
+}
+
+.button-row-small {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .button-3,
@@ -91,9 +131,13 @@
 .button-task-3
 {
   border: none;
-  border-radius: 10px;
+  border-radius: 4px;
 
-  height: 40px;
+  padding: 6px 9px;
+
+  font-size: 14px;
+
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
 
   cursor: pointer;
 
@@ -103,8 +147,7 @@
 
 
 .button-3 {
-  width: 100px;
-  background-color: rgb(39, 153, 218);
+  background-color: #03A9F3;
   color: #ffffff;
 }
 
@@ -113,24 +156,23 @@
 }
 
 .button-3:active {
-  background-color: rgb(39, 153, 218);
+  background-color: #03A9F3;
 }
 
 
 
 
 .button-2 {
-  width: 80px;
-  background-color: rgb(113, 121, 126);
+  background-color: #878787;
   color: #ffffff;
 }
 
 .button-2:hover {
-  background-color: rgb(132, 137, 141);
+  background-color: #9c9c9c;
 }
 
 .button-2:active {
-  background-color: rgb(113, 121, 126);
+  background-color: #878787;
 }
 
 
@@ -138,47 +180,44 @@
 
 
 .button-task-1 {
-  width: 50px;
-  background-color: rgb(6, 155, 33);
+  background-color: #00C292;
   color: #ffffff;
 }
 
 .button-task-1:hover {
-  background-color: rgb(10, 173, 56);
+  background-color: #15e2af;
 }
 
 .button-task-1:active {
-  background-color: rgb(6, 155, 33);
+  background-color: #00C292;
 }
 
 
 .button-task-2 {
-  width: 50px;
-  background-color: rgb(239, 40, 40);
+  background-color: #F44336;
   color: #ffffff;
 }
 
 .button-task-2:hover {
-  background-color: rgb(239, 76, 76);
+  background-color: rgb(249, 98, 98)
 }
 
 .button-task-2:active {
-  background-color: rgb(239, 40, 40);
+  background-color: #F44336;
 }
 
 
 .button-task-3 {
-  width: 70px;
-  background-color: rgb(113, 121, 126);
+  background-color: #878787;
   color: #ffffff;
 }
 
 .button-task-3:hover {
-  background-color: rgb(132, 137, 141);
+  background-color: #9c9c9c;
 }
 
 .button-task-3:active {
-  background-color: rgb(113, 121, 126);
+  background-color: #878787;
 }
 
 
@@ -187,30 +226,70 @@
 
 
 /* Progress bar */
-.progress-bar-container {
+.progress-bar-container,
+.progress-bar-container-custom,
+.progress-bar-container-bootstrap,
+.progress-bar-container-none-margin {
     position: relative;
 
     width: 100%;
-    height: 15px;
-
-    margin-bottom: 20px;
+    height: 16px;
 
     background-color: #e9ecef;
-    border-radius: 7px;
+    border-radius: 6px;
     overflow: hidden;
 
 }
+
+.progress-bar-container {
+  margin: 0 0 25px;
+}
+
+.progress-bar-container-custom {
+    margin: 0 0 8px;
+}
+
+.progress-bar-container-bootstrap {
+    margin: 0 0 16px;
+}
+
+.progress-bar-container-basic {
+    margin: 0 0 30px;
+}
+
+.progress-bar-container-none-margin {
+  margin: 0;
+}
+
+.progress-bar-container.last-progress {
+  margin-bottom: 0 !important;
+}
+
 
 .progress-bar-container-row {
     display: flex;
 
     width: 100%;
-    height: 15px;
+    height: 16px;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
     background-color: #e9ecef;
-    border-radius: 7px;
+    border-radius: 6px;
+    overflow: hidden;
+
+}
+
+.progress-bar-container-row-margin-none {
+    display: flex;
+
+    width: 100%;
+    height: 16px;
+
+    margin-bottom: 0;
+
+    background-color: #e9ecef;
+    border-radius: 6px;
     overflow: hidden;
 
 }
@@ -225,14 +304,22 @@
     justify-content: center;
 }
 
-.progress-label {
+.progress-label,
+.progress-label-bold {
     color: #fff;
 
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 12px;
+    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
 
     line-height: 1;
     white-space: nowrap;
+}
+
+.progress-label {
+  font-weight: 400;
+}
+.progress-label-bold {
+  font-weight: 700;
 }
 
 
@@ -260,16 +347,16 @@
 
 .progress-bgcolor-5,
 .progress-bgcolor-label-4 {
-    background-color: #e61919;
+    background-color: #f44336;
 }
 
 .progress-bgcolor-6,
 .progress-bgcolor-project-3 {
-    background-color: #7b7878;
+    background-color: #878787;
 }
 
 .progress-bgcolor-7 {
-    background-color: #000000;
+    background-color: #272c33;
 }
 
 
@@ -277,66 +364,65 @@
 
 
 .progress-mix-bgcolor-1 {
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #ffffff26 0,
-            #ffffff26 8px,
-            transparent 8px,
-            transparent 16px
-        ),
-        #0da9e8;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #ffffff26 0,
+      #ffffff26 5.5px,
+      transparent 5.5px,
+      transparent 11px
+    ),
+    #03A9F3;
 }
 
 .progress-mix-bgcolor-2 {
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #ffffff26 0,
-            #ffffff26 8px,
-            transparent 8px,
-            transparent 16px
-        ),
-        #00c49a;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #ffffff26 0,
+      #ffffff26 5.5px,
+      transparent 5.5px,
+      transparent 11px
+    ),
+    #00C292;
 }
 
 .progress-mix-bgcolor-3 {
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #ffffff26 0,
-            #ffffff26 8px,
-            transparent 8px,
-            transparent 16px
-        ),
-        #0da9e8;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #ffffff26 0,
+      #ffffff26 5.5px,
+      transparent 5.5px,
+      transparent 11px
+    ),
+    #03A9F3;
 }
 
 .progress-mix-bgcolor-4,
 .progress-bgcolor-project-2 {
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #ffffff26 0,
-            #ffffff26 8px,
-            transparent 8px,
-            transparent 16px
-        ),
-        #ff9578;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #ffffff26 0,
+      #ffffff26 5.5px,
+      transparent 5.5px,
+      transparent 11px
+    ),
+    #fb9678;
 }
 
 .progress-mix-bgcolor-5 {
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #ffffff26 0,
-            #ffffff26 8px,
-            transparent 8px,
-            transparent 16px
-        ),
-        #e61919;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #ffffff26 0,
+      #ffffff26 5.5px,
+      transparent 5.5px,
+      transparent 11px
+    ),
+    #F44336;
 }
-
 
 
 
@@ -369,9 +455,9 @@
   width: 100%;
   background-color: #ffffff;
   height: 100%;
-  padding: 10px;
-  margin-top: 20px;
+  margin-top: 53px;
   transition: transform 0.2s ease;
+  box-sizing: border-box;
 }
 
 .box-row-4:hover 
@@ -381,75 +467,46 @@
 }
 
 .box-row-4 h3 {
-  margin: 20px;
+  padding: 20px;
+  color: #272C33;
+  font-family: Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 
 /* =====================================================
    RESPONSIVE
    ===================================================== */
-
-
-@media screen and (max-width: 992px) {
-
-  .section {
-    padding-top: 140px;
-    padding-right: 30px;
-    padding-left: 30px;
-    padding-bottom: 60px;
+@media (max-width: 1200px) {
+  .title {
+    font-size: calc(1.275rem + .3vw);
   }
-
-  .box-row-1,
-  .box-row-2 {
-    gap: 15px;
-  }
-
-  .box-row-1-column-1,
-  .box-row-1-column-2 {
-    width: 50%;
-  }
-
-  .box-row-1-column-1 h3,
-  .box-row-1-column-2 h3 {
-    margin: 15px;
-  }
-
-  .button-margin {
-    margin: 15px;
-  }
-
 }
 
 
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 990px) {
 
   .section {
-    width: 100%;
-
-    padding-top: 100px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-top: 15px;
+    padding-right: 27px;
+    padding-left: 27px;
     padding-bottom: 50px;
   }
 
-
+  .section-title {
+    margin-top: -16px;
+  }
 
   .box-row-1,
   .box-row-2 {
-    flex-direction: column;
-
     width: 100%;
-    gap: 20px;
-  }
+    display: flex;
+    flex-direction: column;
+    gap: 24px
 
-
-  .box-row-1 {
-    margin-top: 20px;
-  }
-
-  .box-row-2 {
-    margin-top: 30px;
+    /* margin-top: 20px; */
   }
 
 
@@ -458,115 +515,16 @@
     width: 100%;
   }
 
-
-  .box-row-1-column-1 h3,
-  .box-row-1-column-2 h3 {
-    margin: 15px;
+  .margin-bar {
+    padding-bottom: 11px;
   }
 
-
-
-  .button-margin {
-    margin: 15px;
-  }
-
-  .button-row {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-
-
-  .progress-bar-container,
-  .progress-bar-container-row {
-    width: 100%;
-  }
-
-
-  /* Box cuối */
-
-  .box-row-4 {
-    width: 100%;
-    margin-top: 20px;
-  }
 
 }
 
-
-
-
-@media screen and (max-width: 480px) {
-
-  .section {
-    padding-top: 80px;
-    padding-right: 12px;
-    padding-left: 12px;
-    padding-bottom: 40px;
+@media (max-width: 576px) {
+  .section-title {
+    display: block;
+    margin-top: -6px;
   }
-
-
-  .box-row-1,
-  .box-row-2 {
-    gap: 15px;
-  }
-
-
-  .box-row-1-column-1 h3,
-  .box-row-1-column-2 h3,
-  .box-row-4 h3 {
-    margin: 12px;
-  }
-
-
-  .button-margin {
-    margin: 12px;
-  }
-
-
-  .button-margin p {
-    font-size: 16px;
-  }
-
-
-  .button-row {
-    gap: 10px;
-  }
-
-
-
-
-  .button-3 {
-    width: 90px;
-  }
-
-  .button-2 {
-    width: 70px;
-  }
-
-  .button-task-1,
-  .button-task-2 {
-    width: 45px;
-  }
-
-  .button-task-3 {
-    width: 60px;
-  }
-
-
-
-
-  .progress-bar-container,
-  .progress-bar-container-row {
-    height: 14px;
-  }
-
-  .progress-label {
-    font-size: 10px;
-  }
-
-
-  .box-row-4 {
-    padding: 5px;
-  }
-
 }

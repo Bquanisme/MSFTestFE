@@ -13,7 +13,7 @@ export class DashboardService {
         title: 'REVENUE',
         percent: '0.2%',
         isIncrease: true,
-        icon: 'attach_money'
+        icon: 'fa-solid fa-dollar-sign'
       },
       {
         id: 2,
@@ -21,7 +21,7 @@ export class DashboardService {
         title: 'SALES',
         percent: '4.3%',
         isIncrease: false,
-        icon: 'shopping_cart'
+        icon: 'fa-solid fa-shopping-cart'
       },
       {
         id: 3,
@@ -29,7 +29,7 @@ export class DashboardService {
         title: 'CUSTOMERS',
         percent: '3.5%',
         isIncrease: true,
-        icon: 'people'
+        icon: 'fa-solid fa-users'
       },
       {
         id: 4,
@@ -37,7 +37,7 @@ export class DashboardService {
         title: 'BOUNCE RATE',
         percent: '3.8%',
         isIncrease: true,
-        icon: 'show_chart'
+        icon: 'fa-solid fa-chart-line'
       },
     ]
   }
@@ -46,28 +46,28 @@ export class DashboardService {
     return [
       {
         id: 1,
-        type: 'shopping_basket',
+        type: 'fa-solid fa-shopping-bag',
         title: 'New order received',
         description: 'Order #12345 from John Doe',
         time: '2 minutes ago',
       },
       {
         id: 2,
-        type: 'person_add',
+        type: 'fa-solid fa-user-plus',
         title: 'New customer registered',
         description: 'Jane Smith joined the platform',
         time: '15 minutes ago',
       },
       {
         id: 3,
-        type: 'warning',
+        type: 'fa-solid fa-exclamation-triangle',
         title: 'Low stock alert',
         description: 'Product SKU #789 is running low',
         time: '1 hour ago',
       },
       {
         id: 4,
-        type: 'message',
+        type: 'fa-solid fa-comment',
         title: 'New review posted',
         description: '5-star review on Product XYZ',
         time: '3 hours ago',
@@ -79,7 +79,7 @@ export class DashboardService {
     return [
       {
         id: 1,
-        type: 'inbox',
+        type: 'fa-solid fa-box',
         name: 'Premium Widget',
         sales: 245,
         revenue: 12250,
@@ -87,7 +87,7 @@ export class DashboardService {
       },
       {
         id: 2,
-        type: 'markunread_mailbox',
+        type: 'fa-solid fa-cube',
         name: 'Standard Package',
         sales: 189,
         revenue: 9450,
@@ -95,7 +95,7 @@ export class DashboardService {
       },
       {
         id: 3,
-        type: 'tab',
+        type: 'fa-solid fa-layer-group',
         name: 'Basic Module',
         sales: 156,
         revenue: 4680,
@@ -103,7 +103,7 @@ export class DashboardService {
       },
       {
         id: 4,
-        type: 'card_giftcard',
+        type: 'fa-solid fa-gift',
         name: 'Pro Bundle',
         sales: 98,
         revenue: 19600,

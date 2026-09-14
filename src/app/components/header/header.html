@@ -21,7 +21,7 @@
         type="button"
         (click)="setIsDrawerOpen.emit()"
       >
-        <mat-icon fontIcon="menu"></mat-icon>
+        <i class="fa fa-bars"></i>
       </button>
 
     </div>
@@ -38,7 +38,7 @@
         type="button"
         (click)="toggleSearch()"
       >
-        <mat-icon fontIcon="search"></mat-icon>
+        <i class="fa fa-search"></i>
       </button> 
 
         <!-- ================= SEARCH ================= -->
@@ -57,17 +57,15 @@
               placeholder="Search for pages, users, or features..."
             />
 
-            @if (searchInput.length > 0) {
 
-              <button
-                type="button"
-                class="search-clear-button"
-                (click)="handleClose()"
-              >
-                <i class="fa-solid fa-xmark"></i>
-              </button>
+            <button
+              type="button"
+              class="search-clear-button"
+              (click)="handleClose()"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
 
-            }
 
             <button
               type="button"
@@ -76,49 +74,50 @@
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
 
-          </div>
+            <div class="search-result-list">
+
+              @if (searchInput.length === 0) {
 
 
+                <div class="search-section-title">
+                  Quick Links
+                </div>
 
-          <div class="search-result-list">
+                @for (
+                  item of searchData();
+                  track item.id
+                ) {
 
-            @if (searchInput.length === 0) {
+                  <div
+                    class="search-item"
+                    [style.padding-bottom.px]="$last ? 6 : 10"
+                    (click)="routerPath(item.path)"
+                  >
 
+                    <div [class]="`search-item-icon-` + item.id">
+                      <i [class]="item.icon"></i>
+                    </div>
 
-              <div class="search-section-title">
-                Quick Links
-              </div>
+                    <div class="search-item-content">
 
+                      <div class="search-item-title">
+                        {{ item.title }}
+                      </div>
 
-              @for (
-                item of searchData();
-                track item.id
-              ) {
-
-                <div
-                  class="search-item"
-                  (click)="routerPath(item.path)"
-                >
-
-                  <div [class]="`search-item-icon-` + item.id">
-                    <i [class]="item.icon"></i>
-                  </div>
-
-                  <div class="search-item-content">
-
-                    <div class="search-item-title">
-                      {{ item.title }}
                     </div>
 
                   </div>
 
-                </div>
+                }
 
               }
 
-            }
+            </div>
 
           </div>
+
+
+          
 
         </div>
 
@@ -134,12 +133,8 @@
           (click)="toggleNotification()"
         >
 
-          <app-badge
-            icon="notifications"
-            [count]="3"
-            badgeClass="error-badge"
-            iconBadgeClass="icon-badge"
-          />
+          <i class="fa fa-bell"></i>
+          <span class="error-badge">3</span>
 
         </button>
 
@@ -150,113 +145,89 @@
 
         @if (showNotification()) {
 
-        <div class="dropdown-panel notification-panel">
+        <div class="notification-scroll">
+          <div class="dropdown-panel notification-panel">
 
-          <!-- HEADER -->
-          <div class="dropdown-header">
+            <!-- BODY -->
+            <div class="notification-list">
 
-            <span style="font-size: 18px;">
-              Notifications
-            </span>
+              <!-- HEADER -->
+              <div class="dropdown-header">
+                <span>Notifications</span>
 
-            <button
-              type="button"
-              class="clear-button"
-              (click)="handleClose()"
-            >
-              Clear all
-            </button>
-
-          </div>
-
-
-          <!-- BODY -->
-          <div class="notification-list">
-
-            @if (notificationData().length > 0) {
-
-              @for (
-                notification of notificationData();
-                track notification.id
-              ) {
-
-                <div
-                  class="notification-item"
+                <button
+                  type="button"
+                  class="clear-button"
                   (click)="handleClose()"
                 >
+                  Clear all
+                </button>
+              </div>
+
+              @if (notificationData().length > 0) {
+
+                @for (
+                  notification of notificationData();
+                  track notification.id
+                ) {
 
                   <div
-                    [class]="'notification-icon-' + notification.id"
+                    class="notification-item"
+                    [style.padding-top.px]="$first ? 24 : 14"
+                    (click)="handleClose()"
                   >
 
-                    <i
-                      [class]="notification.icon"
-                    ></i>
-
-                  </div>
-
-
-                  <div class="notification-content">
-
-                    <div class="notification-title">
-                      {{
-                        notification.title || 'Notification'
-                      }}
+                    <div [class]="'notification-icon-' + notification.id" style="width: 36px;">
+                      <i [class]="notification.icon"></i>
                     </div>
 
+                    <div class="notification-content">
 
-                    <div class="notification-message">
-                      {{
-                        notification.description || ''
-                      }}
-                    </div>
+                      <div class="notification-title">
+                        {{ notification.title || 'Notification' }}
+                      </div>
 
+                      <div class="notification-message">
+                        {{ notification.description || '' }}
+                      </div>
 
-                    <div class="notification-time">
+                      <div class="notification-time">
+                        <i class="fa-regular fa-clock"></i>
 
-                      <mat-icon fontIcon="schedule"></mat-icon>
-
-                      <span>
-                        {{
-                          notification.time || 'Just now'
-                        }}
-                      </span>
+                        <span>
+                          {{ notification.time || 'Just now' }}
+                        </span>
+                      </div>
 
                     </div>
 
                   </div>
 
+                }
+
+              } @else {
+
+                <div class="notification-empty">
+                  No notifications
                 </div>
 
               }
 
-            } @else {
-
-              <div class="notification-empty">
-                No notifications
+              <!-- FOOTER -->
+              <div class="notification-footer">
+                <button
+                  type="button"
+                  class="button-footer-notification"
+                  (click)="handleClose()"
+                >
+                  View all notifications
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
               </div>
-
-            }
-
-
-            <!-- FOOTER -->
-            <div class="notification-footer">
-
-              <button
-                type="button"
-                class="button-footer-notification"
-                (click)="handleClose()"
-              >
-                View all notification
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-              </button>
 
             </div>
 
           </div>
-
         </div>
 
         }
@@ -274,12 +245,8 @@
           (click)="toggleMessage()"
         >
 
-          <app-badge
-            icon="email"
-            [count]="5"
-            badgeClass="info-badge"
-            iconBadgeClass="icon-badge"
-          />
+          <i class="fa fa-envelope"></i>
+          <span class="primary-badge">4</span>
 
         </button>
 
@@ -287,118 +254,121 @@
         <!-- MESSAGE PANEL -->
 
         @if (showMessage()) {
+          <div class="notification-scroll">
+            <div class="dropdown-panel message-panel" (click)="handleClose()" style="width: 360px;">
+  
+              <div class="notification-list">
 
-          <div class="dropdown-panel message-panel" (click)="handleClose()" >
-
-            <div class="dropdown-header">
-
-              <span style="font-size: 18px;">
-                Messages
-              </span>
-
-              <button
-                type="button"
-                class="clear-button"
-                (click)="handleClose()"
-              >
-                Mark all read
-              </button>
-
-            </div>
-
-
-            <div class="notification-list">
-
-              @if (messageData().length > 0) {
-
-                @for (
-                  message of messageData();
-                  track message.id
-                ) {
-
-                  <div class="notification-item">
-
-                    <div class="notification-icon">
-
-                      <img 
-                        style="width: 40px; height: 40px; border-radius: 50%;"
-                        [src]="message.image" 
-                      >
-
-                    </div>
-
-
-                    <div class="notification-content">
-
-                      <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                        <div class="notification-title">
-
-                          {{
-                            message.title || 'New message'
-                          }}
-
-                        </div>
-
-                        <span class="notification-message">
-                          {{
-                            message.time
-                            || 'Just now'
-                          }}
-                        </span>
-
+                <div class="dropdown-header">
+  
+                  <span>
+                    Messages
+                  </span>
+    
+                  <button
+                    type="button"
+                    class="clear-button"
+                    (click)="handleClose()"
+                  >
+                    Mark all read
+                  </button>
+    
+                </div>
+  
+                @if (messageData().length > 0) {
+  
+                  @for (
+                    message of messageData();
+                    track message.id
+                  ) {
+  
+                    <div class="notification-item" 
+                      style="padding: 25px 16px 5px 18px;"
+                      [style.padding-bottom.px]="$last ? 20 : 5"  
+                    >
+  
+                      <div class="notification-icon">
+  
+                        <img 
+                          style="width: 40px; height: 40px; border-radius: 50%;"
+                          [src]="message.image" 
+                        >
+  
                       </div>
-
-                      <div class="notification-description">
-
-                        {{
-                          message.description
-                          || ''
-                        }}
-
-                      </div>
-
-
-                      <div class="message-status">
-
-                        <div [class]="`message-status-` + message.id">
-                          {{ message.status }}
-                        </div>
-
-                        @if (message.status2 !== "") {
-                          <div class="message-status-3">
-                            {{ message.status2 }}
+  
+  
+                      <div class="notification-content" style="transform: translateY(-2px);">
+  
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin: 0 0 1px;">
+  
+                          <div class="notification-title">
+  
+                            {{
+                              message.title || 'New message'
+                            }}
+  
                           </div>
-
-                        }
-
+  
+                          <span class="notification-message">
+                            {{
+                              message.time
+                              || 'Just now'
+                            }}
+                          </span>
+  
                         </div>
-                        
-
+  
+                        <div class="time-description">
+  
+                          {{
+                            message.description
+                            || ''
+                          }}
+  
+                        </div>
+  
+  
+                        <div class="message-status">
+  
+                          <div [class]="`message-status-` + message.id">
+                            {{ message.status }}
+                          </div>
+  
+                          @if (message.status2 !== "") {
+                            <div class="message-status-3">
+                              {{ message.status2 }}
+                            </div>
+  
+                          }
+  
+                          </div>
+                          
+  
+                      </div>
+  
                     </div>
-
-                  </div>
-
-                }
-
-              } 
-
-              <div class="notification-footer">
-
-                <button
-                  type="button"
-                  class="button-footer-notification"
-                  (click)="handleClose()"
-                >
-                  View all messages
-
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
-
+  
+                  }
+  
+                } 
+  
+                <div class="notification-footer">
+  
+                  <button
+                    type="button"
+                    class="button-footer-notification"
+                    (click)="handleClose()"
+                  >
+                    View all messages
+  
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+  
+                </div>
+  
               </div>
-
+  
             </div>
-
           </div>
 
         }
@@ -410,7 +380,7 @@
 
       <button
         type="button"
-        class="admin-avatar-button"
+        class="header-icon-button"
         (click)="toggleUser()"
       >
 
@@ -452,7 +422,7 @@
 
                   <div class="user-status">
                     <span class="status-dot"></span>
-                    Online
+                      Online
                   </div>
 
                 </div>
@@ -462,7 +432,7 @@
 
               <!-- ================= MENU ================= -->
 
-              <div class="user-menu">
+              <div>
 
                 <button
                   type="button"
@@ -521,6 +491,7 @@
                 <button
                   type="button"
                   class="user-menu-item"
+                  style="margin-bottom: 3px;"
                   (click)="handleClose()"
                 >
 
@@ -545,7 +516,7 @@
 
               <!-- ================= BOTTOM MENU ================= -->
 
-              <div class="user-menu bottom-menu">
+              <div class="bottom-menu">
 
                 <!-- LOCK SCREEN -->
 
@@ -608,11 +579,11 @@
 
                 <div class="user-stat">
 
-                  <div class="stat-title">
+                  <div class="stat-title" style="margin-bottom: 2px;">
                     Projects
                   </div>
 
-                  <div class="stat-value stat-number">
+                  <div class="stat-number">
                     12
                   </div>
 
@@ -623,11 +594,11 @@
 
                 <div class="user-stat">
 
-                  <div class="stat-title">
+                  <div class="stat-title" style="margin-bottom: 2px;">
                     Tasks
                   </div>
 
-                  <div class="stat-value stat-number">
+                  <div class="stat-number">
                     34
                   </div>
 

@@ -60,7 +60,13 @@ export class ForgetPasswordPage {
     this.router.navigate(['/pages/login'])
   }
 
+  backToRegister() {
+    this.router.navigate(['/pages/register'])
+  }
+
   backToDashboard() {
     this.router.navigate(['/'])
   }
+
+
 }

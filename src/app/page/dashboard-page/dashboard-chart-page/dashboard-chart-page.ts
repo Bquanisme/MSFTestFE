@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import {
+  Chart,
   ChartConfiguration,
   ChartData,
   ChartOptions,
 } from 'chart.js';
-import { MatIcon } from "@angular/material/icon";
 
 @Component({
   selector: 'app-dashboard-chart-page',
-  imports: [MatIcon, BaseChartDirective],
+  imports: [BaseChartDirective],
   templateUrl: './dashboard-chart-page.html',
   styleUrl: './dashboard-chart-page.css',
 })
@@ -52,7 +52,7 @@ export class DashboardChartPage {
         ],
 
         borderColor: '#03a9f4',
-        backgroundColor: 'rgba(3, 169, 244, 0.12)',
+        backgroundColor: 'rgba(50, 184, 246, 0.12)',
 
         borderWidth: 2,
 
@@ -83,7 +83,7 @@ export class DashboardChartPage {
         ],
 
         borderColor: '#00c49a',
-        backgroundColor: 'rgba(0, 196, 154, 0.12)',
+        backgroundColor: 'rgba(58, 226, 190, 0.12)',
 
         borderWidth: 2,
 
@@ -113,7 +113,7 @@ export class DashboardChartPage {
 
         labels: {
           usePointStyle: true,
-          padding: 95,
+          padding: 20,
         },
       },
 
@@ -122,7 +122,7 @@ export class DashboardChartPage {
           label: (context) => {
             const value = context.raw as number;
 
-            return `${context.dataset.label}: $${value.toLocaleString()}`;
+            return `${context.dataset.label}: $${value.toLocaleString()}.00`;
           },
         },
       },
@@ -134,7 +134,7 @@ export class DashboardChartPage {
 
         ticks: {
           callback: (value) => {
-            return `$${Number(value).toLocaleString()}`;
+            return `$${Number(value).toLocaleString()}.00`;
           },
         },
 
@@ -178,35 +178,30 @@ export class DashboardChartPage {
         backgroundColor: [
           '#03a9f4',
           '#00c49a',
-          '#ffb703',
-          '#a30bf5',
-          '#00c427',
+          '#ff9275',
+          '#a78cdf',
+          '#5fbd6a',
         ],
 
-        borderWidth: 0,
+        borderWidth: 0.1,
 
-        hoverOffset: 5,
+        hoverOffset: 3,
       },
     ],
   };
 
   public trafficOptions: ChartOptions<'doughnut'> = {
-    responsive: true,
+    responsive: false,
 
-    maintainAspectRatio: false,
-
-    cutout: '65%',
+    cutout: '70%',
 
     plugins: {
       legend: {
-        display: true,
+        display: false,
+      },
 
-        position: 'bottom',
-
-        labels: {
-          usePointStyle: true,
-          padding: 50,
-        },
+      tooltip: {
+        enabled: true,
       },
     },
   };

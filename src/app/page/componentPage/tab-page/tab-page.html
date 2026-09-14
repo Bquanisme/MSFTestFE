@@ -1,9 +1,9 @@
 <div class="section">
-    <div style="display: flex; justify-content: space-between">
-        <h2>Tabs</h2>
+    <div class="section-title">
+        <h2 class="title">Tabs</h2>
         <app-breadcrumb 
-            [title]="'UI Components'"
-            [folderTitle]="'Tabs'"
+            [title]="'Tabs'"
+            [folderTitle]="'UI Components'"
 
         ></app-breadcrumb>
     </div>
@@ -174,8 +174,11 @@
             <div class="card-body">
     
               <p class="description">
-                To make the tabs toggleable, click on each
-                link to change the content.
+                To make the tabs toggleable, add the <code>data-bs-toggle="tab"</code> attribute 
+                to each link. Then add a <code>.tab-pane</code> class with a unique ID for every tab 
+                and wrap them inside a <code><</code><code>div></code> element with class <code>.tab-content</code>. If you 
+                want the tabs to fade in and out when clicking on them, add the <code>.fade</code> 
+                class to <code>.tab-pane</code>:
               </p>
     
     

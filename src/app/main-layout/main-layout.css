@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app-layout {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* HEADER */
+app-header {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+/* SIDEBAR + CONTENT */
+.layout {
+  width: 100%;
+  min-height: calc(100vh - 60px);
+
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+
+  transition: grid-template-columns 0.3s ease;
+}
+
+/* SIDEBAR ĐÓNG */
+.sidebar-closed-layout {
+  grid-template-columns: 70px minmax(0, 1fr);
+}
+
+/* SIDEBAR */
+app-sidebar {
+  display: block;
+  width: 100%;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: calc(100vh - 60px);
+
+  display: flex;
+  flex-direction: column;
+
+  background: #2c3e50;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* CONTENT */
+.content {
+  min-width: 0;
+  width: 100%;
+
+  min-height: calc(100vh - 60px);
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ROUTER */
+.router-content {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* FOOTER */
+app-footer {
+  display: block;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+@media (max-width: 990px) {
+
+  /* Layout không còn dành chỗ cho sidebar */
+  .layout {
+    display: block;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+  }
+
+  .sidebar-closed-layout {
+    display: block;
+  }
+
+  /* Content luôn full width */
+  .content {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+  }
+
+  .router-content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /*
+    app-sidebar không chiếm diện tích
+    vì sidebar bên trong sẽ position: fixed
+  */
+  app-sidebar {
+    position: static;
+    display: block;
+    width: 0;
+    height: 0;
+  }
+
+}

@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { MatIcon } from "@angular/material/icon";
 import { SweetAlert2Service } from '../../../service/component/sweet-alert-2/sweet-alert-2-service';
 import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
@@ -7,7 +6,7 @@ import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-sweet-alert2-page',
-  imports: [MatIcon],
+  imports: [],
   templateUrl: './sweet-alert2-page.html',
   styleUrl: './sweet-alert2-page.css',
 })
