@@ -1,0 +1,18 @@
+<div [class]="toast()">
+    <div [class]="toastIcon()">
+        <i [class]="icon()"></i>
+    </div>
+
+    <div class="toast-content">
+        {{  message()  }}
+        <!-- Save successfully! -->
+    </div>
+
+    <button 
+        type="button" 
+        class="toast-close"
+        (click)="handleCloseToast.emit()"
+    >
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+</div>

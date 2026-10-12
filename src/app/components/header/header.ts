@@ -5,7 +5,7 @@ import {
   signal
 } from '@angular/core';
 
-import { Badge } from '../badge/badge';
+// import { Badge } from '../badge/badge';
 import { MatIconModule } from '@angular/material/icon';
 
 import { HeaderService } from '../../service/home/header/header-service';
@@ -14,14 +14,18 @@ import { map, tap } from 'rxjs';
 import { HeaderTs } from '../../typescript/home';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../service/auth/auth-service';
+import { RoleService } from '../../service/role/role-service';
+import { Toast } from '../toast/toast';
 
 
 @Component({
   selector: 'app-header',
   imports: [
     MatIconModule,
-    FormsModule
-  ],
+    FormsModule,
+    Toast
+],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
@@ -36,6 +40,10 @@ export class Header {
 
 
   private headerService = inject(HeaderService);
+
+  private authService = inject(AuthService)
+
+  private RoleService = inject(RoleService)
 
   private router = inject(Router)
 
@@ -58,6 +66,34 @@ export class Header {
 
   searchInput = "";
 
+  showToastSuccess = signal(false)
+
+
+
+  userData = this.authService.getCurrentUser()
+
+  roleNames: string[] = [];
+
+  ngOnInit(): void {
+    if (!this.userData) return;
+
+    this.RoleService.getRoleNames(this.userData.roleId).subscribe({
+      next: names => this.roleNames = names
+    });
+  }
+
+
+  handleOpenToast() {
+    this.showToastSuccess.set(true)
+
+    setTimeout(() => {
+      this.showToastSuccess.set(false);
+    }, 2000);
+  }
+
+  handleCloseToast() {
+    this.showToastSuccess.set(false)
+  }
 
 
   toggleNotification() {
@@ -190,6 +226,19 @@ export class Header {
 
     this.scrollToTop()
 
+  }
+
+  handleLogout(): void {
+    this.handleClose();
+    const user = this.authService.getCurrentUser();
+    
+    if (user) {
+      this.authService.logout();
+      this.handleOpenToast();
+    }
+
+    this.userData = null;
+    this.roleNames = [];
   }
 
 

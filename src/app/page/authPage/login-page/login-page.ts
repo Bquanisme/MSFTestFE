@@ -1,10 +1,13 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
+import { LoginItem } from '../../../typescript/home';
+import { AuthService } from '../../../service/auth/auth-service';
+import { Toast } from '../../../components/toast/toast';
 
 @Component({
   selector: 'app-login-page',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, Toast],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
 })
@@ -14,6 +17,19 @@ export class LoginPage {
 
   private fb = inject(FormBuilder);
 
+  private authService = inject(AuthService)
+
+  errorText = signal<string | undefined>('')
+
+  showToastSuccess = signal(false)
+  showToastError = signal(false)
+
+  handleCheckPassword = signal(false)
+
+  handleChangePasswordType() {
+    this.handleCheckPassword.update(value => !value)
+  }
+
   handleReturnDashboard() {
     this.router.navigate(['/'])
   }
@@ -21,6 +37,32 @@ export class LoginPage {
   handleForgetPassword() {
     this.router.navigate(['/pages/forget-password'])
   }
+
+  handleOpenToast() {
+    this.showToastSuccess.set(true)
+
+    setTimeout(() => {
+      this.showToastSuccess.set(false);
+    }, 2000);
+  }
+
+  handleCloseToast() {
+    this.showToastSuccess.set(false)
+  }
+
+
+  handleOpenToastError() {
+    this.showToastError.set(true)
+
+    setTimeout(() => {
+      this.showToastError.set(false);
+    }, 2000);
+  }
+
+  handleCloseToastError() {
+    this.showToastError.set(false)
+  }
+
 
   loginForm = this.fb.nonNullable.group({
     email: [
@@ -35,7 +77,7 @@ export class LoginPage {
       '',
       [
         Validators.required,
-        Validators.minLength(8)
+        Validators.minLength(6)
       ]
     ],
 
@@ -54,15 +96,56 @@ export class LoginPage {
 
     const formValue = this.loginForm.getRawValue();
 
-    console.log('Login data:', formValue);
-    
-    // Call API ở đây
-    // this.authService.login(formValue).subscribe(...)
-    
-    this.loginForm.reset();
 
-    this.submitted = false
+    console.log(formValue)
 
+    const loginData: LoginItem = {
+      email: formValue.email,
+      password: formValue.password
+    };
+
+    this.authService.login(loginData).subscribe({
+      next: (users) => {
+        const user = users.find(
+          item => item.password === loginData.password
+        );
+
+        if (!user) {
+          this.errorText.set('Email hoặc password không chính xác.');
+          this.handleOpenToastError();
+          return;
+        }
+
+        // Không lưu password
+        const { password, ...userData } = user;
+
+        localStorage.setItem(
+          'user-data',
+          JSON.stringify(userData)
+        );
+
+        this.loginForm.reset({
+          email: '',
+          password: ''
+        });
+
+        this.handleOpenToast();
+
+        setTimeout(() => {
+          this.router.navigate(['/']);
+        }, 2000);
+      },
+
+      error: (err) => {
+        console.error(err);
+
+        this.errorText.set(
+          err?.error?.error || 'Đăng nhập thất bại.'
+        );
+
+        this.handleOpenToastError();
+      }
+    });
   }
 
   get email() {

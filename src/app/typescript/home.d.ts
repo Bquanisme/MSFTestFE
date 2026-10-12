@@ -74,6 +74,13 @@ export interface TabsResponse {
 }
 
 
+export interface IconTab {
+  id: string;
+  label: string;
+  icon: string;
+}
+
+
 
 // export interface PositionItem {
 //   id: number;
@@ -178,4 +185,59 @@ export interface AdvancedForm {
 export interface AdvancedFormResponse {
   id: number;
   data: AdvancedForm[]
+}
+
+interface FontAwesomeIcon {
+  id: number;
+  icon: string;
+  name: string;
+  color?: string;
+  copied?: boolean;
+}
+
+
+
+
+interface IconItem {
+    id: number;
+    icon: string;
+    name: string;
+    copied: boolean;
+}
+
+interface IconCategory {
+    id: number;
+    category: string;
+    icons: IconItem[];
+}
+
+
+
+
+interface RoleItem {
+    id: string;
+    name: string;
+    status?: Array<'default' | 'public'>;
+}
+
+// export interface RoleResponse {
+//   roles: RoleItem[];
+// }
+
+
+interface UserItem {
+    id: string;
+    username: string;
+    name?: string;
+    surname?: string;
+    email: string;
+    phone?: string;
+    roleId: string[];
+    password?: string
+}
+
+
+interface LoginItem {
+    email: string;
+    password: string
 }

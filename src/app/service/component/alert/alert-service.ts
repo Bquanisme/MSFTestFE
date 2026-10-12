@@ -58,7 +58,7 @@ export class AlertService {
       },
       {
         id: 4,
-        title: 'This is a success alert with <strong><a href="#">an example link</a></strong>. Give it a click if you like.',
+        title: 'This is a danger alert with <strong><a href="#">an example link</a></strong>. Give it a click if you like.',
       },
       {
         id: 5,

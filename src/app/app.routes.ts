@@ -26,6 +26,9 @@ import { LoginPage } from './page/authPage/login-page/login-page';
 import { RegisterPage } from './page/authPage/register-page/register-page';
 import { ForgetPasswordPage } from './page/authPage/forget-password-page/forget-password-page';
 import { MainLayout } from './main-layout/main-layout';
+import { RolePage } from './page/authPage/role-page/role-page';
+import { UserPage } from './page/authPage/user-page/user-page';
+import { adminGuard, guestGuard } from './guard/auth.guard';
 
 export const routes: 
     Routes = [
@@ -36,6 +39,18 @@ export const routes:
                 {
                     path: "",
                     component: DashboardPage
+                },
+
+                {
+                    path: "roles",
+                    canActivate: [adminGuard],
+                    component: RolePage
+                },
+
+                {
+                    path: "users",
+                    canActivate: [adminGuard],
+                    component: UserPage
                 },
         
                 {
@@ -167,10 +182,12 @@ export const routes:
             children: [
                 {
                     path: "login",
+                    canActivate: [guestGuard],
                     component: LoginPage
                 },
                 {
                     path: "register",
+                    canActivate: [guestGuard],
                     component: RegisterPage
                 },
                 {

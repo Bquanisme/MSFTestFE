@@ -12,7 +12,7 @@
     </div>
 
 
-    <div class="login-card">
+    <div class="login-card" id="login-card-id">
 
         <div class="login-title">
             <h1>Create Account</h1>
@@ -53,7 +53,7 @@
                 <div class="error-message">
 
                 @if (fullName.errors?.['required']) {
-                    <span>fullName is required</span>
+                    <span>FullName is required</span>
                 }
 
                 @if (fullName.errors?.['minlength']) {
@@ -153,7 +153,9 @@
 
             } -->
 
-            <p style="color: #212529bf; margin-top: 4px; font-size: 14px;">Must be at least 8 characters</p>
+            <p style="color: #212529bf; margin-top: 4px; font-size: 14px;">
+                Must be at least 6 characters
+            </p>
 
             </div>
 
@@ -228,3 +230,25 @@
     </div>
 
 </div>
+
+
+@if (showToastSuccess()) {
+    <app-toast 
+        (handleCloseToast)="handleCloseToast()"
+        [message]="'Saved successfully!'"
+        [toast]="'toast-success'"
+        [icon]="'fa-solid fa-check'"
+        [toastIcon]="'toast-icon'"
+    ></app-toast>
+}
+
+
+@if (showToastError()) {
+    <app-toast 
+        (handleCloseToast)="handleCloseToastError()"
+        [message]="`${errorText()}!`"
+        [toast]="'toast-error'"
+        [icon]="'fa-solid fa-xmark'"
+        [toastIcon]="'toast-icon-delete'"
+    ></app-toast>
+}

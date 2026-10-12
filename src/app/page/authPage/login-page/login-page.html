@@ -85,11 +85,23 @@
 
                 <input
                     id="password"
-                    type="password"
+                    [type]="handleCheckPassword() ? 'text' : 'password'"
                     formControlName="password"
                     placeholder="Enter your password"
                     required
                 >
+
+                <div 
+                    class="button-change"
+                    (click)="handleChangePasswordType()"
+                >
+                    @if (handleCheckPassword()) {
+                        <i class="fa-regular fa-eye"></i>
+                    }
+                    @else {
+                        <i class="fa-regular fa-eye-slash"></i>
+                    }
+                </div>
 
             </div>
 
@@ -186,3 +198,27 @@
     </div>
 
 </div>
+
+
+
+
+@if (showToastSuccess()) {
+    <app-toast 
+        (handleCloseToast)="handleCloseToast()"
+        [message]="'Saved successfully!'"
+        [toast]="'toast-success'"
+        [icon]="'fa-solid fa-check'"
+        [toastIcon]="'toast-icon'"
+    ></app-toast>
+}
+
+
+@if (showToastError()) {
+    <app-toast 
+        (handleCloseToast)="handleCloseToastError()"
+        [message]="`${errorText()}!`"
+        [toast]="'toast-error'"
+        [icon]="'fa-solid fa-xmark'"
+        [toastIcon]="'toast-icon-delete'"
+    ></app-toast>
+}

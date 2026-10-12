@@ -486,15 +486,28 @@
 
                     <!-- Content -->
                     <div class="project-content">
+                        @if ($index === 2) {
+                            <h3>
+                                <i
+                                    [class]="item.icon"
+                                    [style.color]="item.color"
+                                ></i>
 
-                        <h3>
-                            <i
-                                [class]="item.icon"
-                                [style.color]="item.color"
-                            ></i>
+                                {{ item.title }}
+                            </h3>
+                        }
 
-                            {{ item.title }}
-                        </h3>
+                        @else {
+                            <h3>
+                                <i
+                                    [class]="item.icon"
+                                    [style.color]="item.color"
+                                    style="margin: 0 4px 0 3px;"
+                                ></i>
+
+                                {{ item.title }}
+                            </h3>
+                        }
 
 
                         <p>
@@ -505,31 +518,36 @@
                         <!-- Footer -->
                         <div class="project-footer">
 
-                            <span>
-                                <i [class]="item.icon2"></i>
-                                {{ item.time }}
-                            </span>
-
 
                             @if ($index === 2) {
+                                <span style="transform: translateY(-1px);">
+                                    <i [class]="item.icon2" style="margin: 0"></i>
+                                    {{ item.time }}
+                                </span>
+
                                 <button
                                     [style.background]="item.color"
                                     [style.color]="'#272c33'"
                                     style="flex-wrap: wrap; align-items: center; display: flex; justify-content: center;"
                                 >
                                     <i [class]="item.icon3"></i>
-                                    {{ item.action }}
+                                    <p>{{ item.action }}</p>
                                 </button>
                             }
 
                             @else {
+                                <span>
+                                    <i [class]="item.icon2"></i>
+                                    {{ item.time }}
+                                </span>
+
                                 <button
                                     [style.background]="item.color"
 
                                     style="flex-wrap: wrap; align-items: center; display: flex; justify-content: center;"
                                 >
                                     <i [class]="item.icon3"></i>
-                                    {{ item.action }}
+                                    <p style="color: #ffffff;">{{ item.action }}</p>
                                 </button>
                             }
 

@@ -10,7 +10,7 @@
 
 .section {
   width: 100%;
-  padding: 75px 30px 60px;
+  padding: 84px 30px 60px;
   box-sizing: border-box;
   background-color: #f1f2f7;
 }
@@ -55,7 +55,7 @@
   height: 100%;
   transition: transform 0.2s ease;
 
-  margin-top: 26px;
+  margin-top: 34px;
   border-radius: 5px;
   border-bottom: 1px solid #e4e1e1;
 }
@@ -322,7 +322,7 @@ EXPORT DATA TABLE
 
 /* Danger */
 .flat-badges-2 {
-  background-color: #eb0909;
+  background-color: #f44336;
 }
 
 /* Warning */
@@ -353,7 +353,7 @@ EXPORT DATA TABLE
   }
 
   .section-title {
-    margin-top: -16px;
+    margin-top: -6px;
   }
 
   .box-row-1 {
@@ -521,5 +521,13 @@ EXPORT DATA TABLE
   .section-title {
     display: block;
     margin-top: -6px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .box-row-4 {
+    margin-top: 42px;
   }
 }

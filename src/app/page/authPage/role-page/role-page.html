@@ -1,0 +1,484 @@
+<main class="section">
+
+        <!-- Header -->
+        <header class="section-title mb-4-first">
+
+            <h4 class="title">Roles</h4>
+                
+            <div class="col-auto px-0 pt-0 pe-0">
+                <button 
+                    type="button" 
+                    class="d-inline-flex align-items-center gap-1 btn btn-primary btn-sm" 
+                    (click)="handleOpenModalNew()"
+                >
+                    <i class="fa fa-plus me-1"></i> 
+                    New role 
+                </button>
+            </div>
+
+
+        </header>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="data-tables-filter flex-grow-1">
+                        <div class="input-group">
+                            <input 
+                                type="search" 
+                                class="form-control" 
+                                style="height: 42px;" 
+                                placeholder="Search"
+                                [formControl]="searchControl"
+                            >
+                            <button 
+                                class="btn btn-primary" 
+                                style="height: 42px; padding: 10.8px 20px" 
+                                (click)="handleCLickSearch()"
+                            >
+                                <i aria-hidden="true" class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Actions</th>
+                            <th>
+                                Role Name
+                                <i class="fa-solid fa-angle-down"></i>
+                            </th>
+                            <th>User Count</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <!-- @if (isLoading) {
+                            <tr class="loading-row">
+                                <td colspan="3">
+                                    <app-loading></app-loading>
+                                </td>
+                            </tr>
+                        } @else { -->
+                            @if (!filteredRoles() || filteredRoles().length <= 0) {
+                                <div class='empty-row'>
+                                    No data available
+                                </div>
+                            }
+                            @for (item of filteredRoles(); track item.id) {
+                                <tr>
+                                    <td>
+                                        <div class="action-dropdown">
+                                            <button 
+                                                class="btn btn-primary"
+                                                (click)="toggleAction(item.id, $event)"
+                                            >
+                                                <i class="fas fa-cog"></i>
+                                                <span style="font-size: 11.2px;">Actions</span>
+                                                <i class="fas fa-caret-down"></i>
+                                            </button>
+                                            @if (openActionId() === item.id) {
+                                                <div 
+                                                    class="action-menu"
+                                                >
+                                                    <button 
+                                                        class="action-item"
+                                                        (click)="handleOpenModalEdit(item)"
+                                                    >
+                                                        Edit
+                                                    </button>
+    
+                                                    <!-- <button 
+                                                        class="action-item"
+                                                    >
+                                                        Claims
+                                                    </button>
+    
+                                                    <button 
+                                                        class="action-item"
+                                                    >
+                                                        Permissions
+                                                    </button>
+    
+                                                    <button 
+                                                        class="action-item"
+                                                    >
+                                                        Change history
+                                                    </button> -->
+
+                                                    <button 
+                                                        class="action-item"
+                                                        (click)="handleOpenModalDelete(item)"
+                                                    >
+                                                        Delete
+                                                    </button>
+    
+                                                    <!-- <button 
+                                                        class="action-item"
+                                                    >
+                                                        Move all users
+                                                    </button> -->
+
+                                                </div>
+                                            }
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {{ item.name }}
+                                        @if (item.status?.includes('default')) {
+                                            <span class="default-badge">
+                                                Default
+                                            </span>
+                                        }
+                                        @if (item.status?.includes('public')) {
+                                            <span class="public-badge">
+                                                Public
+                                            </span>
+                                        }
+                                    </td>
+                                    <td>
+                                        {{ getUserCountByRole(item.id) }}
+                                    </td>
+                                </tr>
+                            }
+
+                        <!-- } -->
+                            
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card-footer">
+                {{ filteredRoles().length }} total
+            </div>
+        </div>
+        
+</main>
+
+@if (isModalOpenEdit()) {
+
+  <div
+    class="dialog-overlay"
+    (click)="handleCloseModalEdit()"
+  >
+
+    <div
+      class="dialog-small"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="dialog-header">
+
+        <h2>
+          Edit - Supporter
+        </h2>
+
+        <button
+          class="close-button"
+          type="button"
+          (click)="handleCloseModalEdit()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </div>
+
+      
+      <form [formGroup]="validateForm" (ngSubmit)="onSubmit()">
+
+      <div class="dialog-body">
+
+        <p>
+          Role name *
+        </p>
+
+        <div class="mb-4">
+            <input 
+                class="form-control mb-3"
+                style="margin: 0;" 
+                id="role-name" 
+                type="text"
+                formControlName="roleName"
+                [class.is-invalid]="submitted && roleName.invalid"
+            >
+    
+            @if (submitted && roleName.invalid) {
+                <div class="invalid-feedback">
+                    @if (roleName.errors?.['required']) {
+                        <span>This field is required.</span>
+                    }
+                </div>
+            }
+        </div>
+
+
+
+        <div class="form-check">
+            <input
+                class="form-check-input"
+                type="checkbox"
+                id="default"
+                formControlName="default"
+            >
+            <label class="form-check-label" for="invalidCheck">
+                Default
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input
+                class="form-check-input"
+                type="checkbox"
+                id="public"
+                formControlName="public"
+            >
+            <label class="form-check-label" for="invalidCheck">
+                Public
+            </label>
+        </div>
+
+    </div>
+    
+    
+    
+    <div class="dialog-footer">
+        
+        <button
+          class="btn btn-outline-primary m-4 p-10 fs-14"
+          type="button"
+          (click)="handleCloseModalEdit()"
+        >
+          Cancel
+        </button>
+        
+        <button
+          class="btn btn-primary m-4 p-10 fs-14"
+          type="submit"
+
+        >
+          Confirm
+        </button>
+        
+    </div>
+
+    </form>
+
+    </div>
+
+  </div>
+
+}
+
+@if (isModalOpenDelete()) {
+
+  <div
+    class="dialog-overlay"
+    (click)="handleCloseModalDelete()"
+  >
+
+    <div
+      class="dialog-small"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="dialog-header-delete">
+
+        <h3>
+          Are you sure?
+        </h3>
+
+        <button
+          class="close-button"
+          type="button"
+          (click)="handleCloseModalDelete()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </div>
+
+    
+
+      <div class="dialog-body-delete">
+
+        <h4>
+          Are you sure you want to delete the role 'Manager'?
+        </h4>
+
+        <p class="mt-2">
+          There are 1 users assigned to the role you are trying to delete. Please choose an action:
+        </p>
+
+    </div>
+    
+    
+    
+    <div class="dialog-footer">
+        
+        <button
+          class="btn btn-outline-danger m-4 p-10 fs-14"
+          type="button"
+          (click)="handleCloseModalDelete()"
+        >
+          Cancel
+        </button>
+        
+        <button
+          class="btn btn-danger m-4 p-10 fs-14"
+          type="submit"
+          (click)="handleClickDelete()"
+        >
+          Confirm
+        </button>
+        
+    </div>
+
+
+    </div>
+
+  </div>
+
+}
+
+@if (isModalOpenNew()) {
+
+  <div
+    class="dialog-overlay"
+    (click)="handleCloseModalNew()"
+  >
+
+    <div
+      class="dialog-small"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="dialog-header">
+
+        <h2>
+          New role
+        </h2>
+
+        <button
+          class="close-button"
+          type="button"
+          (click)="handleCloseModalNew()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </div>
+
+      
+      <form [formGroup]="validateForm" (ngSubmit)="onSubmitNewRole()">
+
+      <div class="dialog-body">
+
+        <p style="word-spacing: .3px;">
+          Role name *
+        </p>
+
+        <div class="mb-4">
+            <input 
+                class="form-control mb-3"
+                style="margin: 0;" 
+                id="role-name" 
+                type="text"
+                formControlName="roleName"
+                [class.is-invalid]="submitted && roleName.invalid"
+            >
+    
+            @if (submitted && roleName.invalid) {
+                <div class="invalid-feedback">
+                    @if (roleName.errors?.['required']) {
+                        <span>This field is required.</span>
+                    }
+                </div>
+            }
+        </div>
+
+
+
+        <div class="form-check">
+            <input
+                class="form-check-input"
+                type="checkbox"
+                id="default"
+                formControlName="default"
+            >
+            <label class="form-check-label" for="invalidCheck">
+                Default
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input
+                class="form-check-input"
+                type="checkbox"
+                id="public"
+                formControlName="public"
+            >
+            <label class="form-check-label" for="invalidCheck">
+                Public
+            </label>
+        </div>
+
+    </div>
+    
+    
+    
+    <div class="dialog-footer">
+        
+        <button
+          class="btn btn-outline-primary m-4 p-10 fs-14"
+          type="button"
+          (click)="handleCloseModalNew()"
+        >
+          Cancel
+        </button>
+        
+        <button
+          class="btn btn-primary m-4 p-10 fs-14"
+          type="submit"
+
+        >
+          Confirm
+        </button>
+        
+    </div>
+
+    </form>
+
+    </div>
+
+  </div>
+
+}
+
+
+
+@if (showToastSuccess()) {
+    <app-toast 
+        (handleCloseToast)="handleCloseToast()"
+        [message]="'Saved successfully!'"
+        [toast]="'toast-success'"
+        [icon]="'fa-solid fa-check'"
+        [toastIcon]="'toast-icon'"    
+    ></app-toast>
+}
+
+@if (showToastError()) {
+    <app-toast 
+        (handleCloseToast)="handleCloseToastError()"
+        [message]="`${errorText()}!`"
+        [toast]="'toast-error'"
+        [icon]="'fa-solid fa-xmark'"
+        [toastIcon]="'toast-icon-delete'"
+    ></app-toast>
+}

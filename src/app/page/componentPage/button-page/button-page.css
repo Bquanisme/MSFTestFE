@@ -7,7 +7,7 @@
 
 .section {
   width: 100%;
-  padding: 75px 30px 60px;
+  padding: 84px 30px 60px;
   box-sizing: border-box;
   background-color: #f1f2f7;
 }
@@ -43,7 +43,7 @@
 
 .box-row-1 {
   /* margin-top: 30px; */
-  padding: 26px 0 17px;
+  padding: 34px 0 17px;
 }
 
 .box-row-2 {
@@ -1226,7 +1226,7 @@
   }
 
   .section-title {
-    margin-top: -16px;
+    margin-top: -6px;
   }
 
   .box-row-1,
@@ -1238,7 +1238,7 @@
   }
 
   .box-row-1 {
-    padding: 24px 0 0;
+    padding: 34px 0 0;
   }
 
   .box-row-2 {
@@ -1291,7 +1291,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    column-gap: 4px;
+    column-gap: 5px;
 
     row-gap: 0;
   }
@@ -1420,5 +1420,13 @@
   .section-title {
     display: block;
     margin-top: -6px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .box-row-1 {
+    padding-top: 42px;
   }
 }

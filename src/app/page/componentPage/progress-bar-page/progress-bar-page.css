@@ -7,7 +7,7 @@
 
 .section {
   width: 100%;
-  padding: 75px 42px 60px;
+  padding: 84px 42px 60px;
   box-sizing: border-box;
   background-color: #f1f2f7;
 }
@@ -44,7 +44,7 @@
 
 
 .box-row-1 {
-  margin: 26px 0 23px;
+  margin: 34px 0 23px;
 }
 
 .box-row-2 {
@@ -313,6 +313,8 @@
 
     line-height: 1;
     white-space: nowrap;
+
+    overflow: hidden;
 }
 
 .progress-label {
@@ -475,6 +477,10 @@
   font-weight: 500;
 }
 
+.dynamic-content {
+  width: 50%
+}
+
 
 /* =====================================================
    RESPONSIVE
@@ -492,11 +498,11 @@
     padding-top: 15px;
     padding-right: 27px;
     padding-left: 27px;
-    padding-bottom: 50px;
+    padding-bottom: 45px;
   }
 
   .section-title {
-    margin-top: -16px;
+    margin-top: -6px;
   }
 
   .box-row-1,
@@ -509,6 +515,10 @@
     /* margin-top: 20px; */
   }
 
+  .box-row-1 {
+    margin: 34px 0 0;
+  }
+
 
   .box-row-1-column-1,
   .box-row-1-column-2 {
@@ -519,6 +529,19 @@
     padding-bottom: 11px;
   }
 
+  .button-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .dynamic-content {
+    width: 100%
+  }
+
+}
+
+@media (max-width: 768px) {
 
 }
 
@@ -526,5 +549,13 @@
   .section-title {
     display: block;
     margin-top: -6px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .box-row-1 {
+    margin-top: 42px;
   }
 }

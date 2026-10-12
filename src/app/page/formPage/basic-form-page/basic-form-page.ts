@@ -6,11 +6,12 @@ import {
   ReactiveFormsModule,
   Validators
 } from '@angular/forms';
+import { Breadcrumb } from '../../../components/breadcrumb/breadcrumb';
 
 @Component({
   selector: 'basic-form-page',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule],
+  imports: [ReactiveFormsModule, FormsModule, Breadcrumb],
   templateUrl: './basic-form-page.html',
   styleUrl: './basic-form-page.css'
 })
@@ -43,6 +44,14 @@ export class BasicFormPage {
   dropdownInput = '';
   firstName = '';
   lastName = '';
+
+  company = '';
+
+  password = '';
+
+  description = '';
+
+  select = '';
 
   dropdownOpen = false;
   selectedDropdown = 'Dropdown';
@@ -153,15 +162,24 @@ export class BasicFormPage {
       password: '',
       description: '',
       select: '',
-      multipleSelect: [],
-      largeInput: '',
-      defaultInput: '',
-      smallInput: '',
-      readonlyInput: 'Readonly input',
-      fileInput: null,
-      multipleFiles: null
+      // multipleSelect: [],
+      // largeInput: '',
+      // defaultInput: '',
+      // smallInput: '',
+      // readonlyInput: 'Readonly input',
+      // fileInput: null,
+      // multipleFiles: null
     });
 
+  }
+
+  ResetForm(): void {
+      this.company = '';
+      this.email = '';
+      this.password = '';
+      this.description = '';
+      this.select = ''
+      
   }
 
 

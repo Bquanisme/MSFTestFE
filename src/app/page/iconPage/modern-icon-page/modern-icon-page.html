@@ -1,1 +1,321 @@
-<p>modern-icon-page works!</p>
+<main class="section">
+
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <header class="section-title mb-4-first">
+            <h4 class="title">Modern Icons</h4>
+                
+            <div class="breadcrumb">
+                <app-breadcrumb 
+                    [title]="'Modern Icons'"
+                    [folderTitle]="'Icons'"
+
+                ></app-breadcrumb>
+            </div>
+
+
+        </header>
+
+
+
+        <div class="card">
+            <div class="card-header">
+                
+                <ul class="card-header-tabs">
+    
+                    <div class="tab-list">
+            
+                        @for (tab of iconTabs; track tab.id) {
+            
+                        <button
+                            class="tab-button"
+                            [class.active]="activeIconTab() === tab.id"
+                            (click)="selectedIconTab(tab.id)"
+                        >
+                            <i [class]="tab.icon"></i>{{ tab.label }}
+                        </button>
+            
+                        }
+            
+                    </div>
+            
+                </ul>
+            </div>
+
+
+            <div class="card-body">
+                <div class="tab-content">
+
+                    @if (activeIconTab() === 'FA6') {
+                        <!-- Font Awesome Tab -->
+                        <div class="tab-pane fade active show" id="fontawesome" role="tabpanel">
+                            <div class="icon-search">
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="faSearch" 
+                                    placeholder="Search Font Awesome icons..."
+                                    [(ngModel)]="searchText"
+                                    (input)="searchIcons()"
+                                >
+                            </div>
+    
+                            @for (category of filteredIconModern; track category.id) {
+
+                                <h5 class="mb-3">{{ category.category }}</h5>
+
+                                <div class="icon-grid">
+
+                                @for (item of category.icons; track item.id) {
+
+                                    <div
+                                        class="icon-item"
+                                        (click)="copyCode(item)"
+                                        >
+                                        <i [class]="item.icon"></i>
+
+                                        <span class="icon-name">
+                                            {{ item.copied ? 'Copied!' : item.name }}
+                                        </span>
+                                    </div>
+
+                                }
+
+                                </div>
+
+                            }
+                        </div>
+                    }
+
+
+                    @if (activeIconTab() === 'BI') {
+                        <!-- Bootstrap Icons Tab -->
+                        <div class="tab-pane fade" id="bootstrap" role="tabpanel">
+                            <div class="icon-search">
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="biSearch" 
+                                    placeholder="Search Bootstrap icons..."
+                                    [(ngModel)]="searchOutlineText"
+                                    (input)="searchOutlineIcons()"
+                                >
+                            </div>
+    
+                            @for (category of filteredIconOutlineModern; track category.id) {
+                                <h5 class="mb-3">{{ category.category }}</h5>
+
+                                <div class="icon-grid">
+                                    @for (item of category.icons; track item.id) {
+                                    <div 
+                                        class="icon-item"
+                                        (click)="copyCode(item)"
+                                    >
+                                        <i [class]="item.icon"></i>
+                                        <span class="icon-name">
+                                            {{ item.copied ? "Copied!" : item.name }}
+                                        </span>
+                                    </div>
+                                    }
+                                </div>
+                                }
+                            
+                        </div>
+                    }
+                    
+
+                    @if (activeIconTab() === 'UE') {
+                        <!-- Usage Examples Tab -->
+                        <div class="tab-pane fade" id="usage" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                    <strong>Icon Sizes</strong>
+                                    </div>
+                                    <div class="card-body">
+                                    <h6>Font Awesome Sizes</h6>
+                                    <div class="icon-size-demo mb-3">
+                                        <i class="fas fa-star fa-xs"></i>
+                                        <i class="fas fa-star fa-sm"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star fa-lg"></i>
+                                        <i class="fas fa-star fa-2x"></i>
+                                        <i class="fas fa-star fa-3x"></i>
+                                    </div>
+<pre><code>&lt;i class="fas fa-star fa-xs"&gt;&lt;/i&gt;
+&lt;i class="fas fa-star fa-sm"&gt;&lt;/i&gt;
+&lt;i class="fas fa-star"&gt;&lt;/i&gt;
+&lt;i class="fas fa-star fa-lg"&gt;&lt;/i&gt;   
+&lt;i class="fas fa-star fa-2x"&gt;&lt;/i&gt;
+&lt;i class="fas fa-star fa-3x"&gt;&lt;/i&gt;</code></pre>
+    
+                                    <h6 class="mt-4">Bootstrap Icons with Font Size</h6>
+                                    <div class="icon-size-demo mb-3">
+                                        <i class="bi bi-star" style="font-size: 0.75rem"></i>
+                                        <i class="bi bi-star" style="font-size: 1rem"></i>
+                                        <i class="bi bi-star" style="font-size: 1.5rem"></i>
+                                        <i class="bi bi-star" style="font-size: 2rem"></i>
+                                        <i class="bi bi-star" style="font-size: 3rem"></i>
+                                    </div>
+<pre><code>&lt;i class="bi bi-star" style="font-size: 1rem;"&gt;&lt;/i&gt;
+&lt;i class="bi bi-star" style="font-size: 2rem;"&gt;&lt;/i&gt;
+&lt;i class="bi bi-star" style="font-size: 3rem;"&gt;&lt;/i&gt;</code></pre>
+                                    </div>
+                                </div>
+                                </div>
+    
+                                <div class="col-lg-6">
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                    <strong>Icon Colors</strong>
+                                    </div>
+                                    <div class="card-body">
+                                    <h6>Using Bootstrap Text Colors</h6>
+                                    <div class="icon-color-demo mb-3">
+                                        <i class="fas fa-heart text-primary"></i>
+                                        <i class="fas fa-heart text-secondary"></i>
+                                        <i class="fas fa-heart text-success"></i>
+                                        <i class="fas fa-heart text-danger"></i>
+                                        <i class="fas fa-heart text-warning"></i>
+                                        <i class="fas fa-heart text-info"></i>
+                                    </div>
+<pre><code>&lt;i class="fas fa-heart text-primary"&gt;&lt;/i&gt;
+&lt;i class="fas fa-heart text-success"&gt;&lt;/i&gt;
+&lt;i class="fas fa-heart text-danger"&gt;&lt;/i&gt;</code></pre>
+    
+                                    <h6 class="mt-4">Custom Colors</h6>
+                                    <div class="icon-color-demo mb-3">
+                                        <i class="bi bi-heart-fill" style="color: #e91e63"></i>
+                                        <i class="bi bi-heart-fill" style="color: #9c27b0"></i>
+                                        <i class="bi bi-heart-fill" style="color: #673ab7"></i>
+                                        <i class="bi bi-heart-fill" style="color: #3f51b5"></i>
+                                        <i class="bi bi-heart-fill" style="color: #00bcd4"></i>
+                                    </div>
+<pre><code>&lt;i class="bi bi-heart-fill" style="color: #e91e63;"&gt;&lt;/i&gt;</code></pre>
+                                    </div>
+                                </div>
+                                </div>
+    
+                                <div class="col-lg-6">
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                    <strong>Icon Animations</strong>
+                                    </div>
+                                    <div class="card-body">
+                                    <h6>Font Awesome Animations</h6>
+                                    <div class="mb-3">
+                                        <i class="fas fa-spinner fa-spin fa-2x me-3"></i>
+                                        <i class="fas fa-circle-notch fa-spin fa-2x me-3"></i>
+                                        <i class="fas fa-sync fa-spin fa-2x me-3"></i>
+                                        <i class="fas fa-cog fa-spin fa-2x me-3"></i>
+                                    </div>
+<pre><code>&lt;i class="fas fa-spinner fa-spin"&gt;&lt;/i&gt;
+&lt;i class="fas fa-circle-notch fa-spin"&gt;&lt;/i&gt;
+&lt;i class="fas fa-sync fa-spin"&gt;&lt;/i&gt;</code></pre>
+    
+                                    <h6 class="mt-4">Pulse Animation</h6>
+                                    <div class="mb-3">
+                                        <i class="fas fa-heart fa-beat fa-2x me-3 text-danger"></i>
+                                        <i class="fas fa-bell fa-shake fa-2x me-3 text-warning"></i>
+                                    </div>
+<pre><code>&lt;i class="fas fa-heart fa-beat"&gt;&lt;/i&gt;
+&lt;i class="fas fa-bell fa-shake"&gt;&lt;/i&gt;</code></pre>
+</div>
+                                </div>
+                                </div>
+    
+                                <div class="col-lg-6">
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                    <strong>Icon Styles</strong>
+                                    </div>
+                                    <div class="card-body">
+                                    <h6>Font Awesome Styles</h6>
+                                    <div class="mb-3">
+                                        <i class="fas fa-user fa-2x me-3"></i>
+                                        <i class="far fa-user fa-2x me-3"></i>
+                                        <i class="fab fa-github fa-2x me-3"></i>
+                                    </div>
+<pre><code>&lt;i class="fas fa-user"&gt;&lt;/i&gt; &lt;!-- Solid --&gt;
+&lt;i class="far fa-user"&gt;&lt;/i&gt; &lt;!-- Regular --&gt;
+&lt;i class="fab fa-github"&gt;&lt;/i&gt; &lt;!-- Brands --&gt;</code></pre>
+    
+                                    <h6 class="mt-4">Bootstrap Icons Variants</h6>
+                                    <div class="mb-3">
+                                        <i class="bi bi-heart fa-2x me-3"></i>
+                                        <i class="bi bi-heart-fill fa-2x me-3"></i>
+                                        <i class="bi bi-heart-half fa-2x me-3"></i>
+                                    </div>
+<pre><code>&lt;i class="bi bi-heart"&gt;&lt;/i&gt;
+&lt;i class="bi bi-heart-fill"&gt;&lt;/i&gt;
+&lt;i class="bi bi-heart-half"&gt;&lt;/i&gt;</code></pre>
+                                    </div>
+                                </div>
+                                </div>
+    
+                                <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                    <strong>Usage in Components</strong>
+                                    </div>
+                                    <div class="card-body">
+                                    <h6>Buttons with Icons</h6>
+                                    <div class="mb-3">
+                                        <button class="btn btn-primary me-4">
+                                        <i class="fas fa-download me-2"></i>Download
+                                        </button>
+                                        <button class="btn btn-success me-4">
+                                        <i class="fas fa-check me-2"></i>Success
+                                        </button>
+                                        <button class="btn btn-danger me-4">
+                                        <i class="fas fa-trash me-2"></i>Delete
+                                        </button>
+                                        <button class="btn btn-info me-4">
+                                        <i class="bi bi-info-circle me-2"></i>Info
+                                        </button>
+                                    </div>
+    
+                                    <h6 class="mt-4">Input Groups</h6>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            <input type="text" class="form-control" placeholder="Username">
+                                        </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                            <input type="email" class="form-control" placeholder="Email">
+                                        </div>
+                                        </div>
+                                    </div>
+    
+                                    <h6 class="mt-4">List Groups</h6>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                        <i class="fas fa-home me-2 text-primary"></i>Home
+                                        </li>
+                                        <li class="list-group-item">
+                                        <i class="fas fa-user me-2 text-success"></i>Profile
+                                        </li>
+                                        <li class="list-group-item">
+                                        <i class="fas fa-cog me-2 text-secondary"></i>Settings
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>

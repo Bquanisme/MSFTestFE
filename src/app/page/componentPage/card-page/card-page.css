@@ -6,7 +6,7 @@
 
 .section {
   width: 100%;
-  padding: 75px 42px 60px;
+  padding: 84px 42px 60px;
   box-sizing: border-box;
 
   font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
@@ -48,7 +48,7 @@
 
 
 .box-row-1 {
-  margin: 26px 0 52px;
+  margin: 34px 0 52px;
 }
 
 .box-row-2 {
@@ -141,7 +141,7 @@
 {
     width: 100%;
 
-    padding: 20px;
+    padding: 22px 20px 20px;
 
     box-sizing: border-box;
 
@@ -621,7 +621,8 @@
 }
 
 .center-card-body {
-    min-height: 308px;
+    
+    /* min-height: 308px; */
 
     padding: 20px;
 
@@ -683,7 +684,7 @@
 
     color: #292d32;
 
-    font-size:  calc(1.275rem + .3vw);;
+    font-size: 24px;
     font-weight: 600;
     /* line-height: 1; */
 }
@@ -692,7 +693,7 @@
 /* Description */
 
 .center-description {
-    max-width: 480px;
+    /* max-width: 480px; */
 
     margin: 0 0 14px;
 
@@ -728,18 +729,13 @@
 }
 
 .second-description {
-    max-width: 500px;
-
-    margin-bottom: 0;
-
-    max-width: 480px;
 
     margin: 0 0 16px;
 
     color: #212529bf;
 
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.45;
 
 }
 
@@ -1227,7 +1223,7 @@
 }
 
 .alert-body {
-    min-height: 126px;
+    /* min-height: 126px; */
     padding: 20px;
 
     color: #fff;
@@ -1354,7 +1350,7 @@
 ========================= */
 
 .project-content {
-    padding: 20px;
+    padding: 17px 20px 20px;
 }
 
 .project-content h3 {
@@ -1362,7 +1358,7 @@
 
     color: #212529;
 
-    font-size: calc(1.275rem + .3vw);
+    font-size: 24px;
     font-weight: 600;
 
     line-height: 1.4;
@@ -1370,18 +1366,14 @@
 
 .project-content h3 i {
     display: inline;
-    margin: 0 3px;
+    margin: 0 2px 0 0;
 }
 
-/* .project-content i {
-    font-size: 24px;
-} */
 
 
 /* Description */
 
 .project-content p {
-    min-height: 60px;
 
     margin: 0 0 16px;
 
@@ -1416,7 +1408,7 @@
 
 .project-footer span i {
     display: inline;
-    margin: 0 3px;
+    margin: 0 2px 0 2px;
     font-size: 14px;
 }
 
@@ -1424,7 +1416,7 @@
 /* Button */
 
 .project-footer button {
-    padding: 6px 9px;
+    padding: 5px 9px;
 
     display: flex;
     align-items: center;
@@ -1451,15 +1443,45 @@
     opacity: 1;
 }
 
+.project-footer > button > p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.project-footer > button > i {
+    transform: translateY(-1px);
+}
+
 
 /* =========================
    RESPONSIVE
 ========================= */
+@media (max-width: 1300px) {
+    .project-footer > button > p {
+        margin: 0;
+        font-size: 14px;
+        transform: translateY(-1px);
+    }
+
+    .project-footer > button > i {
+        transform: translateY(0px);
+    }
+
+
+}
 
 
 @media (max-width: 1200px) {
   .title {
     font-size: calc(1.275rem + .3vw);
+  }
+
+  .center-card-body h2 {
+    font-size: calc(1.275rem + .3vw);
+  }
+
+  .project-content h3 {
+    font-size: calc(1.275rem + .3vw);;
   }
 }
 
@@ -1470,18 +1492,22 @@
     padding-top: 15px;
     padding-right: 27px;
     padding-left: 27px;
-    padding-bottom: 40px;
+    padding-bottom: 45px;
   }
 
 
   .section-title {
-    margin-top: -16px;
+    margin-top: -6px;
   }
 
   .box-row-1,
   .box-row-2 {
     gap: 24px;
     margin-top: 26px;
+  }
+
+  .box-row-1 {
+    margin-top: 34px;
   }
 
   /* =========================
@@ -1543,6 +1569,11 @@
     margin-top: 26px;
   }
 
+  .box-row-1 {
+    margin-top: 36px;
+    gap: 50px;
+  }
+
   /* =========================
      BOX
   ========================= */
@@ -1576,6 +1607,7 @@
 
     font-size: 16px;
   }
+
 
   /* =========================
      PROFILE
@@ -1621,7 +1653,6 @@
 
     max-width: 100%;
 
-    font-size: 13px;
   }
 
   /* =========================
@@ -1653,47 +1684,6 @@
     padding-right: 12px;
   }
 
-  /* =========================
-     PROJECT
-  ========================= */
-
-
-  .project-content {
-    padding: 15px;
-  }
-
-
-  .project-content p {
-
-    min-height: auto;
-
-    font-size: 14px;
-  }
-
-  .project-footer {
-    font-size: 13px;
-  }
-
-  /* =========================
-     ALERT
-  ========================= */
-
-  .alert-head-1,
-  .alert-head-2,
-  .alert-head-3 {
-
-    height: 55px;
-
-    padding: 0 15px;
-  }
-
-  .alert-body {
-    padding: 15px;
-  }
-
-  .alert-body p {
-    font-size: 14px;
-  }
 
   /* =========================
      GRID
@@ -1713,7 +1703,7 @@
   ========================= */
 
   .flex i {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   /* =========================
@@ -1732,5 +1722,13 @@
   .section-title {
     display: block;
     margin-top: -6px;
+  }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .box-row-1 {
+    padding-top: 16px;
   }
 }

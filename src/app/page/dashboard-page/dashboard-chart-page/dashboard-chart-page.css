@@ -9,7 +9,7 @@
   margin-top: 52px;
 
   display: grid;
-  grid-template-columns: 67.2fr 32.8fr;
+  grid-template-columns: 67.25fr 32.75fr;
 
   gap: 24px;
 }

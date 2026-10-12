@@ -1,0 +1,316 @@
+<main class="section">
+
+    <!-- Header -->
+    <header class="section-title mb-4-first">
+        <div class="title-header">
+            <h4 class="title">Basic Forms</h4>
+        </div>
+        <div class="breadcrumb">
+            <app-breadcrumb 
+                [title]="'Basic Forms'"
+                [folderTitle]="'Forms'"
+
+            ></app-breadcrumb>
+        </div>
+
+
+    </header>
+
+
+    <div class="row">
+        <!-- Basic Form Elements -->
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Basic Form Elements</h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="companyName" class="form-label">Company</label>
+                            <input 
+                                type="text" 
+                                [value]="company"
+                                class="form-control" 
+                                id="companyName" 
+                                placeholder="Enter your company name" 
+                            >
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email</label>
+                            <input 
+                                type="email" 
+                                class="form-control" 
+                                id="emailInput" 
+                                placeholder="Enter email" 
+                                [value]="email"
+                            >
+                            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordInput" class="form-label">Password</label>
+                            <input 
+                                type="password" 
+                                class="form-control" 
+                                id="passwordInput" 
+                                placeholder="Password" 
+                                [value]="password"
+                            >
+                        </div>
+                        <div class="mb-3">
+                            <label for="textArea" class="form-label">Textarea</label>
+                            <textarea 
+                                class="form-control" 
+                                [value]="description"
+                                id="textArea" 
+                                rows="3"
+                                placeholder="Enter description..."
+                            ></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="selectInput" class="form-label">Select</label>
+                            <select class="form-select" id="selectInput" fdprocessedid="b0sq8">
+                            <option selected="" [value]="select">Choose...</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="multiSelect" class="form-label">Multiple Select</label>
+                            <select class="form-select" id="multiSelect" multiple="" fdprocessedid="dpmmig">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                            <option value="4">Option 4</option>
+                            <option value="5">Option 5</option>
+                            </select>
+                        </div>
+                        <button 
+                            type="submit" 
+                            (click)="scrollToTop()"
+                            class="btn bg-flat-color-1 text-white" 
+                            style="margin-right: 4.5px;"
+                        >
+                            Submit
+                        </button>
+                        <button 
+                            type="reset" 
+                            (click)="ResetForm()"
+                            class="btn bg-flat-color-4 text-white"
+                        >
+                            Reset
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Controls Sizing -->
+        <div class="col-lg-6">
+            <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Form Control Sizing</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                <div class="mb-3">
+                    <label for="largeInput" class="form-label">Large Input</label>
+                    <input type="text" class="form-control form-control-lg" id="largeInput" placeholder="Large input" fdprocessedid="0x933k">
+                </div>
+                <div class="mb-3">
+                    <label for="defaultInput" class="form-label">Default Input</label>
+                    <input type="text" class="form-control" id="defaultInput" placeholder="Default input" fdprocessedid="thfd9">
+                </div>
+                <div class="mb-3">
+                    <label for="smallInput" class="form-label">Small Input</label>
+                    <input type="text" class="form-control form-control-sm" id="smallInput" placeholder="Small input" fdprocessedid="3detfa">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Disabled Input</label>
+                    <input type="text" class="form-control" placeholder="Disabled input" disabled="" fdprocessedid="zs9hxc">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Readonly Input</label>
+                    <input type="text" class="form-control" value="Readonly input" readonly="" fdprocessedid="dmpzv">
+                </div>
+                <div class="mb-3">
+                    <label for="fileInput" class="form-label">File Input</label>
+                    <input class="form-control" type="file" id="fileInput">
+                </div>
+                <div class="mb-3">
+                    <label for="multipleFiles" class="form-label">Multiple Files</label>
+                    <input class="form-control" type="file" id="multipleFiles" multiple="">
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="row mt-4">
+        <!-- Checkboxes and Radios -->
+        <div class="col-lg-6">
+            <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Checkboxes and Radios</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                <div class="mb-3">
+                    <label class="form-label">Checkboxes</label>
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="check1">
+                    <label class="form-check-label" for="check1"> Default checkbox </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="check2" checked="">
+                    <label class="form-check-label" for="check2"> Checked checkbox </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="check3" disabled="">
+                    <label class="form-check-label" for="check3"> Disabled checkbox </label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Radio Buttons</label>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioOptions" id="radio1" value="option1" checked="">
+                    <label class="form-check-label" for="radio1"> Default radio </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioOptions" id="radio2" value="option2">
+                    <label class="form-check-label" for="radio2"> Second radio </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radioOptions" id="radio3" value="option3" disabled="">
+                    <label class="form-check-label" for="radio3"> Disabled radio </label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Inline Checkboxes</label>
+                    <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheck1" value="option1">
+                        <label class="form-check-label" for="inlineCheck1">1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheck2" value="option2">
+                        <label class="form-check-label" for="inlineCheck2">2</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheck3" value="option3">
+                        <label class="form-check-label" for="inlineCheck3">3</label>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Switches</label>
+                    <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="switch1">
+                    <label class="form-check-label" for="switch1">Default switch</label>
+                    </div>
+                    <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="switch2" checked="">
+                    <label class="form-check-label" for="switch2">Checked switch</label>
+                    </div>
+                    <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="switch3" disabled="">
+                    <label class="form-check-label" for="switch3">Disabled switch</label>
+                    </div>
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+
+        <!-- Input Groups -->
+        <div class="col-lg-6">
+            <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Input Groups</h5>
+            </div>
+            <div class="card-body">
+                <form>
+                <div class="mb-3">
+                    <label class="form-label">With Text</label>
+                    <div class="input-group">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="Username" fdprocessedid="pturmm">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Recipient's username" fdprocessedid="sqtcln">
+                        <span class="input-group-text">@example.com</span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">With Icon</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Username" fdprocessedid="l381zh">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="input-group">
+                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                    <input type="email" class="form-control" placeholder="Email" fdprocessedid="e3uqed">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">With Button</label>
+                    <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for..." fdprocessedid="p5wstk">
+                    <button class="btn bg-flat-color-3 text-white" type="button" fdprocessedid="ffeb3">Search</button>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">With Dropdown</label>
+                    <div class="input-group">
+                        <button 
+                            class="btn bg-flat-color-2 text-white dropdown-toggle" 
+                            type="button" 
+                            [value]="dropdownOpen"
+                            data-bs-toggle="dropdown" 
+                            (click)="toggleDropdown()"
+                        >
+                            Dropdown
+                        </button>
+                        @if (dropdownOpen === true) {
+                            <ul class="dropdown-menu show" style="position: absolute; inset: 0px auto auto 0px; transform: translate3d(0px, 39.3333px, 0px); margin: 0px;" data-popper-placement="bottom-start">
+                                <li><a class="dropdown-item" (click)="scrollToTop()">Action</a></li>
+                                <li><a class="dropdown-item" (click)="scrollToTop()">Another action</a></li>
+                                <li><a class="dropdown-item" (click)="scrollToTop()">Something else here</a></li>
+                            </ul>
+                        }
+                        <input type="text" class="form-control" fdprocessedid="frd16">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Multiple Inputs</label>
+                    <div class="input-group">
+                    <span class="input-group-text">First and last name</span>
+                    <input type="text" class="form-control" placeholder="First name" fdprocessedid="5cjqfu">
+                    <input type="text" class="form-control" placeholder="Last name" fdprocessedid="9czd5a">
+                    </div>
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</main>

@@ -7,7 +7,7 @@
 
 .section {
   width: 100%;
-  padding: 75px 42px 60px;
+  padding: 84px 42px 60px;
   box-sizing: border-box;
   background-color: #f1f2f7;
 }
@@ -43,7 +43,7 @@
 
 
 .box-row-1 {
-  margin: 26px 0 30px;
+  margin: 34px 0 30px;
 }
 
 .box-row-2 {
@@ -78,7 +78,7 @@
 }
 
 .margin {
-  padding: 21px 20px;
+  padding: 22px 20px;
 }
 
 .margin-20 {
@@ -189,6 +189,11 @@
   border-color: #0da9e8;
   outline: none;
   box-shadow: 0 0 5px rgba(13, 169, 232, 0.35);
+}
+
+.input::placeholder {
+    font-size: 13px;
+    color: #212529bf;
 }
 
 
@@ -561,6 +566,7 @@
     font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
     font-weight: 600 !important;
     margin: 0 0 10px;
+    letter-spacing: 0.5px;
 }
 
 
@@ -820,17 +826,13 @@
         padding-top: 15px;
         padding-right: 27px;
         padding-left: 27px;
-        padding-bottom: 50px;
+        padding-bottom: 45px;
     }
 
     .section-title {
-        margin-top: -16px;
+        margin-top: -6px;
     }
 
-    .box-row-1,
-    .box-row-2 {
-        gap: 16px;
-    }
 
 
     .box-row-1-column-1 {
@@ -852,19 +854,6 @@
     .box-row-4 {
         overflow-x: auto;
     }
-
-    /* .button-row-inline {
-        flex-wrap: wrap;
-    }
-
-    .button-row-last {
-        flex-shrink: 0;
-        white-space: nowrap;
-    }
-
-    .button-row-last p {
-        white-space: nowrap;
-    } */
 }
 
 
@@ -880,12 +869,13 @@
         padding-top: 15px;
         padding-right: 27px;
         padding-left: 27px;
-        padding-bottom: 48px;
+        padding-bottom: 45px;
     }
 
     .section-title {
-        margin-top: -16px;
+        margin-top: -5px;
     }
+    
 
     /* =====================
        BOX ROW
@@ -898,6 +888,10 @@
         display: flex;
         flex-direction: column;
         gap: 30px
+    }
+
+    .box-row-1 {
+        margin: 36px 0 0;
     }
 
 
@@ -999,6 +993,14 @@
   .section-title {
     display: block;
     margin-top: -6px;
+  }
+  
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .box-row-1 {
+    margin-top: 42px;
   }
 
 }

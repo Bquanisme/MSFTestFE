@@ -18,7 +18,7 @@
 
 
 
-      @if (item.id === 2) {
+      @if (item.id === 4) {
 
         @if (isDrawerOpen() || isHoverSidebar()) {
           <div class="sidebar-section">
@@ -30,7 +30,7 @@
 
 
 
-      @if (item.id === 5) {
+      @if (item.id === 7) {
 
         @if (isDrawerOpen() || isHoverSidebar()) {
           <div class="sidebar-section">
@@ -41,7 +41,7 @@
       }
 
 
-      @if (item.id === 9) {
+      @if (item.id === 11) {
 
         @if (isDrawerOpen() || isHoverSidebar()) {
           <div class="sidebar-section">
@@ -73,34 +73,42 @@
               }
 
               @case (2) {
-                <i class="fa-solid fa-puzzle-piece"></i>
+                <i class="fa-solid fa-user"></i>
               }
 
               @case (3) {
-                <i class="fa-solid fa-table"></i>
+                <i class="fa-solid fa-users"></i>
               }
 
               @case (4) {
-                <i class="fa-solid fa-pen-to-square"></i>
+                <i class="fa-solid fa-puzzle-piece"></i>
               }
 
               @case (5) {
-                <i class="fa-solid fa-icons"></i>
+                <i class="fa-solid fa-table"></i>
               }
 
               @case (6) {
-                <i class="fa-solid fa-border-all"></i>
+                <i class="fa-solid fa-pen-to-square"></i>
               }
 
               @case (7) {
-                <i class="fa-solid fa-chart-bar"></i>
+                <i class="fa-solid fa-icons"></i>
               }
 
               @case (8) {
-                <i class="fa-solid fa-map-location-dot"></i>
+                <i class="fa-solid fa-border-all"></i>
               }
 
               @case (9) {
+                <i class="fa-solid fa-chart-bar"></i>
+              }
+
+              @case (10) {
+                <i class="fa-solid fa-map-location-dot"></i>
+              }
+
+              @case (11) {
                 <i class="fa-solid fa-file-lines"></i>
               }
             }

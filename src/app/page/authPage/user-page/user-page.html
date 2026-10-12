@@ -1,0 +1,969 @@
+<main class="section">
+
+        <!-- Header -->
+        <header class="section-title mb-4-first">
+
+            <h4 class="title">Users</h4>
+                
+            <div class="col-auto px-0 pt-0 pe-0 ng-star-inserted">
+                <button 
+                    type="button" 
+                    class="d-inline-flex align-items-center gap-1 btn btn-primary btn-sm ng-star-inserted" 
+                    (click)="handleOpenModalNew()"
+                >
+                    <i class="fa fa-plus me-1"></i> 
+                    New user
+                </button>
+            </div>
+
+
+        </header>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-center">
+                    <div class="data-tables-filter flex-grow-1">
+                        <div class="input-group">
+                            <input 
+                                type="search" 
+                                class="form-control ng-untouched ng-pristine ng-valid" 
+                                style="height: 42px;" 
+                                placeholder="Search"
+                                [formControl]="searchControl"
+                            >
+                            <button 
+                                class="btn btn-primary" 
+                                style="height: 42px; padding: 10.8px 20px" 
+                                (click)="handleCLickSearch()"
+                            >
+                                <i aria-hidden="true" class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+
+            <div class="table-wrapper">
+                <table class="table">
+
+                    <thead>
+                        <tr>
+                            <th>Actions</th>
+
+                            <th>
+                                User Name
+                                <i class="fa-solid fa-angle-down"></i>
+                            </th>
+
+                            <th>
+                                Email address
+                                <i class="fa-solid fa-angle-down"></i>
+                            </th>
+
+                            <th>
+                                Roles
+                                <i class="fa-solid fa-angle-down"></i>
+                            </th>
+
+                            <th>
+                                Phone number
+                                <i class="fa-solid fa-angle-down"></i>
+                            </th>
+
+                            <th>
+                                Name
+                                <i class="fa-solid fa-angle-down"></i>
+                            </th>
+
+                            <th>
+                                Surname
+                                <i class="fa-solid fa-angle-down"></i>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @if (filteredUsers().length === 0) {
+
+                            <tr>
+                                <td colspan="7">
+                                    <div class="empty-row">
+                                        No data available
+                                    </div>
+                                </td>
+                            </tr>
+
+                        } @else {
+
+                            @for (item of filteredUsers(); track item.id) {
+
+                                <tr>
+
+                                    <!-- Actions -->
+                                    <td>
+                                        <div class="action-dropdown">
+
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary"
+                                                (click)="toggleAction(item.id, $event)"
+                                            >
+                                                <i class="fas fa-cog"></i>
+
+                                                <span
+                                                    style="font-size: 11.2px"
+                                                >
+                                                    Actions
+                                                </span>
+
+                                                <i class="fas fa-caret-down"></i>
+                                            </button>
+
+                                            @if (openActionId() === item.id) {
+
+                                                <div class="action-menu">
+
+                                                    <button
+                                                        type="button"
+                                                        class="action-item"
+                                                        (click)="handleOpenModalDetail(item)"
+                                                    >
+                                                        View details
+                                                    </button>
+
+                                                    <button
+                                                        type="button"
+                                                        class="action-item"
+                                                        (click)="handleOpenModalEdit(item)"
+                                                    >
+                                                        Edit
+                                                    </button>
+
+                                                    <button
+                                                        type="button"
+                                                        class="action-item"
+                                                        (click)="handleOpenModalDelete(item)"
+                                                    >
+                                                        Delete
+                                                    </button>
+
+                                                </div>
+
+                                            }
+
+                                        </div>
+                                    </td>
+
+                                    <!-- User name -->
+                                    <td>
+                                        {{ item.username }}
+                                    </td>
+
+                                    <!-- Email -->
+                                    <td>
+                                        {{ item.email }}
+                                    </td>
+
+                                    <!-- Roles -->
+                                    <td>
+                                        {{ getRoleNames(item.roleId).join(', ') }}
+                                    </td>
+
+                                    <!-- Phone -->
+                                    <td>
+                                        {{ item.phone }}
+                                    </td>
+
+                                    <!-- Name -->
+                                    <td>
+                                        {{ item.name }}
+                                    </td>
+
+                                    <!-- Surname -->
+                                    <td>
+                                        {{ item.surname }}
+                                    </td>
+
+                                </tr>
+                            }
+
+                        }
+
+                    </tbody>
+
+                </table>
+            </div>
+
+            <div class="card-footer">
+                {{ filteredUsers().length }} total
+            </div>
+
+        </div>
+        
+</main>
+
+
+
+@if (isModalOpenDetail()) {
+
+  <div
+    class="dialog-overlay"
+    (click)="handleCloseModalDetail()"
+  >
+
+    <div
+      class="dialog-small"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="dialog-header">
+
+        <h2>
+          View details
+        </h2>
+
+        <button
+          class="close-button"
+          type="button"
+          (click)="handleCloseModalDetail()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </div>
+
+      
+      
+      <form [formGroup]="validateForm" (ngSubmit)="onSubmit()">
+
+        <div class="dialog-tabs">
+
+          <button
+            type="button"
+            class="dialog-tab"
+            style="padding: 14px 0 10.5px;"
+            [class.active]="activeTabDetail() === 'userInfo'"
+            (click)="changeTabDetail('userInfo')"
+          >
+                User Information
+          </button>
+
+          <button
+            type="button"
+            class="dialog-tab"
+            style="padding: 14px 0 10.5px;"
+            [class.active]="activeTabDetail() === 'general'"
+            (click)="changeTabDetail('general')"
+          >
+                General
+          </button>
+
+        </div>
+
+        @if (activeTabDetail() === 'userInfo') {
+            <table class="user-detail-table">
+                <tbody>
+                    <tr>
+                    <td>User id</td>
+                    <td>{{ selectedUser()?.id || '-'}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>User name</td>
+                        <td>{{ selectedUser()?.username || '-'}}</td>
+                    </tr>
+
+                    <tr>
+                    <td>Name</td>
+                    <td>{{ selectedUser()?.name || '-'}}</td>
+                    </tr>
+
+                    <tr>
+                    <td>Surname</td>
+                    <td>{{ selectedUser()?.surname || '-'}}</td>
+                    </tr>
+
+                    <tr>
+                    <td>Email</td>
+                    <td>{{ selectedUser()?.email || '-'}}</td>
+                    </tr>
+
+                    <tr>
+                    <td>Roles</td>
+                    <td>{{ getRoleNames(selectedUser()?.roleId ?? []).join(', ') }}</td>
+                    </tr>
+
+                    <tr>
+                    <td>Phone number</td>
+                    <td>{{ selectedUser()?.phone || '-'}}</td>
+                    </tr>
+
+                    <tr>
+                    <td>Active</td>
+                    <td>Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+    
+        @if (activeTabDetail() === 'general') {
+
+            <table class="user-detail-table">
+                <tbody>
+                    <tr>
+                    <td>Created by</td>
+                    <td>-</td>
+                    </tr>
+
+                    <tr>
+                        <td>Creation time</td>
+                        <td>9/26/2026 3:19 PM</td>
+                    </tr>
+
+                    <tr>
+                    <td>Modified by</td>
+                    <td>-</td>
+                    </tr>
+
+                    <tr>
+                    <td>Modification time</td>
+                    <td>-</td>
+                    </tr>
+
+                    <tr>
+                    <td>Password update time</td>
+                    <td>9/26/2026 3:19 PM</td>
+                    </tr>
+
+                    <tr>
+                    <td>Lockout end time</td>
+                    <td>0</td>
+                    </tr>
+
+                    <tr>
+                    <td>Account lockout</td>
+                    <td>Yes</td>
+                    </tr>
+
+                    <tr>
+                    <td>External</td>
+                    <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        }
+    
+        <div class="dialog-footer">
+            
+            <button
+                class="btn btn-secondary m-4 p-10 fs-14"
+                type="button"
+                (click)="handleCloseModalDetail()"
+            >
+                Cancel
+            </button>
+            
+        </div>
+
+    </form>
+
+    </div>
+
+  </div>
+
+}
+
+@if (isModalOpenEdit()) {
+
+  <div
+    class="dialog-overlay"
+    (click)="handleCloseModalEdit()"
+  >
+
+    <div
+      class="dialog-small"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="dialog-header">
+
+        <h2>
+          Edit - {{ selectedUser()?.username }}
+        </h2>
+
+        <button
+          class="close-button"
+          type="button"
+          (click)="handleCloseModalEdit()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </div>
+
+      
+      
+      <form [formGroup]="validateForm" (ngSubmit)="onSubmit()">
+
+        <div class="dialog-tabs">
+
+          <button
+            type="button"
+            class="dialog-tab"
+            [class.active]="activeTab() === 'user'"
+            (click)="changeTab('user')"
+          >
+                User Information
+          </button>
+
+          <button
+            type="button"
+            class="dialog-tab"
+            [class.active]="activeTab() === 'roles'"
+            (click)="changeTab('roles')"
+          >
+                {{ editRoleIds().length > 0 ? `Role (${editRoleIds().length})` : `Role`}}
+          </button>
+
+        </div>
+
+        @if (activeTab() === 'user') {
+            <div class="dialog-body">
+
+                <!-- User name -->
+                <div class="mb-4">
+                    <p>
+                        User name *
+                    </p>
+
+                    <input
+                    class="form-control"
+                    id="username"
+                    type="text"
+                    formControlName="userName"
+                    [class.is-invalid]="submitted && userName.invalid"
+                    >
+
+                    @if (submitted && userName.invalid) {
+                    <div class="invalid-feedback">
+                        @if (userName.errors?.['required']) {
+                        <span>This field is required.</span>
+                        }
+                    </div>
+                    }
+                </div>
+
+
+                <!-- Name + Surname -->
+                <div class="row">
+
+                    <div class="col-6">
+                        <div class="mb-4">
+                            <p>
+                                Name
+                            </p>
+
+                            <input
+                            class="form-control"
+                            id="name"
+                            type="text"
+                            formControlName="name"
+                            >
+                        </div>
+                    </div>
+
+
+                    <div class="col-6">
+                        <div class="mb-4">
+                            <p>
+                                Surname
+                            </p>
+
+                            <input
+                            class="form-control"
+                            id="surname"
+                            type="text"
+                            formControlName="surname"
+                            >
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="mb-4">
+                    <p>
+                        Email address *
+                    </p>
+
+                    <input
+                        class="form-control"
+                        id="email"
+                        type="email"
+                        formControlName="emailAddress"
+                        [class.is-invalid]="submitted && emailAddress.invalid"
+                    >
+
+                    @if (submitted && emailAddress.invalid) {
+                    <div class="invalid-feedback">
+
+                        @if (emailAddress.errors?.['required']) {
+                        <span>This field is required.</span>
+                        }
+
+                        @if (emailAddress.errors?.['email']) {
+                        <span>Please enter a valid email.</span>
+                        }
+
+                    </div>
+                    }
+                </div>
+
+
+                <!-- Phone -->
+                <div class="mb-4">
+                    <p>
+                        Phone number
+                    </p>
+
+                    <input
+                        class="form-control"
+                        id="phone"
+                        type="text"
+                        formControlName="phoneNumber"
+                    >
+                </div>
+
+            </div>
+        }
+    
+        @if (activeTab() === 'roles') {
+
+            <div class="role-list">
+
+                @for (role of roles(); track role.id) {
+
+                <div class="form-check">
+
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        [id]="'role-' + role.id"
+                        [checked]="editRoleIds().includes(role.id)"
+                        (change)="toggleRole(role.id)"
+                    >
+
+                    <label
+                        class="form-check-label"
+                        [for]="'role-' + role.id"
+                    >
+                        {{ role.name }}
+                    </label>
+
+                </div>
+
+                }
+
+            </div>
+
+        }
+    
+        <div class="dialog-footer">
+            
+            <button
+                class="btn btn-outline-primary m-4 p-10 fs-14"
+                type="button"
+                (click)="handleCloseModalEdit()"
+            >
+                Cancel
+            </button>
+            
+            <button
+                class="btn btn-primary m-4 p-10 fs-14"
+                type="submit"
+
+            >
+                Confirm
+            </button>
+            
+        </div>
+
+    </form>
+
+    </div>
+
+  </div>
+
+}
+
+@if (isModalOpenDelete()) {
+
+  <div
+    class="dialog-overlay-delete"
+    (click)="handleCloseModalDelete()"
+  >
+
+    <div
+      class="dialog-small-delete"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="dialog-header-delete">
+
+        <i class="icon fa fa-exclamation-triangle"></i>
+
+
+      </div>
+
+    
+
+      <div class="dialog-body-delete">
+
+        <h4>
+          Are you sure?
+        </h4>
+
+        <p>
+          Are you sure you want to delete the user '{{ selectedUserDelete()?.username }}'?
+        </p>
+
+    </div>
+    
+    
+    
+    <div class="dialog-footer">
+        
+        <button
+          class="btn btn-outline-danger m-4 p-10 fs-14"
+          type="button"
+          (click)="handleCloseModalDelete()"
+        >
+          Cancel
+        </button>
+        
+        <button
+          class="btn btn-danger m-4 p-10 fs-14"
+          type="submit"
+          (click)="handleClickDelete()"
+        >
+          Confirm
+        </button>
+        
+    </div>
+
+
+    </div>
+
+  </div>
+
+}
+
+@if (isModalOpenNew()) {
+
+  <div
+    class="dialog-overlay"
+    (click)="handleCloseModalNew()"
+  >
+
+    <div
+      class="dialog-small"
+      (click)="$event.stopPropagation()"
+    >
+
+      <div class="dialog-header">
+
+        <h2>
+          New user
+        </h2>
+
+        <button
+          class="close-button"
+          type="button"
+          (click)="handleCloseModalNew()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+
+      </div>
+
+      
+      
+      <form [formGroup]="validateFormNew" (ngSubmit)="onSubmitNewUser()">
+
+            <div class="dialog-body">
+                <div class="dialog-tabs-new">
+        
+                  <button
+                    type="button"
+                    class="dialog-tab-new"
+                    [class.active]="activeTab() === 'user'"
+                    (click)="changeTab('user')"
+                  >
+                    User Information
+                  </button>
+        
+                  <button
+                    type="button"
+                    class="dialog-tab-new"
+                    [class.active]="activeTab() === 'roles'"
+                    (click)="changeTab('roles')"
+                  >
+                    {{ selectedRoleIds().length > 0 ? `Role (${selectedRoleIds().length})` : `Role`}}
+                  </button>
+        
+                </div>
+
+                @if (activeTab() === 'user') {
+                <!-- User name -->
+                <div class="mb-4">
+                    <p>
+                        User name *
+                    </p>
+
+                    <input
+                        class="form-control"    
+                        id="username"
+                        type="text"
+                        formControlName="userNameNew"
+                        [class.is-invalid]="submitted && userNameNew.invalid"
+                    >
+
+                    @if (submitted && userNameNew.invalid) {
+                    <div class="invalid-feedback">
+                        @if (userNameNew.errors?.['required']) {
+                        <span>This field is required.</span>
+                        }
+                    </div>
+                    }
+                </div>
+
+
+                <!-- Name + Surname -->
+                <div class="row">
+
+                    <div class="col-6">
+                        <div class="mb-4">
+                            <p>
+                                Name
+                            </p>
+
+                            <input
+                            class="form-control"
+                            id="name"
+                            type="text"
+                            formControlName="name"
+                            >
+                        </div>
+                    </div>
+
+
+                    <div class="col-6">
+                        <div class="mb-4">
+                            <p>
+                                Surname
+                            </p>
+
+                            <input
+                            class="form-control"
+                            id="surname"
+                            type="text"
+                            formControlName="surname"
+                            >
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Password -->
+                <div class="mb-4">
+                    <p>
+                        Password *
+                    </p>
+
+                    <div class="password-input-wrapper">
+
+                        <input
+                            class="form-control"
+                            id="password"
+                            [type]="showPassword() ? 'text' : 'password'"
+                            formControlName="password"
+                            [class.is-invalid]="submitted && password.invalid"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            (click)="showPassword.set(!showPassword())"
+                        >
+                            <i
+                                class="fa-solid"
+                                [class.fa-eye]="showPassword()"
+                                [class.fa-eye-slash]="!showPassword()"
+                            ></i>
+                        </button>
+
+                    </div>
+
+                    @if (submitted && password.invalid) {
+                        <div class="invalid-feedback">
+
+                        @if (password.errors?.['required']) {
+                            <span>This field is required.</span>
+                        }
+
+                        @if (password.errors?.['minlength']) {
+                            <span>Password must be at least 6 characters.</span>
+                        }
+
+                        </div>
+                    }
+                </div>
+
+                <!-- Email -->
+                <div class="mb-4">
+                    <p>
+                        Email address *
+                    </p>
+
+                    <input
+                        class="form-control"
+                        id="email"
+                        type="email"
+                        formControlName="emailAddressNew"
+                        [class.is-invalid]="submitted && emailAddressNew.invalid"
+                    >
+
+                    @if (submitted && emailAddressNew.invalid) {
+                    <div class="invalid-feedback">
+
+                        @if (emailAddressNew.errors?.['required']) {
+                        <span>This field is required.</span>
+                        }
+
+                        @if (emailAddressNew.errors?.['email']) {
+                        <span>Please enter a valid email.</span>
+                        }
+
+                    </div>
+                    }
+                </div>
+
+
+                <!-- Phone -->
+                <div class="mb-4">
+                    <p>
+                        Phone number
+                    </p>
+
+                    <input
+                        class="form-control"
+                        id="phone"
+                        type="text"
+                        formControlName="phoneNumber"
+                    >
+                </div>
+
+                }
+            </div>
+
+
+            @if (activeTab() === 'roles') {
+
+            <div class="role-list">
+
+                @for (role of roles(); track role.id) {
+
+                <div class="form-check">
+
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    [id]="'role-' + role.id"
+                    [checked]="selectedRoleIds().includes(role.id)"
+                    (change)="toggleRoleNew(role.id)"
+                    >
+
+                    <label
+                    class="form-check-label"
+                    [for]="'role-' + role.id"
+                    >
+                        {{ role.name }}
+                    </label>
+
+                </div>
+
+                }
+
+            </div>
+
+            }
+    
+    
+        <div class="dialog-footer">
+            
+            <button
+                class="btn btn-outline-primary m-4 p-10 fs-14"
+                type="button"
+                (click)="handleCloseModalNew()"
+            >
+                Cancel
+            </button>
+            
+            <button
+                class="btn btn-primary m-4 p-10 fs-14"
+                type="submit"
+
+            >
+                <i aria-hidden="true" class="me-1 fa fa-check"></i>
+                Save
+            </button>
+            
+        </div>
+
+    </form>
+
+    </div>
+
+  </div>
+
+}
+
+
+
+@if (showToastSuccess()) {
+    <app-toast 
+        (handleCloseToast)="handleCloseToast()"
+        [message]="'Saved successfully!'"
+        [toast]="'toast-success'"
+        [icon]="'fa-solid fa-check'"
+        [toastIcon]="'toast-icon'"
+    ></app-toast>
+}
+
+
+@if (showToastDelete()) {
+    <app-toast 
+        (handleCloseToast)="handleCloseToastDelete()"
+        [message]="'Deleted successfully!'"
+        [toast]="'toast-success'"
+        [icon]="'fa-solid fa-check'"
+        [toastIcon]="'toast-icon'"
+    ></app-toast>
+}
+
+@if (showToastError()) {
+    <app-toast 
+        (handleCloseToast)="handleCloseToastError()"
+        [message]="`${errorText()}!`"
+        [toast]="'toast-error'"
+        [icon]="'fa-solid fa-xmark'"
+        [toastIcon]="'toast-icon-delete'"
+    ></app-toast>
+}

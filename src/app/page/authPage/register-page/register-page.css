@@ -190,6 +190,10 @@
   color: #dc3545;
 
   font-size: 11px;
+
+  font-weight: 500;
+
+  font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
 }
 
 
@@ -466,3 +470,18 @@
         width: 16.5px;
     }
 }
+
+
+
+
+
+
+
+/* #login-card-id {
+    background: purple;
+}
+
+div.login-page .login-card {
+    background: red;
+}
+ */

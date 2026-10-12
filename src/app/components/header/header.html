@@ -236,7 +236,6 @@
 
 
       <!-- ================= MESSAGE ================= -->
-
       <div class="header-dropdown">
 
         <button
@@ -254,8 +253,13 @@
         <!-- MESSAGE PANEL -->
 
         @if (showMessage()) {
+
           <div class="notification-scroll">
-            <div class="dropdown-panel message-panel" (click)="handleClose()" style="width: 360px;">
+            <div 
+              class="dropdown-panel message-panel" 
+              (click)="handleClose()" 
+              style="width: 360px;"
+            >
   
               <div class="notification-list">
 
@@ -392,227 +396,242 @@
 
       </button>
 
-        <div class="user-dropdown">
 
-          <!-- USER PANEL -->
+          
+      <div class="user-dropdown">
 
-          @if (showUser()) {
+        <!-- USER PANEL -->
 
-            <div class="user-panel">
+        @if (showUser()) {
 
-              <!-- ================= USER INFO ================= -->
+          <div class="user-panel">
 
-              <div class="user-info">
+            <!-- ================= USER INFO ================= -->
 
-                <img
-                  [src]="authLogo"
-                  alt="admin-logo"
-                  class="user-avatar"
-                />
+            <div class="user-info">
 
-                <div class="user-info-content">
+              <img
+                [src]="authLogo"
+                alt="admin-logo"
+                class="user-avatar"
+              />
 
-                  <div class="user-name">
-                    John Doe
-                  </div>
+              <div class="user-info-content">
 
-                  <div class="user-role">
-                    Administrator
-                  </div>
-
-                  <div class="user-status">
-                    <span class="status-dot"></span>
-                      Online
-                  </div>
-
+                <div class="user-name">
+                  {{ userData?.username || 'John Doe' }}
                 </div>
 
-              </div>
-
-
-              <!-- ================= MENU ================= -->
-
-              <div>
-
-                <button
-                  type="button"
-                  class="user-menu-item"
-                  (click)="handleClose()"
-                >
-
-                  <i class="fa-solid fa-user"></i>
-
-                  <span>
-                    My Profile
-                  </span>
-
-                </button>
-
-
-
-                <button
-                  type="button"
-                  class="user-menu-item"
-                  (click)="handleClose()"
-                >
-
-                  <i class="fa-solid fa-gear"></i>
-
-                  <span>
-                    Account Settings
-                  </span>
-
-                </button>
-
-
-                <!-- NOTIFICATIONS -->
-
-                <button
-                  type="button"
-                  class="user-menu-item"
-                  (click)="handleClose()"
-                >
-
-                  <i class="fa-solid fa-bell"></i>
-
-                  <span>
-                    Notifications
-                  </span>
-
-                  <span class="menu-badge notification-badge">
-                    12
-                  </span>
-
-                </button>
-
-
-                <!-- MY TASKS -->
-
-                <button
-                  type="button"
-                  class="user-menu-item"
-                  style="margin-bottom: 3px;"
-                  (click)="handleClose()"
-                >
-
-                  <i class="fa-solid fa-list-check"></i>
-
-                  <span>
-                    My Tasks
-                  </span>
-
-                  <span class="menu-badge task-badge">
-                    5
-                  </span>
-
-                </button>
-
-              </div>
-
-
-
-              <div class="user-divider"></div>
-
-
-              <!-- ================= BOTTOM MENU ================= -->
-
-              <div class="bottom-menu">
-
-                <!-- LOCK SCREEN -->
-
-                <button
-                  type="button"
-                  class="user-menu-item lock-item"
-                  (click)="handleClose()"
-                >
-
-                  <i class="fa-solid fa-lock"></i>
-
-                  <span>
-                    Lock Screen
-                  </span>
-
-                </button>
-
-
-                <!-- LOGOUT -->
-
-                <button
-                  type="button"
-                  class="user-menu-item logout-item"
-                  (click)="handleClose()"
-                >
-
-                  <i class="fa-solid fa-right-from-bracket"></i>
-
-                  <span>
-                    Logout
-                  </span>
-
-                </button>
-
-              </div>
-
-
-              <!-- ================= USER STATS ================= -->
-
-              <div class="user-stats">
-
-                <!-- STORAGE -->
-
-                <div class="user-stat">
-
-                  <div class="stat-title">
-                    Storage
-                  </div>
-
-                  <div class="stat-line"></div>
-
-                  <div class="stat-value">
-                    65%
-                  </div>
-
+                <div class="user-role">
+                  {{ roleNames.length ? roleNames.join(', ') : 'Administrator' }}
                 </div>
 
-
-                <!-- PROJECTS -->
-
-                <div class="user-stat">
-
-                  <div class="stat-title" style="margin-bottom: 2px;">
-                    Projects
-                  </div>
-
-                  <div class="stat-number">
-                    12
-                  </div>
-
-                </div>
-
-
-                <!-- TASKS -->
-
-                <div class="user-stat">
-
-                  <div class="stat-title" style="margin-bottom: 2px;">
-                    Tasks
-                  </div>
-
-                  <div class="stat-number">
-                    34
-                  </div>
-
+                <div class="user-status">
+                  <span class="status-dot"></span>
+                    Online
                 </div>
 
               </div>
 
             </div>
 
-          }
 
-        </div>
+            <!-- ================= MENU ================= -->
+
+            <div>
+
+              <button
+                type="button"
+                class="user-menu-item"
+                (click)="handleClose()"
+              >
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>
+                  My Profile
+                </span>
+
+              </button>
+
+
+
+              <button
+                type="button"
+                class="user-menu-item"
+                (click)="handleClose()"
+              >
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+                  Account Settings
+                </span>
+
+              </button>
+
+
+              <!-- NOTIFICATIONS -->
+
+              <button
+                type="button"
+                class="user-menu-item"
+                (click)="handleClose()"
+              >
+
+                <i class="fa-solid fa-bell"></i>
+
+                <span>
+                  Notifications
+                </span>
+
+                <span class="menu-badge notification-badge">
+                  12
+                </span>
+
+              </button>
+
+
+              <!-- MY TASKS -->
+
+              <button
+                type="button"
+                class="user-menu-item"
+                style="margin-bottom: 3px;"
+                (click)="handleClose()"
+              >
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <span>
+                  My Tasks
+                </span>
+
+                <span class="menu-badge task-badge">
+                  5
+                </span>
+
+              </button>
+
+            </div>
+
+
+
+            <div class="user-divider"></div>
+
+
+            <!-- ================= BOTTOM MENU ================= -->
+
+            <div class="bottom-menu">
+
+              <!-- LOCK SCREEN -->
+
+              <button
+                type="button"
+                class="user-menu-item lock-item"
+                (click)="handleClose()"
+              >
+
+                <i class="fa-solid fa-lock"></i>
+
+                <span>
+                  Lock Screen
+                </span>
+
+              </button>
+
+
+              <!-- LOGOUT -->
+
+              <button
+                type="button"
+                class="user-menu-item logout-item"
+                (click)="handleLogout()"
+              >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                  Logout
+                </span>
+
+              </button>
+
+            </div>
+
+
+            <!-- ================= USER STATS ================= -->
+
+            <div class="user-stats">
+
+              <!-- STORAGE -->
+
+              <div class="user-stat">
+
+                <div class="stat-title">
+                  Storage
+                </div>
+
+                <div class="stat-line"></div>
+
+                <div class="stat-value">
+                  65%
+                </div>
+
+              </div>
+
+
+              <!-- PROJECTS -->
+
+              <div class="user-stat">
+
+                <div class="stat-title" style="margin-bottom: 2px;">
+                  Projects
+                </div>
+
+                <div class="stat-number">
+                  12
+                </div>
+
+              </div>
+
+
+              <!-- TASKS -->
+
+              <div class="user-stat">
+
+                <div class="stat-title" style="margin-bottom: 2px;">
+                  Tasks
+                </div>
+
+                <div class="stat-number">
+                  34
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+      
 
     </div>
 
   </header>
 </main>
+
+
+
+@if (showToastSuccess()) {
+    <app-toast 
+        (handleCloseToast)="handleCloseToast()"
+        [message]="'Logout successfully!'"
+        [toast]="'toast-success'"
+        [icon]="'fa-solid fa-check'"
+        [toastIcon]="'toast-icon'"
+    ></app-toast>
+}

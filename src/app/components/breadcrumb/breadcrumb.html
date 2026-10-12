@@ -1,16 +1,20 @@
-<div style="
-    display: flex;
-    align-items: center;
-    gap: 8px;
-">
-    <a href="https://preview.colorlib.com/#saasify" class="link-breadcrumb">Dashboard</a>
-    <p>/</p>
-    <a
-        (click)="scrollToTop($event)"
-        class="link-breadcrumb"
-        >
-        {{ folderTitle }}
-    </a>
-      <p>/</p>
-      <p>{{  title  }}</p>
+<div class="breadcrumb">
+  <a href="https://preview.colorlib.com/#saasify" class="link-breadcrumb">
+    Dashboard
+  </a>
+
+  <span>/</span>
+
+  <a
+    (click)="scrollToTop($event)"
+    class="link-breadcrumb"
+  >
+    {{ folderTitle }}
+  </a>
+
+  <span>/</span>
+
+  <span class="color-title">
+    {{ title }}
+  </span>
 </div>

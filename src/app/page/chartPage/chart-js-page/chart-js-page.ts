@@ -725,7 +725,6 @@ export class ChartJsPage {
 
         data: [11, 16, 7, 3, 14],
 
-        // Màu nền nhạt giống hình
         backgroundColor: [
           'rgba(255, 99, 132, 0.20)',   // Red
           'rgba(75, 192, 192, 0.20)',   // Green
@@ -733,8 +732,7 @@ export class ChartJsPage {
           'rgba(201, 203, 207, 0.20)',  // Grey
           'rgba(54, 162, 235, 0.20)'    // Blue
         ],
-
-        // Border theo đúng màu của từng phần
+        
         borderColor: [
           '#FF6384',
           '#4BC0C0',

@@ -315,8 +315,8 @@
 
 
                 <div class="button-row">
-                    <div style="width: 50%;">
-                        <p style="font-weight: 600; margin-bottom: 16px;">Download Progress</p>
+                    <div class="dynamic-content">
+                        <p style="font-weight: 600; margin-bottom: 14px; color: #212529;">Download Progress</p>
                         <div class="progress-bar-container-bootstrap" style="height: 25px;">
                             @if (width() === 100) {
                                 <div
@@ -344,8 +344,8 @@
                             <button class="button-2" (click)="resetProgress()">Reset</button>
                         </div>
                     </div>
-                    <div style="width: 50%;">
-                        <p style="font-weight: 600; margin-bottom: 16px;">Task Progress</p>
+                    <div class="dynamic-content">
+                        <p style="font-weight: 600; margin-bottom: 14px; color: #212529;">Task Progress</p>
                         <div class="progress-bar-container-bootstrap" style="height: 25px;">
                             @if (widthTask() >= 80) {
                                 <div

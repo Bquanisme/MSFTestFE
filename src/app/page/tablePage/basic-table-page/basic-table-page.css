@@ -13,7 +13,7 @@
 
   background-color: #f1f2f7;
 
-  padding: 75px 42px 60px;
+  padding: 84px 42px 60px;
 }
 
 .section-title {
@@ -44,7 +44,7 @@
 
 
 .box-row-1 {
-  padding: 26px 0;
+  padding: 34px 0 12px;
 }
 
 .box-row-2 {
@@ -194,8 +194,10 @@
 
   padding: 8px;
 
+  transform: translateY(-2px);
 
-  border-bottom: 1px solid #807f7f;
+
+  border-bottom: 1px solid #565656;
 }
 
 .basic-table-dark .table-number{
@@ -214,6 +216,7 @@
   height: 44px;
 
   padding: 12px;
+  
 
   text-align: left;
   vertical-align: middle;
@@ -241,9 +244,8 @@
 .basic-table th:nth-child(1),
 .basic-table td:nth-child(1),
 .basic-table-dark th:nth-child(1),
-.basic-table-dark td:nth-child(1),
-.basic-table-border th:nth-child(1),
-.basic-table-border td:nth-child(1) {
+.basic-table-dark td:nth-child(1) 
+{
   width: 13.05%;
 }
 
@@ -252,9 +254,7 @@
 .basic-table th:nth-child(2),
 .basic-table td:nth-child(2),
 .basic-table-dark th:nth-child(2),
-.basic-table-dark td:nth-child(2),
-.basic-table-border th:nth-child(2),
-.basic-table-border td:nth-child(2) {
+.basic-table-dark td:nth-child(2) {
   width: 23.73%;
 }
 
@@ -263,9 +263,7 @@
 .basic-table th:nth-child(3),
 .basic-table td:nth-child(3),
 .basic-table-dark th:nth-child(3),
-.basic-table-dark td:nth-child(3),
-.basic-table-border th:nth-child(3),
-.basic-table-border td:nth-child(3) {
+.basic-table-dark td:nth-child(3) {
   width: 32.34%;
 }
 
@@ -274,11 +272,35 @@
 .basic-table th:nth-child(4),
 .basic-table td:nth-child(4),
 .basic-table-dark th:nth-child(4),
-.basic-table-dark td:nth-child(4),
+.basic-table-dark td:nth-child(4) {
+  width: 30.88%;
+}
+
+
+
+
+
+
+.basic-table-border th:nth-child(1),
+.basic-table-border td:nth-child(1) {
+  width: 13.15%;
+}
+
+.basic-table-border th:nth-child(2),
+.basic-table-border td:nth-child(2) {
+  width: 23.73%;
+}
+
+.basic-table-border th:nth-child(3),
+.basic-table-border td:nth-child(3) {
+  width: 32.24%;
+}
+
 .basic-table-border th:nth-child(4),
 .basic-table-border td:nth-child(4) {
   width: 30.88%;
 }
+
 
 /* HOVER */
 
@@ -398,8 +420,12 @@
   }
 
   .section-title {
-    margin-top: -16px;
+    margin-top: -6px;
   }
+
+  /* .box-row-1 {
+    padding: 34px 0 0;
+  } */
 
   .box-row-1 {
     width: 100%;
@@ -426,4 +452,13 @@
     display: block;
     margin-top: -6px;
   }
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .box-row-1 {
+    padding-top: 42px;
+  }
+
 }
